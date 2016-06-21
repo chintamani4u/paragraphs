@@ -1,0 +1,17 @@
+/**
+ * Widescreen
+ *
+ * Both of the following media queries must *exactly* match what is in
+ * node.module.css. This is rather crazy.
+ *
+ * @todo Figure out how to reduce media query duplication across files
+ *       and modules. Layout styles only allowed in themes?
+ */
+@media screen and (min-width: 780px), (orientation: landscape) and (min-device-height: 780px) {
+  .node-form-layout .messages {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGUtYWRkLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7R0FRRztBQUNIO0VBQ0U7SUFDRSxnQkFBZ0I7SUFDaEIsbUJBQW1CO0dBQ3BCO0NBQ0YiLCJmaWxlIjoibGF5b3V0L25vZGUtYWRkLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogV2lkZXNjcmVlblxuICpcbiAqIEJvdGggb2YgdGhlIGZvbGxvd2luZyBtZWRpYSBxdWVyaWVzIG11c3QgKmV4YWN0bHkqIG1hdGNoIHdoYXQgaXMgaW5cbiAqIG5vZGUubW9kdWxlLmNzcy4gVGhpcyBpcyByYXRoZXIgY3JhenkuXG4gKlxuICogQHRvZG8gRmlndXJlIG91dCBob3cgdG8gcmVkdWNlIG1lZGlhIHF1ZXJ5IGR1cGxpY2F0aW9uIGFjcm9zcyBmaWxlc1xuICogICAgICAgYW5kIG1vZHVsZXMuIExheW91dCBzdHlsZXMgb25seSBhbGxvd2VkIGluIHRoZW1lcz9cbiAqL1xuQG1lZGlhIHNjcmVlbiBhbmQgKG1pbi13aWR0aDogNzgwcHgpLCAob3JpZW50YXRpb246IGxhbmRzY2FwZSkgYW5kIChtaW4tZGV2aWNlLWhlaWdodDogNzgwcHgpIHtcbiAgLm5vZGUtZm9ybS1sYXlvdXQgLm1lc3NhZ2VzIHtcbiAgICBtYXJnaW4tdG9wOiAxZW07XG4gICAgbWFyZ2luLWJvdHRvbTogMWVtO1xuICB9XG59XG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */

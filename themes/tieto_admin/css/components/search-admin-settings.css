@@ -1,0 +1,16 @@
+/**
+ * @file
+ * Styles for administration pages.
+ */
+/**
+ * Add search page select/submit.
+ */
+.search-admin-settings .container-inline {
+  margin-bottom: 1em;
+}
+
+.search-admin-settings label[for="edit-search-type"] {
+  display: block;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlYXJjaC1hZG1pbi1zZXR0aW5ncy5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7OztHQUdHO0FBQ0g7O0dBRUc7QUFDSDtFQUNFLG1CQUFtQjtDQUNwQjs7QUFFRDtFQUNFLGVBQWU7Q0FDaEIiLCJmaWxlIjoiY29tcG9uZW50cy9zZWFyY2gtYWRtaW4tc2V0dGluZ3MuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBAZmlsZVxuICogU3R5bGVzIGZvciBhZG1pbmlzdHJhdGlvbiBwYWdlcy5cbiAqL1xuLyoqXG4gKiBBZGQgc2VhcmNoIHBhZ2Ugc2VsZWN0L3N1Ym1pdC5cbiAqL1xuLnNlYXJjaC1hZG1pbi1zZXR0aW5ncyAuY29udGFpbmVyLWlubGluZSB7XG4gIG1hcmdpbi1ib3R0b206IDFlbTtcbn1cblxuLnNlYXJjaC1hZG1pbi1zZXR0aW5ncyBsYWJlbFtmb3I9XCJlZGl0LXNlYXJjaC10eXBlXCJdIHtcbiAgZGlzcGxheTogYmxvY2s7XG59XG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */

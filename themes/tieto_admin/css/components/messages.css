@@ -1,0 +1,26 @@
+/**
+ * Messages.
+ */
+.messages {
+  margin: 9px 0 10px 8px;
+  /* LTR */
+}
+
+[dir="rtl"] .messages {
+  margin: 9px 8px 10px 0;
+}
+
+.messages pre {
+  margin: 0;
+}
+
+.messages h1, .messages .heading-a,
+.messages h2, .messages .heading-b,
+.messages h3, .messages .heading-c,
+.messages h4, .messages .heading-d,
+.messages h5, .messages .heading-e,
+.messages h6, .messages .heading-f {
+  margin-top: 0;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lc3NhZ2VzLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7R0FFRztBQUNIO0VBQ0UsdUJBQXVCO0VBQ3ZCLFNBQVM7Q0FDVjs7QUFFRDtFQUNFLHVCQUF1QjtDQUN4Qjs7QUFFRDtFQUNFLFVBQVU7Q0FDWDs7QUFFRDs7Ozs7O0VBTUUsY0FBYztDQUNmIiwiZmlsZSI6ImNvbXBvbmVudHMvbWVzc2FnZXMuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBNZXNzYWdlcy5cbiAqL1xuLm1lc3NhZ2VzIHtcbiAgbWFyZ2luOiA5cHggMCAxMHB4IDhweDtcbiAgLyogTFRSICovXG59XG5cbltkaXI9XCJydGxcIl0gLm1lc3NhZ2VzIHtcbiAgbWFyZ2luOiA5cHggOHB4IDEwcHggMDtcbn1cblxuLm1lc3NhZ2VzIHByZSB7XG4gIG1hcmdpbjogMDtcbn1cblxuLm1lc3NhZ2VzIGgxLCAubWVzc2FnZXMgLmhlYWRpbmctYSxcbi5tZXNzYWdlcyBoMiwgLm1lc3NhZ2VzIC5oZWFkaW5nLWIsXG4ubWVzc2FnZXMgaDMsIC5tZXNzYWdlcyAuaGVhZGluZy1jLFxuLm1lc3NhZ2VzIGg0LCAubWVzc2FnZXMgLmhlYWRpbmctZCxcbi5tZXNzYWdlcyBoNSwgLm1lc3NhZ2VzIC5oZWFkaW5nLWUsXG4ubWVzc2FnZXMgaDYsIC5tZXNzYWdlcyAuaGVhZGluZy1mIHtcbiAgbWFyZ2luLXRvcDogMDtcbn1cbiJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ== */

@@ -1,0 +1,20 @@
+uuid: b1cde6b0-8e09-4414-ba3e-615081dc2991
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tieto_admin
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: tieto_admin_page_title
+theme: tieto_admin
+region: content
+weight: -7
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

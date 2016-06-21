@@ -1,0 +1,22 @@
+uuid: b3e40949-9829-421e-8028-b97a6e243e73
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tieto_admin
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: tieto_admin_local_tasks
+theme: tieto_admin
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

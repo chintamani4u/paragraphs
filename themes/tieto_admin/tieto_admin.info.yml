@@ -1,0 +1,45 @@
+name: Tieto Admin
+type: theme
+base theme: classy
+description: 'Tieto Admin theme based on Seven.'
+version: VERSION
+core: 8.x
+
+libraries:
+ - tieto_admin/global-styling
+
+libraries-override:
+  core/drupal.vertical-tabs:
+    css:
+      component:
+        misc/vertical-tabs.css: false
+  core/jquery.ui:
+    css:
+      theme:
+        assets/vendor/jquery.ui/themes/base/theme.css: false
+  core/jquery.ui.dialog:
+    css:
+      component:
+        assets/vendor/jquery.ui/themes/base/dialog.css: false
+  classy/dialog:
+    tieto_admin/tieto_admin.drupal.dialog
+
+libraries-extend:
+  core/drupal.vertical-tabs:
+    - tieto_admin/vertical-tabs
+  core/jquery.ui:
+    - tieto_admin/tieto_admin.jquery.ui
+
+quickedit_stylesheets:
+  - css/components/quickedit.css
+
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  sidebar: 'Sidebar'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
