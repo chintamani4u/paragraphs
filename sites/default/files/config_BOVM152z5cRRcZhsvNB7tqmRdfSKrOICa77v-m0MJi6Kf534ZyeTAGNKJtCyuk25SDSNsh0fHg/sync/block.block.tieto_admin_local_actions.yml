@@ -2,6 +2,8 @@ uuid: 1a40a20b-fdac-41f9-8fea-8148d52b818b
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - tieto_admin
 _core:
@@ -17,4 +19,9 @@ settings:
   label: 'Primary admin actions'
   provider: core
   label_display: '0'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/1
+    negate: true
+    context_mapping: {  }

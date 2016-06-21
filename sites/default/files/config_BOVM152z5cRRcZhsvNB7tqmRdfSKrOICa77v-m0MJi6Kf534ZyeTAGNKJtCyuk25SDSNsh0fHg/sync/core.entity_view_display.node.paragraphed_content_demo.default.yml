@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.paragraphed_content_demo.field_paragraphs_demo
     - node.type.paragraphed_content_demo
   module:
-    - comment
     - entity_reference_revisions
     - user
 _core:
@@ -23,13 +22,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     label: hidden
-  comment:
-    weight: 103
-    label: above
-    settings:
-      pager_id: 0
-    third_party_settings: {  }
-    type: comment_default
   field_paragraphs_demo:
     type: entity_reference_revisions_entity_view
     weight: 102
@@ -38,9 +30,7 @@ content:
       link: ''
     third_party_settings: {  }
     label: hidden
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  comment: true
   langcode: true
+  links: true
