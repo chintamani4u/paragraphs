@@ -1,0 +1,65 @@
+/**
+ * @file
+ * Override Quick Edit's entity toolbar style on the Drupal front-end.
+ *
+ * I.e. loaded by Quick Edit on the front-end, despite this being a back-end theme.
+ */
+/**
+ * The Seven style guide prescribes softer corners.
+ */
+.quickedit-toolbar-container > .quickedit-toolbar-content,
+.quickedit-toolbar-container > .quickedit-toolbar-lining {
+  border-radius: 4px;
+}
+
+.quickedit-button {
+  border-radius: 3px;
+}
+
+/**
+ * Entity toolbar's "save" button must be styled like a Seven primary button.
+ */
+.quickedit-button.action-save,
+.quickedit-button.action-saving {
+  border-color: #1e5c90;
+  background-image: linear-gradient(to bottom, #007bc6, #0071b8);
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  margin-top: 2px;
+}
+
+.quickedit-button.action-save:hover,
+.quickedit-button.action-save:focus,
+.quickedit-button.action-saving:hover,
+.quickedit-button.action-saving:focus {
+  background-color: #2369a6;
+  background-image: linear-gradient(to bottom, #0c97ed, #1f86c7);
+  border-color: #1e5c90;
+  color: #fff;
+}
+
+.quickedit-button.action-save:hover,
+.quickedit-button.action-save:focus,
+.quickedit-button.action-saving:hover,
+.quickedit-button.action-saving:focus {
+  box-shadow: 0 1px 2px rgba(23, 26, 28, 0.25);
+}
+
+.quickedit-button.action-save:active,
+.quickedit-button.action-saving:active {
+  background-image: linear-gradient(to bottom, #08639b, #0071b8);
+  border-color: #144b78;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * The entity toolbar's "save" button's top margin shifts both buttons 2px down,
+ * so we must compensate for that to achieve vertically centered positioning.
+ */
+.quickedit .icon-close:before {
+  top: 8px;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInF1aWNrZWRpdC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7O0dBS0c7QUFDSDs7R0FFRztBQUNIOztFQUVFLG1CQUFtQjtDQUNwQjs7QUFFRDtFQUNFLG1CQUFtQjtDQUNwQjs7QUFFRDs7R0FFRztBQUNIOztFQUVFLHNCQUFzQjtFQUV0QiwrREFBK0Q7RUFDL0QsWUFBWTtFQUNaLHNDQUFzQztFQUN0QyxpQkFBaUI7RUFDakIsb0NBQW9DO0VBQ3BDLGdCQUFnQjtDQUNqQjs7QUFFRDs7OztFQUlFLDBCQUEwQjtFQUUxQiwrREFBK0Q7RUFDL0Qsc0JBQXNCO0VBQ3RCLFlBQVk7Q0FDYjs7QUFFRDs7OztFQUlFLDZDQUE2QztDQUM5Qzs7QUFFRDs7RUFHRSwrREFBK0Q7RUFDL0Qsc0JBQXNCO0VBQ3RCLCtDQUErQztDQUNoRDs7QUFFRDs7O0dBR0c7QUFDSDtFQUNFLFNBQVM7Q0FDViIsImZpbGUiOiJjb21wb25lbnRzL3F1aWNrZWRpdC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEBmaWxlXG4gKiBPdmVycmlkZSBRdWljayBFZGl0J3MgZW50aXR5IHRvb2xiYXIgc3R5bGUgb24gdGhlIERydXBhbCBmcm9udC1lbmQuXG4gKlxuICogSS5lLiBsb2FkZWQgYnkgUXVpY2sgRWRpdCBvbiB0aGUgZnJvbnQtZW5kLCBkZXNwaXRlIHRoaXMgYmVpbmcgYSBiYWNrLWVuZCB0aGVtZS5cbiAqL1xuLyoqXG4gKiBUaGUgU2V2ZW4gc3R5bGUgZ3VpZGUgcHJlc2NyaWJlcyBzb2Z0ZXIgY29ybmVycy5cbiAqL1xuLnF1aWNrZWRpdC10b29sYmFyLWNvbnRhaW5lciA+IC5xdWlja2VkaXQtdG9vbGJhci1jb250ZW50LFxuLnF1aWNrZWRpdC10b29sYmFyLWNvbnRhaW5lciA+IC5xdWlja2VkaXQtdG9vbGJhci1saW5pbmcge1xuICBib3JkZXItcmFkaXVzOiA0cHg7XG59XG5cbi5xdWlja2VkaXQtYnV0dG9uIHtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xufVxuXG4vKipcbiAqIEVudGl0eSB0b29sYmFyJ3MgXCJzYXZlXCIgYnV0dG9uIG11c3QgYmUgc3R5bGVkIGxpa2UgYSBTZXZlbiBwcmltYXJ5IGJ1dHRvbi5cbiAqL1xuLnF1aWNrZWRpdC1idXR0b24uYWN0aW9uLXNhdmUsXG4ucXVpY2tlZGl0LWJ1dHRvbi5hY3Rpb24tc2F2aW5nIHtcbiAgYm9yZGVyLWNvbG9yOiAjMWU1YzkwO1xuICBiYWNrZ3JvdW5kLWltYWdlOiAtd2Via2l0LWxpbmVhci1ncmFkaWVudCh0b3AsICMwMDdiYzYsICMwMDcxYjgpO1xuICBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQodG8gYm90dG9tLCAjMDA3YmM2LCAjMDA3MWI4KTtcbiAgY29sb3I6ICNmZmY7XG4gIHRleHQtc2hhZG93OiAwIDFweCByZ2JhKDAsIDAsIDAsIDAuNSk7XG4gIGZvbnQtd2VpZ2h0OiA3MDA7XG4gIC13ZWJraXQtZm9udC1zbW9vdGhpbmc6IGFudGlhbGlhc2VkO1xuICBtYXJnaW4tdG9wOiAycHg7XG59XG5cbi5xdWlja2VkaXQtYnV0dG9uLmFjdGlvbi1zYXZlOmhvdmVyLFxuLnF1aWNrZWRpdC1idXR0b24uYWN0aW9uLXNhdmU6Zm9jdXMsXG4ucXVpY2tlZGl0LWJ1dHRvbi5hY3Rpb24tc2F2aW5nOmhvdmVyLFxuLnF1aWNrZWRpdC1idXR0b24uYWN0aW9uLXNhdmluZzpmb2N1cyB7XG4gIGJhY2tncm91bmQtY29sb3I6ICMyMzY5YTY7XG4gIGJhY2tncm91bmQtaW1hZ2U6IC13ZWJraXQtbGluZWFyLWdyYWRpZW50KHRvcCwgIzBjOTdlZCwgIzFmODZjNyk7XG4gIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCh0byBib3R0b20sICMwYzk3ZWQsICMxZjg2YzcpO1xuICBib3JkZXItY29sb3I6ICMxZTVjOTA7XG4gIGNvbG9yOiAjZmZmO1xufVxuXG4ucXVpY2tlZGl0LWJ1dHRvbi5hY3Rpb24tc2F2ZTpob3Zlcixcbi5xdWlja2VkaXQtYnV0dG9uLmFjdGlvbi1zYXZlOmZvY3VzLFxuLnF1aWNrZWRpdC1idXR0b24uYWN0aW9uLXNhdmluZzpob3Zlcixcbi5xdWlja2VkaXQtYnV0dG9uLmFjdGlvbi1zYXZpbmc6Zm9jdXMge1xuICBib3gtc2hhZG93OiAwIDFweCAycHggcmdiYSgyMywgMjYsIDI4LCAwLjI1KTtcbn1cblxuLnF1aWNrZWRpdC1idXR0b24uYWN0aW9uLXNhdmU6YWN0aXZlLFxuLnF1aWNrZWRpdC1idXR0b24uYWN0aW9uLXNhdmluZzphY3RpdmUge1xuICBiYWNrZ3JvdW5kLWltYWdlOiAtd2Via2l0LWxpbmVhci1ncmFkaWVudCh0b3AsICMwODYzOWIsICMwMDcxYjgpO1xuICBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQodG8gYm90dG9tLCAjMDg2MzliLCAjMDA3MWI4KTtcbiAgYm9yZGVyLWNvbG9yOiAjMTQ0Yjc4O1xuICBib3gtc2hhZG93OiBpbnNldCAwIDFweCAzcHggcmdiYSgwLCAwLCAwLCAwLjIpO1xufVxuXG4vKipcbiAqIFRoZSBlbnRpdHkgdG9vbGJhcidzIFwic2F2ZVwiIGJ1dHRvbidzIHRvcCBtYXJnaW4gc2hpZnRzIGJvdGggYnV0dG9ucyAycHggZG93bixcbiAqIHNvIHdlIG11c3QgY29tcGVuc2F0ZSBmb3IgdGhhdCB0byBhY2hpZXZlIHZlcnRpY2FsbHkgY2VudGVyZWQgcG9zaXRpb25pbmcuXG4gKi9cbi5xdWlja2VkaXQgLmljb24tY2xvc2U6YmVmb3JlIHtcbiAgdG9wOiA4cHg7XG59XG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */

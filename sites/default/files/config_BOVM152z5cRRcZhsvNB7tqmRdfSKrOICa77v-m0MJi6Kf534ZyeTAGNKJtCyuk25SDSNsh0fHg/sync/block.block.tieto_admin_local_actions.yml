@@ -1,0 +1,27 @@
+uuid: 1a40a20b-fdac-41f9-8fea-8148d52b818b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tieto_admin
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: tieto_admin_local_actions
+theme: tieto_admin
+region: content
+weight: -7
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/1
+    negate: true
+    context_mapping: {  }

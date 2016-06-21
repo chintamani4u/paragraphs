@@ -1,0 +1,45 @@
+/**
+* Reusable utility classes that apply vertical spacing consistency and in line
+* with the base line height of Seven.
+*/
+.leader {
+  margin-top: 20px;
+  margin-top: 1.538rem;
+}
+
+.leader-double {
+  margin-top: 40px;
+  margin-top: 3.076rem;
+}
+
+.leader-triple {
+  margin-top: 60px;
+  margin-top: 4.614rem;
+}
+
+.leader-quadruple {
+  margin-top: 80px;
+  margin-top: 6.152rem;
+}
+
+.trailer {
+  margin-bottom: 20px;
+  margin-bottom: 1.538rem;
+}
+
+.trailer-double {
+  margin-bottom: 40px;
+  margin-bottom: 3.076rem;
+}
+
+.trailer-triple {
+  margin-bottom: 60px;
+  margin-bottom: 4.614rem;
+}
+
+.trailer-quadruple {
+  margin-bottom: 80px;
+  margin-bottom: 6.152rem;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInR5cG9ncmFwaHkuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7RUFHRTtBQUNGO0VBQ0UsaUJBQWlCO0VBQ2pCLHFCQUFxQjtDQUN0Qjs7QUFFRDtFQUNFLGlCQUFpQjtFQUNqQixxQkFBcUI7Q0FDdEI7O0FBRUQ7RUFDRSxpQkFBaUI7RUFDakIscUJBQXFCO0NBQ3RCOztBQUVEO0VBQ0UsaUJBQWlCO0VBQ2pCLHFCQUFxQjtDQUN0Qjs7QUFFRDtFQUNFLG9CQUFvQjtFQUNwQix3QkFBd0I7Q0FDekI7O0FBRUQ7RUFDRSxvQkFBb0I7RUFDcEIsd0JBQXdCO0NBQ3pCOztBQUVEO0VBQ0Usb0JBQW9CO0VBQ3BCLHdCQUF3QjtDQUN6Qjs7QUFFRDtFQUNFLG9CQUFvQjtFQUNwQix3QkFBd0I7Q0FDekIiLCJmaWxlIjoiYmFzZS90eXBvZ3JhcGh5LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuKiBSZXVzYWJsZSB1dGlsaXR5IGNsYXNzZXMgdGhhdCBhcHBseSB2ZXJ0aWNhbCBzcGFjaW5nIGNvbnNpc3RlbmN5IGFuZCBpbiBsaW5lXG4qIHdpdGggdGhlIGJhc2UgbGluZSBoZWlnaHQgb2YgU2V2ZW4uXG4qL1xuLmxlYWRlciB7XG4gIG1hcmdpbi10b3A6IDIwcHg7XG4gIG1hcmdpbi10b3A6IDEuNTM4cmVtO1xufVxuXG4ubGVhZGVyLWRvdWJsZSB7XG4gIG1hcmdpbi10b3A6IDQwcHg7XG4gIG1hcmdpbi10b3A6IDMuMDc2cmVtO1xufVxuXG4ubGVhZGVyLXRyaXBsZSB7XG4gIG1hcmdpbi10b3A6IDYwcHg7XG4gIG1hcmdpbi10b3A6IDQuNjE0cmVtO1xufVxuXG4ubGVhZGVyLXF1YWRydXBsZSB7XG4gIG1hcmdpbi10b3A6IDgwcHg7XG4gIG1hcmdpbi10b3A6IDYuMTUycmVtO1xufVxuXG4udHJhaWxlciB7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG4gIG1hcmdpbi1ib3R0b206IDEuNTM4cmVtO1xufVxuXG4udHJhaWxlci1kb3VibGUge1xuICBtYXJnaW4tYm90dG9tOiA0MHB4O1xuICBtYXJnaW4tYm90dG9tOiAzLjA3NnJlbTtcbn1cblxuLnRyYWlsZXItdHJpcGxlIHtcbiAgbWFyZ2luLWJvdHRvbTogNjBweDtcbiAgbWFyZ2luLWJvdHRvbTogNC42MTRyZW07XG59XG5cbi50cmFpbGVyLXF1YWRydXBsZSB7XG4gIG1hcmdpbi1ib3R0b206IDgwcHg7XG4gIG1hcmdpbi1ib3R0b206IDYuMTUycmVtO1xufVxuIl0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9 */

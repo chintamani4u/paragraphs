@@ -1,0 +1,63 @@
+/**
+ * @file
+ * Installation styling.
+ *
+ * Unfortunately we have to make our styling quite strong, to override the
+ * .maintenance-page styling.
+ */
+.install-page {
+  background-color: #1275b2;
+  background-image: url(../../images/noise-low.png), radial-gradient(#1788cf, #106193);
+  background-repeat: repeat;
+  background-position: left top, 50% 50%;
+  /* LTR */
+  min-height: 100%;
+}
+
+[dir="rtl"] .install-page {
+  background-position: right top, 50% 50%;
+}
+
+/**
+ * Password widget
+ */
+.install-page .password-parent,
+.install-page .confirm-parent {
+  width: auto;
+}
+
+.install-page .form-item .password-suggestions {
+  float: none;
+  width: auto;
+}
+
+.install-page table td {
+  word-break: break-word;
+}
+
+.install-page .site-version {
+  vertical-align: super;
+  font-size: 0.5em;
+  color: #595959;
+}
+
+@media all and (max-width: 1010px) and (min-width: 48em) {
+  .install-page .password-strength,
+  .install-page .confirm-parent {
+    width: 100%;
+  }
+  .install-configure-form .form-type-password {
+    width: 100%;
+  }
+  .password-confirm,
+  .password-field {
+    float: none;
+  }
+  .password-confirm-match {
+    float: none;
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluc3RhbGwtcGFnZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7OztHQU1HO0FBQ0g7RUFDRSwwQkFBMEI7RUFFMUIscUZBQXFGO0VBQ3JGLDBCQUEwQjtFQUMxQix1Q0FBdUM7RUFDdkMsU0FBUztFQUNULGlCQUFpQjtDQUNsQjs7QUFFRDtFQUNFLHdDQUF3QztDQUN6Qzs7QUFFRDs7R0FFRztBQUNIOztFQUVFLFlBQVk7Q0FDYjs7QUFFRDtFQUNFLFlBQVk7RUFDWixZQUFZO0NBQ2I7O0FBRUQ7RUFDRSx1QkFBdUI7Q0FDeEI7O0FBRUQ7RUFDRSxzQkFBc0I7RUFDdEIsaUJBQWlCO0VBQ2pCLGVBQWU7Q0FDaEI7O0FBRUQ7RUFDRTs7SUFFRSxZQUFZO0dBQ2I7RUFDRDtJQUNFLFlBQVk7R0FDYjtFQUNEOztJQUVFLFlBQVk7R0FDYjtFQUNEO0lBQ0UsWUFBWTtJQUNaLFlBQVk7SUFDWixnQkFBZ0I7R0FDakI7Q0FDRiIsImZpbGUiOiJ0aGVtZS9pbnN0YWxsLXBhZ2UuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBAZmlsZVxuICogSW5zdGFsbGF0aW9uIHN0eWxpbmcuXG4gKlxuICogVW5mb3J0dW5hdGVseSB3ZSBoYXZlIHRvIG1ha2Ugb3VyIHN0eWxpbmcgcXVpdGUgc3Ryb25nLCB0byBvdmVycmlkZSB0aGVcbiAqIC5tYWludGVuYW5jZS1wYWdlIHN0eWxpbmcuXG4gKi9cbi5pbnN0YWxsLXBhZ2Uge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMTI3NWIyO1xuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoLi4vLi4vaW1hZ2VzL25vaXNlLWxvdy5wbmcpLCAtd2Via2l0LXJhZGlhbC1ncmFkaWVudCgjMTc4OGNmLCAjMTA2MTkzKTtcbiAgYmFja2dyb3VuZC1pbWFnZTogdXJsKC4uLy4uL2ltYWdlcy9ub2lzZS1sb3cucG5nKSwgcmFkaWFsLWdyYWRpZW50KCMxNzg4Y2YsICMxMDYxOTMpO1xuICBiYWNrZ3JvdW5kLXJlcGVhdDogcmVwZWF0O1xuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBsZWZ0IHRvcCwgNTAlIDUwJTtcbiAgLyogTFRSICovXG4gIG1pbi1oZWlnaHQ6IDEwMCU7XG59XG5cbltkaXI9XCJydGxcIl0gLmluc3RhbGwtcGFnZSB7XG4gIGJhY2tncm91bmQtcG9zaXRpb246IHJpZ2h0IHRvcCwgNTAlIDUwJTtcbn1cblxuLyoqXG4gKiBQYXNzd29yZCB3aWRnZXRcbiAqL1xuLmluc3RhbGwtcGFnZSAucGFzc3dvcmQtcGFyZW50LFxuLmluc3RhbGwtcGFnZSAuY29uZmlybS1wYXJlbnQge1xuICB3aWR0aDogYXV0bztcbn1cblxuLmluc3RhbGwtcGFnZSAuZm9ybS1pdGVtIC5wYXNzd29yZC1zdWdnZXN0aW9ucyB7XG4gIGZsb2F0OiBub25lO1xuICB3aWR0aDogYXV0bztcbn1cblxuLmluc3RhbGwtcGFnZSB0YWJsZSB0ZCB7XG4gIHdvcmQtYnJlYWs6IGJyZWFrLXdvcmQ7XG59XG5cbi5pbnN0YWxsLXBhZ2UgLnNpdGUtdmVyc2lvbiB7XG4gIHZlcnRpY2FsLWFsaWduOiBzdXBlcjtcbiAgZm9udC1zaXplOiAwLjVlbTtcbiAgY29sb3I6ICM1OTU5NTk7XG59XG5cbkBtZWRpYSBhbGwgYW5kIChtYXgtd2lkdGg6IDEwMTBweCkgYW5kIChtaW4td2lkdGg6IDQ4ZW0pIHtcbiAgLmluc3RhbGwtcGFnZSAucGFzc3dvcmQtc3RyZW5ndGgsXG4gIC5pbnN0YWxsLXBhZ2UgLmNvbmZpcm0tcGFyZW50IHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxuICAuaW5zdGFsbC1jb25maWd1cmUtZm9ybSAuZm9ybS10eXBlLXBhc3N3b3JkIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxuICAucGFzc3dvcmQtY29uZmlybSxcbiAgLnBhc3N3b3JkLWZpZWxkIHtcbiAgICBmbG9hdDogbm9uZTtcbiAgfVxuICAucGFzc3dvcmQtY29uZmlybS1tYXRjaCB7XG4gICAgZmxvYXQ6IG5vbmU7XG4gICAgd2lkdGg6IGF1dG87XG4gICAgbWF4LXdpZHRoOiAxMDAlO1xuICB9XG59XG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */
