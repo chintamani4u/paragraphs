@@ -26,3 +26,5 @@ permissions:
   - 'view paragraph content user'
   - 'access user contact forms'
   - 'access user profiles'
+  - 'access kint'
+  - 'view paragraph content parallax'
