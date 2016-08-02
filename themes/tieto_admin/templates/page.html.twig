@@ -39,35 +39,15 @@
  * @see html.html.twig
  */
 #}
-  <header class="content-header clearfix">
-    <div class="layout-container">
-      <a class="logo" href="{{ base_path }}" title="{{ site_name }}">{{ site_name }}</a>
-      {{ page.header }}
-    </div>
-  </header>
-
+<header class="content-header clearfix">
   <div class="layout-container">
-    {{ page.breadcrumb }}
-
-    {% if page.sidebar %}
-      {% spaceless %}
-        {{ page.sidebar }}
-      {% endspaceless %}
-    {% endif %}
-
-    {{ page.pre_content }}
-
-    <main class="page-content clearfix" role="main">
-      <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
-
-      {{ page.highlighted }}
-
-      {% if page.help %}
-        <div class="help">
-          {{ page.help }}
-        </div>
-      {% endif %}
-
-      {{ page.content }}
-    </main>
+    <a class="logo" href="{{ base_path }}" title="{{ site_name }}">{{ site_name }}</a>
+    {{ page.header }}
   </div>
+</header>
+
+<main class="page-content clearfix" role="main">
+  <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
+
+  {{ page.content }}
+</main>
