@@ -39,7 +39,13 @@
  * @see html.html.twig
  */
 #}
-<main class="page-content clearfix" role="main">
+{% if page.header %}
+<header class="page-header">
+	{{ page.header }}
+</header>
+{% endif %}
+
+<main class="page-content" role="main">
   <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
   {{ page.content }}
 </main>
