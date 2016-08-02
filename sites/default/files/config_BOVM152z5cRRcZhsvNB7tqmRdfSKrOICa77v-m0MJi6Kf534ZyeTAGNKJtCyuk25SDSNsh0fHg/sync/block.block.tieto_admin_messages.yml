@@ -1,6 +1,6 @@
 uuid: 3365d4c0-49ef-48c1-825f-faed9491f541
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,7 +10,7 @@ _core:
   default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
 id: tieto_admin_messages
 theme: tieto_admin
-region: highlighted
+region: '-1'
 weight: 0
 provider: null
 plugin: system_messages_block

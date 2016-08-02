@@ -11,7 +11,7 @@ _core:
 id: tieto_admin_powered
 theme: tieto_admin
 region: '-1'
-weight: -5
+weight: -3
 provider: null
 plugin: system_powered_by_block
 settings:

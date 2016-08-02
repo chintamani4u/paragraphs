@@ -1,6 +1,6 @@
 uuid: 1a40a20b-fdac-41f9-8fea-8148d52b818b
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,8 +10,8 @@ _core:
   default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
 id: tieto_admin_local_actions
 theme: tieto_admin
-region: content
-weight: -7
+region: '-1'
+weight: 5
 provider: null
 plugin: local_actions_block
 settings:

@@ -1,6 +1,6 @@
 uuid: f005b8e0-1120-420c-a88a-4e24fad1f3f2
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.main
@@ -12,8 +12,8 @@ _core:
   default_config_hash: rx9IrdDv7Ldc4kpalZAxdhIPZfYIeOMh1N-qKoQZwHo
 id: tieto_admin_main_menu
 theme: tieto_admin
-region: header
-weight: 0
+region: '-1'
+weight: -4
 provider: null
 plugin: 'system_menu_block:main'
 settings:
