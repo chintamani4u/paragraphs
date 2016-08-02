@@ -179,3 +179,29 @@ img {
 		}
 	}
 }
+
+$tieto-blue: #67afe1;
+
+.tieto-onepage {
+	position: relative;
+
+	.page-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+
+	}
+
+	.logo {
+		display: inline-block;
+
+		&::after {
+			display: block;
+			background: $tieto-blue;
+			width: 150%;
+			height: 200px;
+		}
+	}
+
+}
