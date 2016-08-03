@@ -24,3 +24,4 @@ permissions:
   - 'access user profiles'
   - 'access kint'
   - 'view paragraph content parallax'
+  - 'view paragraph content campaign_header'
