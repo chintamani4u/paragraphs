@@ -1,8 +1,8 @@
 @import "../vars";
 
-.paragraph--type--parallax {
+.paragraph--type--campaign-header {
     background: transparent;
-    text-align: center;
+    min-height: 570px;
 
     // .paragraph-inner {
     // 	width: 100%;
@@ -146,26 +146,91 @@
 	}
 }
 
+/**
+ * TIETO CAMPAIGN SITES
+ */
+$tieto-blue: #67afe1;
+
 .tieto-onepage {
 	position: relative;
 
+	/**
+	 * Header wrapper, which stays fixed.
+	 */
 	.page-header {
 		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
-
 	}
 
+	/**
+	 * Tieto logo.
+	 */
 	.logo {
-		display: inline-block;
+		display: block;
+		margin: 0 auto;
+		text-align: center;
+		height: 50px;
+		background: $tieto-blue;
 
-		&::after {
+		img {
+			height: 100%;
+		}
+
+		@include breakpoint(md) {
+			background: 0;
 			display: block;
-			background: $tieto-blue;
-			width: 150%;
-			height: 200px;
+			float: left;
+			position: relative;
+
+			img {
+				height: auto;
+				padding-left: 7px;
+			}
+
+			&::after {
+				transform: rotate(12deg) skew(-32deg);
+				content: " ";
+				position: absolute;
+				top: -100px;
+				left: -50px;
+				display: block;
+				background: $tieto-blue;
+				width: 200px;
+				height: 200px;
+				z-index: -1;
+			}
 		}
 	}
 
+	/**
+	 * Campaign smoothscroll menu.
+	 */
+	.block.navigation {
+		float: right;
+	}
+
+	.page-header .menu {
+		text-align: center;
+		margin: .5em 1em;
+		float: right;
+		font-size: 1.2em;
+		font-weight: bold;
+
+		> li {
+		    display: inline-block;
+
+		    &:hover a,
+		    a.is-active {
+
+		    }
+
+		    > a {
+		    	color: rgba(255, 255, 255, .8);
+			    padding: .5em;
+			    display: inline-block;
+		    }
+		}
+	}
 }

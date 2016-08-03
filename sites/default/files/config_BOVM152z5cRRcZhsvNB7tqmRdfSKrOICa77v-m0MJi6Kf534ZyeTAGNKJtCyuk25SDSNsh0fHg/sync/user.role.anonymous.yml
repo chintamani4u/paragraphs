@@ -25,3 +25,5 @@ permissions:
   - 'access kint'
   - 'view paragraph content parallax'
   - 'view paragraph content campaign_header'
+  - 'view paragraph content insights'
+  - 'view paragraph content tabs'

@@ -1,0 +1,42 @@
+uuid: 125e590e-db48-43b6-b56d-a875ee65e2f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.insights.field_image_demo
+    - field.field.paragraph.insights.field_text_demo
+    - field.field.paragraph.insights.field_title
+    - image.style.insights
+    - paragraphs.paragraphs_type.insights
+  module:
+    - image
+    - text
+id: paragraph.insights.default
+targetEntityType: paragraph
+bundle: insights
+mode: default
+content:
+  field_image_demo:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: insights
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_text_demo:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  uid: true

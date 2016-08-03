@@ -1,0 +1,18 @@
+{%
+set classes = [
+	'paragraph',
+	'paragraph--type--' ~ paragraph.bundle|clean_class,
+	view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+]
+%}
+{% set enableParallax = content.field_enable_parallax['#items'].getValue()[0]['value'] == '1' %}
+{% set background = file_url(content.field_background_image['#items'].entity.uri.value) %}
+
+<div{{ attributes.addClass(classes) }} {% if enableParallax %}data-parallax="scroll" data-image-src="{{ background }}"{% else %}style="background-image: url({{ background }});"{% endif %}>
+  <section class="paragraph-inner">
+  	<h1 class="title">{{ content.field_title }}</h1>
+  	<h2 class="secondary-title">{{ content.field_secondary_title }}</h2>
+  	<p>{{ content.field_lead_text }}</p>
+  	<div class="cta-wrapper">{{ content.field_call_to_action }}</div>
+  </section>
+</div>
