@@ -1,0 +1,29 @@
+uuid: 06b74e66-b7f7-4cbb-b492-69df73cb6525
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.campaign-national-retail-pa
+  module:
+    - system
+  theme:
+    - tieto_admin
+id: campaignnationalretailpaymentswitch
+theme: tieto_admin
+region: header
+weight: -8
+provider: null
+plugin: 'system_menu_block:campaign-national-retail-pa'
+settings:
+  id: 'system_menu_block:campaign-national-retail-pa'
+  label: 'Menu: National Retail Payment Switch'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/6
+    negate: false
+    context_mapping: {  }

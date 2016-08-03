@@ -1,6 +1,6 @@
 uuid: b3e40949-9829-421e-8028-b97a6e243e73
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,8 +10,8 @@ _core:
   default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
 id: tieto_admin_local_tasks
 theme: tieto_admin
-region: header
-weight: -5
+region: '-1'
+weight: 4
 provider: null
 plugin: local_tasks_block
 settings:

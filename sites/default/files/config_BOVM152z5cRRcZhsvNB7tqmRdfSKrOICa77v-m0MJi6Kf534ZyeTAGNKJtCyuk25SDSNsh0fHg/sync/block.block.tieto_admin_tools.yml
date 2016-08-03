@@ -13,7 +13,7 @@ _core:
 id: tieto_admin_tools
 theme: tieto_admin
 region: '-1'
-weight: 4
+weight: 2
 provider: null
 plugin: 'system_menu_block:tools'
 settings:
