@@ -11,7 +11,7 @@ dependencies:
 id: campaignnationalretailpaymentswitch
 theme: tieto_admin
 region: header
-weight: -8
+weight: -7
 provider: null
 plugin: 'system_menu_block:campaign-national-retail-pa'
 settings:

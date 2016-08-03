@@ -1,39 +1,73 @@
 @import "../vars";
 
+$pulp-yellow: #fcea6a;
+$pulp-red: #d03428;
+
 .paragraph--type--parallax {
     background: transparent;
     text-align: center;
+    font-size: 2em;
+    color: white;
+    line-height: 1.6;
+    display: table;
+	width: 100%;
 
-    // .paragraph-inner {
-    // 	width: 100%;
-    // 	font-family: 'Crimson Text', serif;
-    // 	font-weight: bold;
-    // 	h2 {
-    // 		font-family: 'Alfa Slab One', cursive;
-    // 		line-height: normal;
-    // 		font-weight: normal;
-    // 	}
-    // 	text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    // 	display: table-cell;
-    // 	vertical-align: middle;
-    // 	padding: 2em;
-    // 	@include breakpoint(md) {
-    // 		padding: 0 5em;
-    // 	}
-    // }
+    .paragraph-inner {
+    	width: 100%;
+    	font-family: 'Crimson Text', serif;
+    	font-weight: bold;
+    	h2 {
+    		font-family: 'Alfa Slab One', cursive;
+    		line-height: normal;
+    		font-weight: normal;
+    	}
+    	text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    	display: table-cell;
+    	vertical-align: middle;
+    	padding: 2em;
+    	@include breakpoint(md) {
+    		padding: 0 5em;
+    	}
+    }
+}
+
+.page-content {
+	margin-bottom: 0;
+}
+
+.node {
+	font-size: 1.6em;
+	font-family: 'Crimson Text', serif;
+	line-height: 1.6;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	box-sizing: border-box;
+}
+
+.paragraph--type--images, .paragraph--type--image-text, .paragraph--type--text-image {
+	img {
+		border: 5px solid white;
+	}
+}
+
+.node__submitted, .node__meta {
+	display: none;
 }
 
 // Every paragraph
-// .paragraph {
-// 	padding: 50px 0;
-// }
+.paragraph {
+	padding: 50px 0;
+}
 
 // Paragraph inner wrapper
-// .paragraph-inner {
-// 	max-width: 1020px;
-//     margin: 0 auto;
-//     padding: 0 1em;
-// }
+.paragraph-inner {
+	max-width: 1020px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
 
 // Image + Text
 .paragraph--type--image-text {
@@ -144,28 +178,4 @@
 			border-radius: 50%;
 		}
 	}
-}
-
-.tieto-onepage {
-	position: relative;
-
-	.page-header {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-
-	}
-
-	.logo {
-		display: inline-block;
-
-		&::after {
-			display: block;
-			background: $tieto-blue;
-			width: 150%;
-			height: 200px;
-		}
-	}
-
 }
