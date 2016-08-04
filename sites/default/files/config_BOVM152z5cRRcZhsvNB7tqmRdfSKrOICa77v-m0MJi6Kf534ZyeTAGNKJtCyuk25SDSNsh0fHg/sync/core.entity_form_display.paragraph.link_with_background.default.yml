@@ -1,0 +1,35 @@
+uuid: e199bd25-51aa-42ca-aa5b-2424d5c89c68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.link_with_background.field_background_image
+    - field.field.paragraph.link_with_background.field_url
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.link_with_background
+  module:
+    - image
+    - link
+id: paragraph.link_with_background.default
+targetEntityType: paragraph
+bundle: link_with_background
+mode: default
+content:
+  field_background_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_url:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+hidden:
+  created: true
+  status: true
+  uid: true
