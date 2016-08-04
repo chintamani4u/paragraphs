@@ -5,6 +5,9 @@
  *, *::before, *::after {
   box-sizing: border-box;
  }
+ #toolbar-administration {
+  z-index: 1001;
+ }
 body {
   color: #333;
   background: #fff;
