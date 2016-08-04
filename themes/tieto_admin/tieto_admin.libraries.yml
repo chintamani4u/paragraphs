@@ -44,6 +44,18 @@ global-styling:
     - system/admin
     - core/jquery
 
+# @see https://github.com/jellekralt/Responsive-Tabs
+responsive-tabs:
+  version: VERSION
+  css:
+    layout:
+      css/vendor/responsive-tabs.css: {}
+  js:
+    js/jquery.responsiveTabs.min.js: {}
+    js/scripts.js: {}
+  dependencies:
+    - core/jquery
+
 node-form:
   version: VERSION
   css:

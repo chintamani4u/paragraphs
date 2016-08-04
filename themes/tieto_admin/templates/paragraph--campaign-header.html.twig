@@ -10,9 +10,9 @@ set classes = [
 
 <div{{ attributes.addClass(classes) }} {% if enableParallax %}data-parallax="scroll" data-image-src="{{ background }}"{% else %}style="background-image: url({{ background }});"{% endif %}>
   <section class="paragraph-inner">
-  	<h1 class="title">{{ content.field_title }}</h1>
-  	<h2 class="secondary-title">{{ content.field_secondary_title }}</h2>
-  	<p>{{ content.field_lead_text }}</p>
-  	<div class="cta-wrapper">{{ content.field_call_to_action }}</div>
+  	{{ content.field_title }}
+  	{{ content.field_secondary_title }}
+  	{{ content.field_lead_text }}
+  	{{ content.field_call_to_action }}
   </section>
 </div>
