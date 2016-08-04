@@ -19,6 +19,7 @@
 	});
 
 	$(document).ready(function() {
+		if ($(window).width() < 768) return;
         header.scrollspy({
             min: 500,
             onEnter: function(element, position) {

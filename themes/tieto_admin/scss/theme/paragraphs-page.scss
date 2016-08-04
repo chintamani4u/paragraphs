@@ -13,6 +13,7 @@ $page-max-width: 1000px;
 .tieto-onepage {
 	position: relative;
 
+
 	.paragraph-inner {
 		max-width: $page-max-width;
 		margin: 0 auto;
@@ -334,4 +335,33 @@ $page-max-width: 1000px;
 			color: white;
 		}
 	}
+}
+
+.paragraph--type--link-with-background {
+	background-color: rgba(103, 175, 225, .4);
+	min-height: 200px;
+
+	.field--name-field-url {
+		text-align: center;
+		display: table;
+		width: 100%;
+		height: 200px;
+		a {
+			display: table-cell;
+			vertical-align: middle;
+			font-size: 3em;
+			font-weight: bold;
+			line-height: normal;
+			color: white;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.paragraph--type--text {
+	background: white;
+	padding: 0 2em 2em;
+	@include clearfix;
 }
