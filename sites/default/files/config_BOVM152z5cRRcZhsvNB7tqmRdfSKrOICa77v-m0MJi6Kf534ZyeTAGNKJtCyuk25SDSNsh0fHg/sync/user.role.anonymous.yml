@@ -27,3 +27,4 @@ permissions:
   - 'view paragraph content campaign_header'
   - 'view paragraph content insights'
   - 'view paragraph content tabs'
+  - 'view paragraph content link_with_background'

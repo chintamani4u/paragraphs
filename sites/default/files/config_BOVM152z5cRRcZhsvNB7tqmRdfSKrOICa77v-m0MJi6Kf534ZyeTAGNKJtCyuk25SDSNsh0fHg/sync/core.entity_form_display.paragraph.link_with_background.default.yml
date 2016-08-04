@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.link_with_background.field_background_image
+    - field.field.paragraph.link_with_background.field_enable_parallax
     - field.field.paragraph.link_with_background.field_url
     - image.style.thumbnail
     - paragraphs.paragraphs_type.link_with_background
@@ -22,6 +23,12 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+  field_enable_parallax:
+    weight: 2
+    settings:
+      display_label: false
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_url:
     weight: 0
     settings:

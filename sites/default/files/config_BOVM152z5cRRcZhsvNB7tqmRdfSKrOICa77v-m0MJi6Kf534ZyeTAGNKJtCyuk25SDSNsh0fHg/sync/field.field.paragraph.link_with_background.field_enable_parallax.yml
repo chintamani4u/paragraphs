@@ -1,0 +1,23 @@
+uuid: f57549f1-6f37-442e-8133-2682b3f98970
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_enable_parallax
+    - paragraphs.paragraphs_type.link_with_background
+id: paragraph.link_with_background.field_enable_parallax
+field_name: field_enable_parallax
+entity_type: paragraph
+bundle: link_with_background
+label: 'Enable Parallax'
+description: 'Check this to make the background image scroll slower than the content above it.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Use Parallax'
+  off_label: 'Off'
+field_type: boolean
