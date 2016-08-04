@@ -3,101 +3,8 @@
 $tieto-blue: #67afe1;
 $tieto-lightblue: #cde6f5;
 $tieto-green: #b2eb95;
-
-.paragraph--type--campaign-header {
-    background-color: rgba(103, 175, 225, .4);
-    min-height: 570px;
-    position: relative;
-
-    .paragraph-inner {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 100%;
-		text-align: center;
-		color: white;
-		padding: 2em 2em 0;
-    }
-
-    .field--name-field-title,
-    .field--name-field-secondary-title {
-		line-height: normal;
-		text-shadow: 0 0 5px rgba(0, 0, 0, .6);
-    }
-
-    .field--name-field-secondary-title {
-		font-weight: bold;
-    	font-size: 2em;
-    }
-
-    .field--name-field-lead-text {
-    	line-height: 1.5em;
-    	margin-top: .5em;
-    	text-shadow: 0 0 5px rgba(0, 0, 0, .6);
-    }
-
-    .field--name-field-call-to-action {
-    	margin-top: 2em;
-    	a {
-    		color: white;
-    		display: inline-block;
-    		padding: 1em 2em;
-    		text-transform: uppercase;
-    		background: rgba(0, 0, 0, .4);
-    		border-radius: 3px;
-    		border: 1px solid white;
-    		font-size: .9em;
-    		transition: background .3s;
-    		&:hover, &:focus, &:active {
-    			text-decoration: none;
-    			background: rgba(0, 0, 0, .6);
-    		}
-    	}
-    }
-}
-
-.paragraph--type--insights {
-	padding: 30px;
-
-	.field--name-field-text-demo {
-		padding: 2em 3em;
-		background: $tieto-lightblue;
-	}
-	.field--name-field-image-demo img {
-		margin: 2em auto;
-	}
-}
-
-.paragraph--type--tabs {
-	padding: 30px;
-	background: $tieto-green;
-
-	.field--name-field-title {
-		color: white;
-	}
-
-	.field--name-field-lead-text {
-		margin-bottom: 1em;
-	}
-
-	.r-tabs-accordion-title {
-		a {
-			font-size: 1.5em;
-			font-weight: bold;
-			border-bottom: 3px solid black;
-			display: block;
-			padding: .5em 0;
-			&:hover, &:focus, &:active {
-				text-decoration: none;
-			}
-		}
-
-		&.r-tabs-state-active a {
-			border-color: white;
-			color: white;
-		}
-	}
-}
+$header-height: 50px;
+$page-max-width: 1000px;
 
 /**
  * TIETO CAMPAIGN SITES
@@ -105,6 +12,11 @@ $tieto-green: #b2eb95;
 
 .tieto-onepage {
 	position: relative;
+
+	.paragraph-inner {
+		max-width: $page-max-width;
+		margin: 0 auto;
+	}
 
 	.field--name-field-title {
 		font-size: 3em;
@@ -123,17 +35,105 @@ $tieto-green: #b2eb95;
 		left: 0;
 		right: 0;
 		z-index: 1000;
+		transition: background .2s;
+
+		&.fixed {
+			background: rgba(0, 0, 0, .5);
+		}
+
+		@include breakpoint-max(md) {
+			backface-visibility: hidden;
+			box-shadow: 0 0 4px 2px rgba(0, 0, 0, .3);
+			height: $header-height;
+			background: $tieto-blue;
+		}
+	}
+
+	.navigation {
+		@include breakpoint-max(md) {
+			position: absolute;
+			top: $header-height;
+			right: 0;
+			left: 0;
+			background: rgba(0, 0, 0, 0.7);
+			max-height: 0;
+			transition: max-height .3s;
+			will-change: max-height;
+			overflow-y: hidden;
+			backface-visibility: hidden;
+		}
+
+		.menu {
+			margin: 0;
+			@include md {
+				margin: 1em;
+				float: right;
+			}
+		}
+		.menu-item {
+			list-style: none;
+			padding: 0;
+			@include md {
+				display: inline-block;
+			}
+		}
+	}
+
+	.hamburger {
+		padding: 0;
+		width: $header-height;
+		height: $header-height;
+		float: right;
+
+		@include md {
+			display: none;
+		}
+
+		@include breakpoint-max(md) {
+			&.is-active + .navigation {
+				max-height: 259px;
+			}
+		}
+
+		&:active, &:focus {
+			outline: none;
+		}
+
+		.hamburger-inner {
+			&, &::before, &::after {
+				width: 30px;
+				background-color: white;
+			}
+		}
+
+		.hamburger-box {
+			width: 30px;
+			height: 29px;
+		}
+
+		.hamburger-toggle {
+			color: white;
+			width: $header-height;
+			height: $header-height;
+			&:hover, &:active, &:focus {
+				text-decoration: none;
+			}
+			@include md {
+				display: none;
+			}
+		}
 	}
 
 	/**
 	 * Tieto logo.
 	 */
 	.logo {
-		display: block;
+		display: inline-block;
 		margin: 0 auto;
 		text-align: center;
-		height: 50px;
+		height: $header-height;
 		background: $tieto-blue;
+		padding: 0 10px;
 
 		img {
 			height: 100%;
@@ -165,32 +165,173 @@ $tieto-green: #b2eb95;
 		}
 	}
 
-	/**
-	 * Campaign smoothscroll menu.
-	 */
-	.block.navigation {
-		float: right;
-	}
-
 	.page-header .menu {
-		text-align: center;
-		margin: .5em 1em;
-		float: right;
-		font-weight: bold;
+		// text-align: center;
+		// margin: .5em 1em;
+		// float: right;
 
 		> li {
-		    display: inline-block;
+			// @include md {
+		 //    	display: inline-block;
+			// }
 
-		    &:hover a,
-		    a.is-active {
+		  //   &:hover a {
+				// text-decoration: none;
 
-		    }
+		  //   }
 
 		    > a {
-		    	color: rgba(255, 255, 255, .8);
-			    padding: .5em;
-			    display: inline-block;
+		    	color: rgba(255, 255, 255, .9);
+			    padding: .5em 1em .5em 3em;
+			    @include md {
+			    	text-shadow: 0 0 5px rgba(0, 0, 0, .3);
+			    	padding: .5em;
+			    }
+			    display: block;
+			    font-weight: bold;
+			    text-align: center;
 		    }
+		}
+	}
+}
+
+.paragraph--type--campaign-header {
+    background-color: rgba(103, 175, 225, .4);
+    min-height: 570px;
+    position: relative;
+
+    .paragraph-inner {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		width: 100%;
+		color: white;
+		padding: 2em 2em 0;
+		@include breakpoint-max(md) {
+			transform: translateY(-50%);
+			text-align: center;
+		}
+    }
+
+    .field--name-field-title {
+    	margin-bottom: 0;
+    }
+    .field--name-field-title,
+    .field--name-field-secondary-title {
+		line-height: normal;
+		text-shadow: 0 0 5px rgba(0, 0, 0, .6);
+    }
+
+    .field--name-field-secondary-title {
+		font-weight: bold;
+    	font-size: 2em;
+    }
+
+    .field--name-field-lead-text {
+    	line-height: 1.5em;
+    	margin-top: .5em;
+    	text-shadow: 0 0 5px rgba(0, 0, 0, .6);
+    }
+
+    .field--name-field-call-to-action {
+    	margin-top: 2em;
+    	@include md {
+    		float: right;
+    		margin-top: 0;
+    		width: 50%;
+    	}
+    	a {
+    		color: white;
+    		display: inline-block;
+    		padding: 1em 2em;
+    		text-transform: uppercase;
+    		background: rgba(0, 0, 0, .4);
+    		border-radius: 3px;
+    		border: 1px solid white;
+    		font-size: .9em;
+    		transition: background .3s;
+    		&:hover, &:focus, &:active {
+    			text-decoration: none;
+    			background: rgba(0, 0, 0, .6);
+    		}
+    	}
+    }
+
+    @include md {
+    	.field--name-field-title,
+    	.field--name-field-secondary-title,
+    	.field--name-field-lead-text {
+			width: 50%;
+			text-align: left;
+			float: left;
+			clear: left;
+    	}
+    }
+}
+
+.paragraph--type--insights {
+	padding: 30px;
+
+	.field--name-field-text-demo {
+		padding: 2em 3em;
+		background: $tieto-lightblue;
+
+		@include md {
+			padding-right: 6em;
+			width: 50%;
+			display: inline-block;
+		}
+	}
+	.field--name-field-image-demo {
+
+		@include md {
+			transform: translateX(-2em);
+			margin-top: 5em;
+			width: 50%;
+			float: right;
+		}
+	}
+}
+
+.paragraph--type--tabs {
+	padding: 30px;
+	background: $tieto-green;
+
+	.field--name-field-title {
+		color: white;
+	}
+
+	.field--name-field-lead-text {
+		margin-bottom: 1em;
+	}
+
+	.r-tabs-panel {
+		clear: both;
+	}
+	.r-tabs-accordion-title, .r-tabs-tab {
+		@include breakpoint(md) {
+			float: left;
+			width: 33.333%;
+		}
+		a {
+			font-size: 1.4em;
+			font-weight: bold;
+			border-bottom: 3px solid black;
+			display: block;
+			padding: .5em 0;
+			@include breakpoint(md) {
+				padding: .5em;
+				text-align: center;
+			}
+			&:hover, &:focus, &:active {
+				text-decoration: none;
+			}
+		}
+
+		&.r-tabs-state-active a {
+			border-color: white;
+			color: white;
 		}
 	}
 }

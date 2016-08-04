@@ -34,6 +34,7 @@ global-styling:
       css/components/system-status-report.css: {}
       css/components/tabs.css: {}
       css/components/views-ui.css: {}
+      css/vendor/hamburgers.css: {}
     layout:
       css/layout/layout.css: {}
       css/layout/views.css: {}
@@ -53,6 +54,13 @@ responsive-tabs:
   js:
     js/jquery.responsiveTabs.min.js: {}
     js/scripts.js: {}
+  dependencies:
+    - core/jquery
+
+scrollspy:
+  version: VERSION
+  js:
+    js/jquery-scrollspy.js: {}
   dependencies:
     - core/jquery
 

@@ -13,8 +13,24 @@
       @content;
     }
   }
-  @else {
-    @warn "Breakpoint mixin supports: md, lg";
+}
+
+@mixin md() {
+  @include breakpoint(md) {
+    @content;
+  }
+}
+
+@mixin breakpoint-max($class) {
+  @if $class == md {
+    @media (max-width: 766px) {
+      @content;
+    }
+  }
+  @else if $class == lg {
+    @media (max-width: 1199px) {
+      @content;
+    }
   }
 }
 
