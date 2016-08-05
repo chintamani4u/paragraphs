@@ -38,8 +38,10 @@ $page-max-width: 1000px;
 		z-index: 1000;
 		transition: background .2s;
 
-		&.fixed {
-			background: rgba(0, 0, 0, .5);
+		@include breakpoint(md) {
+			&.fixed {
+				background: rgba(0, 0, 0, .5);
+			}
 		}
 
 		@include breakpoint-max(md) {
