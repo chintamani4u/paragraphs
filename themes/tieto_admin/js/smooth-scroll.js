@@ -59,7 +59,7 @@
    */
   Drupal.behaviors.smoothScroll = {
     attach: function (context, settings) {
-      $('a[href*=#]:not([href=#])', context).on('click', smoothScroll);
+      $('a[href*=#]:not([href=#]):not([href^=#tab-])', context).on('click', smoothScroll);
     }
   };
 
