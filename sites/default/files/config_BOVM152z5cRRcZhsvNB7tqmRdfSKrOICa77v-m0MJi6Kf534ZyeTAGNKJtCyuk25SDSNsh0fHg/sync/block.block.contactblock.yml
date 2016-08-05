@@ -1,0 +1,27 @@
+uuid: c0af5c88-208d-46fe-9855-412f1d95e5c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_block
+    - system
+  theme:
+    - tieto_admin
+id: contactblock
+theme: tieto_admin
+region: content
+weight: -6
+provider: null
+plugin: contact_block
+settings:
+  id: contact_block
+  label: 'Contact Us Form'
+  provider: contact_block
+  label_display: '0'
+  contact_form: contact_us
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

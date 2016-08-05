@@ -13,12 +13,20 @@ $page-max-width: 1000px;
 .tieto-onepage {
 	position: relative;
 
-
+	.block-contact-block #contact-message-contact-us-form,
+	.block-contact-us > .field,
 	.paragraph-inner {
 		max-width: $page-max-width;
 		margin: 0 auto;
 	}
 
+	.block-contact-us {
+		background: white;
+		padding: 2em;
+		@include clearfix;
+	}
+
+	.block-contact-us .title,
 	.field--name-field-title {
 		font-size: 3em;
 		font-weight: bold;
@@ -362,12 +370,6 @@ $page-max-width: 1000px;
 			}
 		}
 	}
-}
-
-.paragraph--type--text {
-	background: white;
-	padding: 0 2em 2em;
-	@include clearfix;
 }
 
 body.toolbar-vertical {
