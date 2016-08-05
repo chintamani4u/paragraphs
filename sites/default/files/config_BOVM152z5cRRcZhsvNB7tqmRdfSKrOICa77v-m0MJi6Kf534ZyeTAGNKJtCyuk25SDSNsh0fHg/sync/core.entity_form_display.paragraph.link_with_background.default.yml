@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.link_with_background.field_anchor
     - field.field.paragraph.link_with_background.field_background_image
     - field.field.paragraph.link_with_background.field_enable_parallax
     - field.field.paragraph.link_with_background.field_url
@@ -16,6 +17,13 @@ targetEntityType: paragraph
 bundle: link_with_background
 mode: default
 content:
+  field_anchor:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_background_image:
     weight: 1
     settings:

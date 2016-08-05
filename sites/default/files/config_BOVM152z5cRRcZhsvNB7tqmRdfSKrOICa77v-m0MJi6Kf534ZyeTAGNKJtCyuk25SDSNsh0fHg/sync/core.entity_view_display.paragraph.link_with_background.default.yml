@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.link_with_background.field_anchor
     - field.field.paragraph.link_with_background.field_background_image
     - field.field.paragraph.link_with_background.field_enable_parallax
     - field.field.paragraph.link_with_background.field_url
@@ -16,8 +17,15 @@ targetEntityType: paragraph
 bundle: link_with_background
 mode: default
 content:
+  field_anchor:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_background_image:
-    weight: 1
+    weight: 2
     label: hidden
     settings:
       image_style: thumbnail
@@ -25,7 +33,7 @@ content:
     third_party_settings: {  }
     type: image
   field_enable_parallax:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       format: default
@@ -34,7 +42,7 @@ content:
     third_party_settings: {  }
     type: boolean
   field_url:
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       trim_length: 80

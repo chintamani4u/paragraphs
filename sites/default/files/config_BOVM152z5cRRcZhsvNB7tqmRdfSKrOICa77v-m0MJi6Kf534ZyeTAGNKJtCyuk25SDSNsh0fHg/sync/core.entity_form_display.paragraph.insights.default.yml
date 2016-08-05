@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.insights.field_anchor
     - field.field.paragraph.insights.field_image_demo
     - field.field.paragraph.insights.field_text_demo
     - field.field.paragraph.insights.field_title
@@ -16,6 +17,13 @@ targetEntityType: paragraph
 bundle: insights
 mode: default
 content:
+  field_anchor:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_image_demo:
     weight: 2
     settings:

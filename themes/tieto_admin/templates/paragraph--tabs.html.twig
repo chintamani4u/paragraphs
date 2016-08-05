@@ -7,10 +7,11 @@ set classes = [
 %}
 {% set titles = content.field_tab_titles['#items'].getValue() %}
 {% set tabs = content.field_tab_contents['#items'].getValue() %}
+{% set anchor = content.field_anchor['#items'].getValue()[0].value %}
 
 {{ attach_library('tieto_admin/responsive-tabs') }}
 
-<div{{ attributes.addClass(classes) }}>
+<div{{ attributes.addClass(classes).setAttribute('id', anchor ? anchor : '') }}>
 	<section class="paragraph-inner">
 	    {{ content.field_title }}
 	    {{ content.field_lead_text }}

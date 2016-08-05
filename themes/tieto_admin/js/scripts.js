@@ -19,9 +19,8 @@
 	});
 
 	$(document).ready(function() {
-		console.log(window);
         header.scrollspy({
-            min: 500,
+            min: 490,
             max: 10000,
             onEnter: function(element, position) {
                 header.addClass('fixed');

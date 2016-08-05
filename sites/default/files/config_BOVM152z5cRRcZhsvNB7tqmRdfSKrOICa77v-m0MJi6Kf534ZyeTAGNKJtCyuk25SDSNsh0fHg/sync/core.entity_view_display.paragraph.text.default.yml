@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.text.field_anchor
     - field.field.paragraph.text.field_text_demo
     - paragraphs.paragraphs_type.text
   module:
@@ -14,9 +15,16 @@ targetEntityType: paragraph
 bundle: text
 mode: default
 content:
+  field_anchor:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_text_demo:
     type: text_default
-    weight: 0
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     label: hidden

@@ -206,6 +206,7 @@ $page-max-width: 1000px;
     .paragraph-inner {
 		position: absolute;
 		top: 50%;
+		transform: translateY(-30%);
 		left: 0;
 		right: 0;
 		width: 100%;
@@ -241,8 +242,9 @@ $page-max-width: 1000px;
     	margin-top: 2em;
     	@include md {
     		float: right;
-    		margin-top: 0;
+    		margin-top: -3em;
     		width: 50%;
+    		text-align: center;
     	}
     	a {
     		color: white;

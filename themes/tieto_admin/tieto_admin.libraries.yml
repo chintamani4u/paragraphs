@@ -57,6 +57,15 @@ responsive-tabs:
   dependencies:
     - core/jquery
 
+# Smooth Scroll
+smooth-scroll:
+  version: VERSION
+  js:
+    js/smooth-scroll.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
 scrollspy:
   version: VERSION
   js:
