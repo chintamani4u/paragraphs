@@ -46,6 +46,9 @@
         $('html,body').animate({
           scrollTop: target.offset().top - headerHeight - offset
         }, scrollSpeed);
+        if ($(window).width() < 768 && $('#hamburger').hasClass('is-active')) {
+          $('#hamburger').removeClass('is-active');
+        }
         return false;
       }
     }
