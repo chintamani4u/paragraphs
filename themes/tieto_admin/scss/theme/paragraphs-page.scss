@@ -13,11 +13,50 @@ $page-max-width: 1000px;
 .tieto-onepage {
 	position: relative;
 
-	// .block-contact-block #contact-message-contact-us-form,
-	// .block-contact-us > .field,
 	.paragraph-inner {
 		max-width: $page-max-width;
 		margin: 0 auto;
+	}
+
+	#contact-message-contact-us-form {
+		position: relative;
+		@include md {
+			.form-item-mail,
+			.form-item-name,
+			.field--name-field-company,
+			.field--name-message {
+				width: 50%;
+				display: inline-block;
+				padding: 0 1em;
+			}
+			.field--name-message {
+				position: absolute; // sorry :(
+				top: 0;
+				right: 0;
+			}
+			.form-actions {
+				clear: both;
+			}
+		}
+
+		#edit-submit {
+			color: white;
+		    display: inline-block;
+		    padding: 1em 2em;
+		    text-transform: uppercase;
+		    background: rgba(0, 0, 0, 0.4);
+		    border-radius: 3px;
+		    border: 1px solid white;
+		    font-size: .9em;
+		    transition: background .3s;
+		    &:hover, &:focus, &:active {
+		    	text-decoration: none;
+		    	background: rgba(0, 0, 0, .6);
+		    }
+		}
+		#edit-preview {
+			display: none;
+		}
 	}
 
 	.block-contact-block {
