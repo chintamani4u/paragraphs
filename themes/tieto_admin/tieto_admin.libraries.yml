@@ -2,6 +2,7 @@ global-styling:
   version: VERSION
   js:
     js/parallax.min.js: {}
+    js/scripts.js: {}
   css:
     base:
       css/base/elements.css: {}
@@ -53,7 +54,7 @@ responsive-tabs:
       css/vendor/responsive-tabs.css: {}
   js:
     js/jquery.responsiveTabs.min.js: {}
-    js/scripts.js: {}
+    js/rtabs.js: {}
   dependencies:
     - core/jquery
 
@@ -70,6 +71,7 @@ scrollspy:
   version: VERSION
   js:
     js/jquery-scrollspy.js: {}
+    js/scrollspy.js: {}
   dependencies:
     - core/jquery
 
