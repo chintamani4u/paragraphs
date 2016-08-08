@@ -1,0 +1,59 @@
+uuid: df92f919-87e7-4057-8251-828c70bd4f1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.campaign_header_video.field_call_to_action
+    - field.field.paragraph.campaign_header_video.field_lead_text
+    - field.field.paragraph.campaign_header_video.field_secondary_title
+    - field.field.paragraph.campaign_header_video.field_title
+    - field.field.paragraph.campaign_header_video.field_video
+    - paragraphs.paragraphs_type.campaign_header_video
+  module:
+    - file
+    - link
+id: paragraph.campaign_header_video.default
+targetEntityType: paragraph
+bundle: campaign_header_video
+mode: default
+content:
+  field_call_to_action:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_lead_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_secondary_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_video:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: file_url_plain
+hidden:
+  created: true
+  uid: true

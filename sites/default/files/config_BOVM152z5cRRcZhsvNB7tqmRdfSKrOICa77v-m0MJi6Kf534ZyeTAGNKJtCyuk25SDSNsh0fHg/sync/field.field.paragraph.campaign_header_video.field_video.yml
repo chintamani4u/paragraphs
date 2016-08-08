@@ -1,0 +1,27 @@
+uuid: 2c311f2f-ccf2-49e1-a933-1eade618540c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video
+    - paragraphs.paragraphs_type.campaign_header_video
+  module:
+    - file
+id: paragraph.campaign_header_video.field_video
+field_name: field_video
+entity_type: paragraph
+bundle: campaign_header_video
+label: Video
+description: 'Upload a video for the background. Format should be <b>mp4</b>, <b>webm</b> or <b>ogg</b>.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: videos
+  file_extensions: 'mp4 webm ogg'
+  max_filesize: '20 MB'
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

@@ -75,6 +75,13 @@ scrollspy:
   dependencies:
     - core/jquery
 
+background-video:
+  js:
+    js/backgroundVideo.min.js: {}
+    js/bgvideo.js: {}
+  dependencies:
+    - core/jquery
+
 node-form:
   version: VERSION
   css:

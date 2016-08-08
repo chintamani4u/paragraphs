@@ -28,3 +28,4 @@ permissions:
   - 'view paragraph content insights'
   - 'view paragraph content tabs'
   - 'view paragraph content link_with_background'
+  - 'view paragraph content campaign_header_video'

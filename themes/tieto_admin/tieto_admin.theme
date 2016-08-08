@@ -101,6 +101,21 @@ function tieto_admin_preprocess_block_content_add_list(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Add video URL path and mime type for custom Paragraph.
+ */
+function tieto_admin_preprocess_paragraph__campaign_header_video(&$vars) {
+  if (isset($vars['elements']['field_video'])) {
+    $video_path = $vars['elements']['field_video'][0]['#markup'];
+    $vars['video'] = array(
+      'path' => file_create_url($video_path),
+      'mime' => Drupal::service('file.mime_type.guesser')->guess($video_path)
+    );
+  }
+}
+
+/**
  * Implements hook_preprocess_block().
  *
  * Disables contextual links for all blocks.
