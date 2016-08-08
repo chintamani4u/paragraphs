@@ -104,7 +104,7 @@ $page-max-width: 1000px;
 		}
 	}
 
-	.navigation {
+	.region-header {
 		@include breakpoint-max(md) {
 			position: absolute;
 			top: $header-height;
@@ -145,7 +145,7 @@ $page-max-width: 1000px;
 		}
 
 		@include breakpoint-max(md) {
-			&.is-active + .navigation {
+			&.is-active + .region-header {
 				max-height: 259px;
 			}
 		}
