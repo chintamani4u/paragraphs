@@ -1,0 +1,349 @@
+@import "../vars";
+
+$tieto-blue: #67afe1;
+$tieto-lightblue: #cde6f5;
+$tieto-green: #b2eb95;
+$header-height: 50px;
+$page-max-width: 1000px;
+
+/**
+ * TIETO CAMPAIGN SITES
+ */
+#page-tieto {
+	position: relative;
+
+	.paragraph {
+		background-color: white;
+		clear: both;
+	}
+
+	/**
+	 * Tieto logo.
+	 */
+	.logo {
+		display: inline-block;
+		margin: 0 auto;
+		text-align: center;
+		height: $header-height;
+		background: $tieto-blue;
+		padding: 0 10px;
+
+		img {
+			height: 100%;
+		}
+
+		@include breakpoint(md) {
+			background: 0;
+			display: block;
+			float: left;
+			position: relative;
+
+			img {
+				height: auto;
+				padding-left: 7px;
+			}
+
+			&::after {
+				transform: rotate(12deg) skew(-32deg);
+				content: " ";
+				position: absolute;
+				top: -100px;
+				left: -50px;
+				display: block;
+				background: $tieto-blue;
+				width: 200px;
+				height: 200px;
+				z-index: -1;
+			}
+		}
+	}
+
+	#contact-message-contact-us-form {
+		position: relative;
+		@include md {
+			.form-item-mail,
+			.form-item-name,
+			.field--name-field-company,
+			.field--name-message {
+				width: 50%;
+				display: inline-block;
+				padding: 0 1em;
+			}
+			.field--name-message {
+				position: absolute; // sorry :(
+				top: 0;
+				right: 0;
+			}
+			.form-actions {
+				clear: both;
+			}
+		}
+
+		#edit-submit {
+			color: white;
+		    display: inline-block;
+		    padding: 1em 2em;
+		    text-transform: uppercase;
+		    background: rgba(0, 0, 0, 0.4);
+		    border-radius: 3px;
+		    border: 1px solid white;
+		    font-size: .9em;
+		    transition: background .3s;
+		    &:hover, &:focus, &:active {
+		    	text-decoration: none;
+		    	background: rgba(0, 0, 0, .6);
+		    }
+		}
+		#edit-preview {
+			display: none;
+		}
+	}
+
+	.block-contact-block {
+		background: white;
+		padding: 2em;
+		@include clearfix;
+	}
+
+	.block-contact-block .title,
+	.field--name-field-title {
+		font-size: 3em;
+		font-weight: bold;
+		text-align: center;
+		line-height: normal;
+		margin-bottom: .8em;
+	}
+
+	.paragraph-inner {
+		max-width: $page-max-width;
+		margin: 0 auto;
+	}
+
+	/**
+	 * Header wrapper, which stays fixed.
+	 */
+	.page-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1000;
+		transition: background .2s;
+
+		@include breakpoint(md) {
+			&.fixed {
+				background: rgba(0, 0, 0, .5);
+			}
+		}
+
+		@include breakpoint-max(md) {
+			backface-visibility: hidden;
+			box-shadow: 0 0 4px 2px rgba(0, 0, 0, .3);
+			height: $header-height;
+			background: $tieto-blue;
+		}
+	}
+
+	.region-header {
+		@include breakpoint-max(md) {
+			position: absolute;
+			top: $header-height;
+			right: 0;
+			left: 0;
+			background: rgba(0, 0, 0, 0.7);
+			max-height: 0;
+			transition: max-height .3s;
+			will-change: max-height;
+			overflow-y: hidden;
+			backface-visibility: hidden;
+		}
+
+		.menu {
+			margin: 0;
+			@include md {
+				margin: 1em;
+				float: right;
+			}
+		}
+		.menu-item {
+			list-style: none;
+			padding: 0;
+			@include md {
+				display: inline-block;
+			}
+		}
+	}
+
+	.hamburger {
+		padding: 0;
+		width: $header-height;
+		height: $header-height;
+		float: right;
+
+		@include md {
+			display: none;
+		}
+
+		@include breakpoint-max(md) {
+			&.is-active + .region-header {
+				max-height: 259px;
+			}
+		}
+
+		&:active, &:focus {
+			outline: none;
+		}
+
+		.hamburger-inner {
+			&, &::before, &::after {
+				width: 30px;
+				background-color: white;
+			}
+		}
+
+		.hamburger-box {
+			width: 30px;
+			height: 29px;
+		}
+
+		.hamburger-toggle {
+			color: white;
+			width: $header-height;
+			height: $header-height;
+			&:hover, &:active, &:focus {
+				text-decoration: none;
+			}
+			@include md {
+				display: none;
+			}
+		}
+	}
+
+	.page-header .menu {
+		> li {
+		    > a {
+		    	color: rgba(255, 255, 255, .9);
+			    padding: .5em 1em .5em 3em;
+			    @include md {
+			    	text-shadow: 0 0 5px rgba(0, 0, 0, .3);
+			    	padding: .5em;
+			    }
+			    display: block;
+			    font-weight: bold;
+			    text-align: center;
+		    }
+		}
+	}
+
+	.paragraph--type--insights {
+		padding: 30px;
+
+		.field--name-field-text-demo {
+			padding: 2em 3em;
+			background: $tieto-lightblue;
+
+			@include md {
+				padding-right: 6em;
+				width: 50%;
+				display: inline-block;
+			}
+		}
+		.field--name-field-image-demo {
+
+			@include md {
+				transform: translateX(-2em);
+				margin-top: 5em;
+				width: 50%;
+				float: right;
+			}
+		}
+	}
+
+	.paragraph--type--tabs {
+		padding: 30px;
+		background: $tieto-green;
+
+		.field--name-field-title {
+			color: white;
+		}
+
+		.field--name-field-lead-text {
+			margin-bottom: 1em;
+		}
+
+		.r-tabs-panel {
+			clear: both;
+		}
+		.r-tabs-accordion-title, .r-tabs-tab {
+			@include breakpoint(md) {
+				float: left;
+				width: 33.333%;
+			}
+			a {
+				font-size: 1.4em;
+				font-weight: bold;
+				border-bottom: 3px solid black;
+				display: block;
+				padding: .5em 0;
+				@include breakpoint(md) {
+					padding: .5em;
+					text-align: center;
+				}
+				&:hover, &:focus, &:active {
+					text-decoration: none;
+				}
+			}
+
+			&.r-tabs-state-active a {
+				border-color: white;
+				color: white;
+			}
+		}
+	}
+
+	.paragraph--type--link-with-background {
+		background-color: rgba(103, 175, 225, .4);
+		min-height: 200px;
+
+		.field--name-field-url {
+			text-align: center;
+			display: table;
+			width: 100%;
+			height: 200px;
+			a {
+				display: table-cell;
+				vertical-align: middle;
+				font-size: 3em;
+				font-weight: bold;
+				line-height: normal;
+				color: white;
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+body.toolbar-vertical {
+	@include breakpoint-max(md) {
+		#toolbar-administration {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
+	}
+	.paragraphs-page .page-header {
+		top: 39px;
+	}
+}
+body.toolbar-horizontal {
+	.paragraphs-page .page-header {
+		top: 39px;
+	}
+
+	&.toolbar-tray-open .paragraphs-page .page-header {
+		top: 78px;
+	}
+}

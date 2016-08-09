@@ -41,7 +41,9 @@ global-styling:
       css/layout/views.css: {}
       css/layout/login.css: {}
     theme:
-      css/theme/paragraphs-page.css: {}
+      css/theme/paragraphs.css: {}
+      css/theme/tieto-campaign.css: {}
+      css/theme/pulp-fiction.css: {}
   dependencies:
     - system/admin
     - core/jquery
