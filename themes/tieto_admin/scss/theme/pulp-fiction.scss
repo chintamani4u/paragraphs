@@ -1,10 +1,62 @@
 @import "../vars";
 
-$pulp-yellow: #fcea6a;
+$pulp-yellow: #fdd706;
 $pulp-red: #d03428;
+
+@font-face {
+    font-family: 'Pulp';
+    src: url('../../fonts/pulp_fiction_m54-webfont.eot');
+    src: url('../../fonts/pulp_fiction_m54-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/pulp_fiction_m54-webfont.woff2') format('woff2'),
+         url('../../fonts/pulp_fiction_m54-webfont.woff') format('woff'),
+         url('../../fonts/pulp_fiction_m54-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 #page-pulp-fiction {
 	font-size: 14px;
+
+	.paragraph--type--campaign-header-video {
+
+		.field--name-field-title,
+		.field--name-field-secondary-title,
+		.field--name-field-lead-text {
+			width: 100%;
+			float: none;
+			text-align: center;
+		}
+
+		.field--name-field-title,
+		.field--name-field-secondary-title {
+			font-family: 'Pulp';
+			font-weight: normal;
+			line-height: 1.2em;
+			color: $pulp-yellow;
+			text-shadow: 0 7px $pulp-red;
+		}
+
+		.field--name-field-title {
+		    font-size: 3em;
+		}
+
+		.field--name-field-secondary-title {
+			font-size: 2em;
+			font-style: italic;
+		}
+
+		.field--name-field-lead-text {
+			font-size: 1.3em;
+		}
+
+		#video-outer {
+		    min-height: 620px;
+		}
+		#video-wrap::before {
+		    background-color: rgba(241, 196, 15, .2);
+		}
+	}
+
 	.paragraph--type--parallax {
 	    background: transparent;
 	    text-align: center;
@@ -16,13 +68,6 @@ $pulp-red: #d03428;
 
 	    .paragraph-inner {
 	    	width: 100%;
-	    	font-family: 'Crimson Text', serif;
-	    	font-weight: bold;
-	    	h2 {
-	    		font-family: 'Alfa Slab One', cursive;
-	    		line-height: normal;
-	    		font-weight: normal;
-	    	}
 	    	text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 	    	display: table-cell;
 	    	vertical-align: middle;
