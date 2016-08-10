@@ -12,6 +12,21 @@ $page-max-width: 1000px;
 #page-tieto {
 	position: relative;
 
+	.field--name-field-title,
+	.field--name-field-secondary-title {
+		text-align: center;
+	}
+
+	@include breakpoint(md) {
+		.paragraph--type--campaign-header-video,
+		.paragraph--type--campaign-header {
+			.field--name-field-title,
+			.field--name-field-secondary-title {
+				text-align: left;
+			}
+		}
+	}
+
 	.paragraph {
 		background-color: white;
 		clear: both;
@@ -105,6 +120,9 @@ $page-max-width: 1000px;
 		@include clearfix;
 	}
 
+	.block-contact-block .title {
+		text-align: center;
+	}
 	.block-contact-block .title,
 	.field--name-field-title {
 		font-size: 3em;

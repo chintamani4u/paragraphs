@@ -22,10 +22,6 @@
     .field--name-field-title {
     	margin-bottom: 0;
     	display: inline-block;
-        text-align: center;
-        @include breakpoint(md) {
-            text-align: left;
-        }
     }
     .field--name-field-title,
     .field--name-field-secondary-title {
