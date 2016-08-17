@@ -44,6 +44,38 @@ class MarketoJSFormBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function blockForm($form, FormStateInterface $form_state) {
+    /**
+     * BlockForm code:
+     *
+     * $form['marketo_js_base_url'] = array();
+     * String: URL to the Marketo server instance for your subscription
+     *
+     * $form['marketo_js_munchkin_id'] = array();
+     * String: Munchkin ID of the subscription
+     *
+     * $form['marketo_js_form_id'] = array();
+     * String or Number: The form version id (Vid) of the form to load
+     *
+     * --------------
+     * Output in build:
+     *
+     * Into head:
+     *  <script src="{{$baseUrl}}/js/forms2/js/forms2.js"></script>
+     *
+     * Into body:
+     *  <form id="mtkoForm_{{$formId}}"></form>
+     *  <script>MktoForms2.loadForm(baseUrl, munchkinId, formId);</script>
+     *
+     * e.g:
+     * Head:
+     * <script src="//app-sjqe.marketo.com/js/forms2/js/forms2.js"></script>
+     *
+     * Body:
+     * <form id="mktoForm_621"></form>
+     * <script> MktoForms2.loadForm("//app-sjqe.marketo.com", "718-GIV-198", 621); </script>
+     */
+
+    // @todo: temporary solution
     $form['marketo_form_raw_html'] = array(
       '#type' => 'textfield',
       '#title' => $this->t('Marketo Form Raw HTML'),
