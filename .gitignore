@@ -1,1 +1,5 @@
-sites/default/settings.php
+sites/*/settings*.php
+sites/*/services*.yml
+
+modules/examples/
+.idea
