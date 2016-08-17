@@ -61,6 +61,8 @@ class MarketoJSFormBlock extends BlockBase {
      *
      * Into head:
      *  <script src="{{$baseUrl}}/js/forms2/js/forms2.js"></script>
+     *  Use: hook_page_attachments
+     *  @see: https://www.webomelette.com/adding-new-html-tags-drupal-8
      *
      * Into body:
      *  <form id="mtkoForm_{{$formId}}"></form>
