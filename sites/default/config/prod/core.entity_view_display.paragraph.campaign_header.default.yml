@@ -1,0 +1,72 @@
+uuid: e80d350d-4d20-4595-bcca-54bec30c43ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.campaign_header.field_background_image
+    - field.field.paragraph.campaign_header.field_call_to_action
+    - field.field.paragraph.campaign_header.field_enable_parallax
+    - field.field.paragraph.campaign_header.field_lead_text
+    - field.field.paragraph.campaign_header.field_secondary_title
+    - field.field.paragraph.campaign_header.field_title
+    - image.style.medium
+    - paragraphs.paragraphs_type.campaign_header
+  module:
+    - image
+    - link
+id: paragraph.campaign_header.default
+targetEntityType: paragraph
+bundle: campaign_header
+mode: default
+content:
+  field_background_image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+  field_call_to_action:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_enable_parallax:
+    type: boolean
+    weight: 5
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+  field_lead_text:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_secondary_title:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  uid: true

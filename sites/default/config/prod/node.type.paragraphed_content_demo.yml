@@ -1,0 +1,20 @@
+uuid: 24e529e0-22b6-4bc0-95e8-885e44bfca25
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: zjMgs2dN4P8KsiF0x3MzcYsLGm1A1kINUoWb1QjsShs
+name: 'Paragraphed article'
+type: paragraphed_content_demo
+description: 'Article with paragraphs.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

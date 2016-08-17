@@ -1,0 +1,6 @@
+uuid: 64035599-677d-4942-a96a-c17deeb7ce3d
+langcode: en
+status: true
+dependencies: {  }
+id: tabs
+label: Tabs

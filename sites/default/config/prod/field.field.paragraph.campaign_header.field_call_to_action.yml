@@ -1,0 +1,23 @@
+uuid: c5a76b02-a194-4c8f-9f3b-73d6fe3faade
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_call_to_action
+    - paragraphs.paragraphs_type.campaign_header
+  module:
+    - link
+id: paragraph.campaign_header.field_call_to_action
+field_name: field_call_to_action
+entity_type: paragraph
+bundle: campaign_header
+label: 'Call to Action'
+description: 'Large buttons or links which redirect the user to an important section of the page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

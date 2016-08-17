@@ -1,0 +1,20 @@
+uuid: 7aab06a1-512c-44fa-a452-b55a6192a612
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_biography
+  module:
+    - user
+id: user.user.field_biography
+field_name: field_biography
+entity_type: user
+bundle: user
+label: Bio
+description: 'Write something about yourself.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

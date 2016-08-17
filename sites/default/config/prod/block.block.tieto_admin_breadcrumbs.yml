@@ -1,0 +1,27 @@
+uuid: 9f2fa33d-2eb5-431c-ad21-1ed6e4c9cae4
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - tieto_admin
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: tieto_admin_breadcrumbs
+theme: tieto_admin
+region: '-1'
+weight: -7
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/1
+    negate: true
+    context_mapping: {  }

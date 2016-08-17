@@ -1,0 +1,19 @@
+uuid: b82ff13d-b5d9-4354-9c75-bf8f0fbee818
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_secondary_title
+    - paragraphs.paragraphs_type.campaign_header_video
+id: paragraph.campaign_header_video.field_secondary_title
+field_name: field_secondary_title
+entity_type: paragraph
+bundle: campaign_header_video
+label: 'Secondary title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

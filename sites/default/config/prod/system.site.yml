@@ -1,0 +1,14 @@
+uuid: ab099d2a-d866-46ad-96c2-6ab1ccaf3fd5
+name: 'Paragraphs Demo'
+mail: dev@brainsum.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/6
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

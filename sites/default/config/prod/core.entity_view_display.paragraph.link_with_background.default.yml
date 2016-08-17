@@ -1,0 +1,57 @@
+uuid: e1609722-68f8-42ee-b53c-18c532d24986
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.link_with_background.field_anchor
+    - field.field.paragraph.link_with_background.field_background_image
+    - field.field.paragraph.link_with_background.field_enable_parallax
+    - field.field.paragraph.link_with_background.field_url
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.link_with_background
+  module:
+    - image
+    - link
+id: paragraph.link_with_background.default
+targetEntityType: paragraph
+bundle: link_with_background
+mode: default
+content:
+  field_anchor:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_background_image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_enable_parallax:
+    weight: 3
+    label: hidden
+    settings:
+      format: default
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings: {  }
+    type: boolean
+  field_url:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+hidden:
+  created: true
+  uid: true

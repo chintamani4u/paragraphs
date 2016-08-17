@@ -1,0 +1,19 @@
+uuid: 3180ac51-5004-4748-93c3-bbc04d46acb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.campaign_header
+id: paragraph.campaign_header.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: campaign_header
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
