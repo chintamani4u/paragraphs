@@ -1,0 +1,22 @@
+uuid: 2e9ee46f-664e-4966-9873-bc2e8b678357
+langcode: en
+status: true
+dependencies:
+  module:
+    - marketo_js
+  theme:
+    - tieto_admin
+id: marketojsformblock
+theme: tieto_admin
+region: content
+weight: null
+provider: null
+plugin: marketo_js_form_block
+settings:
+  id: marketo_js_form_block
+  label: 'MarketoJS Form Block'
+  provider: marketo_js
+  label_display: '0'
+  block_example_string: 'A default value. This block was created at <em class="placeholder">2016-08-17T11:43:22+00:00</em>'
+  marketo_code: ''
+visibility: {  }

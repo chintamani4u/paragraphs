@@ -29,6 +29,7 @@ module:
   kint: 0
   language: 0
   link: 0
+  marketo_js: 0
   menu_ui: 0
   node: 0
   options: 0
