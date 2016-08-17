@@ -2,3 +2,4 @@ sites/*/settings*.php
 sites/*/services*.yml
 
 modules/examples/
+.idea
