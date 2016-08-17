@@ -1,10 +1,25 @@
 <?php
 
+/**
+ * @todo: olyan modul, amelyik configozhatóvá teszi, hogy melyik formhoz melyik id kerüljön
+ *  3 mező:
+ *    subscriber URL
+ *    subscriber munchkin ID
+ *    form ID
+ *
+ *  e.g.: MktoForms2.loadForm("//app-sjqe.marketo.com", "718-GIV-198", 621);
+ * @todo: Remake this so it uses the proper marketo munchkin API
+ *    http://developers.marketo.com/documentation/websites/forms-2-0/
+ *    For this, we need to add a script tag to the head,
+ *    Also a form + script tag into body
+ * @todo: Need someone to do css
+ */
+
+
 namespace Drupal\marketo_js\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Render\Element\Form;
 
 /**
  * Provides a block with a JS based form through the Marketo API.
@@ -29,11 +44,12 @@ class MarketoJSFormBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function blockForm($form, FormStateInterface $form_state) {
-    $form['marketo_code'] = array(
+    $form['marketo_form_raw_html'] = array(
       '#type' => 'textfield',
-      '#title' => $this->t('Marketo Form Code'),
-      '#description' => $this->t('This text will appear in the example block.'), // @todo
-      '#default_value' => $this->configuration['marketo_code'],
+      '#title' => $this->t('Marketo Form Raw HTML'),
+      '#description' => $this->t('The raw HTML code we want to render.'), // @todo
+      '#default_value' => $this->configuration['marketo_form_raw_html'],
+      '#maxlength' => 5000 // rawFormMarkup_EnergyComponents is 3500 characters long, 5k is needed if other forms are bigger
     );
     return $form;
   }
@@ -42,8 +58,8 @@ class MarketoJSFormBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
-    $this->configuration['marketo_code']
-      = $form_state->getValue('marketo_code');
+    $this->configuration['marketo_form_raw_html']
+      = $form_state->getValue('marketo_form_raw_html');
   }
 
   /**
@@ -55,21 +71,20 @@ class MarketoJSFormBlock extends BlockBase {
       '#type' => 'inline_template',
       '#template' => '{{ somecontent | raw }}', // Raw so <> won't be escaped
       '#context' => [
-        'somecontent' => $this->rawFormMarkup()
+        'somecontent' => $this->configuration['marketo_form_raw_html']
       ]
-    ];
-
-    $mu = [
-      '#type' => 'markup',
-      '#markup' => $this->rawFormMarkup(),
-      '#allowed_tags' => ['div', 'form', 'input', 'button', 'textarea', 'span'],
     ];
 
     return $tpl;
   }
 
-
-  private function rawFormMarkup() {
+  /**
+   * Basic raw html form for the Energy Components site "Leave us a message" form
+   * Copy this into the code part of the block on the block config page.
+   *
+   * @return string
+   */
+  private function rawFormMarkup_EnergyComponents() {
     return '
     <div class="form-title">
         Leave Us A Message
@@ -145,37 +160,3 @@ class MarketoJSFormBlock extends BlockBase {
     ';
   }
 }
-/*
- *
- *
-tieto.com: search:
-mktoForm_621
-
-http://developers.marketo.com/documentation/websites/forms-2-0/
-
-if you output this as "raw html" it should work
-
-Minden form 2 s include
-1ik js-t headerben, másikat formonként
-todo: olyan modul, amelyik configozhatóvá teszi, hogy melyik formhoz melyik id kerüljön
-Minden form custom block kb
-
-adverticum modul pl, 7
-
-péntekig ok:
-custom html blokként felvenni ezeket a formokat
-esetleg paragraph type-ként (ptype: marketoForm. 2 mező: html code, form id)
-modul: headerbe beteszi a központi js include-ot
-
-marketo form paragraph modul kell
-examples-ben configos block -> src/plugin/block kell majd
- */
-
-/**
- *
- * <script>
-MktoForms2.loadForm("//app-sjqe.marketo.com", "718-GIV-198", 621, function(form) {
-// From here we have access to the form object and can call its methods
-});
-</script>
- */
