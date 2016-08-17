@@ -44,18 +44,37 @@ class MarketoJSFormBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function blockForm($form, FormStateInterface $form_state) {
+    $form['marketo_js_base_url'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('Subscription Url'),
+      '#description' => $this->t(
+        'URL to the Marketo server instance for your Marketo subscription. E.g. @exampleUrl',
+        array("@exampleUrl" => "//app-sjqe.marketo.com")
+      ),
+      '#default_value' => $this->configuration['marketo_js_base_url'],
+    );
+
+    $form['marketo_js_munchkin_id'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('Munckin ID'),
+      '#description' => $this->t(
+        'The munchkin ID for your Marketo subscription. E.g. @exampleMID',
+        array("@exampleMID" => "718-GIV-198")
+      ),
+      '#default_value' => $this->configuration['marketo_js_munchkin_id'],
+    );
+
+    $form['marketo_js_form_id'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('Form ID'),
+      '#description' => $this->t(
+        'The form version id (Vid) of the form to load. E.g. @exampleFID',
+        array("@exampleFID" => 612)
+      ),
+      '#default_value' => $this->configuration['marketo_js_form_id'],
+    );
+
     /**
-     * BlockForm code:
-     *
-     * $form['marketo_js_base_url'] = array();
-     * String: URL to the Marketo server instance for your subscription
-     *
-     * $form['marketo_js_munchkin_id'] = array();
-     * String: Munchkin ID of the subscription
-     *
-     * $form['marketo_js_form_id'] = array();
-     * String or Number: The form version id (Vid) of the form to load
-     *
      * --------------
      * Output in build:
      *
@@ -76,15 +95,6 @@ class MarketoJSFormBlock extends BlockBase {
      * <form id="mktoForm_621"></form>
      * <script> MktoForms2.loadForm("//app-sjqe.marketo.com", "718-GIV-198", 621); </script>
      */
-
-    // @todo: temporary solution
-    $form['marketo_form_raw_html'] = array(
-      '#type' => 'textfield',
-      '#title' => $this->t('Marketo Form Raw HTML'),
-      '#description' => $this->t('The raw HTML code we want to render.'), // @todo
-      '#default_value' => $this->configuration['marketo_form_raw_html'],
-      '#maxlength' => 5000 // rawFormMarkup_EnergyComponents is 3500 characters long, 5k is needed if other forms are bigger
-    );
     return $form;
   }
 
@@ -92,8 +102,14 @@ class MarketoJSFormBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
-    $this->configuration['marketo_form_raw_html']
-      = $form_state->getValue('marketo_form_raw_html');
+    $this->configuration['marketo_js_form_id']
+      = $form_state->getValue('marketo_js_form_id');
+
+    $this->configuration['marketo_js_base_url']
+      = $form_state->getValue('marketo_js_base_url');
+
+    $this->configuration['marketo_js_munchkin_id']
+      = $form_state->getValue('marketo_js_munchkin_id');
   }
 
   /**
@@ -101,15 +117,15 @@ class MarketoJSFormBlock extends BlockBase {
    *
    */
   public function build() {
-    $tpl = [
-      '#type' => 'inline_template',
-      '#template' => '{{ somecontent | raw }}', // Raw so <> won't be escaped
-      '#context' => [
-        'somecontent' => $this->configuration['marketo_form_raw_html']
-      ]
-    ];
+    $markup = '
+       <form id="mtkoForm_' . $this->configuration['marketo_js_form_id'] . '"></form>
+       <script>MktoForms2.loadForm("' . $this->configuration['marketo_js_base_url'] . '", "' . $this->configuration['marketo_js_munchkin_id'] . '", ' . $this->configuration['marketo_js_form_id'] . ');</script>'
+    ;
 
-    return $tpl;
+    return [
+      '#markup' => $markup,
+      '#allowed_tags' => ['script', 'form'], // security hole
+    ];
   }
 
   /**
