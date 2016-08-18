@@ -1,0 +1,8 @@
+uuid: fd76e319-9ffc-4678-9b6c-c0b7dd145fcb
+langcode: en
+status: true
+dependencies: {  }
+id: energy-components
+label: 'Energy Components'
+description: ''
+locked: false
