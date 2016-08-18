@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.paragraphed_content_demo.comment
+    - field.field.node.paragraphed_content_demo.field_machine_name
     - field.field.node.paragraphed_content_demo.field_paragraphs_demo
     - node.type.paragraphed_content_demo
   module:
@@ -27,5 +28,6 @@ content:
     weight: 100
 hidden:
   comment: true
+  field_machine_name: true
   field_paragraphs_demo: true
   langcode: true

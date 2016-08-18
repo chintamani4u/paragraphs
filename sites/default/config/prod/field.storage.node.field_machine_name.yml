@@ -1,0 +1,19 @@
+uuid: 8bb42335-835c-439f-8c76-c420a65e3d53
+langcode: en
+status: true
+dependencies:
+  module:
+    - machine_name
+    - node
+id: node.field_machine_name
+field_name: field_machine_name
+entity_type: node
+type: machine_name
+settings: {  }
+module: machine_name
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

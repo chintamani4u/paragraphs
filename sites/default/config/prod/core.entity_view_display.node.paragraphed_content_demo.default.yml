@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.paragraphed_content_demo.comment
+    - field.field.node.paragraphed_content_demo.field_machine_name
     - field.field.node.paragraphed_content_demo.field_paragraphs_demo
     - node.type.paragraphed_content_demo
   module:
@@ -24,7 +25,7 @@ content:
     label: hidden
   field_paragraphs_demo:
     type: entity_reference_revisions_entity_view
-    weight: 102
+    weight: 0
     settings:
       view_mode: default
       link: ''
@@ -32,5 +33,6 @@ content:
     label: hidden
 hidden:
   comment: true
+  field_machine_name: true
   langcode: true
   links: true

@@ -30,6 +30,9 @@ function tieto_admin_theme_suggestions_page_alter(array &$suggestions, array $va
   $attributes = \Drupal::request()->attributes;
   if ($attributes->get('_entity_form') !== "node.edit" && $node = $attributes->get('node')) {
     array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
+    if ($node->getType() == 'paragraphed_content_demo' && $node->get('field_machine_name')->value) {
+      $suggestions[] = 'page__node__' . $node->getType() . '__' . $node->get('field_machine_name')->value;
+    }
   }
 }
 
