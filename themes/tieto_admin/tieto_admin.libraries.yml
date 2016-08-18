@@ -147,3 +147,9 @@ campaign-page.energy-components:
   css:
     theme:
       css/theme/campaign/energy-components.css: {}
+
+campaign-page.fundation:
+  version: VERSION
+  css:
+    theme:
+      css/theme/campaign/foundation.min.css: {}
