@@ -91,6 +91,11 @@
 
 /* */
 
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.15em;
+  font-weight: 700;
+}
+
 #energy-components .paragraph-inner.row {
   max-width: 75rem;
   margin-left: auto;
@@ -109,6 +114,28 @@
 
 .subscribe-logo li {
   margin-bottom: 30px;
+}
+
+/*
+	Contact blocks
+*/
+
+.contact-blocks {
+  margin-bottom: -50px;
+}
+
+.contact-block {
+  margin-bottom: 50px;
+  padding: 0 40px;
+  font-size: 13px;
+  line-height: 16px;
+  color: #232323;
+}
+
+.contact-block h4 {
+  margin: 0 0 20px;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
 /*
