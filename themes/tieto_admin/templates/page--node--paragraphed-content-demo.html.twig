@@ -41,8 +41,12 @@
 #}
 {{ attach_library('tieto_admin/scrollspy') }}
 {{ attach_library('tieto_admin/smooth-scroll') }}
+{% set machine_name = node.field_machine_name.value %}
 
 <div id="page-tieto" class="paragraphs-page">
+{% if machine_name %}
+  <div id="{{ machine_name }}" class="paragraphs-page-wrapper">
+{% endif %}
 	<header class="page-header clearfix">
 		<a href="#" class="logo"><img src="/themes/tieto_admin/images/tietologo.png" alt="Tieto"></a>
 		<button id="hamburger" class="hamburger hamburger--collapse" type="button">
@@ -57,4 +61,7 @@
 	  <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
 	  {{ page.content }}
 	</main>
+{% if machine_name %}
+  </div>
+{% endif %}
 </div>
