@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.image_text.field_anchor
     - field.field.paragraph.image_text.field_image_demo
     - field.field.paragraph.image_text.field_text_demo
     - image.style.thumbnail
@@ -17,6 +18,13 @@ targetEntityType: paragraph
 bundle: image_text
 mode: default
 content:
+  field_anchor:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_image_demo:
     weight: 0
     settings:
@@ -33,6 +41,8 @@ content:
     type: text_textarea
   translation:
     weight: 10
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   status: true

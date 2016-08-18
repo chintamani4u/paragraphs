@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.image_text.field_anchor
     - field.field.paragraph.image_text.field_image_demo
     - field.field.paragraph.image_text.field_text_demo
     - image.style.large
@@ -17,6 +18,13 @@ targetEntityType: paragraph
 bundle: image_text
 mode: default
 content:
+  field_anchor:
+    type: string
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   field_image_demo:
     type: image
     weight: 0
