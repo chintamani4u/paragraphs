@@ -91,9 +91,31 @@
 
 /* */
 
+body {
+  font-size: 17px;
+  line-height: 20px;
+  background: #fff;
+  color: #5a5a5a;
+}
+
+body, input, button, textarea {
+  font-family: Arial, sans-serif;
+}
+
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.15em;
   font-weight: 700;
+}
+
+p {
+  line-height: inherit;
+  font-size: inherit;
+}
+
+a, input, button, textarea {
+  -webkit-transition: all 0.3s !important;
+  -moz-transition: all 0.3s !important;
+  transition: all 0.3s !important;
 }
 
 #energy-components .paragraph-inner.row {
