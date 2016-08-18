@@ -98,6 +98,20 @@
 }
 
 /*
+	Subscribe
+*/
+
+.subscribe-logo {
+  margin: 0;
+  text-align: right;
+  list-style-type: none;
+}
+
+.subscribe-logo li {
+  margin-bottom: 30px;
+}
+
+/*
 	Titles
 */
 
