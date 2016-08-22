@@ -125,6 +125,90 @@ a, input, button, textarea {
 }
 
 /*
+	Top slideshow
+*/
+
+.top-slider {
+  position: relative;
+  overflow: hidden;
+  padding-top: 70px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.top-slider.bg-1 {
+  background-image: url('../img/pictures/slider-1.jpg');
+}
+
+.top-slider:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.23;
+}
+
+.top-slider .slider-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.slider-text {
+  position: relative;
+  height: 500px;
+}
+
+.slider-text .text-wrapper {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+.top-slider .maintitle,
+.top-slider .subtitle {
+  color: #fff;
+}
+
+.top-slider .maintitle {
+  font-size: 66px;
+  font-weight: 700;
+}
+
+.top-slider .subtitle {
+  font-size: 33px;
+  font-weight: 400;
+}
+
+.top-slider .block-list:before,
+.top-slider .block-list:after {
+  position: absolute;
+  content: '';
+  top: 40px;
+  bottom: 0;
+  width: 1000px;
+  background: #fff;
+}
+
+.top-slider .block-list:before {
+  right: 100%;
+  margin-right: 30px;
+}
+
+.top-slider .block-list:after {
+  left: 100%;
+  margin-left: 30px;
+}
+
+.top-slider .block-list ul {
+  padding-bottom: 5px;
+}
+
+/*
 	Subscribe
 */
 
@@ -203,13 +287,19 @@ a, input, button, textarea {
 
 .button {
   margin: 0;
-  padding: 15px 10px;
+  padding: 15px;
   border: 0;
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
   font-weight: 700;
   opacity: 1;
+}
+
+.button.radius {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 .button.orange {
@@ -223,6 +313,17 @@ a, input, button, textarea {
 .button.orange:hover {
   color: #000;
   opacity: 0.6;
+}
+
+.button.black-transparent {
+  font-weight: 400;
+  color: #fff;
+  border: 1px solid #fff;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.button.black-transparent:hover {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .button.width-md {

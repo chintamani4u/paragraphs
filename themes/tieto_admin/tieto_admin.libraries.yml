@@ -142,14 +142,8 @@ tieto_admin.drupal.dialog:
     theme:
       css/components/dialog.css: {}
 
-campaign-page.energy-components:
-  version: VERSION
-  css:
-    theme:
-      css/theme/campaign/energy-components.css: {}
-
 campaign-page.fundation:
   version: VERSION
   css:
     theme:
-      css/theme/campaign/foundation.min.css: {}
+      css/campaign/foundation.min.css: {}
