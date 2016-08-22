@@ -43,11 +43,15 @@ settings:
           name: Tools
           items:
             - Source
+        -
+          name: Styles
+          items:
+            - Styles
   plugins:
     language:
       language_list: un
     stylescombo:
-      styles: ''
+      styles: "span.tieto-silver|Silver\r\nspan.tieto-blue|Tieto blue\r\nspan.tieto-orange|Orange\r\nspan.tieto-white|White"
     video_embed:
       defaults:
         children:

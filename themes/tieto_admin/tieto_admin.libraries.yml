@@ -44,6 +44,7 @@ global-styling:
       css/theme/paragraphs.css: {}
       css/theme/tieto-campaign.css: {}
       css/theme/pulp-fiction.css: {}
+      css/theme/campaign_style.css: {}
   dependencies:
     - system/admin
     - core/jquery
