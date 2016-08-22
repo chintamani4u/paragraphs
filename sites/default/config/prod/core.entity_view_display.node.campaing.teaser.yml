@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.campaing.field_machine_name
     - field.field.node.campaing.field_paragraphs
     - node.type.campaing
   module:
@@ -14,7 +15,10 @@ bundle: campaing
 mode: teaser
 content:
   links:
-    weight: 100
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  field_machine_name: true
   field_paragraphs: true
   langcode: true
