@@ -1,0 +1,20 @@
+uuid: ad6662b7-c6e4-4512-95e2-db38a5575e53
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.campaing.field_paragraphs
+    - node.type.campaing
+  module:
+    - user
+id: node.campaing.teaser
+targetEntityType: node
+bundle: campaing
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_paragraphs: true
+  langcode: true

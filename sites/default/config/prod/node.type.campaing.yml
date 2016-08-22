@@ -1,0 +1,17 @@
+uuid: 1b7d21c2-3a03-4097-b3e2-ccddd3ebd0bd
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Campaing
+type: campaing
+description: 'Campaign site - one page site with paragraphs.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false
