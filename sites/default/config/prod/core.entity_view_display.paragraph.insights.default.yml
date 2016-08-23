@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.insights.field_anchor
+    - field.field.paragraph.insights.field_image
     - field.field.paragraph.insights.field_image_demo
+    - field.field.paragraph.insights.field_text
     - field.field.paragraph.insights.field_text_demo
     - field.field.paragraph.insights.field_title
     - image.style.insights
@@ -24,14 +26,28 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-  field_image_demo:
-    weight: 3
+  field_image:
+    weight: 5
     label: hidden
     settings:
       image_style: insights
       image_link: ''
     third_party_settings: {  }
     type: image
+  field_image_demo:
+    weight: 4
+    label: hidden
+    settings:
+      image_style: insights
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_text:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_text_demo:
     weight: 2
     label: hidden

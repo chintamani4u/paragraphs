@@ -3,7 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.text_image.field_image
     - field.field.paragraph.text_image.field_image_demo
+    - field.field.paragraph.text_image.field_text
     - field.field.paragraph.text_image.field_text_demo
     - paragraphs.paragraphs_type.text_image
   module:
@@ -16,14 +18,28 @@ targetEntityType: paragraph
 bundle: text_image
 mode: default
 content:
+  field_image:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
   field_image_demo:
     type: image
-    weight: 1
+    weight: 2
     settings:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
     label: hidden
+  field_text:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_text_demo:
     type: text_default
     weight: 0

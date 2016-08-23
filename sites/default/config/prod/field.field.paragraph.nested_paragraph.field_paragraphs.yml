@@ -1,0 +1,61 @@
+uuid: 9386f0fe-cef0-413f-a2fc-fd7c8e29a1ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphs
+    - paragraphs.paragraphs_type.nested_paragraph
+  module:
+    - entity_reference_revisions
+id: paragraph.nested_paragraph.field_paragraphs
+field_name: field_paragraphs
+entity_type: paragraph
+bundle: nested_paragraph
+label: 'Nested Paragraph'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    target_bundles_drag_drop:
+      campaign_header:
+        weight: 13
+        enabled: false
+      campaign_header_video:
+        weight: 14
+        enabled: false
+      images:
+        weight: 15
+        enabled: false
+      image_text:
+        weight: 16
+        enabled: false
+      insights:
+        weight: 17
+        enabled: false
+      link_with_background:
+        weight: 18
+        enabled: false
+      nested_paragraph:
+        weight: 19
+        enabled: false
+      parallax:
+        weight: 20
+        enabled: false
+      tabs:
+        weight: 21
+        enabled: false
+      text:
+        weight: 22
+        enabled: false
+      text_image:
+        weight: 23
+        enabled: false
+      user:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.text.field_anchor
+    - field.field.paragraph.text.field_text
     - field.field.paragraph.text.field_text_demo
     - paragraphs.paragraphs_type.text
   module:
@@ -16,12 +17,19 @@ bundle: text
 mode: default
 content:
   field_anchor:
-    weight: 11
+    weight: 3
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_text:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
   field_text_demo:
     weight: 0
     settings:
@@ -30,7 +38,9 @@ content:
     third_party_settings: {  }
     type: text_textarea
   translation:
-    weight: 10
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   status: true
