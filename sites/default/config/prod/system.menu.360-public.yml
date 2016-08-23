@@ -1,0 +1,8 @@
+uuid: 35b7d2e5-7b1a-4e99-baf2-431f5b02bef9
+langcode: en
+status: true
+dependencies: {  }
+id: 360-public
+label: '360 Public'
+description: 'Sticky menu for 360 Public'
+locked: false
