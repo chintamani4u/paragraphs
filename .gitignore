@@ -1,5 +1,12 @@
-sites/*/settings*.php
-sites/*/services*.yml
+# Ignore configuration files that may contain sensitive information.
+sites/*/*settings*.php
+sites/*/*services*.yml
 
-modules/examples/
+# Ignore paths that contain generated content.
+files/
+sites/*/files
+sites/*/private
+
+# Other
+nbproject
 .idea

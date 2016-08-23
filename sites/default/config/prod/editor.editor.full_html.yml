@@ -47,7 +47,6 @@ settings:
           name: 'Block Formatting'
           items:
             - Format
-            - Styles
         -
           name: Tools
           items:
@@ -57,7 +56,7 @@ settings:
     language:
       language_list: un
     stylescombo:
-      styles: "span.tieto-silver|Silver\r\nspan.tieto-blue|Tieto blue\r\nspan.tieto-orange|Orange\r\nspan.tieto-white|White"
+      styles: ''
     video_embed:
       defaults:
         children:

@@ -1,8 +1,0 @@
-uuid: 6a0d5986-496c-42cb-87f4-7f941639ab84
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: wS10MSXnWZp572XotJDU2i2uHw3Z9xD6bScVlYn9Lfg
-id: images
-label: Images
