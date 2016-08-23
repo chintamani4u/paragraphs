@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.images.field_images
     - field.field.paragraph.images.field_images_demo
     - image.style.thumbnail
     - paragraphs.paragraphs_type.images
@@ -15,6 +16,13 @@ targetEntityType: paragraph
 bundle: images
 mode: default
 content:
+  field_images:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
   field_images_demo:
     weight: 0
     settings:
@@ -23,7 +31,9 @@ content:
     third_party_settings: {  }
     type: image_image
   translation:
-    weight: 10
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   status: true

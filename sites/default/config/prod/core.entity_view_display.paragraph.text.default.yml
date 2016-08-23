@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.text.field_anchor
+    - field.field.paragraph.text.field_text
     - field.field.paragraph.text.field_text_demo
     - paragraphs.paragraphs_type.text
   module:
@@ -22,6 +23,12 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_text_demo:
     type: text_default
     weight: 1

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.nested_paragraph.field_paragraphs
     - field.field.paragraph.nested_paragraph.field_paragraphs_demo
     - paragraphs.paragraphs_type.nested_paragraph
   module:
@@ -14,6 +15,16 @@ targetEntityType: paragraph
 bundle: nested_paragraph
 mode: default
 content:
+  field_paragraphs:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+    third_party_settings: {  }
   field_paragraphs_demo:
     weight: 0
     settings:

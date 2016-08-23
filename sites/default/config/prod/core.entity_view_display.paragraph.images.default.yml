@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.images.field_images
     - field.field.paragraph.images.field_images_demo
     - image.style.medium
     - paragraphs.paragraphs_type.images
@@ -15,6 +16,14 @@ targetEntityType: paragraph
 bundle: images
 mode: default
 content:
+  field_images:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: file
+    third_party_settings: {  }
+    type: image
   field_images_demo:
     type: image
     weight: 0
