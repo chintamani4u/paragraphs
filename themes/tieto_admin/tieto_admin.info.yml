@@ -8,6 +8,9 @@ core: 8.x
 libraries:
  - tieto_admin/global-styling
 
+ckeditor_stylesheets:
+  - css/theme/campaign_style.css
+
 libraries-override:
   core/drupal.vertical-tabs:
     css:

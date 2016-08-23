@@ -30,7 +30,34 @@ function tieto_admin_theme_suggestions_page_alter(array &$suggestions, array $va
   $attributes = \Drupal::request()->attributes;
   if ($attributes->get('_entity_form') !== "node.edit" && $node = $attributes->get('node')) {
     array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
+    if (in_array($node->getType(), ['campaign', 'paragraphed_content_demo']) && $node->get('field_machine_name')->value) {
+      $suggestions[] = 'page__node__' . $node->getType() . '__' . $node->get('field_machine_name')->value;
+    }
   }
+}
+
+/**
+ * Implements hook_theme_suggestions_alter().
+ *
+ * Add custom suggestions for paragraph types with machine name.
+ *
+ * @todo move to module.
+ */
+function tieto_admin_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  if ($hook === 'paragraph') {
+    // Add content type suggestions.
+    $attributes = \Drupal::request()->attributes;
+    if ($attributes->get('_entity_form') !== "node.edit" && $node = $attributes->get('node')) {
+      if (in_array($node->getType(), ['campaign', 'paragraphed_content_demo']) && $node->get('field_machine_name')->value) {
+        foreach ($suggestions as $suggestion) {
+          $my_suggestions[] = $suggestion;
+          $my_suggestions[] = preg_replace("/^paragraph__/", 'paragraph__' . $node->get('field_machine_name')->value . "__", $suggestion);
+        }
+        $suggestions = $my_suggestions;
+      }
+    }
+  }
+
 }
 
 /**

@@ -44,6 +44,7 @@ global-styling:
       css/theme/paragraphs.css: {}
       css/theme/tieto-campaign.css: {}
       css/theme/pulp-fiction.css: {}
+      css/theme/campaign_style.css: {}
   dependencies:
     - system/admin
     - core/jquery
@@ -141,3 +142,9 @@ tieto_admin.drupal.dialog:
   css:
     theme:
       css/components/dialog.css: {}
+
+campaign-page.fundation:
+  version: VERSION
+  css:
+    theme:
+      css/campaign/foundation.min.css: {}
