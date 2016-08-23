@@ -19,6 +19,8 @@ settings:
           items:
             - Bold
             - Italic
+            - '-'
+            - RemoveFormat
         -
           name: Linking
           items:
@@ -39,14 +41,11 @@ settings:
           name: 'Block Formatting'
           items:
             - Format
+            - Styles
         -
           name: Tools
           items:
             - Source
-        -
-          name: Styles
-          items:
-            - Styles
   plugins:
     language:
       language_list: un
