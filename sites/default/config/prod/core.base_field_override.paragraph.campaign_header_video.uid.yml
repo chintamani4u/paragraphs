@@ -1,0 +1,20 @@
+uuid: 9b1bee40-e3b3-4637-849b-915176bb84af
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.campaign_header_video
+id: paragraph.campaign_header_video.uid
+field_name: uid
+entity_type: paragraph
+bundle: campaign_header_video
+label: 'Authored by'
+description: 'The user ID of the paragraphs author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\paragraphs\Entity\Paragraph::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

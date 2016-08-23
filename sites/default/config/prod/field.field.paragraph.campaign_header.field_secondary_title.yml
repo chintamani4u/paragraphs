@@ -12,7 +12,7 @@ bundle: campaign_header
 label: 'Secondary title'
 description: 'Will appear around the main title.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

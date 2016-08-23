@@ -1,0 +1,22 @@
+uuid: d1ffcff4-b923-4e26-b36c-ba1560361f4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.campaign_header_video
+id: paragraph.campaign_header_video.status
+field_name: status
+entity_type: paragraph
+bundle: campaign_header_video
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,16 @@
+uuid: 00513431-fc76-41eb-a7c7-c31b11e4e1d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.insights
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: paragraph.insights
+target_entity_type_id: paragraph
+target_bundle: insights
+default_langcode: site_default
+language_alterable: true

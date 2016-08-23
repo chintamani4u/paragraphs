@@ -11,7 +11,7 @@ dependencies:
 third_party_settings:
   content_translation:
     translation_sync:
-      file: '0'
+      file: file
       alt: '0'
       title: '0'
 id: paragraph.parallax.field_image_demo

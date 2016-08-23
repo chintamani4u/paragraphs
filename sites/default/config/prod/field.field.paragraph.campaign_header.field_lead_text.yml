@@ -12,7 +12,7 @@ bundle: campaign_header
 label: 'Lead text'
 description: 'Will appear around the titles. It should contain important introductory text about the page.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

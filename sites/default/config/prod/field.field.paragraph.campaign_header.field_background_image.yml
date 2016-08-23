@@ -6,7 +6,14 @@ dependencies:
     - field.storage.paragraph.field_background_image
     - paragraphs.paragraphs_type.campaign_header
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      file: file
+      alt: '0'
+      title: '0'
 id: paragraph.campaign_header.field_background_image
 field_name: field_background_image
 entity_type: paragraph
@@ -14,7 +21,7 @@ bundle: campaign_header
 label: Background
 description: 'This image will appear below the header and the titles.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.embed
-    - field.field.node.paragraphed_content_demo.comment
     - field.field.node.paragraphed_content_demo.field_machine_name
     - field.field.node.paragraphed_content_demo.field_paragraphs_demo
     - node.type.paragraphed_content_demo
@@ -33,7 +32,6 @@ content:
     third_party_settings: {  }
     label: hidden
 hidden:
-  comment: true
   field_machine_name: true
   langcode: true
   links: true

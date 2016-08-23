@@ -1,0 +1,16 @@
+uuid: c1353008-8577-48c4-ad6a-950b1ba98f2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.campaign_header
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: paragraph.campaign_header
+target_entity_type_id: paragraph
+target_bundle: campaign_header
+default_langcode: site_default
+language_alterable: true

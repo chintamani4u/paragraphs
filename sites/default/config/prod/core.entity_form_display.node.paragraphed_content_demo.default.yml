@@ -3,12 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.paragraphed_content_demo.comment
     - field.field.node.paragraphed_content_demo.field_machine_name
     - field.field.node.paragraphed_content_demo.field_paragraphs_demo
     - node.type.paragraphed_content_demo
   module:
-    - comment
     - machine_name
     - paragraphs
     - path
@@ -27,11 +25,6 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
-  comment:
-    weight: 10
-    settings: {  }
-    third_party_settings: {  }
-    type: comment_default
   created:
     type: datetime_timestamp
     weight: 4

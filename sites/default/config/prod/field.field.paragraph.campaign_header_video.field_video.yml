@@ -14,7 +14,7 @@ bundle: campaign_header_video
 label: Video
 description: 'Upload a video for the background. Format should be <b>mp4</b>, <b>webm</b> or <b>ogg</b>.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

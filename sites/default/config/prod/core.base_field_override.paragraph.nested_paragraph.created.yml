@@ -1,0 +1,18 @@
+uuid: 3fdeca05-aa7d-4a89-9987-d5a23bd791f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.nested_paragraph
+id: paragraph.nested_paragraph.created
+field_name: created
+entity_type: paragraph
+bundle: nested_paragraph
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created
