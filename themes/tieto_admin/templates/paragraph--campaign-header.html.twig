@@ -5,6 +5,8 @@ set classes = [
 	view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
+{{ attach_library('tieto_admin/parallax') }}
+
 {% set enableParallax = content.field_enable_parallax['#items'].getValue()[0]['value'] == '1' %}
 {% set background = file_url(content.field_background_image['#items'].entity.uri.value) %}
 

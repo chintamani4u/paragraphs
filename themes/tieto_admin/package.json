@@ -1,22 +1,28 @@
 {
-  "name": "elevation-theme",
+  "name": "tieto-theme",
   "version": "1.0.0",
   "description": "Drupal 8 Theme",
   "author": "Gergely Pap <gpap@brainsum.com>",
-  "homepage": "https://www.tieto.com/",
+  "homepage": "https://www.brainsum.com/",
+  "private": true,
+  "scripts": {
+    "prod": "gulp --production",
+    "dev": "gulp",
+    "watch": "gulp watch"
+  },
   "devDependencies": {
-    "browser-sync": "^2.10.0",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-beautify": "^2.0.0",
-    "gulp-eslint": "^2.0.0",
-    "gulp-imagemin": "^2.4.0",
-    "gulp-jshint": "^2.0.0",
-    "gulp-load-plugins": "^1.0.0",
-    "gulp-notify": "^2.2.0",
-    "gulp-sass": "^2.1.0",
-    "gulp-shell": "^0.5.1",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.5.1"
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.4",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.13.2",
+    "gulp": "^3.9.1",
+    "jquery": "^3.1.0",
+    "laravel-elixir": "^6.0.0-9",
+    "laravel-elixir-browsersync-official": "^1.0.0",
+    "laravel-elixir-rollup-official": "^1.0.4"
+  },
+  "dependencies": {
+    "background-video": "^0.2.5",
+    "responsive-tabs": "^1.6.1"
   }
 }
