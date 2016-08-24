@@ -12,8 +12,26 @@
  */
 
 import Elixir from 'laravel-elixir'
-import './gulp.config'
 
+/**
+ * Configuration
+ */
+Elixir.config.sourcemaps = true
+Elixir.config.notifications = true
+Elixir.config.assetsPath = 'src'
+Elixir.config.publicPath = 'dist'
+Elixir.config.viewPath = 'templates'
+Elixir.config.js.folder = 'scripts'
+Elixir.config.browserSync = {
+    proxy: 'http://public360.local',
+    open: false,
+    reloadOnRestart: true,
+    notify: false
+}
+
+/**
+ * Build
+ */
 Elixir(mix => {
 
     mix

@@ -1,0 +1,23 @@
+body.toolbar-vertical {
+	@include breakpoint-max(md) {
+		#toolbar-administration {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
+	}
+	.paragraphs-page .page-header {
+		top: 39px;
+	}
+}
+
+body.toolbar-horizontal {
+	.paragraphs-page .page-header {
+		top: 39px;
+	}
+
+	&.toolbar-tray-open .paragraphs-page .page-header {
+		top: 78px;
+	}
+}

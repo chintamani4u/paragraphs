@@ -1,3 +1,9 @@
+.paragraph--type--campaign-header {
+    background-color: rgba(103, 175, 225, .4);
+    min-height: 570px;
+    position: relative;
+}
+
 .paragraph--type--campaign-header-video,
 .paragraph--type--campaign-header {
 
@@ -77,13 +83,6 @@
     	}
     }
 }
-
-.paragraph--type--campaign-header {
-    background-color: rgba(103, 175, 225, .4);
-    min-height: 570px;
-    position: relative;
-}
-
 
 .paragraph--type--campaign-header-video {
 

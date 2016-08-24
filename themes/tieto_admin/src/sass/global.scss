@@ -33,15 +33,22 @@
 @import "components/views-ui";
 
 // Layout
+@import "layout/header";
 @import "layout/layout";
 @import "layout/views";
 @import "layout/login";
 
+// Paragraphs
+@import "paragraphs/common";
+@import "paragraphs/campaign-header";
+@import "paragraphs/insights";
+@import "paragraphs/link-with-background";
+@import "paragraphs/tabs";
+
 // Theme
-@import "theme/paragraphs";
-@import "theme/tieto-campaign";
-@import "theme/pulp-fiction";
-@import "theme/energy";
+@import "theme/campaign";
+// @import "theme/tieto-campaign";
+// @import "theme/pulp-fiction";
 
 // Vendor
 @import "vendor/hamburgers";

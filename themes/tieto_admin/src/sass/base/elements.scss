@@ -1,15 +1,15 @@
 /**
  * Generic elements.
  */
- *, *::before, *::after {
+*, *::before, *::after {
   box-sizing: border-box;
- }
- #toolbar-administration {
+}
+#toolbar-administration {
   z-index: 1001;
- }
+}
 body {
   color: #333;
-  background: red;
+  background: #fff;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5em;
