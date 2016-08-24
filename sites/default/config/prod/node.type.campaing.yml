@@ -8,9 +8,9 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: Campaing
+name: Campaign
 type: campaing
-description: 'Campaign site - one page site with paragraphs.'
+description: 'Dynamic onepage sites using predefined Paragraphs and Tieto design guidelines.'
 help: ''
 new_revision: false
 preview_mode: 1

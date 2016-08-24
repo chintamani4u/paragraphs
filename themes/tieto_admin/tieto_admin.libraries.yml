@@ -1,63 +1,35 @@
-global-styling:
+# Global libraries
+# Loaded on every page.
+global:
   version: VERSION
   js:
-    js/parallax.min.js: {}
-    js/scripts.js: {}
+    dist/js/global.js: {}
   css:
     base:
-      css/base/elements.css: {}
-      css/base/typography.css: {}
-      css/base/print.css: {}
-      css/base/icons.css: {}
-    component:
-      css/components/admin-list.css: {}
-      css/components/content-header.css: {}
-      css/components/breadcrumb.css: {}
-      css/components/buttons.css: {}
-      css/components/book.css: {}
-      css/components/colors.css: {}
-      css/components/messages.css: {}
-      css/components/dropbutton.component.css: {}
-      css/components/entity-meta.css: {}
-      css/components/field-ui.css: {}
-      css/components/form.css: {}
-      css/components/help.css: {}
-      css/components/menus-and-lists.css: {}
-      css/components/modules-page.css: {}
-      css/components/node.css: {}
-      css/components/page-title.css: {}
-      css/components/pager.css: {}
-      css/components/panel.css: {}
-      css/components/skip-link.css: {}
-      css/components/tables.css: {}
-      css/components/search-admin-settings.css: {}
-      css/components/tablesort-indicator.css: {}
-      css/components/system-status-report.css: {}
-      css/components/tabs.css: {}
-      css/components/views-ui.css: {}
-      css/vendor/hamburgers.css: {}
-    layout:
-      css/layout/layout.css: {}
-      css/layout/views.css: {}
-      css/layout/login.css: {}
-    theme:
-      css/theme/paragraphs.css: {}
-      css/theme/tieto-campaign.css: {}
-      css/theme/pulp-fiction.css: {}
-      css/theme/campaign_style.css: {}
+      dist/css/global.css: {}
   dependencies:
     - system/admin
     - core/jquery
 
+# Parallax effect.
+# @see http://pixelcog.github.io/parallax.js/
+parallax:
+  version: VERSION
+  js:
+    vendor/parallax.min.js: {}
+  dependencies:
+    - system/admin
+    - core/jquery
+
+# Responsive Tabs.
 # @see https://github.com/jellekralt/Responsive-Tabs
 responsive-tabs:
   version: VERSION
   css:
-    layout:
-      css/vendor/responsive-tabs.css: {}
+    base:
+      dist/css/responsive-tabs.css: {}
   js:
-    js/jquery.responsiveTabs.min.js: {}
-    js/rtabs.js: {}
+    dist/js/responsive-tabs.js: {}
   dependencies:
     - core/jquery
 
@@ -65,59 +37,55 @@ responsive-tabs:
 smooth-scroll:
   version: VERSION
   js:
-    js/smooth-scroll.js: {}
+    dist/js/smooth-scroll.js: {}
   dependencies:
     - core/drupal
     - core/jquery
 
+# Scroll Spy
 scrollspy:
   version: VERSION
   js:
-    js/jquery-scrollspy.js: {}
-    js/scrollspy.js: {}
+    dist/js/scrollspy.js: {}
   dependencies:
     - core/jquery
 
+# Background video
+# @see https://github.com/linnett/backgroundVideo
 background-video:
   js:
-    js/backgroundVideo.min.js: {}
-    js/bgvideo.js: {}
+    dist/js/background-video.js: {}
   dependencies:
     - core/jquery
 
-node-form:
-  version: VERSION
-  css:
-    layout:
-      css/layout/node-add.css: {}
-  dependencies:
-    - node/form
-
+# Maintenance page
 maintenance-page:
   version: VERSION
   js:
-    js/mobile.install.js: {}
+    dist/js/mobile.install.js: {}
   css:
     theme:
-      css/theme/maintenance-page.css: {}
+      dist/css/maintenance-page.css: {}
   dependencies:
     - system/maintenance
-    - tieto_admin/global-styling
+    - tieto_admin/global
 
+# Installer page
 install-page:
   version: VERSION
   js:
-    js/mobile.install.js: {}
+    dist/js/mobile.install.js: {}
   css:
     theme:
-      css/theme/install-page.css: {}
+      dist/css/install-page.css: {}
   dependencies:
     - tieto_admin/maintenance-page
 
+# Navigation tabs
 # drupal.nav-tabs:
 #   version: VERSION
 #   js:
-#     js/nav-tabs.js: {}
+#     dist/js/nav-tabs.js: {}
 #   dependencies:
 #     - core/matchmedia
 #     - core/jquery
@@ -125,26 +93,23 @@ install-page:
 #     - core/jquery.once
 #     - core/drupal.debounce
 
+# Vertical tabs
 vertical-tabs:
   version: VERSION
   css:
     component:
-      css/components/vertical-tabs.css: {}
+      dist/css/vertical-tabs.css: {}
 
+# jQuery UI theme
 tieto_admin.jquery.ui:
   version: VERSION
   css:
     component:
-      css/components/jquery.ui/theme.css: { weight: -1 }
+      dist/css/jquery.ui.theme.css: { weight: -1 }
 
+# Drupal Dialog
 tieto_admin.drupal.dialog:
   version: VERSION
   css:
     theme:
-      css/components/dialog.css: {}
-
-campaign-page.fundation:
-  version: VERSION
-  css:
-    theme:
-      css/campaign/foundation.min.css: {}
+      dist/css/dialog.css: {}
