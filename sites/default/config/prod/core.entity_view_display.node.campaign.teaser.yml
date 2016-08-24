@@ -1,9 +1,11 @@
 uuid: c78db579-8826-46d7-b1b9-561d9c3a839c
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.campaign.field_machine_name
+    - field.field.node.campaign.field_paragraphs
     - node.type.campaign
   module:
     - user
@@ -11,8 +13,9 @@ id: node.campaign.teaser
 targetEntityType: node
 bundle: campaign
 mode: teaser
-content:
-  links:
-    weight: 100
+content: {  }
 hidden:
+  field_machine_name: true
+  field_paragraphs: true
   langcode: true
+  links: true
