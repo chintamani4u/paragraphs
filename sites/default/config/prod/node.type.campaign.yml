@@ -1,4 +1,4 @@
-uuid: 1b7d21c2-3a03-4097-b3e2-ccddd3ebd0bd
+uuid: 69f7799c-0691-42bd-beaf-c59cfe402ad0
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ third_party_settings:
     available_menus: {  }
     parent: ''
 name: Campaign
-type: campaing
+type: campaign
 description: 'Dynamic onepage sites using predefined Paragraphs and Tieto design guidelines.'
 help: ''
 new_revision: false

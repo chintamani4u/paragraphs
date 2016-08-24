@@ -1,70 +1,76 @@
-uuid: 6c933a37-111f-4eef-9034-807c896f9c1f
+uuid: 3dd31f83-07bc-47b7-95cc-b7bf8676f6e7
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.campaing.field_machine_name
-    - field.field.node.campaing.field_paragraphs
-    - node.type.campaing
+    - field.field.node.campaign.field_machine_name
+    - field.field.node.campaign.field_paragraphs
+    - node.type.campaign
   module:
+    - entity_reference_revisions
     - machine_name
-    - paragraphs
     - path
-id: node.campaing.default
+id: node.campaign.default
 targetEntityType: node
-bundle: campaing
+bundle: campaign
 mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 10
     settings: {  }
     third_party_settings: {  }
   field_machine_name:
-    weight: 2
+    weight: 31
     settings:
-      editable: '1'
+      editable: false
     third_party_settings: {  }
     type: machine_name
   field_paragraphs:
-    type: entity_reference_paragraphs
-    weight: 3
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: button
-      form_display_mode: default
-    third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-  path:
-    type: path
-    weight: 7
-    settings: {  }
-    third_party_settings: {  }
-  title:
-    type: string_textfield
-    weight: 0
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  translation:
-    weight: 6
-    settings: {  }
-    third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 4
+    weight: 32
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  promote: true
-  sticky: true
+    type: entity_reference_revisions_autocomplete
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

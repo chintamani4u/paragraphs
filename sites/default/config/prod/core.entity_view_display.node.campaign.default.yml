@@ -1,0 +1,35 @@
+uuid: dcbd6bf0-9d40-47ca-a85a-ef240bae81fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.campaign.field_machine_name
+    - field.field.node.campaign.field_paragraphs
+    - node.type.campaign
+  module:
+    - entity_reference_revisions
+    - machine_name
+    - user
+id: node.campaign.default
+targetEntityType: node
+bundle: campaign
+mode: default
+content:
+  field_machine_name:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: machine_name
+  field_paragraphs:
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+  links:
+    weight: 100
+hidden:
+  langcode: true

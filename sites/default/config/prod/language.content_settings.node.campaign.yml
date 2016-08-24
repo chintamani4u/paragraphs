@@ -1,16 +1,16 @@
-uuid: 1a60a847-1db8-4de6-b68f-005c0da44563
+uuid: cf6b4dac-1d79-4c78-b5a1-bbc44b0869e5
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.campaing
+    - node.type.campaign
   module:
     - content_translation
 third_party_settings:
   content_translation:
     enabled: true
-id: node.campaing
+id: node.campaign
 target_entity_type_id: node
-target_bundle: campaing
+target_bundle: campaign
 default_langcode: site_default
 language_alterable: true

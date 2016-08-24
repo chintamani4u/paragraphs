@@ -1,13 +1,13 @@
-uuid: 01aded81-fdaa-4d7f-a644-9af156f78ecd
+uuid: 96dbdc61-95c7-4a44-861a-765396f5df58
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.campaing
-id: node.campaing.promote
+    - node.type.campaign
+id: node.campaign.promote
 field_name: promote
 entity_type: node
-bundle: campaing
+bundle: campaign
 label: 'Promoted to front page'
 description: ''
 required: false

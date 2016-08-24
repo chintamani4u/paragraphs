@@ -1,16 +1,16 @@
-uuid: 100cdd62-9a23-462f-a1f7-04b821739130
+uuid: cb89ca2d-2f56-424e-86bc-770691c011ef
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_paragraphs
-    - node.type.campaing
+    - node.type.campaign
   module:
     - entity_reference_revisions
-id: node.campaing.field_paragraphs
+id: node.campaign.field_paragraphs
 field_name: field_paragraphs
 entity_type: node
-bundle: campaing
+bundle: campaign
 label: Paragraphs
 description: ''
 required: false
@@ -23,39 +23,42 @@ settings:
     target_bundles: null
     target_bundles_drag_drop:
       campaign_header:
-        weight: 13
-        enabled: false
-      campaign_header_video:
         weight: 14
         enabled: false
-      images:
+      campaign_header_video:
         weight: 15
         enabled: false
-      image_text:
+      images:
         weight: 16
         enabled: false
-      insights:
+      image_text:
         weight: 17
         enabled: false
-      link_with_background:
+      insights:
         weight: 18
         enabled: false
-      nested_paragraph:
+      link_with_background:
         weight: 19
         enabled: false
-      parallax:
+      nested_paragraph:
         weight: 20
         enabled: false
-      tabs:
+      parallax:
         weight: 21
         enabled: false
-      text:
+      tabs:
         weight: 22
         enabled: false
-      text_image:
+      text:
         weight: 23
         enabled: false
-      user:
+      text_boxes:
         weight: 24
+        enabled: false
+      text_image:
+        weight: 25
+        enabled: false
+      user:
+        weight: 26
         enabled: false
 field_type: entity_reference_revisions
