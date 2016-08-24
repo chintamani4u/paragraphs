@@ -1,0 +1,27 @@
+uuid: 72f3c131-e743-4833-84c9-3439d99076df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background
+    - paragraphs.paragraphs_type.header
+  module:
+    - file
+id: paragraph.header.field_background
+field_name: field_background
+entity_type: paragraph
+bundle: header
+label: Background
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: paragraphs/background
+  file_extensions: 'jpg jpeg svg webp mp4 ogg webm'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

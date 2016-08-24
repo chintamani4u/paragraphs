@@ -1,0 +1,64 @@
+uuid: b3566452-4138-41b6-9c59-4f4a979de35f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.header.field_background
+    - field.field.paragraph.header.field_call_to_action
+    - field.field.paragraph.header.field_enable_parallax
+    - field.field.paragraph.header.field_lead_text
+    - field.field.paragraph.header.field_secondary_title
+    - field.field.paragraph.header.field_title
+    - paragraphs.paragraphs_type.header
+  module:
+    - file
+    - link
+id: paragraph.header.default
+targetEntityType: paragraph
+bundle: header
+mode: default
+content:
+  field_background:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+  field_call_to_action:
+    weight: 3
+    settings:
+      placeholder_url: 'Button URL'
+      placeholder_title: 'Button text'
+    third_party_settings: {  }
+    type: link_default
+  field_enable_parallax:
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_lead_text:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+  field_secondary_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true
