@@ -7,8 +7,8 @@ dependencies:
     - field.field.node.campaign.field_paragraphs
     - node.type.campaign
   module:
-    - entity_reference_revisions
     - machine_name
+    - paragraphs
     - path
 id: node.campaign.default
 targetEntityType: node
@@ -29,11 +29,13 @@ content:
   field_paragraphs:
     weight: 32
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: button
+      form_display_mode: default
     third_party_settings: {  }
-    type: entity_reference_revisions_autocomplete
+    type: entity_reference_paragraphs
   langcode:
     type: language_select
     weight: 2
@@ -65,6 +67,8 @@ content:
     third_party_settings: {  }
   translation:
     weight: 10
+    settings: {  }
+    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
     weight: 5
