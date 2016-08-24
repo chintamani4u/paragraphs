@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.text_boxes.field_anchor
     - field.field.paragraph.text_boxes.field_boxes_per_row
     - field.field.paragraph.text_boxes.field_paragraph_class
     - field.field.paragraph.text_boxes.field_text_boxes
@@ -16,14 +17,21 @@ targetEntityType: paragraph
 bundle: text_boxes
 mode: default
 content:
+  field_anchor:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_boxes_per_row:
-    weight: 4
+    weight: 2
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
   field_paragraph_class:
-    weight: 0
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -35,17 +43,21 @@ content:
     third_party_settings: {  }
     type: text_textarea
   field_title:
-    weight: 2
+    weight: 3
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
   field_title_class:
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  translation:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   status: true

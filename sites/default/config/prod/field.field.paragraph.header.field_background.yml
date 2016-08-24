@@ -12,7 +12,7 @@ field_name: field_background
 entity_type: paragraph
 bundle: header
 label: Background
-description: ''
+description: 'Image or video.'
 required: false
 translatable: false
 default_value: {  }

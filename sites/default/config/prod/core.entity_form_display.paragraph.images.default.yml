@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.images.field_anchor
     - field.field.paragraph.images.field_images
     - image.style.thumbnail
     - paragraphs.paragraphs_type.images
@@ -15,6 +16,13 @@ targetEntityType: paragraph
 bundle: images
 mode: default
 content:
+  field_anchor:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_images:
     weight: 1
     settings:

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.text_boxes.field_anchor
     - field.field.paragraph.text_boxes.field_boxes_per_row
     - field.field.paragraph.text_boxes.field_paragraph_class
     - field.field.paragraph.text_boxes.field_text_boxes
@@ -31,6 +32,7 @@ content:
     type: string
 hidden:
   created: true
+  field_anchor: true
   field_boxes_per_row: true
   field_paragraph_class: true
   field_title_class: true

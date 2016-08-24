@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.images.field_anchor
     - field.field.paragraph.images.field_images
     - image.style.medium
     - paragraphs.paragraphs_type.images
@@ -20,9 +21,10 @@ content:
     label: hidden
     settings:
       image_style: medium
-      image_link: file
+      image_link: ''
     third_party_settings: {  }
     type: image
 hidden:
   created: true
+  field_anchor: true
   uid: true
