@@ -1,0 +1,39 @@
+uuid: c16a05e0-a25d-4fc3-bd73-e5a533764666
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.highlighted.field_anchor
+    - field.field.paragraph.highlighted.field_background
+    - field.field.paragraph.highlighted.field_enable_parallax
+    - field.field.paragraph.highlighted.field_highlighted_layout
+    - field.field.paragraph.highlighted.field_text
+    - field.field.paragraph.highlighted.field_title
+    - paragraphs.paragraphs_type.highlighted
+  module:
+    - text
+id: paragraph.highlighted.default
+targetEntityType: paragraph
+bundle: highlighted
+mode: default
+content:
+  field_text:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  field_anchor: true
+  field_background: true
+  field_enable_parallax: true
+  field_highlighted_layout: true
+  uid: true
