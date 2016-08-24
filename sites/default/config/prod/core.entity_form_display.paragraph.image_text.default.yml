@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.image_text.field_anchor
     - field.field.paragraph.image_text.field_image
+    - field.field.paragraph.image_text.field_image_text_layout
     - field.field.paragraph.image_text.field_text
     - field.field.paragraph.image_text.field_title
     - image.style.thumbnail

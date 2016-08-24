@@ -5,4 +5,4 @@ dependencies: {  }
 _core:
   default_config_hash: 1NKuWn63-MAY5inQNQBIVxTl3_R1V1_0kRz4XUt5uGQ
 id: image_text
-label: 'Image + Text'
+label: 'Text and Image'
