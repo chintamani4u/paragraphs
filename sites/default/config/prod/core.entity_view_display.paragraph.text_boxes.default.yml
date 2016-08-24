@@ -1,0 +1,37 @@
+uuid: 0b306d8f-aefa-4794-832f-9e98a9ebcc48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_boxes.field_boxes_per_row
+    - field.field.paragraph.text_boxes.field_paragraph_class
+    - field.field.paragraph.text_boxes.field_text_boxes
+    - field.field.paragraph.text_boxes.field_title
+    - field.field.paragraph.text_boxes.field_title_class
+    - paragraphs.paragraphs_type.text_boxes
+  module:
+    - text
+id: paragraph.text_boxes.default
+targetEntityType: paragraph
+bundle: text_boxes
+mode: default
+content:
+  field_text_boxes:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  field_boxes_per_row: true
+  field_paragraph_class: true
+  field_title_class: true
+  uid: true

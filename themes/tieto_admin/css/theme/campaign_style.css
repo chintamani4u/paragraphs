@@ -1,6 +1,7 @@
 /**
  * CUSTOM CSS FOR CAMPAIGN PAGES
  */
+/* WYSIWYG Styles */
 span.tieto-silver {
   color: #969696;
 }
@@ -14,5 +15,41 @@ span.tieto-orange {
 }
 
 span.tieto-white {
+  color: #fff;
+}
+
+/* field_paragraph_class */
+#page-tieto .paragraph.tieto-silver,
+.field--name-field-paragraph-class option[value="tieto-silver"] {
+  background-color: #969696;
+}
+#page-tieto .paragraph.tieto-blue,
+.field--name-field-paragraph-class option[value="tieto-blue"] {
+  background-color: #67afe1;
+}
+#page-tieto .paragraph.tieto-orange,
+.field--name-field-paragraph-class option[value="tieto-orange"] {
+  background-color: #e57c1c;
+}
+#page-tieto .paragraph.tieto-white,
+.field--name-field-paragraph-class option[value="tieto-white"] {
+  background-color: #fff;
+}
+
+/* field_title_class */
+#page-tieto .paragraph .field--name-field-title.tieto-silver,
+.field--name-field-title-class option[value="tieto-silver"] {
+  color: #969696;
+}
+#page-tieto .paragraph .field--name-field-title.tieto-blue,
+.field--name-field-title-class option[value="tieto-blue"] {
+  color: #67afe1;
+}
+#page-tieto .paragraph .field--name-field-title.tieto-orange,
+.field--name-field-title-class option[value="tieto-orange"] {
+  color: #e57c1c;
+}
+#page-tieto .paragraph .field--name-field-title.tieto-white,
+.field--name-field-title-class option[value="tieto-white"] {
   color: #fff;
 }

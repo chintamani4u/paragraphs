@@ -1,0 +1,21 @@
+uuid: 2965b931-cb18-469d-b1d2-5f3ff5c57667
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_class
+    - paragraphs.paragraphs_type.text_boxes
+  module:
+    - options
+id: paragraph.text_boxes.field_paragraph_class
+field_name: field_paragraph_class
+entity_type: paragraph
+bundle: text_boxes
+label: 'Paragraph color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

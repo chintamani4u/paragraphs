@@ -1,0 +1,33 @@
+uuid: e1a780dc-96e3-44a7-b3aa-b6c9d4a7abb9
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_paragraph_class
+field_name: field_paragraph_class
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: tieto-silver
+      label: Silver
+    -
+      value: tieto-blue
+      label: 'Tieto blue'
+    -
+      value: tieto-orange
+      label: Orange
+    -
+      value: tieto-white
+      label: White
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
