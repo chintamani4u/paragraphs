@@ -8,19 +8,12 @@ dependencies:
     - node.type.campaing
   module:
     - entity_reference_revisions
-    - machine_name
     - user
 id: node.campaing.default
 targetEntityType: node
 bundle: campaing
 mode: default
 content:
-  field_machine_name:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: machine_name
   field_paragraphs:
     type: entity_reference_revisions_entity_view
     weight: 0
@@ -30,5 +23,6 @@ content:
       link: ''
     third_party_settings: {  }
 hidden:
+  field_machine_name: true
   langcode: true
   links: true
