@@ -20,6 +20,9 @@ settings:
     -
       value: 2
       label: 'Two column (Content first)'
+    -
+      value: 3
+      label: 'Separator (Title only)'
   allowed_values_function: ''
 module: options
 locked: false
