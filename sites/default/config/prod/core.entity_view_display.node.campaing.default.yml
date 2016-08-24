@@ -16,22 +16,19 @@ bundle: campaing
 mode: default
 content:
   field_machine_name:
-    weight: 2
-    label: above
+    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: machine_name
   field_paragraphs:
     type: entity_reference_revisions_entity_view
-    weight: 1
-    label: above
+    weight: 0
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-  links:
-    weight: 0
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   langcode: true
+  links: true
