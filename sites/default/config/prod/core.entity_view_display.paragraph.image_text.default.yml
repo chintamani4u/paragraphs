@@ -12,7 +12,6 @@ dependencies:
     - paragraphs.paragraphs_type.image_text
   module:
     - image
-    - options
     - text
 _core:
   default_config_hash: AtqI7gAU0cJR1kM7IDEnUqWjEbryjkni-c5EU_BwWtA
@@ -23,7 +22,7 @@ mode: default
 content:
   field_anchor:
     type: string
-    weight: 1
+    weight: 2
     label: above
     settings:
       link_to_entity: false
@@ -37,18 +36,19 @@ content:
     third_party_settings: {  }
     type: image
   field_text:
-    weight: 5
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_title:
     type: string
-    weight: 0
+    weight: 1
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
 hidden:
   created: true
+  field_image_text_layout: true
   uid: true
