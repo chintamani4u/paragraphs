@@ -5,9 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.image_text.field_anchor
     - field.field.paragraph.image_text.field_image
-    - field.field.paragraph.image_text.field_image_demo
     - field.field.paragraph.image_text.field_text
-    - field.field.paragraph.image_text.field_text_demo
     - field.field.paragraph.image_text.field_title
     - image.style.thumbnail
     - paragraphs.paragraphs_type.image_text
@@ -35,22 +33,8 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
-  field_image_demo:
-    weight: 1
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
   field_text:
     weight: 4
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
-  field_text_demo:
-    weight: 3
     settings:
       rows: 5
       placeholder: ''

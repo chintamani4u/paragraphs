@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.paragraph.text.field_anchor
     - field.field.paragraph.text.field_text
-    - field.field.paragraph.text.field_text_demo
     - paragraphs.paragraphs_type.text
   module:
     - text
@@ -29,12 +28,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_text_demo:
-    type: text_default
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    label: hidden
 hidden:
   created: true
   uid: true

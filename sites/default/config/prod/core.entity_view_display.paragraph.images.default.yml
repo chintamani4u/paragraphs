@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.images.field_images
-    - field.field.paragraph.images.field_images_demo
     - image.style.medium
     - paragraphs.paragraphs_type.images
   module:
@@ -24,14 +23,6 @@ content:
       image_link: file
     third_party_settings: {  }
     type: image
-  field_images_demo:
-    type: image
-    weight: 0
-    settings:
-      image_style: medium
-      image_link: file
-    third_party_settings: {  }
-    label: hidden
 hidden:
   created: true
   uid: true
