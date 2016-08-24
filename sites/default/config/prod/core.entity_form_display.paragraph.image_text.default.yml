@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.image_text.field_anchor
     - field.field.paragraph.image_text.field_image
     - field.field.paragraph.image_text.field_image_demo
+    - field.field.paragraph.image_text.field_image_text_layout
     - field.field.paragraph.image_text.field_text
     - field.field.paragraph.image_text.field_text_demo
     - field.field.paragraph.image_text.field_title
@@ -42,6 +43,11 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+  field_image_text_layout:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_text:
     weight: 4
     settings:
