@@ -1,0 +1,21 @@
+uuid: 4a2806d6-4763-4476-84a1-24167fd6e8ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.highlighted
+  module:
+    - text
+id: paragraph.highlighted.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: highlighted
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
