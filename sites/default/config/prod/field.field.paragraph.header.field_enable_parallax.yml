@@ -12,7 +12,7 @@ bundle: header
 label: 'Enable Parallax'
 description: '3D effect for the background when scrolling.'
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     value: 0

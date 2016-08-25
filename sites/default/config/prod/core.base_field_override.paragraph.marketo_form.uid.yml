@@ -1,13 +1,13 @@
-uuid: 68934178-57ec-4481-8a69-4d1e1dcae1aa
+uuid: 0b339ec8-a651-4b55-bffc-025a6a908b22
 langcode: en
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.images
-id: paragraph.images.uid
+    - paragraphs.paragraphs_type.marketo_form
+id: paragraph.marketo_form.uid
 field_name: uid
 entity_type: paragraph
-bundle: images
+bundle: marketo_form
 label: 'Authored by'
 description: 'The user ID of the paragraphs author.'
 required: false

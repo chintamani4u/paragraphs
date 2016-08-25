@@ -1,13 +1,13 @@
-uuid: 68934178-57ec-4481-8a69-4d1e1dcae1aa
+uuid: 16f937a6-61c0-41bf-a89b-d42223f342d5
 langcode: en
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.images
-id: paragraph.images.uid
+    - paragraphs.paragraphs_type.header
+id: paragraph.header.uid
 field_name: uid
 entity_type: paragraph
-bundle: images
+bundle: header
 label: 'Authored by'
 description: 'The user ID of the paragraphs author.'
 required: false

@@ -7,15 +7,15 @@ import '../../vendor/jquery-scrollspy'
 
 ($ => {
 
-    const header = $('.page-header')
+    let header = $('.field--name-field-menu')
 
     header.scrollspy({
         min: 490,
         max: 10000,
-        onEnter: function(element, position) {
+        onEnter: function() {
             header.addClass('fixed')
         },
-        onLeave: function(element, position) {
+        onLeave: function() {
             header.removeClass('fixed')
         }
     })
