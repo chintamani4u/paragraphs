@@ -1,10 +1,11 @@
 // Base
 @import "base/vars";
 @import "base/mixins";
+@import "base/fonts";
 @import "base/elements";
 @import "base/typography";
 @import "base/print";
-@import "base/icons";
+// @import "base/icons";
 
 // Components
 @import "components/admin-list";
@@ -40,15 +41,12 @@
 
 // Paragraphs
 @import "paragraphs/common";
-@import "paragraphs/campaign-header";
-@import "paragraphs/insights";
-@import "paragraphs/link-with-background";
+@import "paragraphs/image-text";
+@import "paragraphs/header";
 @import "paragraphs/tabs";
 
 // Theme
 @import "theme/campaign";
-// @import "theme/tieto-campaign";
-// @import "theme/pulp-fiction";
 
 // Vendor
 @import "vendor/hamburgers";

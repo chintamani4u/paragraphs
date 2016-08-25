@@ -13,7 +13,7 @@ entity_type: paragraph
 bundle: header
 label: Background
 description: 'Image or video.'
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

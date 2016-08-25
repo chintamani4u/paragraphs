@@ -1,0 +1,39 @@
+@font-face {
+	font-family: $helvetica-thin;
+	src: url('#{$fonts-directory}/HelveticaNeueLTCom-Th.eot?#iefix') format('embedded-opentype'),
+		 url('#{$fonts-directory}/HelveticaNeueLTCom-Th.woff') format('woff'),
+		 url('#{$fonts-directory}/HelveticaNeueLTCom-Th.ttf')  format('truetype'),
+		 url('#{$fonts-directory}/HelveticaNeueLTCom-Th.svg#HelveticaNeueLTCom-Th') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: $helvetica-light;
+	src: url('#{$fonts-directory}/HelveticaNeueLTCom-Lt.eot?#iefix') format('embedded-opentype'),
+		 url('#{$fonts-directory}/HelveticaNeueLTCom-Lt.woff') format('woff'),
+		 url('#{$fonts-directory}/HelveticaNeueLTCom-Lt.ttf')  format('truetype'),
+		 url('#{$fonts-directory}/HelveticaNeueLTCom-Lt.svg#HelveticaNeueLTCom-Lt') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: $helvetica-roman;
+	src: url('#{$fonts-directory}/HelveticaNeueLTCom-Roman.eot?#iefix') format('embedded-opentype'),
+		 url('#{$fonts-directory}/HelveticaNeueLTCom-Roman.woff') format('woff'),
+		 url('#{$fonts-directory}/HelveticaNeueLTCom-Roman.ttf')  format('truetype'),
+		 url('#{$fonts-directory}/HelveticaNeueLTCom-Roman.svg#HelveticaNeueLTCom-Roman') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: $helvetica-bold;
+	src: url('#{$fonts-directory}/HelveticaNeueLTCom-Hv.eot?#iefix') format('embedded-opentype'),
+		 url('#{$fonts-directory}/HelveticaNeueLTCom-Hv.woff') format('woff'),
+		 url('#{$fonts-directory}/HelveticaNeueLTCom-Hv.ttf')  format('truetype'),
+		 url('#{$fonts-directory}/HelveticaNeueLTCom-Hv.svg#HelveticaNeueLTCom-Hv') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

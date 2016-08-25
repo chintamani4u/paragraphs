@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * HEADER paragraph template.
+ *
+ * @todo replace current parallax/video libraries with ONE single library,
+ *       that supports both images and video!
+ */
+#}
+{%
+set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  'paragraph--background-' ~ campaign.background.type|clean_class,
+  campaign.enable_parallax ? 'parallax-enabled',
+]
+%}
+
+{% set attributes = attributes.addClass(classes) %}
+
+{# Image background #}
+{% if campaign.background.type == 'image' %}
+
+  {% if campaign.enable_parallax %}
+    {{ attach_library('tieto_admin/parallax') }}
+    <div{{ attributes }} data-parallax="scroll" data-image-src="{{ campaign.background.url }}">
+  {% else %}
+    <div{{ attributes }} style="background-image: url({{ campaign.background.url }})">
+  {% endif %}
+      <div class="background-overlay"></div>
+      <div class="paragraph-inner">
+        {{ content }}
+      </div>
+    </div>
+
+{# Video background #}
+{% elseif campaign.background.type == 'video' %}
+  {{ attach_library('tieto_admin/background-video') }}
+
+  <div{{ attributes }}>
+    <div class="background-overlay"></div>
+    <div class="video-outer">
+      <div class="video-wrapper">
+
+        <video class="video" loop muted autoplay>
+            <source src="{{ campaign.background.url }}" type="{{ campaign.background.mime }}">
+        </video>
+
+        <div class="paragraph-inner">
+          {{ content }}
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% endif %}
+
