@@ -38,3 +38,4 @@ permissions:
   - 'view paragraph content simple'
   - 'view paragraph content text_box'
   - 'view paragraph content text_boxes'
+  - 'view paragraph content marketo_form'
