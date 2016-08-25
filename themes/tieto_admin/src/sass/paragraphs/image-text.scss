@@ -1,0 +1,37 @@
+.paragraph--type--image-text {
+  
+  padding: 90px 30px;
+  background-color: white;
+  margin: 0 auto;
+  max-width: 800px;
+
+  .field--name-field-title {
+    font-size: 1.875em;
+    font-weight: bold;
+    line-height: normal;
+    margin: 0 auto 45px auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .field--name-field-image {
+    @include md {
+      transform: translateX(-2em);
+      margin-top: 5em;
+      width: 50%;
+      float: right;
+    }
+
+  }
+
+  .field--name-field-text {
+    padding: 2em 3em;
+    background: $tieto-lightblue;
+
+    @include md {
+      padding-right: 6em;
+      width: 50%;
+      display: inline-block;
+    }
+  }
+}
