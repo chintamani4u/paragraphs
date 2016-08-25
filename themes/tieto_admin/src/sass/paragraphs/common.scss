@@ -1,3 +1,12 @@
+.paragraph {
+	@include clearfix;
+}
+
+.paragraph-inner {
+	max-width: $page-max-width;
+	margin: 0 auto;
+}
+
 body.toolbar-vertical {
 	@include breakpoint-max(md) {
 		#toolbar-administration {
@@ -7,17 +16,17 @@ body.toolbar-vertical {
 			right: 0;
 		}
 	}
-	.paragraphs-page .page-header {
+	.tieto-campaign-page .page-header {
 		top: 39px;
 	}
 }
 
 body.toolbar-horizontal {
-	.paragraphs-page .page-header {
+	.tieto-campaign-page .page-header {
 		top: 39px;
 	}
 
-	&.toolbar-tray-open .paragraphs-page .page-header {
+	&.toolbar-tray-open .tieto-campaign-page .page-header {
 		top: 78px;
 	}
 }

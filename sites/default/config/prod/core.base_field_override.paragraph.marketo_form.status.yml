@@ -1,0 +1,22 @@
+uuid: 1b637e3d-8683-41fe-bb69-30528c9271d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.marketo_form
+id: paragraph.marketo_form.status
+field_name: status
+entity_type: paragraph
+bundle: marketo_form
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

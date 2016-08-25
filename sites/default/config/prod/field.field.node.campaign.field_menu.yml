@@ -1,0 +1,23 @@
+uuid: ecbadb52-2edb-474d-a5fd-4b142248707b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_menu
+    - node.type.campaign
+  module:
+    - link
+id: node.campaign.field_menu
+field_name: field_menu
+entity_type: node
+bundle: campaign
+label: Menu
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

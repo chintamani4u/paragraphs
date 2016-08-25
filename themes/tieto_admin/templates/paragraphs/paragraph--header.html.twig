@@ -13,7 +13,7 @@ set classes = [
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   'paragraph--background-' ~ campaign.background.type|clean_class,
-  campaign.enable_parallax ? 'parallax-enabled',
+  campaign.enable_parallax ? 'parallax-enabled' : 'parallax-disabled',
 ]
 %}
 
@@ -39,7 +39,6 @@ set classes = [
   {{ attach_library('tieto_admin/background-video') }}
 
   <div{{ attributes }}>
-    <div class="background-overlay"></div>
     <div class="video-outer">
       <div class="video-wrapper">
 

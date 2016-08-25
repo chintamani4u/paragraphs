@@ -1,0 +1,43 @@
+.node--type-campaign {
+	position: relative;
+
+	.field--name-field-menu {
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 1000;
+		padding: 1em;
+		font-size: .9em;
+		width: 100%;
+	    text-align: right;
+		transition: background .2s;
+
+		&.fixed {
+			background: rgba(0, 0, 0, .5);
+		}
+
+		.field__item {
+			display: inline-block;
+			padding: .5em;
+		}
+
+		a {
+			font-family: $helvetica-bold;
+			color: white;
+			text-decoration: none;
+			display: block;
+			border-bottom: 2px solid transparent;
+			transition: border-color .2s;
+
+			&:hover {
+				border-color: white;
+			}
+		}
+
+		@include breakpoint(md) {
+			&.fixed {
+				background: rgba(0, 0, 0, .5);
+			}
+		}
+	}
+}

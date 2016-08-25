@@ -1,0 +1,21 @@
+uuid: 3593e871-b2b4-4cf4-9f56-114380e3feff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_marketo_form
+    - paragraphs.paragraphs_type.marketo_form
+  module:
+    - marketo_form
+id: paragraph.marketo_form.field_marketo_form
+field_name: field_marketo_form
+entity_type: paragraph
+bundle: marketo_form
+label: 'Marketo Form'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: marketo_form
