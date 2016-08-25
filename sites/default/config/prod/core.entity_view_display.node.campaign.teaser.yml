@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.campaign.field_machine_name
+    - field.field.node.campaign.field_menu
     - field.field.node.campaign.field_paragraphs
     - node.type.campaign
   module:
@@ -16,6 +17,7 @@ mode: teaser
 content: {  }
 hidden:
   field_machine_name: true
+  field_menu: true
   field_paragraphs: true
   langcode: true
   links: true

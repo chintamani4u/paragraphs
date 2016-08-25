@@ -4,18 +4,31 @@ status: true
 dependencies:
   config:
     - field.field.node.campaign.field_machine_name
+    - field.field.node.campaign.field_menu
     - field.field.node.campaign.field_paragraphs
     - node.type.campaign
   module:
     - entity_reference_revisions
+    - link
     - user
 id: node.campaign.default
 targetEntityType: node
 bundle: campaign
 mode: default
 content:
+  field_menu:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
   field_paragraphs:
-    weight: 102
+    weight: 1
     label: hidden
     settings:
       view_mode: default
