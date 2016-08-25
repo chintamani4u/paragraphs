@@ -5,12 +5,13 @@ dependencies:
   config:
     - field.field.paragraph.text_boxes.field_anchor
     - field.field.paragraph.text_boxes.field_boxes_per_row
-    - field.field.paragraph.text_boxes.field_paragraph_class
+    - field.field.paragraph.text_boxes.field_image
     - field.field.paragraph.text_boxes.field_text_boxes
     - field.field.paragraph.text_boxes.field_title
-    - field.field.paragraph.text_boxes.field_title_class
+    - image.style.thumbnail
     - paragraphs.paragraphs_type.text_boxes
   module:
+    - image
     - text
 id: paragraph.text_boxes.default
 targetEntityType: paragraph
@@ -30,11 +31,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
-  field_paragraph_class:
-    weight: 1
-    settings: {  }
+  field_image:
+    weight: 7
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
-    type: options_select
+    type: image_image
   field_text_boxes:
     weight: 5
     settings:
@@ -49,11 +52,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-  field_title_class:
-    weight: 4
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
   translation:
     weight: 6
     settings: {  }
