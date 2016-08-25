@@ -79,6 +79,7 @@ function campaign_pages_preprocess_paragraph(&$variables) {
     'field_image_text_layout' => [
       0 => 'image_1st',
       1 => 'text_1st',
+      2 => 'text_1st_enhanced',
     ],
     'field_simple_layout' => [
       0 => 'one_column',
