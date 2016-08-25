@@ -1,13 +1,13 @@
-uuid: 295735a5-72f1-451e-984c-7778431fd6fa
+uuid: 832a95dd-8b4f-467b-b568-a921bb4a7ce6
 langcode: en
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.images
-id: paragraph.images.created
+    - paragraphs.paragraphs_type.text_box
+id: paragraph.text_box.created
 field_name: created
 entity_type: paragraph
-bundle: images
+bundle: text_box
 label: 'Authored on'
 description: 'The time that the Paragraph was created.'
 required: false

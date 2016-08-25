@@ -1,15 +1,15 @@
-uuid: 295735a5-72f1-451e-984c-7778431fd6fa
+uuid: 28c554eb-ea30-4e54-b176-66fb3b81ddc0
 langcode: en
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.images
-id: paragraph.images.created
+    - node.type.campaign
+id: node.campaign.created
 field_name: created
-entity_type: paragraph
-bundle: images
+entity_type: node
+bundle: campaign
 label: 'Authored on'
-description: 'The time that the Paragraph was created.'
+description: 'The time that the node was created.'
 required: false
 translatable: false
 default_value: {  }
