@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.images.field_anchor
     - field.field.paragraph.images.field_images
+    - field.field.paragraph.images.field_title
     - image.style.medium
     - paragraphs.paragraphs_type.images
   module:
@@ -24,6 +25,13 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+  field_title:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
 hidden:
   created: true
   field_anchor: true

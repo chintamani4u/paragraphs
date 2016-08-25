@@ -75,10 +75,11 @@ function campaign_pages_preprocess_paragraph(&$variables) {
       2 => 'text_1st_enhanced',
     ],
     'field_simple_layout' => [
-      0 => 'one_column',
-      1 => 'two_column_title_1st',
-      2 => 'two_column_content_1st',
-      3 => 'separator',
+      0 => 'one-column-clean',
+      1 => 'one-column-shaded',
+      2 => 'two-column-title-1st-inverse',
+      3 => 'two-column-content-1st-inverse',
+      4 => 'separator-clean',
     ],
     'field_text_boxes_layout' => [
       0 => 'none',
@@ -121,8 +122,7 @@ function campaign_pages_preprocess_paragraph__header(&$variables) {
   }
 
   // Add variables to theme.
-  $variables['campaign'] = [
-
+  campaign_pages_add_template_variable($variables, [
     'background' => [
       'type' => $type ?? 'image',
       'url' => file_create_url($file_uri),
@@ -130,6 +130,67 @@ function campaign_pages_preprocess_paragraph__header(&$variables) {
     ],
 
     'enable_parallax' => $paragraph->field_enable_parallax->value,
-  ];
+  ]);
 
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Preprocess for Text Box paragraph type.
+ */
+function campaign_pages_preprocess_paragraph__text_box(&$variables) {
+  $paragraph = &$variables['paragraph'];
+
+  campaign_pages_add_template_variable($variables, [
+    'boxes_per_row' => $paragraph->getParentEntity()->field_boxes_per_row->value,
+  ]);
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Preprocess for Paragraphs Entity reference field in Text Boxes paragraph type.
+ */
+function campaign_pages_preprocess_field__paragraph__field_paragraphs__text_boxes(&$variables) {
+  $entity = $variables['element']['#object'];
+
+  campaign_pages_add_template_variable($variables, [
+    'boxes_per_row' => $entity->field_boxes_per_row->value,
+  ]);
+}
+
+/**
+ * Appends a campaign_pages related variable to the same place:
+ * $variables['campaign'][...]
+ * @internal
+ *
+ * @param array &$variables
+ *   The core $variables passed by reference.
+ *
+ * @param array $data
+ *   New data in array format, which will be passed to the template.
+ *
+ * @return array
+ *   The new data.
+ */
+function campaign_pages_add_template_variable(&$variables, $data = null) {
+  if (!$data) {
+    return FALSE;
+  }
+
+  // Root of campaign_pages related data in TWIG.
+  // Example usage:
+  // {{ campaign.background.url }}
+  // {{ campaign.layout }}
+  static $key = 'campaign';
+
+  if (!isset($variables[$key])) {
+    $variables[$key] = $data;
+  }
+  else {
+    $variables[$key][] = $data;
+  }
+
+  return $data;
 }

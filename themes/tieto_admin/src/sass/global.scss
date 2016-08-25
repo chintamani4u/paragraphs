@@ -4,7 +4,8 @@
 @import "base/fonts";
 @import "base/elements";
 @import "base/typography";
-@import "base/print";
+// @import "base/print";
+@import "base/grid";
 // @import "base/icons";
 
 // Components
@@ -44,12 +45,15 @@
 
 // Paragraphs
 @import "paragraphs/common";
+@import "paragraphs/images";
 @import "paragraphs/image-text";
 @import "paragraphs/header";
 @import "paragraphs/tabs";
+@import "paragraphs/simple";
+@import "paragraphs/text-boxes";
 
 // Theme
-@import "theme/campaign";
+@import "theme/tieto-campaign";
 
 // Vendor
 @import "vendor/hamburgers";

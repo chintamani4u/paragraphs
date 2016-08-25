@@ -13,16 +13,19 @@ settings:
   allowed_values:
     -
       value: 0
-      label: 'One column'
+      label: 'One column - Clean'
     -
       value: 1
-      label: 'Two column (Title first)'
+      label: 'One column - Shaded'
     -
       value: 2
-      label: 'Two column (Content first)'
+      label: 'Two column (Title first) - Inverse'
     -
       value: 3
-      label: 'Separator (Title only)'
+      label: 'Two column (Content first) - Inverse'
+    -
+      value: 4
+      label: 'Separator (Title only) - Clean'
   allowed_values_function: ''
 module: options
 locked: false

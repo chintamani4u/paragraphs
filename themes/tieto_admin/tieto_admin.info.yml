@@ -9,7 +9,7 @@ libraries:
  - tieto_admin/global
 
 ckeditor_stylesheets:
-  - dist/css/campaign.css
+  - dist/css/wysiwyg.css
 
 libraries-override:
 

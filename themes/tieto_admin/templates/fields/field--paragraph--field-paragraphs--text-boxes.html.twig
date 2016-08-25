@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ */
+#}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'clearfix'
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {% for item in items %}
+    {# @fixme ugly #}
+    {% if (campaign.boxes_per_row % loop.index == 0) and campaign.boxes_per_row != loop.index %}
+      <div class="clearfix"></div>
+    {% endif %}
+  {{ item.content }}
+  {% endfor %}
+</div>

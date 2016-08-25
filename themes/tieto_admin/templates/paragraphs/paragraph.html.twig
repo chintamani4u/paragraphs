@@ -44,8 +44,8 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
 
-<div {{ attributes.addClass(classes) }}>
-	<section class="paragraph-inner">
-	    {{ content|without('field_anchor') }}
-	</section>
+<div{{ attributes.addClass(classes) }}>
+	<div class="paragraph-inner">
+	    {{ content }}
+	</div>
 </div>

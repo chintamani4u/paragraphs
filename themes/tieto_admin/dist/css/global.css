@@ -260,64 +260,23 @@ details summary:hover {
   margin-bottom: 80px;
   margin-bottom: 6.152rem; }
 
-@media print {
-  * {
-    background-color: transparent !important;
-    color: #000 !important;
-    /* Black prints faster: h5bp.com/s */
-    box-shadow: none !important;
-    text-shadow: none !important; }
-  body {
-    padding-top: 0; }
-  a,
-  a:visited {
-    text-decoration: underline; }
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid; }
-  thead {
-    display: table-header-group;
-    /* h5bp.com/t */ }
-  tr,
-  img {
-    page-break-inside: avoid; }
-  img {
-    max-width: 100% !important; }
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3; }
-  h2,
-  h3 {
-    page-break-after: avoid; }
-  a,
-  .link {
-    color: #000;
-    text-decoration: underline; }
-  .button, .button--primary {
-    background: none !important; }
-  .messages {
-    border-width: 1px;
-    border-color: #999; }
-  .is-collapse-enabled .tabs {
-    max-height: 999em; }
-  .is-horizontal .tabs__tab {
-    margin: 0 4px !important;
-    border-radius: 4px 4px 0 0 !important; }
-  .dropbutton-multiple .dropbutton .secondary-action {
-    display: block; }
-  .js .dropbutton-widget,
-  .js td .dropbutton-widget {
-    position: relative; }
-  .js .dropbutton .dropbutton-toggle {
-    display: none; }
-  .js .dropbutton-multiple .dropbutton-widget {
-    background: none;
-    border-radius: 4px; }
-  input.form-autocomplete, input.form-text, input.form-tel, input.form-email, input.form-url, input.form-search, input.form-number, input.form-color, input.form-file, textarea.form-textarea, select.form-select {
-    border-width: 1px; } }
+.col-1 {
+  width: 100%; }
+
+.col-2 {
+  width: 50%; }
+
+.col-3 {
+  width: 33.3333333333%; }
+
+.col-4 {
+  width: 25%; }
+
+.col-5 {
+  width: 20%; }
+
+.col-6 {
+  width: 16.6666666667%; }
 
 /**
  * Admin lists.
@@ -2586,12 +2545,13 @@ form.user-login-form {
         .node--type-campaign .field--name-field-menu :link:hover {
           border-color: white; } }
 
-.paragraph:before, .paragraph:after {
-  content: "";
-  display: table; }
-
-.paragraph:after {
-  clear: both; }
+.paragraph {
+  padding: 40px 0; }
+  .paragraph:before, .paragraph:after {
+    content: "";
+    display: table; }
+  .paragraph:after {
+    clear: both; }
 
 .paragraph-inner {
   max-width: 1000px;
@@ -2612,6 +2572,11 @@ body.toolbar-horizontal .tieto-campaign-page .page-header {
 
 body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .page-header {
   top: 78px; }
+
+.paragraph--type--images .field--name-field-images {
+  text-align: center; }
+  .paragraph--type--images .field--name-field-images .field__item {
+    display: inline-block; }
 
 .paragraph--type--image-text {
   background-color: white;
@@ -2672,7 +2637,8 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .page-header {
  * HEADER paragraph
  */
 .paragraph--type--header {
-  position: relative; }
+  position: relative;
+  padding: 0; }
   .paragraph--type--header .background-overlay {
     background-color: rgba(103, 175, 225, 0.5);
     position: absolute;
@@ -2792,57 +2758,33 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .page-header {
     border-color: white;
     color: white; }
 
-/**
- * CUSTOM CSS FOR CAMPAIGN PAGES
- *
- * @todo move this
- */
-/* WYSIWYG Styles */
-span.tieto-silver {
-  color: #969696; }
+.paragraph--type--simple.layout--one-column-shaded {
+  background: #cde6f5; }
 
-span.tieto-blue {
-  color: #67afe1; }
+.paragraph--type--text-boxes.layout--text_icon .paragraph--type--text-box {
+  text-align: center; }
 
-span.tieto-orange {
-  color: #e57c1c; }
+.paragraph--type--text-box {
+  float: left;
+  padding: 1em; }
+  .paragraph--type--text-box .field--name-field-image {
+    display: inline-block; }
 
-span.tieto-white {
-  color: #fff; }
+.campaign-title, .campaign-title-center, .paragraph--type--images .field--name-field-title, .paragraph--type--simple .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title, .campaign-title-item, .paragraph--type--text-box .field--name-field-title {
+  margin-bottom: 1em;
+  font-family: "HelveticaBold";
+  letter-spacing: -1px; }
 
-/* field_paragraph_class */
-#page-tieto .paragraph.tieto-silver,
-.field--name-field-paragraph-class option[value="tieto-silver"] {
-  background-color: #969696; }
+.campaign-title-center, .paragraph--type--images .field--name-field-title, .paragraph--type--simple .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title {
+  font-size: 2em;
+  color: #000;
+  text-align: center; }
 
-#page-tieto .paragraph.tieto-blue,
-.field--name-field-paragraph-class option[value="tieto-blue"] {
-  background-color: #67afe1; }
-
-#page-tieto .paragraph.tieto-orange,
-.field--name-field-paragraph-class option[value="tieto-orange"] {
-  background-color: #e57c1c; }
-
-#page-tieto .paragraph.tieto-white,
-.field--name-field-paragraph-class option[value="tieto-white"] {
-  background-color: #fff; }
-
-/* field_title_class */
-#page-tieto .paragraph .field--name-field-title.tieto-silver,
-.field--name-field-title-class option[value="tieto-silver"] {
-  color: #969696; }
-
-#page-tieto .paragraph .field--name-field-title.tieto-blue,
-.field--name-field-title-class option[value="tieto-blue"] {
-  color: #67afe1; }
-
-#page-tieto .paragraph .field--name-field-title.tieto-orange,
-.field--name-field-title-class option[value="tieto-orange"] {
-  color: #e57c1c; }
-
-#page-tieto .paragraph .field--name-field-title.tieto-white,
-.field--name-field-title-class option[value="tieto-white"] {
-  color: #fff; }
+.campaign-title-item, .paragraph--type--text-box .field--name-field-title {
+  font-size: 1.2em;
+  color: #67afe1;
+  text-align: center;
+  line-height: 1.5; }
 
 /*!
  * Hamburgers

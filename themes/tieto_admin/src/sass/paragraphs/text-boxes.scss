@@ -1,0 +1,30 @@
+// Text Boxes
+.paragraph--type--text-boxes {
+
+	// Main Title
+	.field--name-field-title {
+		@extend .campaign-title-center;
+	}
+
+	// Layouts
+	&.layout--text_icon .paragraph--type--text-box {
+		text-align: center
+	}
+
+}
+
+// Text Boxes -> Text Box
+.paragraph--type--text-box {
+	float: left;
+	padding: 1em;
+
+	// Text Box item title
+	.field--name-field-title {
+		@extend .campaign-title-item;
+	}
+
+	// Image
+	.field--name-field-image {
+		display: inline-block;
+	}
+}

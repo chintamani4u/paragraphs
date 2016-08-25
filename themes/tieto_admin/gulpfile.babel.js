@@ -17,7 +17,7 @@ import Elixir from 'laravel-elixir'
  * Configuration
  */
 Elixir.config.sourcemaps = true
-Elixir.config.notifications = true
+Elixir.config.notifications = false
 Elixir.config.assetsPath = 'src'
 Elixir.config.publicPath = 'dist'
 Elixir.config.viewPath = 'templates'
@@ -39,7 +39,7 @@ Elixir(mix => {
         .sass('global.scss')
         .sass('components/dialog.scss')
         .sass('components/vertical-tabs.scss')
-        .sass('theme/campaign.scss')
+        .sass('theme/wysiwyg.scss')
         .sass('theme/install-page.scss')
         .sass('theme/maintenance-page.scss')
         .sass('vendor/jquery.ui.theme.scss')

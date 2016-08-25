@@ -1,0 +1,17 @@
+// Generate simple grid system.
+// @see http://codepen.io/edmoore/pen/qFAGd
+$max-columns: 6;
+$col-widths: ();
+
+@for $i from 1 through $max-columns {
+    $w: (1/$i);
+
+    // If the width doesn't already exist
+    @if not index($col-widths, $w) {
+        .col-#{$i} {
+            width: $w * 100%;
+        }
+        // Add the width to the array
+        $col-widths: append($col-widths, $w, comma);
+    }
+}

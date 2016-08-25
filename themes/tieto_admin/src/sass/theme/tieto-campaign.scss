@@ -1,87 +1,23 @@
-// /**
-//  * TIETO CAMPAIGN SITES
-//  */
-// #page-tieto {
-// 	position: relative;
+// Campaign Sites
+// @todo simplify
 
-// 	.field--name-field-title,
-// 	.field--name-field-secondary-title {
-// 		text-align: center;
-// 	}
+.campaign-title {
+  margin-bottom: 1em;
+  font-family: $helvetica-bold;
+  letter-spacing: -1px;
+}
 
-// 	@include breakpoint(md) {
-// 		.paragraph--type--campaign-header-video,
-// 		.paragraph--type--campaign-header {
-// 			.field--name-field-title,
-// 			.field--name-field-secondary-title {
-// 				text-align: left;
-// 			}
-// 		}
-// 	}
+.campaign-title-center {
+  @extend .campaign-title;
+  font-size: 2em;
+  color: #000;
+  text-align: center;
+}
 
-// 	.paragraph {
-// 		background-color: white;
-// 		clear: both;
-// 	}
-
-
-
-// 	#contact-message-contact-us-form {
-// 		position: relative;
-// 		@include md {
-// 			.form-item-mail,
-// 			.form-item-name,
-// 			.field--name-field-company,
-// 			.field--name-message {
-// 				width: 50%;
-// 				display: inline-block;
-// 				padding: 0 1em;
-// 			}
-// 			.field--name-message {
-// 				position: absolute; // sorry :(
-// 				top: 0;
-// 				right: 0;
-// 			}
-// 			.form-actions {
-// 				clear: both;
-// 			}
-// 		}
-
-// 		#edit-submit {
-// 			color: white;
-// 		    display: inline-block;
-// 		    padding: 1em 2em;
-// 		    text-transform: uppercase;
-// 		    background: rgba(0, 0, 0, 0.4);
-// 		    border-radius: 3px;
-// 		    border: 1px solid white;
-// 		    font-size: .9em;
-// 		    transition: background .3s;
-// 		    &:hover, &:focus, &:active {
-// 		    	text-decoration: none;
-// 		    	background: rgba(0, 0, 0, .6);
-// 		    }
-// 		}
-// 		#edit-preview {
-// 			display: none;
-// 		}
-// 	}
-
-// 	.block-contact-block {
-// 		background: white;
-// 		padding: 2em;
-// 		@include clearfix;
-// 	}
-
-// 	.block-contact-block .title {
-// 		text-align: center;
-// 	}
-// 	.block-contact-block .title,
-// 	.field--name-field-title {
-// 		font-size: 3em;
-// 		font-weight: bold;
-// 		line-height: normal;
-// 		margin-bottom: .8em;
-// 	}
-
-// }
+.campaign-title-item {
+  @extend .campaign-title;
+  font-size: 1.2em;
+  color: $tieto-blue;
+  text-align: center;
+  line-height: 1.5;
+}

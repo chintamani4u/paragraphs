@@ -48,10 +48,10 @@
 }
 
 // Mixin that will include the fall back px declaration as well as the calculated rem value.
-@mixin font-size($size) {
-  font-size: $size;
-  font-size: calculateRem($size);
-}
+// @mixin font-size($size) {
+//   font-size: $size;
+//   font-size: calculateRem($size);
+// }
 
 @mixin vertical-align {
   position: relative;
@@ -72,10 +72,10 @@
   list-style: none;
 }
 
-@mixin page-title {
-  font-weight: bold;
-  padding: .2em 0;
-  border-bottom: 2px solid $grey-200;
-  color: $input-color;
-  line-height: 1.3em;
-}
+// @mixin page-title {
+//   font-weight: bold;
+//   padding: .2em 0;
+//   border-bottom: 2px solid $grey-200;
+//   color: $input-color;
+//   line-height: 1.3em;
+// }

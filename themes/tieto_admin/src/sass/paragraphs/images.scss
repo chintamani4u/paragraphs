@@ -1,0 +1,13 @@
+.paragraph--type--images {
+
+	.field--name-field-title {
+		@extend .campaign-title-center;
+	}
+
+	.field--name-field-images {
+		text-align: center;
+		.field__item {
+			display: inline-block;
+		}
+	}
+}
