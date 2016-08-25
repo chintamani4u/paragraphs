@@ -43,9 +43,8 @@ set classes = [
 view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
-{% set anchor = content.field_anchor['#items'].getValue()[0].value %}
 
-<div {{ attributes.addClass(classes).setAttribute('id', anchor ? anchor : '') }}>
+<div {{ attributes.addClass(classes) }}>
 	<section class="paragraph-inner">
 	    {{ content|without('field_anchor') }}
 	</section>
