@@ -6,6 +6,7 @@
  */
 
 use Drupal\file\Entity\File;
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
@@ -60,7 +61,7 @@ function campaign_pages_preprocess_paragraph(&$variables) {
 
   // Set Anchor variable for the template.
   if ($paragraph->hasField('field_anchor')) {
-    $variables['attributes']['id'] = $paragraph->field_anchor->value;
+    $variables['attributes']['id'] = Html::getId($paragraph->field_anchor->value);
   }
 
   // Define layout CSS classes.
