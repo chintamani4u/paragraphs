@@ -1,9 +1,19 @@
+{#
+/**
+ * @file
+ * HEADER paragraph template.
+ *
+ * @todo replace current parallax/video libraries with ONE single library,
+ *       that supports both images and video!
+ */
+#}
 {%
 set classes = [
   'paragraph',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  campaign.enable_parallax ? 'parallax-enabled'
+  'paragraph--background-' ~ campaign.background.type|clean_class,
+  campaign.enable_parallax ? 'parallax-enabled',
 ]
 %}
 
@@ -14,14 +24,14 @@ set classes = [
 
   {% if campaign.enable_parallax %}
     {{ attach_library('tieto_admin/parallax') }}
-
     <div{{ attributes }} data-parallax="scroll" data-image-src="{{ campaign.background.url }}">
   {% else %}
-    <div{{ attributes }} style="background-image: url({{ background }})">
+    <div{{ attributes }} style="background-image: url({{ campaign.background.url }})">
   {% endif %}
-      <section class="paragraph-inner">
+      <div class="background-overlay"></div>
+      <div class="paragraph-inner">
         {{ content }}
-      </section>
+      </div>
     </div>
 
 {# Video background #}
@@ -29,10 +39,11 @@ set classes = [
   {{ attach_library('tieto_admin/background-video') }}
 
   <div{{ attributes }}>
-    <section id="video-outer">
-      <div id="video-wrap">
+    <div class="background-overlay"></div>
+    <div class="video-outer">
+      <div class="video-wrapper">
 
-        <video id="video" loop muted autoplay>
+        <video class="video" loop muted autoplay>
             <source src="{{ campaign.background.url }}" type="{{ campaign.background.mime }}">
         </video>
 
@@ -41,7 +52,7 @@ set classes = [
         </div>
 
       </div>
-    </section>
+    </div>
   </div>
 {% endif %}
 
