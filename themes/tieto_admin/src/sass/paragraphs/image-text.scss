@@ -7,29 +7,43 @@
 
   &.layout--text_1st {
 
+    @media (max-width: 766px) {
 
-
-    .field--name-field-title {
-      color: $text-color;
-      font-size: 3em;
-      font-weight: bold;
-      letter-spacing: -0.03em;
-      line-height: 1em;
-      margin-bottom: 60px;
-      margin-top: 0;
-      width: 50%;
+      .field--name-field-title {
+        color: $text-color;
+        font-size: 3em;
+        font-weight: bold;
+        letter-spacing: -0.03em;
+        line-height: 1em;
+        margin-bottom: 60px;
+        margin-top: 0;
+      }
     }
 
-    .field--name-field-image {
-      max-width: 50%;
-      float: right;
-      background-color: red;
-      margin-top: -13em;
-   
-    }
+  @media (min-width: 767px) {
 
-    .field--name-field-text {
-      width: 50%;
+      .field--name-field-title {
+        color: $text-color;
+        font-size: 3em;
+        font-weight: bold;
+        letter-spacing: -0.03em;
+        line-height: 1em;
+        margin-bottom: 60px;
+        margin-top: 0;
+        width: 50%;
+      }
+
+      .field--name-field-image {
+        max-width: 50%;
+        float: right;
+        background-color: red;
+        margin-top: -10em;   
+      }
+
+      .field--name-field-text {
+        width: 50%;
+      }
+
     }
 
   }

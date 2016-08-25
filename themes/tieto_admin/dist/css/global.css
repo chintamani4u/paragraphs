@@ -2571,22 +2571,32 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .page-header {
   margin: 0 auto;
   max-width: 800px;
   padding: 90px 30px; }
-  .paragraph--type--image-text.layout--text_1st .field--name-field-title {
-    color: #58595b;
-    font-size: 3em;
-    font-weight: bold;
-    letter-spacing: -0.03em;
-    line-height: 1em;
-    margin-bottom: 60px;
-    margin-top: 0;
-    width: 50%; }
-  .paragraph--type--image-text.layout--text_1st .field--name-field-image {
-    max-width: 50%;
-    float: right;
-    background-color: red;
-    margin-top: -13em; }
-  .paragraph--type--image-text.layout--text_1st .field--name-field-text {
-    width: 50%; }
+  @media (max-width: 766px) {
+    .paragraph--type--image-text.layout--text_1st .field--name-field-title {
+      color: #58595b;
+      font-size: 3em;
+      font-weight: bold;
+      letter-spacing: -0.03em;
+      line-height: 1em;
+      margin-bottom: 60px;
+      margin-top: 0; } }
+  @media (min-width: 767px) {
+    .paragraph--type--image-text.layout--text_1st .field--name-field-title {
+      color: #58595b;
+      font-size: 3em;
+      font-weight: bold;
+      letter-spacing: -0.03em;
+      line-height: 1em;
+      margin-bottom: 60px;
+      margin-top: 0;
+      width: 50%; }
+    .paragraph--type--image-text.layout--text_1st .field--name-field-image {
+      max-width: 50%;
+      float: right;
+      background-color: red;
+      margin-top: -10em; }
+    .paragraph--type--image-text.layout--text_1st .field--name-field-text {
+      width: 50%; } }
   .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title {
     font-size: 1.875em;
     font-weight: bold;
