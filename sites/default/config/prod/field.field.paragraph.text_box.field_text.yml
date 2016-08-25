@@ -1,16 +1,16 @@
-uuid: 5e306ec3-2368-419a-a21c-ef877770464b
+uuid: 644a326c-dce3-4dd7-ac38-cc9bdf8b84d1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_text_boxes
-    - paragraphs.paragraphs_type.text_boxes
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.text_box
   module:
     - text
-id: paragraph.text_boxes.field_text_boxes
-field_name: field_text_boxes
+id: paragraph.text_box.field_text
+field_name: field_text
 entity_type: paragraph
-bundle: text_boxes
+bundle: text_box
 label: Text
 description: ''
 required: false

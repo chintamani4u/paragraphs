@@ -32,4 +32,5 @@ permissions:
   - 'view paragraph content header'
   - 'view paragraph content highlighted'
   - 'view paragraph content simple'
+  - 'view paragraph content text_box'
   - 'view paragraph content text_boxes'
