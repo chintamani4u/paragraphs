@@ -1,43 +1,115 @@
 .node--type-campaign {
-	position: relative;
 
+	.hamburger {
+		padding: 0;
+		width: $header-height;
+		height: $header-height;
+		position: absolute;
+	    top: 0;
+	    right: 0;
+
+		@include md {
+			display: none;
+		}
+
+		@include breakpoint-max(md) {
+			&.is-active + .campaign-menu {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
+		&:active, &:focus {
+			outline: none;
+		}
+
+		.hamburger-inner {
+			&, &::before, &::after {
+				width: 30px;
+				background-color: white;
+			}
+		}
+
+		.hamburger-box {
+			width: 30px;
+			height: 29px;
+		}
+
+		.hamburger-toggle {
+			color: white;
+			width: $header-height;
+			height: $header-height;
+			&:hover, &:active, &:focus {
+				text-decoration: none;
+			}
+			@include md {
+				display: none;
+			}
+		}
+	}
+
+	// Menu field wrapper.
 	.field--name-field-menu {
-		position: fixed;
-		top: 0;
+		position: absolute;
+		top: $header-height;
 		right: 0;
 		z-index: 1000;
-		padding: 1em;
-		font-size: .9em;
 		width: 100%;
-	    text-align: right;
-		transition: background .2s;
 
+		// Mobile styles for Menu field wrapper.
+		@include breakpoint-max(md) {
+			background: rgba(0, 0, 0, 0.7);
+			opacity: 0;
+			visibility: hidden;
+			will-change: opacity;
+			transition: opacity .2s, visibility .2s;
+			overflow-y: hidden;
+			backface-visibility: hidden;
+		}
+
+		// Desktop styles for Menu field wrapper.
+		@include md {
+			position: fixed;
+			top: 0;
+			left: 0;
+			padding: 1em;
+			font-size: .9em;
+			text-align: right;
+			transition: background .2s;
+
+			.campaign-menu-link {
+				display: inline-block;
+			}
+		}
+
+		> ul {
+			margin: 0;
+			padding: 0;
+		}
+
+		// When scrolling past Header, we need a background.
 		&.fixed {
 			background: rgba(0, 0, 0, .5);
 		}
 
-		.field__item {
-			display: inline-block;
-			padding: .5em;
-		}
-
-		a {
+		// Menu links <a> tags
+		:link {
 			font-family: $helvetica-bold;
 			color: white;
 			text-decoration: none;
 			display: block;
-			border-bottom: 2px solid transparent;
-			transition: border-color .2s;
+			text-align: center;
+			padding: .5em;
 
-			&:hover {
-				border-color: white;
+			// On desktop, the links have a bottom border on :hover
+			@include md {
+				border-bottom: 2px solid transparent;
+				transition: border-color .2s;
+				&:hover {
+					border-color: white;
+				}
 			}
 		}
 
-		@include breakpoint(md) {
-			&.fixed {
-				background: rgba(0, 0, 0, .5);
-			}
-		}
 	}
 }

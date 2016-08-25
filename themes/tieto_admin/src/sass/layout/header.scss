@@ -1,47 +1,4 @@
-// .hamburger {
-// 	padding: 0;
-// 	width: $header-height;
-// 	height: $header-height;
-// 	float: right;
 
-// 	@include md {
-// 		display: none;
-// 	}
-
-// 	@include breakpoint-max(md) {
-// 		&.is-active + .region-header {
-// 			max-height: 259px;
-// 		}
-// 	}
-
-// 	&:active, &:focus {
-// 		outline: none;
-// 	}
-
-// 	.hamburger-inner {
-// 		&, &::before, &::after {
-// 			width: 30px;
-// 			background-color: white;
-// 		}
-// 	}
-
-// 	.hamburger-box {
-// 		width: 30px;
-// 		height: 29px;
-// 	}
-
-// 	.hamburger-toggle {
-// 		color: white;
-// 		width: $header-height;
-// 		height: $header-height;
-// 		&:hover, &:active, &:focus {
-// 			text-decoration: none;
-// 		}
-// 		@include md {
-// 			display: none;
-// 		}
-// 	}
-// }
 
 // .page-header  {
 // 	position: fixed;
@@ -77,52 +34,22 @@
 // 	}
 // }
 
-// .region-header {
-// 	@include breakpoint-max(md) {
-// 		position: absolute;
-// 		top: $header-height;
-// 		right: 0;
-// 		left: 0;
-// 		background: rgba(0, 0, 0, 0.7);
-// 		max-height: 0;
-// 		transition: max-height .3s;
-// 		will-change: max-height;
-// 		overflow-y: hidden;
-// 		backface-visibility: hidden;
-// 	}
 
-// 	.menu {
-// 		margin: 0;
-// 		@include md {
-// 			margin: 1em;
-// 			float: right;
-// 		}
-// 	}
-// 	.menu-item {
-// 		list-style: none;
-// 		padding: 0;
-// 		@include md {
-// 			display: inline-block;
-// 		}
-// 	}
-// }
 
 /**
  * Tieto logo.
  */
 .logo {
-	display: inline-block;
-	margin: 0 auto;
-	text-align: center;
-	height: $header-height;
+	display: block;
 	background: $tieto-blue;
 	padding: 0 10px;
+	height: 50px;
 
 	img {
 		height: 100%;
 	}
 
-	@include breakpoint(md) {
+	@include md {
 		background: 0;
 		display: block;
 		float: left;
