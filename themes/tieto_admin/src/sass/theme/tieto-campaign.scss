@@ -7,6 +7,12 @@
   letter-spacing: -1px;
 }
 
+.campaign-headline {
+  @extend .campaign-title;
+  font-size: 3em;
+  line-height: 1;
+}
+
 .campaign-title-center {
   @extend .campaign-title;
   font-size: 2em;

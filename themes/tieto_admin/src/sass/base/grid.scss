@@ -3,15 +3,18 @@
 $max-columns: 6;
 $col-widths: ();
 
-@for $i from 1 through $max-columns {
-    $w: (1/$i);
+// Cols are only on desktop
+@include md {
+	@for $i from 1 through $max-columns {
+	    $w: (1/$i);
 
-    // If the width doesn't already exist
-    @if not index($col-widths, $w) {
-        .col-#{$i} {
-            width: $w * 100%;
-        }
-        // Add the width to the array
-        $col-widths: append($col-widths, $w, comma);
-    }
+	    // If the width doesn't already exist
+	    @if not index($col-widths, $w) {
+	        .col-#{$i} {
+	            width: $w * 100%;
+	        }
+	        // Add the width to the array
+	        $col-widths: append($col-widths, $w, comma);
+	    }
+	}
 }

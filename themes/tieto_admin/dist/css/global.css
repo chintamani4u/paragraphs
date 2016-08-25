@@ -52,7 +52,7 @@ body.page-node-type-campaign:not(.toolbar-horizontal):not(.toolbar-vertical) {
   font-family: "HelveticaRoman"; }
 
 img {
-  display: block;
+  display: inline-block;
   max-width: 100%;
   height: auto; }
 
@@ -260,23 +260,19 @@ details summary:hover {
   margin-bottom: 80px;
   margin-bottom: 6.152rem; }
 
-.col-1 {
-  width: 100%; }
-
-.col-2 {
-  width: 50%; }
-
-.col-3 {
-  width: 33.3333333333%; }
-
-.col-4 {
-  width: 25%; }
-
-.col-5 {
-  width: 20%; }
-
-.col-6 {
-  width: 16.6666666667%; }
+@media (min-width: 767px) {
+  .col-1 {
+    width: 100%; }
+  .col-2 {
+    width: 50%; }
+  .col-3 {
+    width: 33.3333333333%; }
+  .col-4 {
+    width: 25%; }
+  .col-5 {
+    width: 20%; }
+  .col-6 {
+    width: 16.6666666667%; } }
 
 /**
  * Admin lists.
@@ -2478,7 +2474,7 @@ details.fieldset-no-legend {
             border-color: white; } }
 
 .paragraph {
-  padding: 40px 0; }
+  padding: 40px 1em; }
   .paragraph:before, .paragraph:after {
     content: "";
     display: table; }
@@ -2519,59 +2515,59 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   .paragraph--type--images .field--name-field-images .field__item {
     display: inline-block; }
 
-.paragraph--type--image-text {
-  background-color: white;
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 90px 30px; }
-  @media (max-width: 766px) {
-    .paragraph--type--image-text.layout--text_1st .field--name-field-title {
-      color: #58595b;
-      font-size: 3em;
-      font-weight: bold;
-      letter-spacing: -0.03em;
-      line-height: 1em;
-      margin-bottom: 60px;
-      margin-top: 0; } }
+.paragraph--type--image-text.layout--text_1st .field--name-field-title,
+.paragraph--type--image-text.layout--text_1st .field--name-field-text, .paragraph--type--image-text.layout--image_1st .field--name-field-title,
+.paragraph--type--image-text.layout--image_1st .field--name-field-text {
+  text-align: center; }
   @media (min-width: 767px) {
-    .paragraph--type--image-text.layout--text_1st .field--name-field-title {
-      color: #58595b;
-      font-size: 3em;
-      font-weight: bold;
-      letter-spacing: -0.03em;
-      line-height: 1em;
-      margin-bottom: 60px;
-      margin-top: 0;
-      width: 50%; }
-    .paragraph--type--image-text.layout--text_1st .field--name-field-image {
-      max-width: 50%;
-      float: right;
-      background-color: red;
-      margin-top: -10em; }
-    .paragraph--type--image-text.layout--text_1st .field--name-field-text {
+    .paragraph--type--image-text.layout--text_1st .field--name-field-title,
+    .paragraph--type--image-text.layout--text_1st .field--name-field-text, .paragraph--type--image-text.layout--image_1st .field--name-field-title,
+    .paragraph--type--image-text.layout--image_1st .field--name-field-text {
       width: 50%; } }
-  .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title {
-    font-size: 1.875em;
-    font-weight: bold;
-    line-height: normal;
-    margin: 0 auto 45px auto;
-    width: 100%;
-    text-align: center; }
+
+.paragraph--type--image-text.layout--text_1st .field--name-field-image, .paragraph--type--image-text.layout--image_1st .field--name-field-image {
+  text-align: center; }
+
+@media (min-width: 767px) {
+  .paragraph--type--image-text.layout--text_1st .field--name-field-title,
+  .paragraph--type--image-text.layout--text_1st .field--name-field-text {
+    float: left;
+    text-align: left; }
+  .paragraph--type--image-text.layout--text_1st .field--name-field-image {
+    float: right; } }
+
+@media (min-width: 767px) {
+  .paragraph--type--image-text.layout--image_1st .field--name-field-title,
+  .paragraph--type--image-text.layout--image_1st .field--name-field-text {
+    float: right;
+    text-align: right; }
+  .paragraph--type--image-text.layout--image_1st .field--name-field-image {
+    float: left; } }
+
+.paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title {
+  font-size: 1.875em;
+  font-weight: bold;
+  line-height: normal;
+  margin: 0 auto 45px auto;
+  width: 100%;
+  text-align: center; }
+
+@media (min-width: 767px) {
+  .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-image {
+    -webkit-transform: translateX(-2em);
+    transform: translateX(-2em);
+    margin-top: 5em;
+    width: 50%;
+    float: right; } }
+
+.paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-text {
+  padding: 2em 3em;
+  background: #cde6f5; }
   @media (min-width: 767px) {
-    .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-image {
-      -webkit-transform: translateX(-2em);
-      transform: translateX(-2em);
-      margin-top: 5em;
+    .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-text {
+      padding-right: 6em;
       width: 50%;
-      float: right; } }
-  .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-text {
-    padding: 2em 3em;
-    background: #cde6f5; }
-    @media (min-width: 767px) {
-      .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-text {
-        padding-right: 6em;
-        width: 50%;
-        display: inline-block; } }
+      display: inline-block; } }
 
 /**
  * @file
@@ -2706,15 +2702,19 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   text-align: center; }
 
 .paragraph--type--text-box {
-  float: left;
   padding: 1em; }
-  .paragraph--type--text-box .field--name-field-image {
-    display: inline-block; }
+  @media (min-width: 767px) {
+    .paragraph--type--text-box {
+      float: left; } }
 
-.campaign-title, .campaign-title-center, .paragraph--type--images .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title, .campaign-title-separator, .paragraph--type--simple.layout--separator-clean .field--name-field-title, .campaign-title-item, .paragraph--type--text-box .field--name-field-title {
+.campaign-title, .campaign-headline, .paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title, .campaign-title-center, .paragraph--type--images .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title, .campaign-title-separator, .paragraph--type--simple.layout--separator-clean .field--name-field-title, .campaign-title-item, .paragraph--type--text-box .field--name-field-title {
   margin-bottom: 1em;
   font-family: "HelveticaBold";
   letter-spacing: -1px; }
+
+.campaign-headline, .paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title {
+  font-size: 3em;
+  line-height: 1; }
 
 .campaign-title-center, .paragraph--type--images .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title {
   font-size: 2em;
