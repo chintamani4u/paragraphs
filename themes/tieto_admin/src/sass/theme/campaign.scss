@@ -2,13 +2,6 @@
  * CUSTOM CSS FOR CAMPAIGN PAGES
  */
 
-body.page-node-type-campaign {
-  // @fixme
-  &:not(.toolbar-horizontal):not(.toolbar-vertical) {
-    font-family: $helvetica-roman;
-  }
-}
-
 /* WYSIWYG Styles */
 span.tieto-silver {
   color: #969696;

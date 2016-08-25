@@ -19,6 +19,12 @@ body {
   font-weight: normal;
   line-height: $line-height-base;
 }
+body.page-node-type-campaign {
+  // @fixme
+  &:not(.toolbar-horizontal):not(.toolbar-vertical) {
+    font-family: $helvetica-roman;
+  }
+}
 img {
   display: block;
   max-width: 100%;

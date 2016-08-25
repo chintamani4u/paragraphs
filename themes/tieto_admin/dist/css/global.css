@@ -44,6 +44,9 @@ body {
   font-weight: normal;
   line-height: 1.5; }
 
+body.page-node-type-campaign:not(.toolbar-horizontal):not(.toolbar-vertical) {
+  font-family: "HelveticaRoman"; }
+
 img {
   display: block;
   max-width: 100%;
@@ -2763,9 +2766,6 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .page-header {
 /**
  * CUSTOM CSS FOR CAMPAIGN PAGES
  */
-body.page-node-type-campaign:not(.toolbar-horizontal):not(.toolbar-vertical) {
-  font-family: "HelveticaRoman"; }
-
 /* WYSIWYG Styles */
 span.tieto-silver {
   color: #969696; }
