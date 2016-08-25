@@ -2527,6 +2527,9 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
 
 .paragraph--type--image-text.layout--text_1st .field--name-field-image, .paragraph--type--image-text.layout--image_1st .field--name-field-image {
   text-align: center; }
+  @media (min-width: 767px) {
+    .paragraph--type--image-text.layout--text_1st .field--name-field-image, .paragraph--type--image-text.layout--image_1st .field--name-field-image {
+      width: 50%; } }
 
 @media (min-width: 767px) {
   .paragraph--type--image-text.layout--text_1st .field--name-field-title,
@@ -2574,8 +2577,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
  * HEADER paragraph
  */
 .paragraph--type--header {
-  position: relative;
-  padding: 0; }
+  position: relative; }
   .paragraph--type--header .background-overlay {
     background-color: rgba(103, 175, 225, 0.5);
     position: absolute;
@@ -2636,7 +2638,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     right: 0;
     width: 100%;
     color: white;
-    padding: 2em 2em 0;
+    padding: 2em 1em;
     z-index: 20; }
     @media (max-width: 766px) {
       .paragraph--type--header .paragraph-inner {

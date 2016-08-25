@@ -21,6 +21,9 @@
 		// Image
 		.field--name-field-image {
 			text-align: center;
+			@include md {
+				width: 50%;
+			}
 		}
 	}
 

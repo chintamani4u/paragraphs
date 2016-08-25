@@ -7,7 +7,6 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
 
 .paragraph--type--header {
     position: relative;
-    padding: 0;
 
     // Overlay color over the background image/video.
     .background-overlay {
@@ -90,7 +89,7 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
         right: 0;
         width: 100%;
         color: white;
-        padding: 2em 2em 0;
+        padding: 2em 1em;
         z-index: 20;
         @include breakpoint-max(md) {
             transform: translateY(-50%);
