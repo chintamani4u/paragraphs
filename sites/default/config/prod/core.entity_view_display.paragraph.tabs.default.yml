@@ -16,13 +16,6 @@ targetEntityType: paragraph
 bundle: tabs
 mode: default
 content:
-  field_anchor:
-    weight: 0
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
   field_lead_text:
     weight: 2
     label: hidden
@@ -51,4 +44,5 @@ content:
     type: string
 hidden:
   created: true
+  field_anchor: true
   uid: true

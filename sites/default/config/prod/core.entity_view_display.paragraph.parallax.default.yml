@@ -17,13 +17,6 @@ targetEntityType: paragraph
 bundle: parallax
 mode: default
 content:
-  field_anchor:
-    weight: 4
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
   field_text:
     weight: 3
     label: hidden
@@ -32,6 +25,7 @@ content:
     type: text_default
 hidden:
   created: true
+  field_anchor: true
   field_background: true
   field_enable_parallax: true
   field_image: true
