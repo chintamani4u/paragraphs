@@ -43,10 +43,9 @@
 {{ attach_library('tieto_admin/smooth-scroll') }}
 {% set machine_name = node.field_machine_name.value %}
 
-<a href="#" class="logo"><img src="/themes/tieto_admin/images/tietologo.png" alt="Tieto"></a>
 <div id="{{ machine_name|default('tieto_campaign_page') }}" class="tieto-campaign-page">
+	<a href="#" class="logo"><img src="/themes/tieto_admin/images/tietologo.png" alt="Tieto"></a>
     <main class="page-content" role="main">
-        <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
         {{ page.content }}
     </main>
 </div>

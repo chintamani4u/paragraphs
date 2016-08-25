@@ -8,6 +8,12 @@
 	margin: 0 auto;
 }
 
+// Super ugly hack for correctly displaying the fucking
+// admin toolbar with the fucking logo and the fucking responsive hamburger shit.
+body.toolbar-vertical, body.toolbar-horizontal {
+	position: relative;
+}
+
 body.toolbar-vertical {
 	@include breakpoint-max(md) {
 		#toolbar-administration {
@@ -17,17 +23,29 @@ body.toolbar-vertical {
 			right: 0;
 		}
 	}
-	.tieto-campaign-page .page-header {
-		top: 39px;
+	.tieto-campaign-page {
+		.logo {
+			top: $toolbar-height;
+		}
+		.campaign-menu {
+			top: $header-height;
+			@include md {
+				top: $toolbar-height;
+			}
+		}
 	}
 }
 
 body.toolbar-horizontal {
-	.tieto-campaign-page .page-header {
-		top: 39px;
+	.tieto-campaign-page {
+		.logo, .campaign-menu {
+			top: $toolbar-height;
+		}
 	}
 
-	&.toolbar-tray-open .tieto-campaign-page .page-header {
-		top: 78px;
+	&.toolbar-tray-open .tieto-campaign-page {
+		.logo, .campaign-menu {
+			top: $toolbar-height * 2;
+		}
 	}
 }

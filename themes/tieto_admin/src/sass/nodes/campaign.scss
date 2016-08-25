@@ -1,4 +1,6 @@
 .node--type-campaign {
+	// Contextual links adds a position: relative...
+	position: static !important;
 
 	.hamburger {
 		padding: 0;
@@ -7,6 +9,7 @@
 		position: absolute;
 	    top: 0;
 	    right: 0;
+	    z-index: 500;
 
 		@include md {
 			display: none;
@@ -49,11 +52,11 @@
 	}
 
 	// Menu field wrapper.
-	.field--name-field-menu {
+	.campaign-menu {
 		position: absolute;
 		top: $header-height;
 		right: 0;
-		z-index: 1000;
+		z-index: 500;
 		width: 100%;
 
 		// Mobile styles for Menu field wrapper.
