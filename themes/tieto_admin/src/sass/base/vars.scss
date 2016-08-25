@@ -16,14 +16,64 @@ $grey-600: #757575;
 $grey-700: #616161;
 $grey-800: #424242;
 $grey-900: #212121;
-
-$font-size-base: 16px;
-
 $text-color: $grey-700;
 
-// Black / White
-$black: #111;
-$white: #fff;
+$spacer:   1rem !default;
+
+// Typography (from Bootstrap 4)
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$fonts-directory: '../../fonts';
+$helvetica-thin: "HelveticaThin";
+$helvetica-light: "HelveticaLight";
+$helvetica-roman: "HelveticaRoman";
+$helvetica-bold: "HelveticaBold";
+
+$font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-serif:      Georgia, "Times New Roman", Times, serif !default;
+$font-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-base:       $helvetica-roman, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+
+// Pixel value used to responsively scale all typography. Applied to the `<html>` element.
+$font-size-root: 16px !default;
+
+$font-size-base: 1rem !default;
+$font-size-lg:   1.25rem !default;
+$font-size-sm:   .875rem !default;
+$font-size-xs:   .75rem !default;
+
+$line-height-base: 1.5 !default;
+
+$font-size-h1: 2.5rem !default;
+$font-size-h2: 2rem !default;
+$font-size-h3: 1.75rem !default;
+$font-size-h4: 1.5rem !default;
+$font-size-h5: 1.25rem !default;
+$font-size-h6: 1rem !default;
+
+$display1-size: 6rem !default;
+$display2-size: 5.5rem !default;
+$display3-size: 4.5rem !default;
+$display4-size: 3.5rem !default;
+
+$display1-weight: 300 !default;
+$display2-weight: 300 !default;
+$display3-weight: 300 !default;
+$display4-weight: 300 !default;
+
+$headings-margin-bottom: ($spacer / 2) !default;
+$headings-font-family:   inherit !default;
+$headings-font-weight:   500 !default;
+$headings-line-height:   1.1 !default;
+$headings-color:         inherit !default;
+
+$lead-font-size:   1.25rem !default;
+$lead-font-weight: 300 !default;
+
+$small-font-size: 80% !default;
+
+
 
 $box-shadow-1: 0 10px 10px -10px rgba(0, 0, 0, .3);
 
@@ -35,8 +85,6 @@ $header-line-height: 3em;
 $input-color: $grey-700;
 $input-border-color: $grey-300;
 $sidebar-width: 220px;
-
-$icomoon-font-path: "../fonts" !default;
 
 $icon-edit: "\e901";
 $icon-delete: "\e900";
