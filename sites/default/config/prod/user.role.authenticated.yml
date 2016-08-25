@@ -33,3 +33,7 @@ permissions:
   - 'view paragraph content link_with_background'
   - 'view paragraph content insights'
   - 'view paragraph content tabs'
+  - 'view paragraph content header'
+  - 'view paragraph content highlighted'
+  - 'view paragraph content simple'
+  - 'view paragraph content text_boxes'
