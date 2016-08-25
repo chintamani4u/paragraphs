@@ -1,0 +1,47 @@
+{%
+set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  campaign.enable_parallax ? 'parallax-enabled'
+]
+%}
+
+{% set attributes = attributes.addClass(classes) %}
+
+{# Image background #}
+{% if campaign.background.type == 'image' %}
+
+  {% if campaign.enable_parallax %}
+    {{ attach_library('tieto_admin/parallax') }}
+
+    <div{{ attributes }} data-parallax="scroll" data-image-src="{{ campaign.background.url }}">
+  {% else %}
+    <div{{ attributes }} style="background-image: url({{ background }})">
+  {% endif %}
+      <section class="paragraph-inner">
+        {{ content }}
+      </section>
+    </div>
+
+{# Video background #}
+{% elseif campaign.background.type == 'video' %}
+  {{ attach_library('tieto_admin/background-video') }}
+
+  <div{{ attributes }}>
+    <section id="video-outer">
+      <div id="video-wrap">
+
+        <video id="video" loop muted autoplay>
+            <source src="{{ campaign.background.url }}" type="{{ campaign.background.mime }}">
+        </video>
+
+        <div class="paragraph-inner">
+          {{ content }}
+        </div>
+
+      </div>
+    </section>
+  </div>
+{% endif %}
+

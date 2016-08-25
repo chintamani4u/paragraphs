@@ -5,6 +5,7 @@
  * Contains campaign_pages.module
  */
 
+use Drupal\file\Entity\File;
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
@@ -69,7 +70,7 @@ function campaign_pages_preprocess_field(&$variables) {
  */
 function campaign_pages_preprocess_paragraph(&$variables) {
   if (isset($variables['paragraph']->field_anchor) && $id = $variables['paragraph']->field_anchor->getValue()[0]['value']) {
-    $variables['attributes']['id'][] = $id;
+    $variables['attributes']['id'] = $id;
   }
   $layouts = [
     'field_highlighted_layout' => [
@@ -101,4 +102,38 @@ function campaign_pages_preprocess_paragraph(&$variables) {
       }
     }
   }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Preprocess for Header paragraph type.
+ */
+function campaign_pages_preprocess_paragraph__header(&$variables) {
+  $paragraph = &$variables['paragraph'];
+
+  // Get background file info.
+  $file = File::load($paragraph->field_background->target_id);
+  $file_uri = $file->getFileUri();
+  $file_mime = $file->getMimeType();
+
+  if (in_array($file_mime, ['image/jpeg', 'image/svg+xml'])) {
+    $type = 'image';
+  }
+  if (in_array($file_mime, ['video/mp4', 'application/mp4', 'video/webm'])) {
+    $type = 'video';
+  }
+
+  // Add variables to theme.
+  $variables['campaign'] = [
+
+    'background' => [
+      'type' => $type ?? 'image',
+      'url' => file_create_url($file_uri),
+      'mime' => $file_mime,
+    ],
+
+    'enable_parallax' => $paragraph->field_enable_parallax->value,
+  ];
+
 }
