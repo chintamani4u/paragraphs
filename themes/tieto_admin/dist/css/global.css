@@ -2548,7 +2548,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     float: left; } }
 
 .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-text, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-text {
-  padding: 2em 3em;
+  padding: 2em;
   background: #cde6f5; }
   @media (min-width: 767px) {
     .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-text, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-text {
@@ -2557,10 +2557,13 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
 
 .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-image, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-image {
   text-align: center;
-  margin: 0 0 2em 0; }
+  background: #cde6f5;
+  padding: 2em 0 0; }
   @media (min-width: 767px) {
     .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-image, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-image {
       text-align: left;
+      background: 0;
+      padding: 0;
       margin: 2em 0 0 0;
       -webkit-transform: translateX(-2em);
       transform: translateX(-2em);

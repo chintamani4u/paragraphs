@@ -72,7 +72,7 @@
 
         // Text
         .field--name-field-text {
-            padding: 2em 3em;
+            padding: 2em;
             background: $tieto-lightblue;
 
             @include md {
@@ -84,10 +84,13 @@
         // Image
         .field--name-field-image {
             text-align: center;
-            margin: 0 0 2em 0;
+            background: $tieto-lightblue;
+            padding: 2em 0 0;
 
             @include md {
                 text-align: left;
+                background: 0;
+                padding: 0;
                 margin: 2em 0 0 0;
                 transform: translateX(-2em);
                 width: 40%;
