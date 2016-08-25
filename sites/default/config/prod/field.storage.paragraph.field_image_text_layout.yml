@@ -17,6 +17,9 @@ settings:
     -
       value: 1
       label: 'Text first'
+    -
+      value: 2
+      label: 'Text first - Enhanced'
   allowed_values_function: ''
 module: options
 locked: false
