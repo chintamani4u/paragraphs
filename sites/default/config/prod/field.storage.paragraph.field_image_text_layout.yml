@@ -13,10 +13,10 @@ settings:
   allowed_values:
     -
       value: 0
-      label: 'Image first'
+      label: 'Image first - Clean'
     -
       value: 1
-      label: 'Text first'
+      label: 'Text first - Clean'
     -
       value: 2
       label: 'Text first - Enhanced'
