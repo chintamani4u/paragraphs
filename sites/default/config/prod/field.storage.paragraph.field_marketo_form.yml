@@ -1,0 +1,19 @@
+uuid: e352bf29-b1bc-48a8-9ee9-f9c44a530353
+langcode: en
+status: true
+dependencies:
+  module:
+    - marketo_form
+    - paragraphs
+id: paragraph.field_marketo_form
+field_name: field_marketo_form
+entity_type: paragraph
+type: marketo_form
+settings: {  }
+module: marketo_form
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

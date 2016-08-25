@@ -30,6 +30,7 @@ module:
   language: 0
   link: 0
   machine_name: 0
+  marketo_form: 0
   menu_ui: 0
   node: 0
   options: 0
