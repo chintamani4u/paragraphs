@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.text_boxes.field_boxes_per_row
     - field.field.paragraph.text_boxes.field_image
     - field.field.paragraph.text_boxes.field_text_boxes
+    - field.field.paragraph.text_boxes.field_text_boxes_layout
     - field.field.paragraph.text_boxes.field_title
     - image.style.thumbnail
     - paragraphs.paragraphs_type.text_boxes
@@ -32,7 +33,7 @@ content:
     third_party_settings: {  }
     type: number
   field_image:
-    weight: 7
+    weight: 4
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -45,6 +46,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_text_boxes_layout:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_title:
     weight: 3
     settings:
