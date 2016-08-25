@@ -1,10 +1,16 @@
 .paragraph--type--simple {
 
-	.field--name-field-title {
-		@extend .campaign-title-center;
-	}
-
 	&.layout--one-column-shaded {
 		background: $tieto-lightblue;
+		.field--name-field-title {
+			@extend .campaign-title-center;
+		}
+	}
+
+	&.layout--separator-clean {
+		.field--name-field-title {
+			@extend .campaign-title-separator;
+		}
+
 	}
 }
