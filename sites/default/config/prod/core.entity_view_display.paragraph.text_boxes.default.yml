@@ -5,40 +5,25 @@ dependencies:
   config:
     - field.field.paragraph.text_boxes.field_anchor
     - field.field.paragraph.text_boxes.field_boxes_per_row
-    - field.field.paragraph.text_boxes.field_image
-    - field.field.paragraph.text_boxes.field_text_boxes
+    - field.field.paragraph.text_boxes.field_paragraphs
     - field.field.paragraph.text_boxes.field_text_boxes_layout
     - field.field.paragraph.text_boxes.field_title
     - paragraphs.paragraphs_type.text_boxes
   module:
-    - image
-    - options
-    - text
+    - entity_reference_revisions
 id: paragraph.text_boxes.default
 targetEntityType: paragraph
 bundle: text_boxes
 mode: default
 content:
-  field_image:
-    weight: 2
-    label: above
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-  field_text_boxes:
-    weight: 1
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 4
     label: hidden
-    settings: {  }
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: text_default
-  field_text_boxes_layout:
-    weight: 3
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
   field_title:
     weight: 0
     label: hidden
@@ -50,4 +35,5 @@ hidden:
   created: true
   field_anchor: true
   field_boxes_per_row: true
+  field_text_boxes_layout: true
   uid: true
