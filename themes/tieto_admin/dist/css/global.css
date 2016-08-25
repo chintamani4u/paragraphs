@@ -2711,12 +2711,12 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   .paragraph--type--text-box .field--name-field-image {
     display: inline-block; }
 
-.campaign-title, .campaign-title-center, .paragraph--type--images .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title, .campaign-title-separator, .paragraph--type--simple.layout--separator-clean .field--name-field-title, .campaign-title-item, .paragraph--type--text-box .field--name-field-title {
+.campaign-title, .campaign-title-center, .paragraph--type--images .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title, .campaign-title-separator, .paragraph--type--simple.layout--separator-clean .field--name-field-title, .campaign-title-item, .paragraph--type--text-box .field--name-field-title {
   margin-bottom: 1em;
   font-family: "HelveticaBold";
   letter-spacing: -1px; }
 
-.campaign-title-center, .paragraph--type--images .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title {
+.campaign-title-center, .paragraph--type--images .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title {
   font-size: 2em;
   color: #000;
   text-align: center; }
