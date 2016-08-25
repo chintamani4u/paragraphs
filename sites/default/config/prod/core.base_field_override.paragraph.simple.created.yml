@@ -1,19 +1,18 @@
-uuid: 1d7b63af-ac22-45fa-91f3-b16ceba69242
+uuid: a9e2fa98-228a-4e8a-a2ec-2f1621e91612
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_anchor
     - paragraphs.paragraphs_type.simple
-id: paragraph.simple.field_anchor
-field_name: field_anchor
+id: paragraph.simple.created
+field_name: created
 entity_type: paragraph
 bundle: simple
-label: Anchor
-description: ''
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: created

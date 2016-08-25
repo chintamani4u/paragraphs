@@ -1,20 +1,20 @@
-uuid: 96dbdc61-95c7-4a44-861a-765396f5df58
+uuid: dde45f73-fb02-47c1-922d-9d3562b8b96e
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.campaign
-id: node.campaign.promote
-field_name: promote
-entity_type: node
-bundle: campaign
-label: 'Promoted to front page'
+    - paragraphs.paragraphs_type.header
+id: paragraph.header.status
+field_name: status
+entity_type: paragraph
+bundle: header
+label: Published
 description: ''
 required: false
 translatable: false
 default_value:
   -
-    value: 0
+    value: 1
 default_value_callback: ''
 settings:
   on_label: 'On'
