@@ -27,11 +27,27 @@
   const offset = 72
 
   /**
+   * Update the hash in the URL without jumping to the element.
+   *
+   * @param  {String} hash
+   * @return {void}
+   */
+  var updateHash = (hash) => {
+    if (history.pushState) history.pushState(null, null, hash)
+    else window.location.hash = hash
+    // @fixme temp
+    // $('.campaign-menu-link > a.active').removeClass('active')
+    // $('a[href="' + hash + '"]').addClass('active')
+  }
+
+  /**
    * Applying the animation to all anchors, which have
    * <a href="#my-anchor"> format.
    */
   var smoothScroll = function (e) {
     e.preventDefault()
+    updateHash(this.hash)
+
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
 
       // Calculate admin toolbar height.

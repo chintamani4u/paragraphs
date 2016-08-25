@@ -20,4 +20,6 @@ import '../../vendor/jquery-scrollspy'
         }
     })
 
+    $(document).ready(() => { header.trigger('scroll.scrollspy') })
+
 })(jQuery)

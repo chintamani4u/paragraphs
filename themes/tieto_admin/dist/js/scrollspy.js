@@ -289,6 +289,8 @@
         }
     })
 
+    $(document).ready(function () { header.trigger('scroll.scrollspy') })
+
 })(jQuery)
 
 }());

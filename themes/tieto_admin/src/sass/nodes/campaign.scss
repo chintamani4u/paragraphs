@@ -96,23 +96,26 @@
 		}
 
 		// Menu links <a> tags
-		:link {
+		a:link, a:visited, a:active, a:focus {
 			font-family: $helvetica-bold;
 			color: white;
 			text-decoration: none;
 			display: block;
 			text-align: center;
 			padding: .5em;
+		}
 
-			// On desktop, the links have a bottom border on :hover
-			@include md {
+		// On desktop, the links have a bottom border on :hover
+		@include md {
+			a:link {
 				border-bottom: 2px solid transparent;
 				transition: border-color .2s;
-				&:hover {
-					border-color: white;
-				}
+			}
+			a:hover, a.active {
+				border-color: white;
 			}
 		}
+
 
 	}
 }

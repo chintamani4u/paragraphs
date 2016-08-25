@@ -2458,20 +2458,20 @@ details.fieldset-no-legend {
       padding: 0; }
     .node--type-campaign .campaign-menu.fixed {
       background: rgba(0, 0, 0, 0.5); }
-    .node--type-campaign .campaign-menu :link {
+    .node--type-campaign .campaign-menu a:link, .node--type-campaign .campaign-menu a:visited, .node--type-campaign .campaign-menu a:active, .node--type-campaign .campaign-menu a:focus {
       font-family: "HelveticaBold";
       color: white;
       text-decoration: none;
       display: block;
       text-align: center;
       padding: .5em; }
-      @media (min-width: 767px) {
-        .node--type-campaign .campaign-menu :link {
-          border-bottom: 2px solid transparent;
-          -webkit-transition: border-color .2s;
-          transition: border-color .2s; }
-          .node--type-campaign .campaign-menu :link:hover {
-            border-color: white; } }
+    @media (min-width: 767px) {
+      .node--type-campaign .campaign-menu a:link {
+        border-bottom: 2px solid transparent;
+        -webkit-transition: border-color .2s;
+        transition: border-color .2s; }
+      .node--type-campaign .campaign-menu a:hover, .node--type-campaign .campaign-menu a.active {
+        border-color: white; } }
 
 .paragraph {
   padding: 40px 1em; }
