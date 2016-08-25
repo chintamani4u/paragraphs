@@ -2703,25 +2703,29 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .page-header {
       text-align: left;
       float: left;
       clear: left; } }
+  .paragraph--type--header .paragraph-inner {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-30%);
+    transform: translateY(-30%);
+    left: 0;
+    right: 0;
+    width: 100%;
+    color: white;
+    padding: 2em 2em 0;
+    z-index: 20; }
+    @media (max-width: 766px) {
+      .paragraph--type--header .paragraph-inner {
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        text-align: center; } }
   .paragraph--type--header.paragraph--background-image {
-    min-height: 570px;
-    position: relative; }
-    .paragraph--type--header.paragraph--background-image .paragraph-inner {
-      position: absolute;
-      top: 50%;
-      -webkit-transform: translateY(-30%);
-      transform: translateY(-30%);
-      left: 0;
-      right: 0;
-      width: 100%;
-      color: white;
-      padding: 2em 2em 0;
-      z-index: 20; }
-      @media (max-width: 766px) {
-        .paragraph--type--header.paragraph--background-image .paragraph-inner {
-          -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-          text-align: center; } }
+    position: relative;
+    min-height: 570px; }
+    .paragraph--type--header.paragraph--background-image.parallax-disabled {
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover; }
   .paragraph--type--header.paragraph--background-video .video-outer {
     min-height: 570px; }
   .paragraph--type--header.paragraph--background-video .video-wrapper {

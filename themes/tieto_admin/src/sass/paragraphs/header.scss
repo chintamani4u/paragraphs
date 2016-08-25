@@ -3,14 +3,14 @@
  * HEADER paragraph
  */
 $paragraph-header-height: 570px;
-$paragraph-header-overlay: rgba(103, 175, 225, .5); // @todo move to variables (e.g. $tieto-lightblue)
+$paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variables (e.g. $tieto-lightblue)
 
 .paragraph--type--header {
     position: relative;
 
     // Overlay color over the background image/video.
     .background-overlay {
-        background-color: $paragraph-header-overlay;
+        background-color: $paragraph-header-overlay-bg;
         position: absolute;
         top: 0;
         left: 0;
@@ -80,26 +80,32 @@ $paragraph-header-overlay: rgba(103, 175, 225, .5); // @todo move to variables (
         }
     }
 
+    // Content wrapper.
+    .paragraph-inner {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-30%);
+        left: 0;
+        right: 0;
+        width: 100%;
+        color: white;
+        padding: 2em 2em 0;
+        z-index: 20;
+        @include breakpoint-max(md) {
+            transform: translateY(-50%);
+            text-align: center;
+        }
+    }
+
     // Image background.
     &.paragraph--background-image {
-
-        min-height: $paragraph-header-height;
         position: relative;
+        min-height: $paragraph-header-height;
 
-        .paragraph-inner {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-30%);
-            left: 0;
-            right: 0;
-            width: 100%;
-            color: white;
-            padding: 2em 2em 0;
-            z-index: 20;
-            @include breakpoint-max(md) {
-                transform: translateY(-50%);
-                text-align: center;
-            }
+        &.parallax-disabled {
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
         }
     }
 
@@ -122,7 +128,7 @@ $paragraph-header-overlay: rgba(103, 175, 225, .5); // @todo move to variables (
                 right: 0;
                 left: 0;
                 bottom: 0;
-                background-color: $paragraph-header-overlay;
+                background-color: $paragraph-header-overlay-bg;
                 z-index: 10;
             }
         }
