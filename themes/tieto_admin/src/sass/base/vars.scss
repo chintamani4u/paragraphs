@@ -33,7 +33,7 @@ $helvetica-bold: "HelveticaBold";
 $font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $font-serif:      Georgia, "Times New Roman", Times, serif !default;
 $font-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-base:       $helvetica-roman, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+$font-base:       Arial, sans-serif !default;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root: 16px !default;
