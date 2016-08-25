@@ -17,4 +17,13 @@
 		}
 
 	}
+
+	&.layout--two-column-content-1st-inverse,
+	&.layout--two-column-title-1st-inverse {
+		background: $tieto-blue;
+		text-align: center; // @todo temp
+		.field--name-field-title {
+			@extend .campaign-title-inverse;
+		}
+	}
 }
