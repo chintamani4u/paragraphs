@@ -297,13 +297,21 @@
 
 (function ($) {
 
-	$('#parallax-video').backgroundVideo({
-		$outerWrap: $('#video-outer'),
+	var $paragraph = $('.paragraph--type--header')
+	var $outerWrap = $paragraph.find('.video-outer')
+	var $videoWrap = $outerWrap.find('.video-wrapper')
+
+	var settings = {
+		$outerWrap: $outerWrap,
+		$videoWrap: $videoWrap,
 		pauseVideoOnViewLoss: false,
         parallaxOptions: {
             effect: 1.9
-        }
-	})
+        },
+        parallax: $outerWrap.parent().hasClass('parallax-enabled')
+	}
+
+	$paragraph.find('.video').backgroundVideo(settings)
 
 })(jQuery)
 

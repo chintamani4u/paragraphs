@@ -1,0 +1,6 @@
+uuid: 2789679a-3e11-41ff-afeb-911db9bc7fb0
+langcode: en
+status: true
+dependencies: {  }
+id: text_box
+label: 'Text box'
