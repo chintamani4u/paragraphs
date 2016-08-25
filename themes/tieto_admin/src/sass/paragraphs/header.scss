@@ -27,6 +27,7 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
 
     .field--name-field-secondary-title {
         font-size: $font-size-h3;
+        margin-bottom: .5em;
     }
 
     .field--name-field-title,
@@ -35,12 +36,6 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
         line-height: normal;
         letter-spacing: -1px;
         font-weight: bold;
-    }
-
-    // Lead Text.
-    .field--name-field-lead-text {
-        margin-top: .5em;
-        text-shadow: 0 0 5px rgba(0, 0, 0, .6);
     }
 
     // Call to action buttons.
