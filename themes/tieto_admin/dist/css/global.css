@@ -2489,7 +2489,7 @@ details.fieldset-no-legend {
   max-width: 1000px;
   margin: 0 auto; }
 
-body.toolbar-vertical, body.toolbar-horizontal {
+body.toolbar-vertical .tieto-campaign-page, body.toolbar-horizontal .tieto-campaign-page {
   position: relative; }
 
 @media (max-width: 766px) {

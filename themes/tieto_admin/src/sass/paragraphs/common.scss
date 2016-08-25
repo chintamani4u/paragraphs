@@ -11,7 +11,9 @@
 // Super ugly hack for correctly displaying the fucking
 // admin toolbar with the fucking logo and the fucking responsive hamburger shit.
 body.toolbar-vertical, body.toolbar-horizontal {
-	position: relative;
+	.tieto-campaign-page {
+		position: relative;
+	}
 }
 
 body.toolbar-vertical {
