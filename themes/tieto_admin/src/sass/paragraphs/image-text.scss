@@ -4,21 +4,12 @@
     &.layout--text_1st,
     &.layout--image_1st {
 
-        // Title
         .field--name-field-title {
             @extend .campaign-headline;
         }
 
-        // Title and Text
         .field--name-field-title,
-        .field--name-field-text {
-            text-align: center;
-            @include md {
-                width: 50%;
-            }
-        }
-
-        // Image
+        .field--name-field-text,
         .field--name-field-image {
             text-align: center;
             @include md {
