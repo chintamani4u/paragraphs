@@ -2706,8 +2706,30 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   background: #cde6f5; }
 
 .paragraph--type--simple.layout--two-column-content-1st-inverse, .paragraph--type--simple.layout--two-column-title-1st-inverse {
-  background: #67afe1;
-  text-align: center; }
+  background: #67afe1; }
+  .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title,
+  .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-text, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title,
+  .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-text {
+    color: white; }
+    @media (min-width: 767px) {
+      .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title,
+      .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-text, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title,
+      .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-text {
+        width: 50%; } }
+  .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title {
+    margin-top: 20px; }
+
+@media (min-width: 767px) {
+  .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title {
+    float: right;
+    text-align: right; }
+  .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-text {
+    float: left; }
+  .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title {
+    float: left;
+    text-align: left; }
+  .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-text {
+    float: right; } }
 
 .paragraph--type--text-boxes.layout--smallinfo .paragraph--type--text-box, .paragraph--type--text-boxes.layout--lot_infos .paragraph--type--text-box, .paragraph--type--text-boxes.layout--text_icon .paragraph--type--text-box {
   text-align: center; }
@@ -2719,18 +2741,14 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
 .paragraph--type--text-box {
   padding: 1em; }
 
-.campaign-title, .campaign-headline, .paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title, .campaign-title-inverse, .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title, .campaign-title-center, .paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title, .campaign-title-separator, .paragraph--type--simple.layout--separator-clean .field--name-field-title, .campaign-title-item, .paragraph--type--text-box .field--name-field-title {
+.campaign-title, .campaign-headline, .paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title, .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title, .campaign-title-center, .paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title, .campaign-title-separator, .paragraph--type--simple.layout--separator-clean .field--name-field-title, .campaign-title-item, .paragraph--type--text-box .field--name-field-title {
   margin-bottom: 1em;
   font-family: "HelveticaBold";
   letter-spacing: -1px; }
 
-.campaign-headline, .paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title {
+.campaign-headline, .paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title, .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title {
   font-size: 3em;
   line-height: 1; }
-
-.campaign-title-inverse, .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title {
-  font-size: 2em;
-  color: #fff; }
 
 .campaign-title-center, .paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title {
   font-size: 2em;
