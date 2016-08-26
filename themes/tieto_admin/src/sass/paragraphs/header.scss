@@ -6,16 +6,42 @@ $paragraph-header-height: 570px;
 $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variables (e.g. $tieto-lightblue)
 
 .paragraph--type--header {
-    position: relative;
+    padding: 0;
 
-    // Overlay color over the background image/video.
-    .background-overlay {
-        background-color: $paragraph-header-overlay-bg;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+    .background {
+        position: relative;
+        overflow: hidden;
+        height: $paragraph-header-height;
+
+        // Overlay over the background image/video.
+        &::before {
+            content: " ";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 1;
+            background-color: $paragraph-header-overlay-bg;
+        }
+
+        .background-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .background-video, .background-image {
+            width: 100%;
+        }
+
+        .background-image {
+            height: 100%;
+            background: {
+                repeat: no-repeat;
+                position: center center;
+                size: cover;
+            }
+        }
     }
 
     // Title, Secondary title.
@@ -92,40 +118,4 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
         }
     }
 
-    // Image background.
-    &.paragraph--background-image {
-        position: relative;
-        min-height: $paragraph-header-height;
-
-        &.parallax-disabled {
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-        }
-    }
-
-    // Video background.
-    &.paragraph--background-video {
-
-        .video-outer {
-            min-height: $paragraph-header-height;
-        }
-
-        .video-wrapper {
-            position: relative;
-
-            &::before {
-                content: " ";
-                position: absolute;
-                height: 100%;
-                width: 100%;
-                top: 0;
-                right: 0;
-                left: 0;
-                bottom: 0;
-                background-color: $paragraph-header-overlay-bg;
-                z-index: 10;
-            }
-        }
-    }
 }

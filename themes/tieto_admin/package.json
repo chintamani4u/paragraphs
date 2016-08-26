@@ -23,7 +23,7 @@
     "laravel-elixir-rollup-official": "^1.0.4"
   },
   "dependencies": {
-    "background-video": "^0.2.5",
+    "rellax": "^0.1.0",
     "responsive-tabs": "^1.6.1"
   }
 }

@@ -2575,14 +2575,33 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
  * HEADER paragraph
  */
 .paragraph--type--header {
-  position: relative; }
-  .paragraph--type--header .background-overlay {
-    background-color: rgba(103, 175, 225, 0.5);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; }
+  padding: 0; }
+  .paragraph--type--header .background {
+    position: relative;
+    overflow: hidden;
+    height: 570px; }
+    .paragraph--type--header .background::before {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background-color: rgba(103, 175, 225, 0.5); }
+    .paragraph--type--header .background .background-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0; }
+    .paragraph--type--header .background .background-video, .paragraph--type--header .background .background-image {
+      width: 100%; }
+    .paragraph--type--header .background .background-image {
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover; }
   .paragraph--type--header .field--name-field-title {
     font-size: 3rem;
     margin-bottom: 0;
@@ -2641,28 +2660,6 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
         -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
         text-align: center; } }
-  .paragraph--type--header.paragraph--background-image {
-    position: relative;
-    min-height: 570px; }
-    .paragraph--type--header.paragraph--background-image.parallax-disabled {
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover; }
-  .paragraph--type--header.paragraph--background-video .video-outer {
-    min-height: 570px; }
-  .paragraph--type--header.paragraph--background-video .video-wrapper {
-    position: relative; }
-    .paragraph--type--header.paragraph--background-video .video-wrapper::before {
-      content: " ";
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 0;
-      background-color: rgba(103, 175, 225, 0.5);
-      z-index: 10; }
 
 .paragraph--type--tabs {
   padding: 30px;

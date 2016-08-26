@@ -11,15 +11,12 @@ global:
     - system/admin
     - core/jquery
 
-# Parallax effect.
-# @see http://pixelcog.github.io/parallax.js/
+# Parallax, using Rellax.
+# @see https://github.com/dixonandmoe/rellax
 parallax:
   version: VERSION
   js:
-    vendor/parallax.min.js: {}
-  dependencies:
-    - system/admin
-    - core/jquery
+    dist/js/parallax.js: {}
 
 # Responsive Tabs.
 # @see https://github.com/jellekralt/Responsive-Tabs
@@ -47,14 +44,6 @@ scrollspy:
   version: VERSION
   js:
     dist/js/scrollspy.js: {}
-  dependencies:
-    - core/jquery
-
-# Background video
-# @see https://github.com/linnett/backgroundVideo
-background-video:
-  js:
-    dist/js/background-video.js: {}
   dependencies:
     - core/jquery
 
