@@ -9,7 +9,8 @@ set classes = [
 'paragraph',
 'paragraph--type--' ~ paragraph.bundle|clean_class,
 view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-'col-' ~ campaign.boxes_per_row|default('3')
+'col',
+'col-' ~ campaign.columns|default('3')
 ]
 %}
 

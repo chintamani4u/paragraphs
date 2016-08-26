@@ -146,20 +146,20 @@ function campaign_pages_preprocess_paragraph__text_box(&$variables) {
   $paragraph = &$variables['paragraph'];
 
   campaign_pages_add_template_variable($variables, [
-    'boxes_per_row' => $paragraph->getParentEntity()->field_boxes_per_row->value,
+    'columns' => $paragraph->getParentEntity()->field_boxes_per_row->value,
   ]);
 }
 
 /**
  * Implements hook_preprocess_HOOK().
  *
- * Preprocess for Paragraphs Entity reference field in Text Boxes paragraph type.
+ * Preprocess for Text Boxes paragraph type.
  */
-function campaign_pages_preprocess_field__paragraph__field_paragraphs__text_boxes(&$variables) {
-  $entity = $variables['element']['#object'];
+function campaign_pages_preprocess_paragraph__text_boxes(&$variables) {
+  $paragraph = &$variables['paragraph'];
 
   campaign_pages_add_template_variable($variables, [
-    'boxes_per_row' => $entity->field_boxes_per_row->value,
+    'columns' => $paragraph->field_boxes_per_row->value,
   ]);
 }
 

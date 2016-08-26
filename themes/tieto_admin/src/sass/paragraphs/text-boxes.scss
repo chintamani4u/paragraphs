@@ -7,8 +7,11 @@
 	}
 
 	// Layouts
-	&.layout--text_icon .paragraph--type--text-box {
-		text-align: center;
+	&.layout--smallinfo,
+	&.layout--text_icon {
+		.paragraph--type--text-box {
+			text-align: center;
+		}
 	}
 
 }
@@ -16,10 +19,6 @@
 // Text Boxes -> Text Box
 .paragraph--type--text-box {
 	padding: 1em;
-
-	@include md {
-		float: left;
-	}
 
 	// Text Box item title
 	.field--name-field-title {

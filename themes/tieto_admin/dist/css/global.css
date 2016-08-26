@@ -261,18 +261,32 @@ details summary:hover {
   margin-bottom: 6.152rem; }
 
 @media (min-width: 767px) {
-  .col-1 {
+  .col {
+    float: left; }
+  .columns-1 .col {
     width: 100%; }
-  .col-2 {
+  .columns-1 .col:nth-child(1n+1) {
+    clear: left; }
+  .columns-2 .col {
     width: 50%; }
-  .col-3 {
+  .columns-2 .col:nth-child(2n+1) {
+    clear: left; }
+  .columns-3 .col {
     width: 33.3333333333%; }
-  .col-4 {
+  .columns-3 .col:nth-child(3n+1) {
+    clear: left; }
+  .columns-4 .col {
     width: 25%; }
-  .col-5 {
+  .columns-4 .col:nth-child(4n+1) {
+    clear: left; }
+  .columns-5 .col {
     width: 20%; }
-  .col-6 {
-    width: 16.6666666667%; } }
+  .columns-5 .col:nth-child(5n+1) {
+    clear: left; }
+  .columns-6 .col {
+    width: 16.6666666667%; }
+  .columns-6 .col:nth-child(6n+1) {
+    clear: left; } }
 
 /**
  * Admin lists.
@@ -2695,14 +2709,11 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   background: #67afe1;
   text-align: center; }
 
-.paragraph--type--text-boxes.layout--text_icon .paragraph--type--text-box {
+.paragraph--type--text-boxes.layout--smallinfo .paragraph--type--text-box, .paragraph--type--text-boxes.layout--text_icon .paragraph--type--text-box {
   text-align: center; }
 
 .paragraph--type--text-box {
   padding: 1em; }
-  @media (min-width: 767px) {
-    .paragraph--type--text-box {
-      float: left; } }
 
 .campaign-title, .campaign-headline, .paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title, .campaign-title-inverse, .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title, .campaign-title-center, .paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title, .campaign-title-separator, .paragraph--type--simple.layout--separator-clean .field--name-field-title, .campaign-title-item, .paragraph--type--text-box .field--name-field-title {
   margin-bottom: 1em;
