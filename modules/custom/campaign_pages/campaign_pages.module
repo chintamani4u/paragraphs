@@ -5,6 +5,7 @@
  * Contains campaign_pages.module
  */
 
+use Drupal\Core\Url;
 use Drupal\file\Entity\File;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -114,6 +115,7 @@ function campaign_pages_preprocess_paragraph__header(&$variables) {
   $file = File::load($paragraph->field_background->target_id);
   $file_uri = $file->getFileUri();
   $file_mime = $file->getMimeType();
+  $file_path = parse_url(file_create_url($file_uri))['path'];
 
   if (in_array($file_mime, ['image/jpeg', 'image/svg+xml'])) {
     $type = 'image';
@@ -126,7 +128,7 @@ function campaign_pages_preprocess_paragraph__header(&$variables) {
   campaign_pages_add_template_variable($variables, [
     'background' => [
       'type' => $type ?? 'image',
-      'url' => file_create_url($file_uri),
+      'url' => $file_path,
       'mime' => $file_mime,
     ],
 
