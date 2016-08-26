@@ -2709,7 +2709,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   background: #67afe1;
   text-align: center; }
 
-.paragraph--type--text-boxes.layout--smallinfo .paragraph--type--text-box, .paragraph--type--text-boxes.layout--text_icon .paragraph--type--text-box {
+.paragraph--type--text-boxes.layout--smallinfo .paragraph--type--text-box, .paragraph--type--text-boxes.layout--lot_infos .paragraph--type--text-box, .paragraph--type--text-boxes.layout--text_icon .paragraph--type--text-box {
   text-align: center; }
 
 .paragraph--type--text-box {
