@@ -31,11 +31,11 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
         }
 
         .background-video, .background-image {
-            width: 100%;
+            min-width: 100%;
+            min-height: 100%;
         }
 
         .background-image {
-            height: 100%;
             background: {
                 repeat: no-repeat;
                 position: center center;
@@ -46,58 +46,41 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
 
     // Title, Secondary title.
     .field--name-field-title {
-        font-size: 3rem;
+        font-size: 4em;
         margin-bottom: 0;
         display: inline-block;
+        font-family: $helvetica-bold;
+        letter-spacing: -2px;
     }
 
-    .field--name-field-secondary-title {
-        font-size: $font-size-h3;
-        margin-bottom: .5em;
+    .field--name-field-secondary-title,
+    .field--name-field-lead-text {
+        font-size: 1.5em;
+        margin-bottom: 1em;
     }
 
     .field--name-field-title,
     .field--name-field-secondary-title {
-        font-family: $helvetica-bold;
         line-height: normal;
-        letter-spacing: -1px;
-        font-weight: bold;
     }
 
     // Call to action buttons.
     .field--name-field-call-to-action {
-        margin-top: 2em;
-
-        @include md {
-            float: right;
-            margin-top: -3em;
-            width: 50%;
-            text-align: center;
+        .field__item {
+            display: inline-block;
         }
         a {
             color: white;
-            display: inline-block;
-            padding: 1em 2em;
-            text-transform: uppercase;
-            background: rgba(0, 0, 0, .4);
+            display: block;
+            padding: .7em 1.4em;
+            margin-right: .5em;
+            background: $tieto-blue;
             border-radius: 3px;
-            border: 1px solid white;
             transition: background .3s;
             &:hover, &:focus, &:active {
                 text-decoration: none;
-                background: rgba(0, 0, 0, .6);
+                background: lighten($tieto-blue, 10%);
             }
-        }
-    }
-
-    @include md {
-        .field--name-field-title,
-        .field--name-field-secondary-title,
-        .field--name-field-lead-text {
-            width: 50%;
-            text-align: left;
-            float: left;
-            clear: left;
         }
     }
 

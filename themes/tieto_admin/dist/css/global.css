@@ -2608,54 +2608,39 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
       right: 0;
       bottom: 0; }
     .paragraph--type--header .background .background-video, .paragraph--type--header .background .background-image {
-      width: 100%; }
+      min-width: 100%;
+      min-height: 100%; }
     .paragraph--type--header .background .background-image {
-      height: 100%;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover; }
   .paragraph--type--header .field--name-field-title {
-    font-size: 3rem;
+    font-size: 4em;
     margin-bottom: 0;
-    display: inline-block; }
-  .paragraph--type--header .field--name-field-secondary-title {
-    font-size: 1.75rem;
-    margin-bottom: .5em; }
+    display: inline-block;
+    font-family: "HelveticaBold";
+    letter-spacing: -2px; }
+  .paragraph--type--header .field--name-field-secondary-title,
+  .paragraph--type--header .field--name-field-lead-text {
+    font-size: 1.5em;
+    margin-bottom: 1em; }
   .paragraph--type--header .field--name-field-title,
   .paragraph--type--header .field--name-field-secondary-title {
-    font-family: "HelveticaBold";
-    line-height: normal;
-    letter-spacing: -1px;
-    font-weight: bold; }
-  .paragraph--type--header .field--name-field-call-to-action {
-    margin-top: 2em; }
-    @media (min-width: 767px) {
-      .paragraph--type--header .field--name-field-call-to-action {
-        float: right;
-        margin-top: -3em;
-        width: 50%;
-        text-align: center; } }
-    .paragraph--type--header .field--name-field-call-to-action a {
-      color: white;
-      display: inline-block;
-      padding: 1em 2em;
-      text-transform: uppercase;
-      background: rgba(0, 0, 0, 0.4);
-      border-radius: 3px;
-      border: 1px solid white;
-      -webkit-transition: background .3s;
-      transition: background .3s; }
-      .paragraph--type--header .field--name-field-call-to-action a:hover, .paragraph--type--header .field--name-field-call-to-action a:focus, .paragraph--type--header .field--name-field-call-to-action a:active {
-        text-decoration: none;
-        background: rgba(0, 0, 0, 0.6); }
-  @media (min-width: 767px) {
-    .paragraph--type--header .field--name-field-title,
-    .paragraph--type--header .field--name-field-secondary-title,
-    .paragraph--type--header .field--name-field-lead-text {
-      width: 50%;
-      text-align: left;
-      float: left;
-      clear: left; } }
+    line-height: normal; }
+  .paragraph--type--header .field--name-field-call-to-action .field__item {
+    display: inline-block; }
+  .paragraph--type--header .field--name-field-call-to-action a {
+    color: white;
+    display: block;
+    padding: .7em 1.4em;
+    margin-right: .5em;
+    background: #67afe1;
+    border-radius: 3px;
+    -webkit-transition: background .3s;
+    transition: background .3s; }
+    .paragraph--type--header .field--name-field-call-to-action a:hover, .paragraph--type--header .field--name-field-call-to-action a:focus, .paragraph--type--header .field--name-field-call-to-action a:active {
+      text-decoration: none;
+      background: #92c5e9; }
   .paragraph--type--header .paragraph-inner {
     position: absolute;
     top: 50%;
