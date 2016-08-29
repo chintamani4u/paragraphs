@@ -2275,35 +2275,26 @@ details.fieldset-no-legend {
  */
 .logo {
   display: block;
-  background: #67afe1;
   padding: 0 10px;
-  height: 50px; }
-  .logo img {
-    height: 100%; }
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 501; }
+  .logo::after {
+    -webkit-transform: rotate(19deg) skew(-28deg);
+    transform: rotate(19deg) skew(-28deg);
+    background: #67afe1;
+    content: " ";
+    position: absolute;
+    top: -100px;
+    left: -50px;
+    display: block;
+    width: 200px;
+    height: 200px;
+    z-index: -1; }
   @media (min-width: 767px) {
     .logo {
-      background: 0;
-      display: block;
-      float: left;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 501; }
-      .logo img {
-        height: auto;
-        padding-left: 7px; }
-      .logo::after {
-        -webkit-transform: rotate(12deg) skew(-32deg);
-        transform: rotate(12deg) skew(-32deg);
-        content: " ";
-        position: absolute;
-        top: -100px;
-        left: -50px;
-        display: block;
-        background: #67afe1;
-        width: 200px;
-        height: 200px;
-        z-index: -1; } }
+      position: fixed; } }
 
 /**
  * Add spacing to bottom of pages
@@ -2407,9 +2398,6 @@ details.fieldset-no-legend {
 .node--type-campaign {
   position: static !important; }
   .node--type-campaign .hamburger {
-    padding: 0;
-    width: 50px;
-    height: 50px;
     position: absolute;
     top: 0;
     right: 0;
@@ -2430,9 +2418,7 @@ details.fieldset-no-legend {
       width: 30px;
       height: 29px; }
     .node--type-campaign .hamburger .hamburger-toggle {
-      color: white;
-      width: 50px;
-      height: 50px; }
+      color: white; }
       .node--type-campaign .hamburger .hamburger-toggle:hover, .node--type-campaign .hamburger .hamburger-toggle:active, .node--type-campaign .hamburger .hamburger-toggle:focus {
         text-decoration: none; }
       @media (min-width: 767px) {
@@ -2440,10 +2426,20 @@ details.fieldset-no-legend {
           display: none; } }
   .node--type-campaign .campaign-menu {
     position: absolute;
-    top: 50px;
-    right: 0;
+    top: 70px;
+    right: 1em;
     z-index: 500;
-    width: 100%; }
+    padding: 1em; }
+    .node--type-campaign .campaign-menu::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 4px;
+      border: 10px solid;
+      margin-top: -20px;
+      border-color: transparent transparent rgba(0, 0, 0, 0.7) transparent;
+      box-sizing: content-box; }
     @media (max-width: 766px) {
       .node--type-campaign .campaign-menu {
         background: rgba(0, 0, 0, 0.7);
@@ -2451,10 +2447,7 @@ details.fieldset-no-legend {
         visibility: hidden;
         will-change: opacity;
         -webkit-transition: opacity .2s, visibility .2s;
-        transition: opacity .2s, visibility .2s;
-        overflow-y: hidden;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden; } }
+        transition: opacity .2s, visibility .2s; } }
     @media (min-width: 767px) {
       .node--type-campaign .campaign-menu {
         position: fixed;
@@ -2469,7 +2462,8 @@ details.fieldset-no-legend {
           display: inline-block; } }
     .node--type-campaign .campaign-menu > ul {
       margin: 0;
-      padding: 0; }
+      padding: 0;
+      list-style: none; }
     .node--type-campaign .campaign-menu.fixed {
       background: rgba(0, 0, 0, 0.5); }
     .node--type-campaign .campaign-menu a:link, .node--type-campaign .campaign-menu a:visited, .node--type-campaign .campaign-menu a:active, .node--type-campaign .campaign-menu a:focus {
@@ -2640,7 +2634,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     transition: background .3s; }
     .paragraph--type--header .field--name-field-call-to-action a:hover, .paragraph--type--header .field--name-field-call-to-action a:focus, .paragraph--type--header .field--name-field-call-to-action a:active {
       text-decoration: none;
-      background: #92c5e9; }
+      background: #7cbae5; }
   .paragraph--type--header .paragraph-inner {
     position: absolute;
     top: 50%;

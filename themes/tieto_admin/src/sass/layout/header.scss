@@ -3,39 +3,26 @@
  */
 .logo {
 	display: block;
-	background: $tieto-blue;
 	padding: 0 10px;
-	height: 50px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 501;
 
-	img {
-		height: 100%;
+	&::after {
+		transform: rotate(19deg) skew(-28deg);
+		background: $tieto-blue;
+		content: " ";
+		position: absolute;
+		top: -100px;
+		left: -50px;
+		display: block;
+		width: 200px;
+		height: 200px;
+		z-index: -1;
 	}
 
 	@include md {
-		background: 0;
-		display: block;
-		float: left;
 		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 501;
-
-		img {
-			height: auto;
-			padding-left: 7px;
-		}
-
-		&::after {
-			transform: rotate(12deg) skew(-32deg);
-			content: " ";
-			position: absolute;
-			top: -100px;
-			left: -50px;
-			display: block;
-			background: $tieto-blue;
-			width: 200px;
-			height: 200px;
-			z-index: -1;
-		}
 	}
 }

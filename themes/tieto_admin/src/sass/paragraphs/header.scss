@@ -79,7 +79,7 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
             transition: background .3s;
             &:hover, &:focus, &:active {
                 text-decoration: none;
-                background: lighten($tieto-blue, 10%);
+                background: lighten($tieto-blue, 5%);
             }
         }
     }

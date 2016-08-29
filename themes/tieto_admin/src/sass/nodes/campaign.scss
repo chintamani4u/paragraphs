@@ -3,9 +3,6 @@
 	position: static !important;
 
 	.hamburger {
-		padding: 0;
-		width: $header-height;
-		height: $header-height;
 		position: absolute;
 	    top: 0;
 	    right: 0;
@@ -40,8 +37,6 @@
 
 		.hamburger-toggle {
 			color: white;
-			width: $header-height;
-			height: $header-height;
 			&:hover, &:active, &:focus {
 				text-decoration: none;
 			}
@@ -54,10 +49,22 @@
 	// Menu field wrapper.
 	.campaign-menu {
 		position: absolute;
-		top: $header-height;
-		right: 0;
+		top: 70px;
+		right: 1em;
 		z-index: 500;
-		width: 100%;
+		padding: 1em;
+
+		&::before {
+			content: " ";
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 4px;
+		    border: 10px solid;
+		    margin-top: -20px;
+		    border-color: transparent transparent rgba(0, 0, 0, 0.7) transparent;
+		    box-sizing: content-box;
+		}
 
 		// Mobile styles for Menu field wrapper.
 		@include breakpoint-max(md) {
@@ -66,8 +73,6 @@
 			visibility: hidden;
 			will-change: opacity;
 			transition: opacity .2s, visibility .2s;
-			overflow-y: hidden;
-			backface-visibility: hidden;
 		}
 
 		// Desktop styles for Menu field wrapper.
@@ -88,6 +93,7 @@
 		> ul {
 			margin: 0;
 			padding: 0;
+			list-style: none;
 		}
 
 		// When scrolling past Header, we need a background.
