@@ -2462,6 +2462,7 @@ details.fieldset-no-legend {
         position: fixed;
         top: 0;
         left: 0;
+        right: 0;
         padding: 1em;
         font-size: .9em;
         text-align: right;
