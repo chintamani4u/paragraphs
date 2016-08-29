@@ -18,12 +18,44 @@
 
 	}
 
+	// Inverse layout
 	&.layout--two-column-content-1st-inverse,
 	&.layout--two-column-title-1st-inverse {
 		background: $tieto-blue;
-		text-align: center; // @todo temp
+
+		.field--name-field-title,
+		.field--name-field-text {
+			color: white;
+			@include md {
+				width: 50%;
+			}
+		}
+
 		.field--name-field-title {
-			@extend .campaign-title-inverse;
+			@extend .campaign-headline;
+			margin-top: 20px;
+		}
+	}
+
+	@include md {
+		&.layout--two-column-content-1st-inverse {
+			.field--name-field-title {
+				float: right;
+				text-align: right;
+			}
+			.field--name-field-text {
+				float: left;
+			}
+		}
+
+		&.layout--two-column-title-1st-inverse {
+			.field--name-field-title {
+				float: left;
+				text-align: left;
+			}
+			.field--name-field-text {
+				float: right;
+			}
 		}
 	}
 }
