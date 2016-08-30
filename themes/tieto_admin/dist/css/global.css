@@ -321,9 +321,11 @@ details summary:hover {
   text-transform: uppercase; }
 
 .paragraph--type--text-box .field--name-field-title {
-  font-size: 1.2em;
-  color: #67afe1;
+  font-size: 20px;
+  color: #333;
+  text-transform: uppercase;
   text-align: center;
+  letter-spacing: 0;
   line-height: 1.5; }
 
 h3.tieto-lead {
@@ -2896,9 +2898,11 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   text-transform: uppercase; }
 
 .paragraph--type--text-box .field--name-field-title {
-  font-size: 1.2em;
-  color: #67afe1;
+  font-size: 20px;
+  color: #333;
+  text-transform: uppercase;
   text-align: center;
+  letter-spacing: 0;
   line-height: 1.5; }
 
 h3.tieto-lead {

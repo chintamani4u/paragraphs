@@ -37,9 +37,11 @@
 
 %campaign-title-item {
   @extend %campaign-title;
-  font-size: 1.2em;
-  color: $tieto-blue;
+  font-size: 20px;
+  color: $text-color-strong;
+  text-transform: uppercase;
   text-align: center;
+  letter-spacing: 0;
   line-height: 1.5;
 }
 
