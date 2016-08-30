@@ -1,4 +1,9 @@
 @charset "UTF-8";
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
 @font-face {
   font-family: "HelveticaThin";
   src: url("../../fonts/HelveticaNeueLTCom-Th.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeueLTCom-Th.woff") format("woff"), url("../../fonts/HelveticaNeueLTCom-Th.ttf") format("truetype"), url("../../fonts/HelveticaNeueLTCom-Th.svg#HelveticaNeueLTCom-Th") format("svg");
@@ -2439,16 +2444,8 @@ details.fieldset-no-legend {
     right: 1em;
     z-index: 500;
     padding: 1em; }
-    .node--type-campaign .campaign-menu::before {
-      content: " ";
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 4px;
-      border: 10px solid;
-      margin-top: -20px;
-      border-color: transparent transparent rgba(0, 0, 0, 0.7) transparent;
-      box-sizing: content-box; }
+    .node--type-campaign .campaign-menu.fixed {
+      background: rgba(0, 0, 0, 0.5); }
     @media (max-width: 766px) {
       .node--type-campaign .campaign-menu {
         background: rgba(0, 0, 0, 0.7);
@@ -2457,39 +2454,44 @@ details.fieldset-no-legend {
         will-change: opacity;
         -webkit-transition: opacity .2s, visibility .2s;
         transition: opacity .2s, visibility .2s; } }
+    .node--type-campaign .campaign-menu a:link {
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      display: block;
+      text-align: center; }
     @media (min-width: 767px) {
       .node--type-campaign .campaign-menu {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
-        padding: 1em;
-        font-size: .9em;
         text-align: right;
         -webkit-transition: background .2s;
         transition: background .2s; }
+        .node--type-campaign .campaign-menu::before {
+          content: " ";
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 4px;
+          border: 10px solid;
+          margin-top: -20px;
+          border-color: transparent transparent rgba(0, 0, 0, 0.7) transparent;
+          box-sizing: content-box; }
         .node--type-campaign .campaign-menu .campaign-menu-link {
-          display: inline-block; } }
-    .node--type-campaign .campaign-menu > ul {
-      margin: 0;
-      padding: 0;
-      list-style: none; }
-    .node--type-campaign .campaign-menu.fixed {
-      background: rgba(0, 0, 0, 0.5); }
-    .node--type-campaign .campaign-menu a:link, .node--type-campaign .campaign-menu a:visited, .node--type-campaign .campaign-menu a:active, .node--type-campaign .campaign-menu a:focus {
-      font-family: "HelveticaBold";
-      color: white;
-      text-decoration: none;
-      display: block;
-      text-align: center;
-      padding: .5em; }
-    @media (min-width: 767px) {
-      .node--type-campaign .campaign-menu a:link {
-        border-bottom: 2px solid transparent;
-        -webkit-transition: border-color .2s;
-        transition: border-color .2s; }
-      .node--type-campaign .campaign-menu a:hover, .node--type-campaign .campaign-menu a.active {
-        border-color: white; } }
+          display: inline-block;
+          padding: .5em; }
+          .node--type-campaign .campaign-menu .campaign-menu-link:not(:last-child) a:link {
+            border-bottom: 2px solid transparent;
+            -webkit-transition: border-color .2s;
+            transition: border-color .2s; }
+            .node--type-campaign .campaign-menu .campaign-menu-link:not(:last-child) a:link:hover {
+              border-color: white; }
+          .node--type-campaign .campaign-menu .campaign-menu-link:last-child {
+            padding: .5em 1em;
+            border: 2px solid white;
+            border-radius: 3px; } }
 
 .paragraph {
   padding: 40px 1em;
@@ -2647,7 +2649,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   .paragraph--type--header .field--name-field-secondary-title,
   .paragraph--type--header .field--name-field-lead-text {
     font-size: 1.5em;
-    margin-bottom: 1em; }
+    margin-bottom: .5em; }
   .paragraph--type--header .field--name-field-title,
   .paragraph--type--header .field--name-field-secondary-title {
     line-height: normal; }

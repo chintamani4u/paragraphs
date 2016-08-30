@@ -66,6 +66,10 @@
   list-style: none;
 }
 
+.list-reset {
+  @include list-reset;
+}
+
 // mixin
 @mixin angle($pseudo, $angle: 3deg, $flip: true) {
   // Possible values for $pseudo are: before, after, both

@@ -54,16 +54,9 @@
 		z-index: 500;
 		padding: 1em;
 
-		&::before {
-			content: " ";
-			display: block;
-			position: absolute;
-			top: 0;
-			right: 4px;
-		    border: 10px solid;
-		    margin-top: -20px;
-		    border-color: transparent transparent rgba(0, 0, 0, 0.7) transparent;
-		    box-sizing: content-box;
+		// When scrolling past Header, we need a background.
+		&.fixed {
+			background: rgba(0, 0, 0, .5);
 		}
 
 		// Mobile styles for Menu field wrapper.
@@ -75,54 +68,60 @@
 			transition: opacity .2s, visibility .2s;
 		}
 
+		// Menu links <a> tags
+		a:link {
+			font-weight: bold;
+			color: white;
+			text-decoration: none;
+			display: block;
+			text-align: center;
+		}
+
 		// Desktop styles for Menu field wrapper.
 		@include md {
 			position: fixed;
 			top: 0;
 			left: 0;
 			right: 0;
-			padding: 1em;
-			font-size: .9em;
 			text-align: right;
 			transition: background .2s;
 
+			// Arrow for the dropdown.
+			&::before {
+				content: " ";
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 4px;
+			    border: 10px solid;
+			    margin-top: -20px;
+			    border-color: transparent transparent rgba(0, 0, 0, 0.7) transparent;
+			    box-sizing: content-box;
+			}
+
+			// Menu link wrappers (<li> items)
 			.campaign-menu-link {
 				display: inline-block;
+				padding: .5em;
+
+				// On desktop, the links have a bottom border on :hover
+				&:not(:last-child) a:link {
+					border-bottom: 2px solid transparent;
+					transition: border-color .2s;
+
+					&:hover {
+						border-color: white;
+					}
+				}
+
+				// Last item gets a 2px border, making it look like a button.
+				&:last-child {
+					padding: .5em 1em;
+					border: 2px solid white;
+					border-radius: 3px;
+				}
 			}
 		}
-
-		> ul {
-			margin: 0;
-			padding: 0;
-			list-style: none;
-		}
-
-		// When scrolling past Header, we need a background.
-		&.fixed {
-			background: rgba(0, 0, 0, .5);
-		}
-
-		// Menu links <a> tags
-		a:link, a:visited, a:active, a:focus {
-			font-family: $helvetica-bold;
-			color: white;
-			text-decoration: none;
-			display: block;
-			text-align: center;
-			padding: .5em;
-		}
-
-		// On desktop, the links have a bottom border on :hover
-		@include md {
-			a:link {
-				border-bottom: 2px solid transparent;
-				transition: border-color .2s;
-			}
-			a:hover, a.active {
-				border-color: white;
-			}
-		}
-
 
 	}
 }
