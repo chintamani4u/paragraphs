@@ -2492,7 +2492,8 @@ details.fieldset-no-legend {
         border-color: white; } }
 
 .paragraph {
-  padding: 40px 1em; }
+  padding: 40px 1em;
+  background-color: #fff; }
   .paragraph:before, .paragraph:after {
     content: "";
     display: table; }
@@ -2592,10 +2593,29 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
  */
 .paragraph--type--header {
   padding: 0; }
+  .paragraph--type--header + .paragraph {
+    position: relative;
+    z-index: 1; }
+    .paragraph--type--header + .paragraph::before {
+      background: inherit;
+      content: '';
+      display: block;
+      height: 50%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      z-index: -1;
+      -webkit-backface-visibility: hidden; }
+    .paragraph--type--header + .paragraph::before {
+      top: 0;
+      -webkit-transform: skewY(-3deg);
+      transform: skewY(-3deg);
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0; }
   .paragraph--type--header .background {
     position: relative;
     overflow: hidden;
-    height: 570px; }
+    height: 600px; }
     .paragraph--type--header .background::before {
       content: " ";
       position: absolute;
@@ -2646,10 +2666,10 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
       text-decoration: none;
       background: #7cbae5; }
   .paragraph--type--header .paragraph-inner {
-    position: absolute;
+    position: relative;
     top: 50%;
-    -webkit-transform: translateY(-30%);
-    transform: translateY(-30%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
     left: 0;
     right: 0;
     width: 100%;
@@ -2730,6 +2750,9 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
 .paragraph--type--text-box {
   padding: 1em; }
 
+/**
+ * Typography
+ */
 .campaign-title, .campaign-headline, .paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title, .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title, .campaign-title-center, .paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title, .campaign-title-separator, .paragraph--type--simple.layout--separator-clean .field--name-field-title, .campaign-title-item, .paragraph--type--text-box .field--name-field-title {
   margin-bottom: 1em;
   font-family: "HelveticaBold";
@@ -2758,6 +2781,75 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   color: #67afe1;
   text-align: center;
   line-height: 1.5; }
+
+/**
+ * Paragraph blocks
+ */
+.diagonal-after {
+  position: relative;
+  z-index: 1; }
+  .diagonal-after::after {
+    background: inherit;
+    content: '';
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden; }
+  .diagonal-after::after {
+    bottom: 0;
+    -webkit-transform: skewY(2deg);
+    transform: skewY(2deg);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%; }
+
+.diagonal-before {
+  position: relative;
+  z-index: 1; }
+  .diagonal-before::before {
+    background: inherit;
+    content: '';
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden; }
+  .diagonal-before::before {
+    top: 0;
+    -webkit-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+
+.diagonal-both {
+  position: relative;
+  z-index: 1; }
+  .diagonal-both::before, .diagonal-both::after {
+    background: inherit;
+    content: '';
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden; }
+  .diagonal-both::before {
+    top: 0;
+    -webkit-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+  .diagonal-both::after {
+    bottom: 0;
+    -webkit-transform: skewY(2deg);
+    transform: skewY(2deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
 
 /*!
  * Hamburgers

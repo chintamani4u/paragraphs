@@ -1,6 +1,9 @@
 // Campaign Sites
 // @todo simplify
 
+/**
+ * Typography
+ */
 .campaign-title {
   margin-bottom: 1em;
   font-family: $helvetica-bold;
@@ -37,4 +40,19 @@
   color: $tieto-blue;
   text-align: center;
   line-height: 1.5;
+}
+
+/**
+ * Paragraph blocks
+ */
+.diagonal-after {
+  @include angle('after', 2deg)
+}
+
+.diagonal-before {
+  @include angle('before', 2deg)
+}
+
+.diagonal-both {
+  @include angle('both', 2deg)
 }
