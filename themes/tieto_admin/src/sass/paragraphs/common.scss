@@ -9,6 +9,21 @@
 	margin: 0 auto;
 }
 
+/**
+ * Paragraph blocks
+ */
+.diagonal-after {
+  @include angle('after', 2deg)
+}
+
+.diagonal-before {
+  @include angle('before', 2deg)
+}
+
+.diagonal-both {
+  @include angle('both', 2deg)
+}
+
 // Super ugly hack for correctly displaying the fucking
 // admin toolbar with the fucking logo and the fucking responsive hamburger shit.
 body.toolbar-vertical, body.toolbar-horizontal {

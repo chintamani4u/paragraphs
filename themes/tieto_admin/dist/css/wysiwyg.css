@@ -3,7 +3,14 @@
  *
  * @todo move this
  */
-/* WYSIWYG Styles */
+/**
+ * Typography
+ */
+h3.tieto-lead {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 27px; }
+
 span.tieto-silver {
   color: #969696; }
 

@@ -3,7 +3,7 @@
 	&.layout--one-column-clean,
 	&.layout--one-column-shaded {
 		.field--name-field-title {
-			@extend .campaign-title-center;
+			@extend %campaign-title-center;
 		}
 	}
 
@@ -13,7 +13,7 @@
 
 	&.layout--separator-clean {
 		.field--name-field-title {
-			@extend .campaign-title-separator;
+			@extend %campaign-title-separator;
 		}
 
 	}
@@ -32,7 +32,7 @@
 		}
 
 		.field--name-field-title {
-			@extend .campaign-headline;
+			@extend %campaign-headline;
 			margin-top: 20px;
 		}
 	}

@@ -1,7 +1,7 @@
 .paragraph--type--images {
 
 	.field--name-field-title {
-		@extend .campaign-title-center;
+		@extend %campaign-title-center;
 	}
 
 	.field--name-field-images {

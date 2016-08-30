@@ -46,7 +46,7 @@ html {
   font-size: 16px; }
 
 body {
-  color: #58595b;
+  color: #777;
   background: #fff;
   font-size: 1rem;
   font-family: Arial, sans-serif;
@@ -292,6 +292,44 @@ details summary:hover {
     width: 16.6666666667%; }
   .columns-6 .col:nth-child(6n+1) {
     clear: left; } }
+
+/**
+ * Typography
+ */
+.paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title, .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title, .paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title, .paragraph--type--simple.layout--separator-clean .field--name-field-title, .paragraph--type--text-box .field--name-field-title {
+  margin-bottom: 1em;
+  font-family: "HelveticaBold";
+  letter-spacing: -1px;
+  font-size: 48px;
+  line-height: 1; }
+
+.paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title, .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title {
+  color: #333;
+  margin-bottom: 0; }
+
+.paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title {
+  color: #333;
+  text-align: center; }
+
+.paragraph--type--simple.layout--separator-clean .field--name-field-title {
+  color: #969696;
+  font-size: .9em;
+  letter-spacing: 2px;
+  text-align: center;
+  border-bottom: 1px solid #969696;
+  padding-bottom: 1em;
+  text-transform: uppercase; }
+
+.paragraph--type--text-box .field--name-field-title {
+  font-size: 1.2em;
+  color: #67afe1;
+  text-align: center;
+  line-height: 1.5; }
+
+h3.tieto-lead {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 27px; }
 
 /**
  * Admin lists.
@@ -2506,6 +2544,75 @@ details.fieldset-no-legend {
   max-width: 1000px;
   margin: 0 auto; }
 
+/**
+ * Paragraph blocks
+ */
+.diagonal-after {
+  position: relative;
+  z-index: 1; }
+  .diagonal-after::after {
+    background: inherit;
+    content: '';
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden; }
+  .diagonal-after::after {
+    bottom: 0;
+    -webkit-transform: skewY(2deg);
+    transform: skewY(2deg);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%; }
+
+.diagonal-before {
+  position: relative;
+  z-index: 1; }
+  .diagonal-before::before {
+    background: inherit;
+    content: '';
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden; }
+  .diagonal-before::before {
+    top: 0;
+    -webkit-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+
+.diagonal-both {
+  position: relative;
+  z-index: 1; }
+  .diagonal-both::before, .diagonal-both::after {
+    background: inherit;
+    content: '';
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden; }
+  .diagonal-both::before {
+    top: 0;
+    -webkit-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+  .diagonal-both::after {
+    bottom: 0;
+    -webkit-transform: skewY(2deg);
+    transform: skewY(2deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+
 body.toolbar-vertical .tieto-campaign-page, body.toolbar-horizontal .tieto-campaign-page {
   position: relative; }
 
@@ -2552,17 +2659,21 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
 
 @media (min-width: 767px) {
   .paragraph--type--image-text.layout--text_1st .field--name-field-title,
+  .paragraph--type--image-text.layout--text_1st .field--name-field-text, .paragraph--type--image-text.layout--image_1st .field--name-field-title,
+  .paragraph--type--image-text.layout--image_1st .field--name-field-text {
+    text-align: left; } }
+
+@media (min-width: 767px) {
+  .paragraph--type--image-text.layout--text_1st .field--name-field-title,
   .paragraph--type--image-text.layout--text_1st .field--name-field-text {
-    float: left;
-    text-align: left; }
+    float: left; }
   .paragraph--type--image-text.layout--text_1st .field--name-field-image {
     float: right; } }
 
 @media (min-width: 767px) {
   .paragraph--type--image-text.layout--image_1st .field--name-field-title,
   .paragraph--type--image-text.layout--image_1st .field--name-field-text {
-    float: right;
-    text-align: right; }
+    float: right; }
   .paragraph--type--image-text.layout--image_1st .field--name-field-image {
     float: left; } }
 
@@ -2753,23 +2864,29 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   padding: 1em; }
 
 /**
+ * CUSTOM CSS FOR CAMPAIGN PAGES
+ *
+ * @todo move this
+ */
+/**
  * Typography
  */
-.campaign-title, .campaign-headline, .paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title, .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title, .campaign-title-center, .paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title, .campaign-title-separator, .paragraph--type--simple.layout--separator-clean .field--name-field-title, .campaign-title-item, .paragraph--type--text-box .field--name-field-title {
+.paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title, .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title, .paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title, .paragraph--type--simple.layout--separator-clean .field--name-field-title, .paragraph--type--text-box .field--name-field-title {
   margin-bottom: 1em;
   font-family: "HelveticaBold";
-  letter-spacing: -1px; }
-
-.campaign-headline, .paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title, .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title {
-  font-size: 3em;
+  letter-spacing: -1px;
+  font-size: 48px;
   line-height: 1; }
 
-.campaign-title-center, .paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title {
-  font-size: 2em;
-  color: #000;
+.paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title, .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title {
+  color: #333;
+  margin-bottom: 0; }
+
+.paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title {
+  color: #333;
   text-align: center; }
 
-.campaign-title-separator, .paragraph--type--simple.layout--separator-clean .field--name-field-title {
+.paragraph--type--simple.layout--separator-clean .field--name-field-title {
   color: #969696;
   font-size: .9em;
   letter-spacing: 2px;
@@ -2778,80 +2895,62 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   padding-bottom: 1em;
   text-transform: uppercase; }
 
-.campaign-title-item, .paragraph--type--text-box .field--name-field-title {
+.paragraph--type--text-box .field--name-field-title {
   font-size: 1.2em;
   color: #67afe1;
   text-align: center;
   line-height: 1.5; }
 
-/**
- * Paragraph blocks
- */
-.diagonal-after {
-  position: relative;
-  z-index: 1; }
-  .diagonal-after::after {
-    background: inherit;
-    content: '';
-    display: block;
-    height: 50%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    z-index: -1;
-    -webkit-backface-visibility: hidden; }
-  .diagonal-after::after {
-    bottom: 0;
-    -webkit-transform: skewY(2deg);
-    transform: skewY(2deg);
-    -webkit-transform-origin: 0 100%;
-    transform-origin: 0 100%; }
+h3.tieto-lead {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 27px; }
 
-.diagonal-before {
-  position: relative;
-  z-index: 1; }
-  .diagonal-before::before {
-    background: inherit;
-    content: '';
-    display: block;
-    height: 50%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    z-index: -1;
-    -webkit-backface-visibility: hidden; }
-  .diagonal-before::before {
-    top: 0;
-    -webkit-transform: skewY(-2deg);
-    transform: skewY(-2deg);
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0; }
+span.tieto-silver {
+  color: #969696; }
 
-.diagonal-both {
-  position: relative;
-  z-index: 1; }
-  .diagonal-both::before, .diagonal-both::after {
-    background: inherit;
-    content: '';
-    display: block;
-    height: 50%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    z-index: -1;
-    -webkit-backface-visibility: hidden; }
-  .diagonal-both::before {
-    top: 0;
-    -webkit-transform: skewY(-2deg);
-    transform: skewY(-2deg);
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0; }
-  .diagonal-both::after {
-    bottom: 0;
-    -webkit-transform: skewY(2deg);
-    transform: skewY(2deg);
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0; }
+span.tieto-blue {
+  color: #67afe1; }
+
+span.tieto-orange {
+  color: #e57c1c; }
+
+span.tieto-white {
+  color: #fff; }
+
+/* field_paragraph_class */
+#page-tieto .paragraph.tieto-silver,
+.field--name-field-paragraph-class option[value="tieto-silver"] {
+  background-color: #969696; }
+
+#page-tieto .paragraph.tieto-blue,
+.field--name-field-paragraph-class option[value="tieto-blue"] {
+  background-color: #67afe1; }
+
+#page-tieto .paragraph.tieto-orange,
+.field--name-field-paragraph-class option[value="tieto-orange"] {
+  background-color: #e57c1c; }
+
+#page-tieto .paragraph.tieto-white,
+.field--name-field-paragraph-class option[value="tieto-white"] {
+  background-color: #fff; }
+
+/* field_title_class */
+#page-tieto .paragraph .field--name-field-title.tieto-silver,
+.field--name-field-title-class option[value="tieto-silver"] {
+  color: #969696; }
+
+#page-tieto .paragraph .field--name-field-title.tieto-blue,
+.field--name-field-title-class option[value="tieto-blue"] {
+  color: #67afe1; }
+
+#page-tieto .paragraph .field--name-field-title.tieto-orange,
+.field--name-field-title-class option[value="tieto-orange"] {
+  color: #e57c1c; }
+
+#page-tieto .paragraph .field--name-field-title.tieto-white,
+.field--name-field-title-class option[value="tieto-white"] {
+  color: #fff; }
 
 /*!
  * Hamburgers

@@ -5,7 +5,7 @@
     &.layout--image_1st {
 
         .field--name-field-title {
-            @extend .campaign-headline;
+            @extend %campaign-headline;
         }
 
         .field--name-field-title,
@@ -14,6 +14,13 @@
             text-align: center;
             @include md {
                 width: 50%;
+            }
+        }
+
+        @include md {
+            .field--name-field-title,
+            .field--name-field-text {
+                text-align: left;
             }
         }
     }
@@ -26,7 +33,6 @@
             .field--name-field-title,
             .field--name-field-text {
                 float: left;
-                text-align: left;
             }
             // Image
             .field--name-field-image {
@@ -43,7 +49,6 @@
             .field--name-field-title,
             .field--name-field-text {
                 float: right;
-                text-align: right;
             }
             // Image
             .field--name-field-image {
@@ -58,7 +63,7 @@
 
         // Title
         .field--name-field-title {
-            @extend .campaign-title-center;
+            @extend %campaign-title-center;
         }
 
         // Text

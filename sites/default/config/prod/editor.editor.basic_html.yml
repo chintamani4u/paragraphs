@@ -50,7 +50,7 @@ settings:
     language:
       language_list: un
     stylescombo:
-      styles: "span.tieto-silver|Silver\r\nspan.tieto-blue|Tieto blue\r\nspan.tieto-orange|Orange\r\nspan.tieto-white|White"
+      styles: "span.tieto-silver|Silver\r\nspan.tieto-blue|Tieto blue\r\nspan.tieto-orange|Orange\r\nspan.tieto-white|White\r\nh3.tieto-lead|Lead"
     video_embed:
       defaults:
         children:
