@@ -15,15 +15,9 @@ body {
   color: $text-color;
   background: #fff;
   font-size: $font-size-base;
-  font-family: $font-base;
+  font-family: $helvetica-roman;
   font-weight: normal;
   line-height: $line-height-base;
-}
-body.page-node-type-campaign {
-  // @fixme
-  &:not(.toolbar-horizontal):not(.toolbar-vertical) {
-    font-family: $helvetica-roman;
-  }
 }
 img {
   display: inline-block;

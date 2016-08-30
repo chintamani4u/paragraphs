@@ -1,0 +1,29 @@
+uuid: a20e6d2c-9933-4f6f-9514-2536f8009145
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.campaign-national-retail-pa
+  module:
+    - system
+  theme:
+    - seven
+id: seven_campaignnationalretailpaymentswitch
+theme: seven
+region: header
+weight: -7
+provider: null
+plugin: 'system_menu_block:campaign-national-retail-pa'
+settings:
+  id: 'system_menu_block:campaign-national-retail-pa'
+  label: 'Menu: National Retail Payment Switch'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/6
+    negate: false
+    context_mapping: {  }

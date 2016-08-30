@@ -49,12 +49,9 @@ body {
   color: #777;
   background: #fff;
   font-size: 1rem;
-  font-family: Arial, sans-serif;
+  font-family: "HelveticaRoman";
   font-weight: normal;
   line-height: 1.5; }
-
-body.page-node-type-campaign:not(.toolbar-horizontal):not(.toolbar-vertical) {
-  font-family: "HelveticaRoman"; }
 
 img {
   display: inline-block;
@@ -2494,7 +2491,7 @@ details.fieldset-no-legend {
         will-change: opacity;
         -webkit-transition: opacity .2s, visibility .2s;
         transition: opacity .2s, visibility .2s; } }
-    .node--type-campaign .campaign-menu a:link {
+    .node--type-campaign .campaign-menu a {
       font-weight: bold;
       color: white;
       text-decoration: none;

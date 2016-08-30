@@ -1,0 +1,29 @@
+uuid: 0405221b-644a-4965-b564-3af67b5b2825
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.energy-components
+  module:
+    - system
+  theme:
+    - seven
+id: seven_energycomponents
+theme: seven
+region: header
+weight: null
+provider: null
+plugin: 'system_menu_block:energy-components'
+settings:
+  id: 'system_menu_block:energy-components'
+  label: 'Energy Components'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility:
+  request_path:
+    id: request_path
+    pages: /energy-components
+    negate: false
+    context_mapping: {  }
