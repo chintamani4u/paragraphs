@@ -6,6 +6,7 @@
 
         .field--name-field-title {
             @extend %campaign-headline;
+            color: $text-color-strong;
         }
 
         .field--name-field-title,

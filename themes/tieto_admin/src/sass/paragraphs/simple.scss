@@ -37,6 +37,7 @@
 
 		.field--name-field-title {
 			@extend %campaign-headline;
+			color: white;
 			margin-top: 20px;
 		}
 	}
