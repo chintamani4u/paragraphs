@@ -15,6 +15,10 @@
 		}
 	}
 
+	&.layout--lot_infos-grey {
+		background-color: $tieto-lightgrey;
+	}
+
 	@include md {
 		&.layout--lot_infos .paragraph--type--text-box {
 			text-align: left;
@@ -26,6 +30,7 @@
 // Text Boxes -> Text Box
 .paragraph--type--text-box {
 	padding: 1em;
+	background: inherit;
 
 	// Text Box item title
 	.field--name-field-title {

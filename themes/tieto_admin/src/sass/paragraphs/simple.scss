@@ -1,21 +1,25 @@
 .paragraph--type--simple {
 
 	&.layout--one-column-clean,
-	&.layout--one-column-shaded {
+	&.layout--one-column-shaded,
+	&.layout--one-column-grey {
 		.field--name-field-title {
 			@extend %campaign-title-center;
 		}
 	}
 
 	&.layout--one-column-shaded {
-		background: $tieto-lightblue;
+		background-color: $tieto-lightblue;
+	}
+
+	&.layout--one-column-grey {
+		background-color: $tieto-lightgrey;
 	}
 
 	&.layout--separator-clean {
 		.field--name-field-title {
 			@extend %campaign-title-separator;
 		}
-
 	}
 
 	// Inverse layout

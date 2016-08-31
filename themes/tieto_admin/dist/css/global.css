@@ -293,7 +293,7 @@ details summary:hover {
 /**
  * Typography
  */
-.paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title, .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title, .paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title, .paragraph--type--simple.layout--separator-clean .field--name-field-title, .paragraph--type--text-box .field--name-field-title {
+.paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title, .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title, .paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--simple.layout--one-column-grey .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title, .paragraph--type--simple.layout--separator-clean .field--name-field-title, .paragraph--type--text-box .field--name-field-title {
   margin-bottom: 1em;
   font-family: "HelveticaBold";
   letter-spacing: -1px;
@@ -304,7 +304,7 @@ details summary:hover {
   color: #333;
   margin-bottom: 0; }
 
-.paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title {
+.paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--simple.layout--one-column-grey .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title {
   color: #333;
   text-align: center; }
 
@@ -2824,7 +2824,10 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     color: white; }
 
 .paragraph--type--simple.layout--one-column-shaded {
-  background: #cde6f5; }
+  background-color: #cde6f5; }
+
+.paragraph--type--simple.layout--one-column-grey {
+  background-color: #efefef; }
 
 .paragraph--type--simple.layout--two-column-content-1st-inverse, .paragraph--type--simple.layout--two-column-title-1st-inverse {
   background: #67afe1; }
@@ -2855,12 +2858,16 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
 .paragraph--type--text-boxes.layout--smallinfo .paragraph--type--text-box, .paragraph--type--text-boxes.layout--lot_infos .paragraph--type--text-box, .paragraph--type--text-boxes.layout--text_icon .paragraph--type--text-box {
   text-align: center; }
 
+.paragraph--type--text-boxes.layout--lot_infos-grey {
+  background-color: #efefef; }
+
 @media (min-width: 767px) {
   .paragraph--type--text-boxes.layout--lot_infos .paragraph--type--text-box {
     text-align: left; } }
 
 .paragraph--type--text-box {
-  padding: 1em; }
+  padding: 1em;
+  background: inherit; }
 
 /**
  * CUSTOM CSS FOR CAMPAIGN PAGES
@@ -2870,7 +2877,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
 /**
  * Typography
  */
-.paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title, .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title, .paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title, .paragraph--type--simple.layout--separator-clean .field--name-field-title, .paragraph--type--text-box .field--name-field-title {
+.paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title, .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title, .paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--simple.layout--one-column-grey .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title, .paragraph--type--simple.layout--separator-clean .field--name-field-title, .paragraph--type--text-box .field--name-field-title {
   margin-bottom: 1em;
   font-family: "HelveticaBold";
   letter-spacing: -1px;
@@ -2881,7 +2888,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   color: #333;
   margin-bottom: 0; }
 
-.paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title {
+.paragraph--type--images .field--name-field-title, .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title, .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--simple.layout--one-column-grey .field--name-field-title, .paragraph--type--text-boxes .field--name-field-title {
   color: #333;
   text-align: center; }
 
