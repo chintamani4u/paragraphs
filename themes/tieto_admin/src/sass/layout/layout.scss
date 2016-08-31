@@ -130,3 +130,52 @@
     }
   }
 }
+
+.page-footer {
+
+  max-width: $page-max-width;
+  margin: 0 auto;
+  padding: 2em 0 8em 0;
+  color: $tieto-blue;
+  border-top: 1px solid $tieto-blue;
+
+  a {
+
+      color: $tieto-blue;
+
+  } 
+
+  .footer-text {
+
+    float: left;
+
+      .footer-text-copyright {
+
+        float: left;
+        margin: 0 2em 0 0;
+
+      }
+
+      .footer-text-privacy {
+      
+        border-bottom: 1px solid $tieto-blue;
+        float: left;
+
+        a:hover {
+
+          text-decoration: none;
+          
+        }
+
+
+      }
+
+  }
+
+  .logo-footer-small {
+
+    float: right;
+
+  }
+}
+

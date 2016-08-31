@@ -2446,6 +2446,27 @@ details.fieldset-no-legend {
       background: white;
       color: #2c3e50; }
 
+.page-footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2em 0 8em 0;
+  color: #67afe1;
+  border-top: 1px solid #67afe1; }
+  .page-footer a {
+    color: #67afe1; }
+  .page-footer .footer-text {
+    float: left; }
+    .page-footer .footer-text .footer-text-copyright {
+      float: left;
+      margin: 0 2em 0 0; }
+    .page-footer .footer-text .footer-text-privacy {
+      border-bottom: 1px solid #67afe1;
+      float: left; }
+      .page-footer .footer-text .footer-text-privacy a:hover {
+        text-decoration: none; }
+  .page-footer .logo-footer-small {
+    float: right; }
+
 .node--type-campaign {
   position: static !important; }
   .node--type-campaign .hamburger {

@@ -17,7 +17,7 @@ import Elixir from 'laravel-elixir'
  * Configuration
  */
 Elixir.config.sourcemaps = true
-Elixir.config.notifications = true
+Elixir.config.notifications = false
 Elixir.config.assetsPath = 'src'
 Elixir.config.publicPath = 'dist'
 Elixir.config.viewPath = 'templates'
