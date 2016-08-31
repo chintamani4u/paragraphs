@@ -5,7 +5,7 @@
  */
 
 @import "../base/vars";
-@import "../base/placeholders";
+@import "../base/mixins";
 
 // WYSIWYG Styles Dropdown.
 span.tieto-silver {
@@ -25,7 +25,7 @@ span.tieto-white {
 }
 
 h3.tieto-lead {
-  @extend %campaign-lead;
+  @include campaign-lead;
 }
 
 /* field_paragraph_class */

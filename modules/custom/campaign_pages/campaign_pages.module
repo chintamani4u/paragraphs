@@ -78,16 +78,18 @@ function campaign_pages_preprocess_paragraph(&$variables) {
     ],
     'field_simple_layout' => [
       0 => 'one-column-clean',
-      1 => 'one-column-shaded',
-      2 => 'two-column-title-1st-inverse',
-      3 => 'two-column-content-1st-inverse',
-      4 => 'separator-clean',
+      1 => 'one-column-grey',
+      2 => 'one-column-shaded',
+      3 => 'two-column-title-1st-inverse',
+      4 => 'two-column-content-1st-inverse',
+      5 => 'separator-clean',
     ],
     'field_text_boxes_layout' => [
       0 => 'none',
       1 => 'smallinfo',
       2 => 'lot_infos',
-      3 => 'text_icon',
+      3 => 'lot_infos-grey',
+      4 => 'text_icon',
     ],
   ];
 

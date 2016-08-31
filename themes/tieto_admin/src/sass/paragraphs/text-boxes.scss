@@ -3,7 +3,7 @@
 
 	// Main Title
 	.field--name-field-title {
-		@extend %campaign-title-center;
+		@include campaign-title-center;
 	}
 
 	// Layouts
@@ -13,6 +13,10 @@
 		.paragraph--type--text-box {
 			text-align: center;
 		}
+	}
+
+	&.layout--lot_infos-grey {
+		background-color: $tieto-lightgrey;
 	}
 
 	@include md {
@@ -25,10 +29,11 @@
 
 // Text Boxes -> Text Box
 .paragraph--type--text-box {
-	padding: 1em;
+	padding: 2em 1em;
+	background: inherit;
 
 	// Text Box item title
 	.field--name-field-title {
-		@extend %campaign-title-item;
+		@include campaign-title-item;
 	}
 }

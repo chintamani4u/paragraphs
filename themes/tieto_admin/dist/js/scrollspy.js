@@ -280,7 +280,7 @@
 
     header.scrollspy({
         min: 490,
-        max: 10000,
+        max: 50000,
         onEnter: function() {
             header.addClass('fixed')
         },

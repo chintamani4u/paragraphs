@@ -40,6 +40,11 @@ settings:
         -
           name: 'Block Formatting'
           items:
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
+            - '-'
             - Format
             - Styles
         -
