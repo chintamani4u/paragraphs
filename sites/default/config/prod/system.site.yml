@@ -1,11 +1,11 @@
 uuid: ab099d2a-d866-46ad-96c2-6ab1ccaf3fd5
-name: 'Paragraphs Demo'
+name: Tieto
 mail: dev@brainsum.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node/6
+  front: /node/10
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en
