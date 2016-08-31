@@ -3,7 +3,7 @@
 
 	// Main Title
 	.field--name-field-title {
-		@extend %campaign-title-center;
+		@include campaign-title-center;
 	}
 
 	// Layouts
@@ -34,6 +34,6 @@
 
 	// Text Box item title
 	.field--name-field-title {
-		@extend %campaign-title-item;
+		@include campaign-title-item;
 	}
 }

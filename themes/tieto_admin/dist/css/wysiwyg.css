@@ -3,14 +3,14 @@
  *
  * @todo move this
  */
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
 /**
  * Typography
  */
-h3.tieto-lead {
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 27px; }
-
 span.tieto-silver {
   color: #969696; }
 
@@ -22,6 +22,11 @@ span.tieto-orange {
 
 span.tieto-white {
   color: #fff; }
+
+h3.tieto-lead {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 27px; }
 
 /* field_paragraph_class */
 #page-tieto .paragraph.tieto-silver,

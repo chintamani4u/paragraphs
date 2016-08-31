@@ -5,7 +5,7 @@
     &.layout--image_1st {
 
         .field--name-field-title {
-            @extend %campaign-headline;
+            @include campaign-headline;
             color: $text-color-strong;
         }
 
@@ -64,7 +64,7 @@
 
         // Title
         .field--name-field-title {
-            @extend %campaign-title-center;
+            @include campaign-title-center;
         }
 
         // Text
