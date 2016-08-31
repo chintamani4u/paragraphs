@@ -2860,7 +2860,8 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   text-align: center;
   border-bottom: 1px solid #969696;
   padding-bottom: 1em;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-size: 1em; }
   @media (min-width: 767px) {
     .paragraph--type--simple.layout--separator-clean .field--name-field-title {
       line-height: 1;
@@ -2889,8 +2890,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     line-height: 1.2;
     word-break: break-word;
     margin-bottom: 0;
-    color: white;
-    margin-top: 20px; }
+    color: white; }
     @media (min-width: 767px) {
       .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title {
         line-height: 1;
