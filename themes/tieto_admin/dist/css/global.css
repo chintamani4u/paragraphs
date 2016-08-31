@@ -2933,7 +2933,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     text-align: left; } }
 
 .paragraph--type--text-box {
-  padding: 1em;
+  padding: 2em 1em;
   background: inherit; }
   .paragraph--type--text-box .field--name-field-title {
     margin-bottom: 1em;
