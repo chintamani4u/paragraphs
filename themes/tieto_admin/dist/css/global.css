@@ -2856,7 +2856,6 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   line-height: 1.2;
   word-break: break-word;
   color: #969696;
-  font-size: .9em;
   letter-spacing: 2px;
   text-align: center;
   border-bottom: 1px solid #969696;
@@ -2866,6 +2865,10 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     .paragraph--type--simple.layout--separator-clean .field--name-field-title {
       line-height: 1;
       font-size: 48px; } }
+  @media (min-width: 767px) {
+    .paragraph--type--simple.layout--separator-clean .field--name-field-title {
+      font-size: .9em;
+      line-height: 1.5; } }
 
 .paragraph--type--simple.layout--two-column-content-1st-inverse, .paragraph--type--simple.layout--two-column-title-1st-inverse {
   background: #67afe1; }
@@ -2939,16 +2942,18 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     font-size: 26px;
     line-height: 1.2;
     word-break: break-word;
-    font-size: 20px;
     color: #333;
     text-transform: uppercase;
     text-align: center;
-    letter-spacing: 0;
-    line-height: 1.5; }
+    letter-spacing: 0; }
     @media (min-width: 767px) {
       .paragraph--type--text-box .field--name-field-title {
         line-height: 1;
         font-size: 48px; } }
+    @media (min-width: 767px) {
+      .paragraph--type--text-box .field--name-field-title {
+        line-height: 1.5;
+        font-size: 20px; } }
 
 /**
  * CUSTOM CSS FOR CAMPAIGN PAGES
@@ -2977,7 +2982,6 @@ span.tieto-white {
 
 h3.tieto-lead {
   font-weight: bold;
-  font-size: 20px;
   line-height: 27px; }
 
 /* field_paragraph_class */
