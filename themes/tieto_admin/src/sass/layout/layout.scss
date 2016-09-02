@@ -149,27 +149,24 @@
 
     float: left;
 
-      .footer-text-copyright {
+    .footer-text-copyright {
 
-        float: left;
-        margin: 0 2em 0 0;
+      float: left;
+      margin: 0 2em 0 0;
 
-      }
+    }
 
-      .footer-text-privacy {
+    .footer-text-privacy {
       
-        border-bottom: 1px solid $tieto-blue;
-        float: left;
+      border-bottom: 1px solid $tieto-blue;
+      float: left;
 
-        a:hover {
+      a:hover {
 
-          text-decoration: none;
+        text-decoration: none;
           
-        }
-
-
       }
-
+    }
   }
 
   .logo-footer-small {
