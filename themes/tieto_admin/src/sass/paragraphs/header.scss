@@ -47,6 +47,13 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
                 size: cover;
             }
         }
+
+        video::-webkit-media-controls-play-button,
+        video::-webkit-media-controls-start-playback-button {
+            opacity: 0;
+            pointer-events: none;
+            width: 5px;
+        }
     }
 
     // Title, Secondary title.

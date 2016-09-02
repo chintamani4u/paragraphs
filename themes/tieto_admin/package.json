@@ -23,6 +23,7 @@
     "laravel-elixir-rollup-official": "^1.0.4"
   },
   "dependencies": {
+    "iphone-inline-video": "^1.9.3",
     "rellax": "^0.1.0",
     "responsive-tabs": "^1.6.1"
   }

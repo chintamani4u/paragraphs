@@ -50,6 +50,7 @@ Elixir(mix => {
         .rollup('global.js')
         .rollup('responsive-tabs.js')
         .rollup('parallax.js')
+        .rollup('iphone-inline-video.js')
         .rollup('scrollspy.js')
         .rollup('smooth-scroll.js')
         .rollup('mobile.install.js')
