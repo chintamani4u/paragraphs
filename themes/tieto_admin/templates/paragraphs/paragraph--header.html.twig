@@ -35,7 +35,7 @@ set classes = [
       {% if campaign.background.type == 'image' %}
         <div class="background-image" style="background-image: url({{- campaign.background.url -}})"></div>
       {% elseif campaign.background.type == 'video' %}
-        <video class="background-video" loop muted autoplay>
+        <video class="background-video" loop muted autoplay poster="{{ campaign.background.poster }}">
           <source src="{{ campaign.background.url }}" type="{{ campaign.background.mime }}">
         </video>
       {% endif %}

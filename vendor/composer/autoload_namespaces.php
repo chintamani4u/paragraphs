@@ -12,6 +12,9 @@ return array(
     'Stack' => array($vendorDir . '/stack/builder/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
+    'Neutron' => array($vendorDir . '/neutron/temporary-filesystem/src'),
+    'FFMpeg' => array($vendorDir . '/php-ffmpeg/php-ffmpeg/src'),
+    'Evenement' => array($vendorDir . '/evenement/evenement/src'),
     'Egulias\\' => array($vendorDir . '/egulias/email-validator/src'),
     'EasyRdf_' => array($vendorDir . '/easyrdf/easyrdf/lib'),
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
@@ -21,4 +24,5 @@ return array(
     'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib'),
     'Doctrine\\Common\\' => array($vendorDir . '/doctrine/common/lib'),
     'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src'),
+    'Alchemy' => array($vendorDir . '/alchemy/binary-driver/src'),
 );

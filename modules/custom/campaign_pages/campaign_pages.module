@@ -5,8 +5,10 @@
  * Contains campaign_pages.module
  */
 
+use Drupal;
 use Drupal\Core\Url;
 use Drupal\file\Entity\File;
+use FFMpeg\Coordinate\TimeCode;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Routing\RouteMatchInterface;
 
@@ -124,6 +126,18 @@ function campaign_pages_preprocess_paragraph__header(&$variables) {
   }
   if (in_array($file_mime, ['video/mp4', 'application/mp4', 'video/webm'])) {
     $type = 'video';
+
+    // Generate poster image for video if not exist.
+    $video_filename = pathinfo($file_path)['filename'];
+    $poster_path = '/sites/default/files/paragraphs/background/' . $video_filename . '_poster.jpg';
+
+    if (! file_exists(DRUPAL_ROOT . $poster_path)) {
+      $ffmpeg = Drupal::service('php_ffmpeg');
+      $video = $ffmpeg->open(drupal_realpath($file_uri));
+      $video_path = $video->getPathfile();
+
+      $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(0))->save(DRUPAL_ROOT . $poster_path);
+    }
   }
 
   // Add variables to theme.
@@ -132,6 +146,7 @@ function campaign_pages_preprocess_paragraph__header(&$variables) {
       'type' => $type ?? 'image',
       'url' => $file_path,
       'mime' => $file_mime,
+      'poster' => $type === 'video' ? $poster_path : null,
     ],
 
     'enable_parallax' => $paragraph->field_enable_parallax->value,
