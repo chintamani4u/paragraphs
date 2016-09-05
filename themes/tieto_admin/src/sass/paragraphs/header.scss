@@ -17,6 +17,7 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
         position: relative;
         overflow: hidden;
         height: $paragraph-header-height;
+        max-height: 100vh;
 
         // Overlay over the background image/video.
         &::before {
@@ -33,6 +34,7 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
             left: 0;
             right: 0;
             bottom: 0;
+            text-align: center;
         }
 
         .background-video, .background-image {
@@ -48,8 +50,8 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
             }
         }
 
-        video::-webkit-media-controls-play-button,
-        video::-webkit-media-controls-start-playback-button {
+        .IIV::-webkit-media-controls-play-button,
+        .IIV::-webkit-media-controls-start-playback-button {
             opacity: 0;
             pointer-events: none;
             width: 5px;

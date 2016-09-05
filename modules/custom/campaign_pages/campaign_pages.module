@@ -129,14 +129,13 @@ function campaign_pages_preprocess_paragraph__header(&$variables) {
 
     // Generate poster image for video if not exist.
     $video_filename = pathinfo($file_path)['filename'];
-    $poster_path = '/sites/default/files/paragraphs/background/' . $video_filename . '_poster.jpg';
+    $poster = '/sites/default/files/paragraphs/background/' . $video_filename . '_poster.jpg';
 
-    if (! file_exists(DRUPAL_ROOT . $poster_path)) {
+    if (! file_exists(DRUPAL_ROOT . $poster)) {
       $ffmpeg = Drupal::service('php_ffmpeg');
       $video = $ffmpeg->open(drupal_realpath($file_uri));
-      $video_path = $video->getPathfile();
 
-      $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(0))->save(DRUPAL_ROOT . $poster_path);
+      $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(0))->save(DRUPAL_ROOT . $poster);
     }
   }
 
@@ -146,7 +145,7 @@ function campaign_pages_preprocess_paragraph__header(&$variables) {
       'type' => $type ?? 'image',
       'url' => $file_path,
       'mime' => $file_mime,
-      'poster' => $type === 'video' ? $poster_path : null,
+      'poster' => $type === 'video' ? $poster : null,
     ],
 
     'enable_parallax' => $paragraph->field_enable_parallax->value,
