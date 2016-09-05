@@ -147,8 +147,12 @@
     left: 0;
     right: 0;
     z-index: -1;
-    backface-visibility: hidden;
     transform: skewY($angle);
+
+    // Mobile Safari 'AA' fix for jagged edges
+    // @see http://stackoverflow.com/questions/16115271
+    backface-visibility: hidden;
+    outline: 1px solid transparent;
 
     @if $position == 'before' {
       top: 0;

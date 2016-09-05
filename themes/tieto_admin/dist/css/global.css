@@ -2542,10 +2542,11 @@ details.fieldset-no-legend {
     left: 0;
     right: 0;
     z-index: -1;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
     -webkit-transform: skewY(-1.5deg);
     transform: skewY(-1.5deg);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    outline: 1px solid transparent;
     bottom: 0;
     -webkit-transform-origin: 100%;
     transform-origin: 100%; }
@@ -2562,10 +2563,11 @@ details.fieldset-no-legend {
     left: 0;
     right: 0;
     z-index: -1;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
     -webkit-transform: skewY(-1.5deg);
     transform: skewY(-1.5deg);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    outline: 1px solid transparent;
     top: 0;
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0; }
@@ -2717,10 +2719,11 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
       left: 0;
       right: 0;
       z-index: -1;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
       -webkit-transform: skewY(-1.5deg);
       transform: skewY(-1.5deg);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      outline: 1px solid transparent;
       top: 0;
       -webkit-transform-origin: 0 0;
       transform-origin: 0 0; }
