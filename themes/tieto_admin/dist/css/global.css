@@ -2535,64 +2535,38 @@ details.fieldset-no-legend {
   z-index: 1; }
   .diagonal-after::after {
     background: inherit;
-    content: '';
+    content: ' ';
     display: block;
     height: 100%;
-    left: 0;
     position: absolute;
+    left: 0;
     right: 0;
     z-index: -1;
-    -webkit-backface-visibility: hidden; }
-  .diagonal-after::after {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: skewY(-1.5deg);
+    transform: skewY(-1.5deg);
     bottom: 0;
-    -webkit-transform: skewY(2deg);
-    transform: skewY(2deg);
-    -webkit-transform-origin: 0 100%;
-    transform-origin: 0 100%; }
+    -webkit-transform-origin: 100%;
+    transform-origin: 100%; }
 
 .diagonal-before {
   position: relative;
   z-index: 1; }
   .diagonal-before::before {
     background: inherit;
-    content: '';
+    content: ' ';
     display: block;
     height: 100%;
-    left: 0;
     position: absolute;
+    left: 0;
     right: 0;
     z-index: -1;
-    -webkit-backface-visibility: hidden; }
-  .diagonal-before::before {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: skewY(-1.5deg);
+    transform: skewY(-1.5deg);
     top: 0;
-    -webkit-transform: skewY(-2deg);
-    transform: skewY(-2deg);
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0; }
-
-.diagonal-both {
-  position: relative;
-  z-index: 1; }
-  .diagonal-both::before, .diagonal-both::after {
-    background: inherit;
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    z-index: -1;
-    -webkit-backface-visibility: hidden; }
-  .diagonal-both::before {
-    top: 0;
-    -webkit-transform: skewY(-2deg);
-    transform: skewY(-2deg);
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0; }
-  .diagonal-both::after {
-    bottom: 0;
-    -webkit-transform: skewY(2deg);
-    transform: skewY(2deg);
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0; }
 
@@ -2736,18 +2710,18 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     z-index: 1; }
     .paragraph--type--header + .paragraph::before {
       background: inherit;
-      content: '';
+      content: ' ';
       display: block;
       height: 100%;
-      left: 0;
       position: absolute;
+      left: 0;
       right: 0;
       z-index: -1;
-      -webkit-backface-visibility: hidden; }
-    .paragraph--type--header + .paragraph::before {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: skewY(-1.5deg);
+      transform: skewY(-1.5deg);
       top: 0;
-      -webkit-transform: skewY(-3deg);
-      transform: skewY(-3deg);
       -webkit-transform-origin: 0 0;
       transform-origin: 0 0; }
   .paragraph--type--header .background {

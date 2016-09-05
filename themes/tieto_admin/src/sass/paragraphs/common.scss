@@ -13,15 +13,11 @@
  * Paragraph blocks
  */
 .diagonal-after {
-  @include angle('after', 2deg)
+  @include slope(after)
 }
 
 .diagonal-before {
-  @include angle('before', 2deg)
-}
-
-.diagonal-both {
-  @include angle('both', 2deg)
+  @include slope(before)
 }
 
 // Super ugly hack for correctly displaying the fucking

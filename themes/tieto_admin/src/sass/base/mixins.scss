@@ -130,77 +130,45 @@
 }
 
 // mixin
-@mixin angle($pseudo, $angle: 3deg, $flip: true) {
-  // Possible values for $pseudo are: before, after, both
-  @if $pseudo == 'before' or $pseudo == 'after' or $pseudo == 'both' {
-    position: relative;
-    z-index: 1;
-    $selector: if($pseudo == 'both', '&::before,&::after', '&::#{$pseudo}');
+@mixin slope($position: 'before', $angle: 1.5deg, $flip: true) {
+  position: relative;
+  z-index: 1;
 
-    #{$selector} {
-      background: inherit;
-      content: '';
-      display: block;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      right: 0;
-      z-index: -1;
-      -webkit-backface-visibility: hidden; // for Chrome Windows
-    }
+  @if $flip {
+    $angle: $angle * -1;
+  }
 
-    @if $pseudo == 'before' {
-      #{$selector} {
-        top: 0;
+  &::#{$position} {
+    background: inherit;
+    content: ' ';
+    display: block;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    backface-visibility: hidden;
+    transform: skewY($angle);
 
-        @if $flip {
-          transform: skewY($angle * -1);
-          transform-origin: 0 0;
-        } @else {
-          transform: skewY($angle);
-          transform-origin: 100% 0;
-        }
+    @if $position == 'before' {
+      top: 0;
+      @if ($flip) {
+        transform-origin: 0 0;
+      }
+      @else {
+        transform-origin: 100% 0;
       }
     }
 
-    @if $pseudo == 'after' {
-      #{$selector} {
-        bottom: 0;
-
-        @if $flip {
-          transform: skewY($angle);
-          transform-origin: 0 100%;
-        } @else {
-          transform: skewY($angle * -1);
-          transform-origin: 100%;
-        }
+    @if $position == 'after' {
+      bottom: 0;
+      @if ($flip) {
+        transform-origin: 100%;
+      }
+      @else {
+        transform-origin: 0 0;
       }
     }
 
-    @if $pseudo == 'both' {
-      &::before {
-        top: 0;
-
-        @if $flip {
-          transform: skewY($angle * -1);
-          transform-origin: 0 0;
-        } @else {
-          transform: skewY($angle);
-          transform-origin: 100% 0;
-        }
-      }
-
-      &::after {
-        bottom: 0;
-
-        @if $flip {
-          transform: skewY($angle);
-          transform-origin: 0 0;
-        } @else {
-          transform: skewY($angle * -1);
-          transform-origin: 100%;
-        }
-      }
-    }
   }
 }
