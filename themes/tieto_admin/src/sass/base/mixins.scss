@@ -126,7 +126,8 @@
 
 @mixin campaign-lead {
   font-weight: bold;
-  line-height: 27px;
+  // line-height: 27px;
+  font-size: 1.5rem;
 }
 
 // mixin

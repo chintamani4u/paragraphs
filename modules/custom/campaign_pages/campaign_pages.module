@@ -93,6 +93,10 @@ function campaign_pages_preprocess_paragraph(&$variables) {
       3 => 'lot_infos-grey',
       4 => 'text_icon',
     ],
+    'field_marketo_form_layout' => [
+      0 => 'clean',
+      1 => 'download',
+    ],
   ];
 
   // Set CSS class for the selected layout.
