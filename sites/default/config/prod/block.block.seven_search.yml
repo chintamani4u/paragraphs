@@ -1,0 +1,22 @@
+uuid: 9b594b5b-58d2-4fec-854a-7a2ba394b57a
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - seven
+_core:
+  default_config_hash: za-39d5WDUg6XvbyqSnuVYEeq6QM4qKJxW8MnoAha5A
+id: seven_search
+theme: seven
+region: '-1'
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+visibility: {  }

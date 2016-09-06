@@ -11,7 +11,7 @@ _core:
 id: tieto_admin_messages
 theme: tieto_admin
 region: '-1'
-weight: 1
+weight: 0
 provider: null
 plugin: system_messages_block
 settings:

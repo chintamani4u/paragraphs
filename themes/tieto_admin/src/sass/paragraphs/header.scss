@@ -2,16 +2,22 @@
  * @file
  * HEADER paragraph
  */
-$paragraph-header-height: 570px;
+$paragraph-header-height: 600px;
 $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variables (e.g. $tieto-lightblue)
 
 .paragraph--type--header {
     padding: 0;
 
+    // Diagonal edge for the next paragraph.
+    + .paragraph {
+        @include slope(before)
+    }
+
     .background {
         position: relative;
         overflow: hidden;
         height: $paragraph-header-height;
+        max-height: 100vh;
 
         // Overlay over the background image/video.
         &::before {
@@ -28,84 +34,75 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
             left: 0;
             right: 0;
             bottom: 0;
+            text-align: center;
         }
 
         .background-video, .background-image {
-            width: 100%;
+            min-width: 100%;
+            min-height: 100%;
         }
 
         .background-image {
-            height: 100%;
             background: {
                 repeat: no-repeat;
                 position: center center;
                 size: cover;
             }
         }
+
+        .IIV::-webkit-media-controls-play-button,
+        .IIV::-webkit-media-controls-start-playback-button {
+            opacity: 0;
+            pointer-events: none;
+            width: 5px;
+        }
     }
 
     // Title, Secondary title.
     .field--name-field-title {
-        font-size: 3rem;
+        font-size: 4em;
         margin-bottom: 0;
         display: inline-block;
+        font-family: $helvetica-bold;
+        letter-spacing: -2px;
     }
 
-    .field--name-field-secondary-title {
-        font-size: $font-size-h3;
+    .field--name-field-secondary-title,
+    .field--name-field-lead-text {
+        font-size: 1.5em;
         margin-bottom: .5em;
     }
 
     .field--name-field-title,
     .field--name-field-secondary-title {
-        font-family: $helvetica-bold;
         line-height: normal;
-        letter-spacing: -1px;
-        font-weight: bold;
     }
 
     // Call to action buttons.
     .field--name-field-call-to-action {
-        margin-top: 2em;
-
-        @include md {
-            float: right;
-            margin-top: -3em;
-            width: 50%;
-            text-align: center;
+        .field__item {
+            display: inline-block;
         }
         a {
             color: white;
-            display: inline-block;
-            padding: 1em 2em;
-            text-transform: uppercase;
-            background: rgba(0, 0, 0, .4);
+            display: block;
+            padding: .7em 1.4em;
+            margin-right: .5em;
+            background: $tieto-blue;
             border-radius: 3px;
-            border: 1px solid white;
             transition: background .3s;
             &:hover, &:focus, &:active {
                 text-decoration: none;
-                background: rgba(0, 0, 0, .6);
+                background: lighten($tieto-blue, 5%);
             }
-        }
-    }
-
-    @include md {
-        .field--name-field-title,
-        .field--name-field-secondary-title,
-        .field--name-field-lead-text {
-            width: 50%;
-            text-align: left;
-            float: left;
-            clear: left;
         }
     }
 
     // Content wrapper.
     .paragraph-inner {
-        position: absolute;
+        position: relative;
         top: 50%;
-        transform: translateY(-30%);
+        transform: translateY(-50%);
         left: 0;
         right: 0;
         width: 100%;

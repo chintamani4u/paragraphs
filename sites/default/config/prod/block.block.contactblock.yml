@@ -1,6 +1,6 @@
 uuid: c0af5c88-208d-46fe-9855-412f1d95e5c9
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - contact_block
@@ -9,8 +9,8 @@ dependencies:
     - tieto_admin
 id: contactblock
 theme: tieto_admin
-region: content
-weight: -6
+region: '-1'
+weight: 3
 provider: null
 plugin: contact_block
 settings:

@@ -13,13 +13,16 @@ set classes = [
   'paragraph',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  'paragraph--background-' ~ campaign.background.type|clean_class
+  'paragraph--background-' ~ campaign.background.type|clean_class,
 ]
 %}
 
 {# Attach library if Parallax is enabled #}
 {% if parallax %}
   {{ attach_library('tieto_admin/parallax') }}
+{% endif %}
+{% if campaign.background.type == 'video' %}
+  {{ attach_library('tieto_admin/iphone-inline-video') }}
 {% endif %}
 
 <div{{ attributes.addClass(classes) }}>
@@ -35,9 +38,7 @@ set classes = [
       {% if campaign.background.type == 'image' %}
         <div class="background-image" style="background-image: url({{- campaign.background.url -}})"></div>
       {% elseif campaign.background.type == 'video' %}
-        <video class="background-video" loop muted autoplay>
-          <source src="{{ campaign.background.url }}" type="{{ campaign.background.mime }}">
-        </video>
+        <video class="background-video" autoplay muted loop webkit-playsinline src="{{ campaign.background.url }}" poster="{{ campaign.background.poster }}"></video>
       {% endif %}
 
     </div>

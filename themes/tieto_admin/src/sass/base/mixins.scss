@@ -47,12 +47,6 @@
   }
 }
 
-// Mixin that will include the fall back px declaration as well as the calculated rem value.
-// @mixin font-size($size) {
-//   font-size: $size;
-//   font-size: calculateRem($size);
-// }
-
 @mixin vertical-align {
   position: relative;
   top: 50%;
@@ -72,10 +66,114 @@
   list-style: none;
 }
 
-// @mixin page-title {
-//   font-weight: bold;
-//   padding: .2em 0;
-//   border-bottom: 2px solid $grey-200;
-//   color: $input-color;
-//   line-height: 1.3em;
-// }
+.list-reset {
+  @include list-reset;
+}
+
+/**
+ * Typography
+ */
+@mixin campaign-title {
+  margin-bottom: 1em;
+  font-family: $helvetica-bold;
+  letter-spacing: -1px;
+  font-size: 26px;
+  line-height: 1.2;
+  word-break: break-word;
+  @include md {
+    line-height: 1;
+    font-size: 48px;
+  }
+}
+
+@mixin campaign-headline {
+  @include campaign-title;
+  margin-bottom: 0;
+}
+
+@mixin campaign-title-center {
+  @include campaign-title;
+  color: $text-color-strong;
+  text-align: center;
+}
+
+@mixin campaign-title-separator {
+  @include campaign-title;
+  color: #969696;
+  letter-spacing: 2px;
+  text-align: center;
+  border-bottom: 1px solid #969696;
+  padding-bottom: 1em;
+  text-transform: uppercase;
+  font-size: 1em;
+  @include md {
+    font-size: .9em;
+    line-height: 1.5;
+  }
+}
+
+@mixin campaign-title-item {
+  @include campaign-title;
+  color: $text-color-strong;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0;
+  @include md {
+    line-height: 1.5;
+    font-size: 20px;
+  }
+}
+
+@mixin campaign-lead {
+  font-weight: bold;
+  // line-height: 27px;
+  font-size: 1.5rem;
+}
+
+// mixin
+@mixin slope($position: 'before', $angle: 1.5deg, $flip: true) {
+  position: relative;
+  z-index: 1;
+
+  @if $flip {
+    $angle: $angle * -1;
+  }
+
+  &::#{$position} {
+    background: inherit;
+    content: ' ';
+    display: block;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    transform: skewY($angle);
+
+    // Mobile Safari 'AA' fix for jagged edges
+    // @see http://stackoverflow.com/questions/16115271
+    backface-visibility: hidden;
+    outline: 1px solid transparent;
+
+    @if $position == 'before' {
+      top: 0;
+      @if ($flip) {
+        transform-origin: 0 0;
+      }
+      @else {
+        transform-origin: 100% 0;
+      }
+    }
+
+    @if $position == 'after' {
+      bottom: 0;
+      @if ($flip) {
+        transform-origin: 100%;
+      }
+      @else {
+        transform-origin: 0 0;
+      }
+    }
+
+  }
+}

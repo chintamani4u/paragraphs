@@ -17,7 +17,7 @@ import Elixir from 'laravel-elixir'
  * Configuration
  */
 Elixir.config.sourcemaps = true
-Elixir.config.notifications = true
+Elixir.config.notifications = false
 Elixir.config.assetsPath = 'src'
 Elixir.config.publicPath = 'dist'
 Elixir.config.viewPath = 'templates'
@@ -50,6 +50,7 @@ Elixir(mix => {
         .rollup('global.js')
         .rollup('responsive-tabs.js')
         .rollup('parallax.js')
+        .rollup('iphone-inline-video.js')
         .rollup('scrollspy.js')
         .rollup('smooth-scroll.js')
         .rollup('mobile.install.js')

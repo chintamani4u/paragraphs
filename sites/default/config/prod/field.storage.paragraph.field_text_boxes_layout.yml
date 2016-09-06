@@ -22,6 +22,9 @@ settings:
       label: 'Lot of infos'
     -
       value: 3
+      label: 'Lot of infos - Light Grey'
+    -
+      value: 4
       label: 'Text with an icon'
   allowed_values_function: ''
 module: options

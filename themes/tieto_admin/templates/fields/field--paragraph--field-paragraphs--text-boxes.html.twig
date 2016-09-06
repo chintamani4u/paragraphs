@@ -15,10 +15,6 @@
 
 <div{{ attributes.addClass(classes) }}>
   {% for item in items %}
-    {# @fixme ugly #}
-    {% if (campaign.boxes_per_row % loop.index == 0) and campaign.boxes_per_row != loop.index %}
-      <div class="clearfix"></div>
-    {% endif %}
-  {{ item.content }}
+    {{ item.content }}
   {% endfor %}
 </div>

@@ -4,7 +4,10 @@
  * @todo move this
  */
 
-/* WYSIWYG Styles */
+@import "../base/vars";
+@import "../base/mixins";
+
+// WYSIWYG Styles Dropdown.
 span.tieto-silver {
   color: #969696;
 }
@@ -19,6 +22,10 @@ span.tieto-orange {
 
 span.tieto-white {
   color: #fff;
+}
+
+h3.tieto-lead {
+  @include campaign-lead;
 }
 
 /* field_paragraph_class */

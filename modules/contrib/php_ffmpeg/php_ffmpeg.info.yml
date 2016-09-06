@@ -1,0 +1,12 @@
+name: PHP-FFMpeg
+description: 'Integrates with the PHP FFmpeg library.'
+type: module
+package: Development
+# core: 8.x
+configure: php_ffmpeg.settings
+
+# Information added by Drupal.org packaging script on 2016-08-29
+version: '8.x-1.0'
+core: '8.x'
+project: 'php_ffmpeg'
+datestamp: 1472493240

@@ -1,0 +1,27 @@
+uuid: 357f2695-a859-421e-a470-16880a49bdc6
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_block
+    - system
+  theme:
+    - seven
+id: seven_contactblock
+theme: seven
+region: content
+weight: -6
+provider: null
+plugin: contact_block
+settings:
+  id: contact_block
+  label: 'Contact Us Form'
+  provider: contact_block
+  label_display: '0'
+  contact_form: contact_us
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/node/8"
+    negate: false
+    context_mapping: {  }

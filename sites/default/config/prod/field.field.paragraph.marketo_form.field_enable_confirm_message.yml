@@ -1,0 +1,23 @@
+uuid: 0f7ab8c6-c5b0-4dd4-ab04-1cb47b1b00b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_enable_confirm_message
+    - paragraphs.paragraphs_type.marketo_form
+id: paragraph.marketo_form.field_enable_confirm_message
+field_name: field_enable_confirm_message
+entity_type: paragraph
+bundle: marketo_form
+label: 'Display confirmation message'
+description: 'Whether to show the confirmation message after submitting the form.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

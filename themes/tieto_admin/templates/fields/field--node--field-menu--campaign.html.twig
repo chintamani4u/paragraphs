@@ -21,7 +21,7 @@
 </button>
 
 <nav{{ attributes.addClass(classes, 'campaign-menu') }}>
-  <ul>
+  <ul class="list-reset">
     {% for item in items %}
       <li{{ item.attributes.addClass('campaign-menu-link') }}>{{ item.content }}</li>
     {% endfor %}

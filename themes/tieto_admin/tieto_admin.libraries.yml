@@ -18,6 +18,13 @@ parallax:
   js:
     dist/js/parallax.js: {}
 
+# Inline video
+# @see https://github.com/bfred-it/iphone-inline-video
+iphone-inline-video:
+  version: VERSION
+  js:
+    dist/js/iphone-inline-video.js: {}
+
 # Responsive Tabs.
 # @see https://github.com/jellekralt/Responsive-Tabs
 responsive-tabs:
