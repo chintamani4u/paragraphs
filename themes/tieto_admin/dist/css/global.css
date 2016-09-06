@@ -2960,6 +2960,44 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
         line-height: 1.5;
         font-size: 20px; } }
 
+.paragraph--type--marketo-form .field--name-field-title {
+  margin-bottom: 1em;
+  font-family: "HelveticaBold";
+  letter-spacing: -1px;
+  font-size: 26px;
+  line-height: 1.2;
+  word-break: break-word;
+  color: #333;
+  text-align: center; }
+  @media (min-width: 767px) {
+    .paragraph--type--marketo-form .field--name-field-title {
+      line-height: 1;
+      font-size: 48px; } }
+
+.paragraph--type--marketo-form .mktoForm, .paragraph--type--marketo-form .mktoForm * {
+  font-family: inherit !important; }
+
+.paragraph--type--marketo-form .mktoForm .mktoLabel, .paragraph--type--marketo-form .mktoForm .mktoRequiredField label.mktoLabel {
+  width: auto !important;
+  display: inline-block;
+  float: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: bold !important; }
+
+.paragraph--type--marketo-form .mktoForm input.mktoField, .paragraph--type--marketo-form .mktoForm textarea.mktoField {
+  min-height: inherit !important;
+  padding: 10px !important;
+  line-height: 1.5 !important;
+  font-size: 16px !important; }
+
+.paragraph--type--marketo-form .mktoForm textarea.mktoField {
+  resize: vertical !important;
+  height: auto !important;
+  min-height: inherit !important; }
+
 /**
  * CUSTOM CSS FOR CAMPAIGN PAGES
  *

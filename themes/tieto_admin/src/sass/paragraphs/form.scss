@@ -1,0 +1,34 @@
+.paragraph--type--marketo-form {
+
+	.field--name-field-title {
+		@include campaign-title-center;
+	}
+
+	// Marketo overrides.
+	.mktoForm {
+		&, * {
+			font-family: inherit !important;
+		}
+		.mktoLabel, .mktoRequiredField label.mktoLabel {
+			width: auto !important;
+			display: inline-block;
+			float: none;
+			padding: 0;
+			margin: 0;
+			line-height: 1.5;
+			font-size: 16px;
+			font-weight: bold !important;
+		}
+		input.mktoField, textarea.mktoField {
+			min-height: inherit !important;
+			padding: 10px !important;
+			line-height: 1.5 !important;
+			font-size: 16px !important;
+		}
+		textarea.mktoField {
+			resize: vertical !important;
+			height: auto !important;
+			min-height: inherit !important;
+		}
+	}
+}
