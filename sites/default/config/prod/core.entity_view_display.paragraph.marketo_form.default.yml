@@ -11,7 +11,7 @@ dependencies:
     - field.field.paragraph.marketo_form.field_marketo_form_layout
     - field.field.paragraph.marketo_form.field_text
     - field.field.paragraph.marketo_form.field_title
-    - image.style.thumbnail
+    - image.style.whitepaper_a4
     - paragraphs.paragraphs_type.marketo_form
   module:
     - image
@@ -26,7 +26,7 @@ content:
     weight: 1
     label: hidden
     settings:
-      image_style: thumbnail
+      image_style: whitepaper_a4
       image_link: ''
     third_party_settings: {  }
     type: image
