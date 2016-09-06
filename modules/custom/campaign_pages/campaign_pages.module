@@ -5,7 +5,6 @@
  * Contains campaign_pages.module
  */
 
-use Drupal\Core\Url;
 use Drupal\file\Entity\File;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -32,7 +31,7 @@ function campaign_pages_help($route_name, RouteMatchInterface $route_match) {
 function campaign_pages_page_attachments_alter(array &$attachments) {
   $attributes = \Drupal::request()->attributes;
   if ($attributes->get('_entity_form') !== "node.edit" && $node = $attributes->get('node')) {
-    if ($machine_name = $node->get('field_machine_name')->value) {
+    if ($node->hasField('field_machine_name') && $machine_name = $node->get('field_machine_name')->value) {
       $css_file_name = \Drupal::theme()->getActiveTheme()->getPath() . '/css/campaign/' . $machine_name . '.css';
       if (file_exists($css_file_name)) {
         $attachments['#attached']['html_head'][] = [
