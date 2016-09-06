@@ -11,7 +11,7 @@ dependencies:
 id: energycomponents
 theme: tieto_admin
 region: header
-weight: null
+weight: -9
 provider: null
 plugin: 'system_menu_block:energy-components'
 settings:
