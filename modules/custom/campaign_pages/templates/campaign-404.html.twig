@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a 404 error page.
+ *
+ * @see campaing_pages_theme()
+ *
+ * @ingroup themeable
+ */
+#}
+<style>
+    #page-404 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+</style>
+<div id="page-404" class="tieto-campaign-page">
+
+    <div class="paragraph--type--header">
+        <div class="background">
+            <div class="background-wrapper">
+                <div class="background-image" style="background-image: url(/themes/tieto_admin/images/404.jpg)"></div>
+            </div>
+            <div class="paragraph-inner">
+                <div class="field field--name-field-title field--type-string field--label-hidden field__item">Page not found. 404</div>
+                <div class="field field--name-field-secondary-title field--type-string field--label-hidden field__item">Unfortunately we were not able to retrieve the page you were looking for.</div>
+            </div>
+        </div>
+    </div>
+
+    {% include directory ~ '/templates/inc/footer.html.twig' %}
+</div>

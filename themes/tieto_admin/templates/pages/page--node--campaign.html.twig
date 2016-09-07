@@ -44,17 +44,11 @@
 {% set machine_name = node.field_machine_name.value %}
 
 <div id="{{ machine_name|default('tieto_campaign_page') }}" class="tieto-campaign-page">
-	<a href="#" class="logo"><img src="/themes/tieto_admin/images/tietologo.png" alt="Tieto"></a>
+    {% include directory ~ '/templates/inc/logo.html.twig' %}
+
     <main class="page-content" role="main">
         {{ page.content }}
     </main>
-    <footer class="page-footer">
-    	<div class="footer-text">
-    		<div class="footer-text-copyright">© Tieto</div>
-    		<div class="footer-text-privacy">
-    			<a href="https://www.tieto.com/privacy-statement" >Privacy statement</a>
-    		</div>
-    	</div>
-        <div class="logo-footer-small"><img src="/themes/tieto_admin/images/logo_footer_small.png" alt="Tieto"></div>
-    </footer>
+
+    {% include directory ~ '/templates/inc/footer.html.twig' with front_page, is_admin %}
 </div>

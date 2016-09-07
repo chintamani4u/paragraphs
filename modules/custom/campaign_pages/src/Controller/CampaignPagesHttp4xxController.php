@@ -17,7 +17,7 @@ class CampaignPagesHttp4xxController extends ControllerBase {
    */
   public function on403() {
     return [
-      '#theme' => 'campaign_pages_403',
+      '#theme' => 'campaign_403',
       '#error_code' => '403',
     ];
   }
@@ -30,7 +30,7 @@ class CampaignPagesHttp4xxController extends ControllerBase {
    */
   public function on404() {
     return [
-      '#theme' => 'campaign_pages_404',
+      '#theme' => 'campaign_404',
       '#error_code' => '404',
     ];
   }
