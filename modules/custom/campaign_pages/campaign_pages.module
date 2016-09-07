@@ -215,3 +215,21 @@ function campaign_pages_add_template_variable(&$variables, $data = null) {
 
   return $data;
 }
+
+/**
+ * Implements hook_theme().
+ */
+function campaign_pages_theme($existing, $type, $theme, $path) {
+  return [
+    'campaign_pages_404' => [
+      'variables' => [
+        'error_code' => NULL
+      ],
+    ],
+    'campaign_pages_403' => [
+      'variables' => [
+        'error_code' => NULL
+      ],
+    ],
+  ];
+}
