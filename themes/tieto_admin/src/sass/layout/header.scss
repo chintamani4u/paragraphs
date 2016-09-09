@@ -20,20 +20,40 @@
 		}
 	}
 
-	&:not(.fixed)::after {
-		transform: rotate(19deg) skew(-28deg);
+	width: 100%;
+	&::after {
+		transform: rotate(19deg) skew(-28deg) translateZ(0);
+
 		background: $tieto-blue;
 		content: " ";
 		position: absolute;
 		display: block;
+		z-index: -1;
+
 		top: -120px;
 	    left: -70px;
-		width: 200px;
+
+	    width: 200px;
 		height: 200px;
-		z-index: -1;
+
 		@include md {
+			will-change: transform, width, left;
 			top: -100px;
 			left: -50px;
+		}
+	}
+
+	@include md {
+		&.not-fixed::after {
+			transition: width .2s, transform .2s ease .2s;
+			transform: rotate(19deg) skew(-28deg);
+		}
+
+		&.fixed::after {
+			transition: transform .2s, width .2s ease .2s;
+			transform: rotate(0) skew(0) translateY(-25px);
+			width: 100%;
+			left: 0;
 		}
 	}
 }
