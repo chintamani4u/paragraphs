@@ -117,7 +117,7 @@
   color: $text-color-strong;
   text-transform: uppercase;
   text-align: center;
-  letter-spacing: 0;
+  letter-spacing: -1px;
   @include md {
     line-height: 1.5;
     font-size: 20px;
@@ -126,12 +126,12 @@
 
 @mixin campaign-lead {
   font-weight: bold;
-  // line-height: 27px;
-  font-size: 1.5rem;
+  line-height: 27px;
+  font-size: 20px;
 }
 
 // mixin
-@mixin slope($position: 'before', $angle: 1.5deg, $flip: true) {
+@mixin slope($position: 'before', $angle: 4deg, $flip: true) {
   position: relative;
   z-index: 1;
 

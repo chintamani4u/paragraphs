@@ -25,7 +25,8 @@ span.tieto-white {
 
 h3.tieto-lead {
   font-weight: bold;
-  font-size: 1.5rem; }
+  line-height: 27px;
+  font-size: 20px; }
 
 /* field_paragraph_class */
 #page-tieto .paragraph.tieto-silver,

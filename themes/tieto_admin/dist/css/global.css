@@ -1155,8 +1155,8 @@ li.tabs__tab a {
     left: 0;
     right: 0;
     z-index: -1;
-    -webkit-transform: skewY(-1.5deg);
-    transform: skewY(-1.5deg);
+    -webkit-transform: skewY(-4deg);
+    transform: skewY(-4deg);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     outline: 1px solid transparent;
@@ -1176,8 +1176,8 @@ li.tabs__tab a {
     left: 0;
     right: 0;
     z-index: -1;
-    -webkit-transform: skewY(-1.5deg);
-    transform: skewY(-1.5deg);
+    -webkit-transform: skewY(-4deg);
+    transform: skewY(-4deg);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     outline: 1px solid transparent;
@@ -1332,8 +1332,8 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
       left: 0;
       right: 0;
       z-index: -1;
-      -webkit-transform: skewY(-1.5deg);
-      transform: skewY(-1.5deg);
+      -webkit-transform: skewY(-4deg);
+      transform: skewY(-4deg);
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       outline: 1px solid transparent;
@@ -1563,7 +1563,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     color: #333;
     text-transform: uppercase;
     text-align: center;
-    letter-spacing: 0; }
+    letter-spacing: -1px; }
     @media (min-width: 767px) {
       .paragraph--type--text-box .field--name-field-title {
         line-height: 1;
@@ -1587,7 +1587,8 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     word-break: break-word;
     margin-bottom: 0;
     text-align: center;
-    margin-bottom: .5em; }
+    margin-bottom: .5em;
+    color: #333; }
     @media (min-width: 767px) {
       .paragraph--type--marketo-form .field--name-field-title, .paragraph--type--marketo-form.layout--clean .field--name-field-title {
         line-height: 1;
@@ -1597,7 +1598,8 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
         text-align: left; } }
   .paragraph--type--marketo-form .field--name-field-lead-text, .paragraph--type--marketo-form.layout--clean .field--name-field-lead-text {
     font-weight: bold;
-    font-size: 1.5rem; }
+    line-height: 27px;
+    font-size: 20px; }
   @media (min-width: 767px) {
     .paragraph--type--marketo-form .field--name-field-title,
     .paragraph--type--marketo-form .field--name-field-lead-text,
@@ -1670,7 +1672,8 @@ span.tieto-white {
 
 h3.tieto-lead {
   font-weight: bold;
-  font-size: 1.5rem; }
+  line-height: 27px;
+  font-size: 20px; }
 
 /* field_paragraph_class */
 #page-tieto .paragraph.tieto-silver,
