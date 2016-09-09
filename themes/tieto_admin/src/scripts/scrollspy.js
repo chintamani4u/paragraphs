@@ -7,7 +7,7 @@ import '../../vendor/jquery-scrollspy'
 
 ($ => {
 
-    let header = $('.field--name-field-menu')
+    let header = $('.field--name-field-menu, .tieto-campaign-page > .logo')
 
     header.scrollspy({
         min: 490,

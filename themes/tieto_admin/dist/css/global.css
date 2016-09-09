@@ -906,7 +906,7 @@ li.tabs__tab a {
     @media (min-width: 767px) {
       .logo img {
         height: auto; } }
-  .logo::after {
+  .logo:not(.fixed)::after {
     -webkit-transform: rotate(19deg) skew(-28deg);
     transform: rotate(19deg) skew(-28deg);
     background: #67afe1;
@@ -919,7 +919,7 @@ li.tabs__tab a {
     height: 200px;
     z-index: -1; }
     @media (min-width: 767px) {
-      .logo::after {
+      .logo:not(.fixed)::after {
         top: -100px;
         left: -50px; } }
 
@@ -1079,7 +1079,7 @@ li.tabs__tab a {
     z-index: 500;
     padding: 1em; }
     .node--type-campaign .campaign-menu.fixed {
-      background: rgba(0, 0, 0, 0.5); }
+      background: #67afe1; }
     @media (max-width: 766px) {
       .node--type-campaign .campaign-menu {
         background: rgba(0, 0, 0, 0.7);

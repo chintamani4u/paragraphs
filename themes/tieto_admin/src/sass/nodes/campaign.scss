@@ -56,7 +56,7 @@
 
 		// When scrolling past Header, we need a background.
 		&.fixed {
-			background: rgba(0, 0, 0, .5);
+			background: $tieto-blue;
 		}
 
 		// Mobile styles for Menu field wrapper.

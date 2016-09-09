@@ -20,7 +20,7 @@
 		}
 	}
 
-	&::after {
+	&:not(.fixed)::after {
 		transform: rotate(19deg) skew(-28deg);
 		background: $tieto-blue;
 		content: " ";

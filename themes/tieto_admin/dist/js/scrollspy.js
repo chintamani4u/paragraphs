@@ -276,7 +276,7 @@
 
 (function ($) {
 
-    var header = $('.field--name-field-menu')
+    var header = $('.field--name-field-menu, .tieto-campaign-page > .logo')
 
     header.scrollspy({
         min: 490,
