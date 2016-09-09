@@ -131,7 +131,7 @@
 }
 
 // mixin
-@mixin slope($position: 'before', $angle: 4deg, $flip: true) {
+@mixin slope($position: 'before', $angle: 3.5deg, $flip: true) {
   position: relative;
   z-index: 1;
 

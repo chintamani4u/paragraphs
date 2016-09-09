@@ -1155,8 +1155,8 @@ li.tabs__tab a {
     left: 0;
     right: 0;
     z-index: -1;
-    -webkit-transform: skewY(-4deg);
-    transform: skewY(-4deg);
+    -webkit-transform: skewY(-3.5deg);
+    transform: skewY(-3.5deg);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     outline: 1px solid transparent;
@@ -1176,8 +1176,8 @@ li.tabs__tab a {
     left: 0;
     right: 0;
     z-index: -1;
-    -webkit-transform: skewY(-4deg);
-    transform: skewY(-4deg);
+    -webkit-transform: skewY(-3.5deg);
+    transform: skewY(-3.5deg);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     outline: 1px solid transparent;
@@ -1332,8 +1332,8 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
       left: 0;
       right: 0;
       z-index: -1;
-      -webkit-transform: skewY(-4deg);
-      transform: skewY(-4deg);
+      -webkit-transform: skewY(-3.5deg);
+      transform: skewY(-3.5deg);
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       outline: 1px solid transparent;
