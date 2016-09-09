@@ -10,7 +10,11 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
 
     // Diagonal edge for the next paragraph.
     + .paragraph {
-        @include slope(before)
+        @include slope(before);
+        ~ .paragraph {
+            position: relative;
+            z-index: 1;
+        }
     }
 
     .background {

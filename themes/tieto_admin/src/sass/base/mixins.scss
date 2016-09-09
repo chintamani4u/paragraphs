@@ -143,17 +143,16 @@
     background: inherit;
     content: ' ';
     display: block;
-    height: 100%;
+    height: 1000px; // height fallback
+    height: 100vh;
     position: absolute;
     left: 0;
     right: 0;
     z-index: -1;
-    transform: skewY($angle);
+    transform: skewY($angle) translateZ(0);
 
     // Mobile Safari 'AA' fix for jagged edges
-    // @see http://stackoverflow.com/questions/16115271
     backface-visibility: hidden;
-    outline: 1px solid transparent;
 
     @if $position == 'before' {
       top: 0;
