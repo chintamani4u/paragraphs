@@ -1022,26 +1022,26 @@ li.tabs__tab a {
       background: white;
       color: #2c3e50; }
 
-.page-footer {
+.container {
   max-width: 1000px;
-  margin: 0 auto;
-  padding: 2em 0 8em 0;
+  margin: 0 auto; }
+
+.campaign-footer .container {
+  border-top: 1px solid #67afe1;
+  padding: 2em 1em; }
+
+.campaign-footer .footer-item {
   color: #67afe1;
-  border-top: 1px solid #67afe1; }
-  .page-footer a {
-    color: #67afe1; }
-  .page-footer .footer-text {
-    float: left; }
-    .page-footer .footer-text .footer-text-copyright {
-      float: left;
-      margin: 0 2em 0 0; }
-    .page-footer .footer-text .footer-text-privacy {
-      border-bottom: 1px solid #67afe1;
-      float: left; }
-      .page-footer .footer-text .footer-text-privacy a:hover {
-        text-decoration: none; }
-  .page-footer .logo-footer-small {
-    float: right; }
+  margin-right: 1em; }
+
+.campaign-footer a {
+  color: #67afe1;
+  text-decoration: none; }
+  .campaign-footer a:hover {
+    border-bottom: 1px solid #67afe1; }
+
+.campaign-footer .tieto-logo {
+  float: right; }
 
 .node--type-campaign {
   position: static !important; }
@@ -1160,6 +1160,7 @@ li.tabs__tab a {
     transform: skewY(-3.5deg) translateZ(0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    outline: 1px solid transparent;
     bottom: 0;
     -webkit-transform-origin: 100%;
     transform-origin: 100%; }
@@ -1181,6 +1182,7 @@ li.tabs__tab a {
     transform: skewY(-3.5deg) translateZ(0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    outline: 1px solid transparent;
     top: 0;
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0; }
@@ -1337,6 +1339,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
       transform: skewY(-3.5deg) translateZ(0);
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
+      outline: 1px solid transparent;
       top: 0;
       -webkit-transform-origin: 0 0;
       transform-origin: 0 0; }

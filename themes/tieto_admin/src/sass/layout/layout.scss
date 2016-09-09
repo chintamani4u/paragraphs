@@ -131,48 +131,32 @@
   }
 }
 
-.page-footer {
-
+.container {
   max-width: $page-max-width;
   margin: 0 auto;
-  padding: 2em 0 8em 0;
-  color: $tieto-blue;
-  border-top: 1px solid $tieto-blue;
+}
+
+.campaign-footer {
+  .container {
+    border-top: 1px solid $tieto-blue;
+    padding: 2em 1em;
+  }
+
+  .footer-item {
+    color: $tieto-blue;
+    margin-right: 1em;
+  }
 
   a {
-
-      color: $tieto-blue;
-
-  } 
-
-  .footer-text {
-
-    float: left;
-
-    .footer-text-copyright {
-
-      float: left;
-      margin: 0 2em 0 0;
-
-    }
-
-    .footer-text-privacy {
-      
+    color: $tieto-blue;
+    text-decoration: none;
+    &:hover {
       border-bottom: 1px solid $tieto-blue;
-      float: left;
-
-      a:hover {
-
-        text-decoration: none;
-          
-      }
     }
   }
 
-  .logo-footer-small {
-
+  .tieto-logo {
     float: right;
-
   }
 }
 

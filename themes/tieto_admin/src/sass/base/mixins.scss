@@ -153,6 +153,7 @@
 
     // Mobile Safari 'AA' fix for jagged edges
     backface-visibility: hidden;
+    outline: 1px solid transparent;
 
     @if $position == 'before' {
       top: 0;
