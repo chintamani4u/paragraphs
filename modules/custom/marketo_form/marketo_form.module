@@ -19,3 +19,17 @@ function marketo_form_help($route_name, RouteMatchInterface $route_match) {
       return $output;
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function marketo_form_theme($existing, $type, $theme, $path) {
+  return [
+    'marketo_form_field' => [
+      'variables' => [
+        'forms' => NULL,
+        'entity' => NULL,
+      ],
+    ],
+  ];
+}
