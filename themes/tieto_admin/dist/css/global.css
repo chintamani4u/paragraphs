@@ -1358,14 +1358,14 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
       left: 0;
       right: 0;
       z-index: -1;
-      -webkit-transform: skewY(-3.5deg) translateZ(0);
-      transform: skewY(-3.5deg) translateZ(0);
+      -webkit-transform: skewY(3.5deg) translateZ(0);
+      transform: skewY(3.5deg) translateZ(0);
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       outline: 1px solid transparent;
       top: 0;
-      -webkit-transform-origin: 0 0;
-      transform-origin: 0 0; }
+      -webkit-transform-origin: 100% 0;
+      transform-origin: 100% 0; }
     .paragraph--type--header + .paragraph ~ .paragraph {
       position: relative;
       z-index: 1; }
