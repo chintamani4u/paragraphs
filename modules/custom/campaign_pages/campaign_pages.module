@@ -233,12 +233,12 @@ function campaign_pages_preprocess_field(&$variables) {
  */
 function campaign_pages_theme($existing, $type, $theme, $path) {
   return [
-    'campaign_pages_404' => [
+    'campaign_404' => [
       'variables' => [
         'error_code' => NULL
       ],
     ],
-    'campaign_pages_403' => [
+    'campaign_403' => [
       'variables' => [
         'error_code' => NULL
       ],

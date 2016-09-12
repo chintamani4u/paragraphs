@@ -3,7 +3,8 @@
 
 	// Main Title
 	.field--name-field-title {
-		@include campaign-title-center;
+		@include campaign-title;
+		color: $text-color-strong;
 	}
 
 	// Layouts
