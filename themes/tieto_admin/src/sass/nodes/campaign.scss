@@ -62,12 +62,26 @@
 
 		// Mobile styles for Menu field wrapper.
 		@include breakpoint-max(md) {
-			background: rgba(0, 0, 0, 0.7);
-			padding: 1em;
+			background: $tieto-blue;
+			padding: .5em 1em;
 			opacity: 0;
 			visibility: hidden;
 			will-change: opacity;
 			transition: opacity .2s, visibility .2s;
+			box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+
+			// Arrow for the dropdown.
+			&::before {
+				content: " ";
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 4px;
+			    border: 10px solid;
+			    margin-top: -20px;
+			    border-color: transparent transparent $tieto-blue transparent;
+			    box-sizing: content-box;
+			}
 		}
 
 		// Menu links <a> tags
@@ -92,19 +106,6 @@
 			text-align: right;
 			transition: background .2s;
 
-			// Arrow for the dropdown.
-			&::before {
-				content: " ";
-				display: block;
-				position: absolute;
-				top: 0;
-				right: 4px;
-			    border: 10px solid;
-			    margin-top: -20px;
-			    border-color: transparent transparent rgba(0, 0, 0, 0.7) transparent;
-			    box-sizing: content-box;
-			}
-
 			// Menu link wrappers (<li> items)
 			.campaign-menu-link {
 				display: inline-block;
@@ -124,6 +125,13 @@
 					padding: .5em 1em;
 					border: 2px solid white;
 					border-radius: 3px;
+
+					&:hover {
+						background: white;
+						a {
+							color: $tieto-blue;
+						}
+					}
 				}
 			}
 		}

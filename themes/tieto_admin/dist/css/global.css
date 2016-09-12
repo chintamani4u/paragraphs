@@ -1100,13 +1100,24 @@ li.tabs__tab a {
     z-index: 501; }
     @media (max-width: 766px) {
       .node--type-campaign .campaign-menu {
-        background: rgba(0, 0, 0, 0.7);
-        padding: 1em;
+        background: #67afe1;
+        padding: .5em 1em;
         opacity: 0;
         visibility: hidden;
         will-change: opacity;
         -webkit-transition: opacity .2s, visibility .2s;
-        transition: opacity .2s, visibility .2s; } }
+        transition: opacity .2s, visibility .2s;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); }
+        .node--type-campaign .campaign-menu::before {
+          content: " ";
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 4px;
+          border: 10px solid;
+          margin-top: -20px;
+          border-color: transparent transparent #67afe1 transparent;
+          box-sizing: content-box; } }
     .node--type-campaign .campaign-menu a {
       font-weight: bold;
       color: white;
@@ -1124,16 +1135,6 @@ li.tabs__tab a {
         text-align: right;
         -webkit-transition: background .2s;
         transition: background .2s; }
-        .node--type-campaign .campaign-menu::before {
-          content: " ";
-          display: block;
-          position: absolute;
-          top: 0;
-          right: 4px;
-          border: 10px solid;
-          margin-top: -20px;
-          border-color: transparent transparent rgba(0, 0, 0, 0.7) transparent;
-          box-sizing: content-box; }
         .node--type-campaign .campaign-menu .campaign-menu-link {
           display: inline-block; }
           .node--type-campaign .campaign-menu .campaign-menu-link:not(:last-child) a:link {
@@ -1145,7 +1146,11 @@ li.tabs__tab a {
           .node--type-campaign .campaign-menu .campaign-menu-link:last-child {
             padding: .5em 1em;
             border: 2px solid white;
-            border-radius: 3px; } }
+            border-radius: 3px; }
+            .node--type-campaign .campaign-menu .campaign-menu-link:last-child:hover {
+              background: white; }
+              .node--type-campaign .campaign-menu .campaign-menu-link:last-child:hover a {
+                color: #67afe1; } }
 
 .paragraph {
   padding: 40px 1em;
