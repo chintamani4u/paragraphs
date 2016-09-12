@@ -5,7 +5,6 @@
  * Functions to support theming in the tieto_admin theme.
  */
 
-use Drupal;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
