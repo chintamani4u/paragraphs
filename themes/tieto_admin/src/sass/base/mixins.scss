@@ -94,7 +94,6 @@
 @mixin campaign-title-center {
   @include campaign-title;
   color: $text-color-strong;
-  text-align: center;
 }
 
 @mixin campaign-title-separator {
