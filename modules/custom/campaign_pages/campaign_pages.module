@@ -217,6 +217,18 @@ function campaign_pages_add_template_variable(&$variables, $data = null) {
 }
 
 /**
+ * Implements hook_preprocess_field().
+ *
+ * Add rendered_confirmation_message to field variables.
+ */
+function campaign_pages_preprocess_field(&$variables) {
+  $element = $variables['element'];
+  if ($variables['field_name'] === 'field_marketo_form') {
+    $variables['element'][0]['#entity']->rendered_confirmation_message = check_markup($element['#object']->field_text[0]->value, $element['#object']->field_text[0]->format);
+  }
+}
+
+/**
  * Implements hook_theme().
  */
 function campaign_pages_theme($existing, $type, $theme, $path) {
