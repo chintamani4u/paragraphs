@@ -115,8 +115,6 @@
 @mixin campaign-title-item {
   @include campaign-title;
   color: $text-color-strong;
-  text-transform: uppercase;
-  text-align: center;
   letter-spacing: -1px;
   @include md {
     line-height: 1.5;
