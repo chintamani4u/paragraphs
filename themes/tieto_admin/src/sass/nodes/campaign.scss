@@ -55,11 +55,6 @@
 		padding: 1em;
 		z-index: 501;
 
-		// When scrolling past Header, we need a background.
-		// &.fixed {
-		// 	background: $tieto-blue;
-		// }
-
 		// Mobile styles for Menu field wrapper.
 		@include breakpoint-max(md) {
 			background: $tieto-blue;
@@ -86,11 +81,12 @@
 
 		// Menu links <a> tags
 		a {
-			font-weight: bold;
 			color: white;
 			text-decoration: none;
 			display: block;
 			text-align: center;
+			font-size: 14px;
+			letter-spacing: .5px;
 		}
 
 		.campaign-menu-link {
@@ -122,7 +118,7 @@
 
 				// Last item gets a 2px border, making it look like a button.
 				&:last-child {
-					padding: .5em 1em;
+					padding: .5em 1.5em;
 					border: 2px solid white;
 					border-radius: 3px;
 

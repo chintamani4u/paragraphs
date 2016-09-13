@@ -3,26 +3,19 @@
  */
 .logo {
 	display: block;
-	padding: 0 10px;
-	top: 0;
-	left: 0;
 	z-index: 501;
 	position: absolute;
+	top: 0; left: 0;
+	padding-left: 14px;
 
 	@include md {
 		position: fixed;
 	}
 
-	img {
-		height: 50px;
-		@include md {
-			height: auto;
-		}
-	}
-
 	width: 100%;
 	&::after {
-		transform: rotate(19deg) skew(-28deg) translateZ(0);
+		transform: $tieto-logo-transform;
+		will-change: transform, width;
 
 		background: $tieto-blue;
 		content: " ";
@@ -30,30 +23,23 @@
 		display: block;
 		z-index: -1;
 
-		top: -120px;
-	    left: -70px;
+		top: -84px;
+		left: -60px;
 
 	    width: 200px;
 		height: 200px;
-
-		@include md {
-			will-change: transform, width, left;
-			top: -100px;
-			left: -50px;
-		}
 	}
 
 	@include md {
 		&.not-fixed::after {
 			transition: width .2s, transform .2s ease .2s;
-			transform: rotate(19deg) skew(-28deg);
+			transform: $tieto-logo-transform;
 		}
 
 		&.fixed::after {
 			transition: transform .2s, width .2s ease .2s;
-			transform: rotate(0) skew(0) translateY(-25px);
+			transform: rotate(0) skew(0) translate3d(60px, -40px, 0);
 			width: 100%;
-			left: 0;
 		}
 	}
 }
