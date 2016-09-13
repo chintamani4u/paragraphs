@@ -13,15 +13,10 @@ $spacer:   1rem !default;
 // Font, line-height, and color for body text, headings, and more.
 
 $fonts-directory: '../../fonts';
-$helvetica-thin: "HelveticaThin";
-$helvetica-light: "HelveticaLight";
-$helvetica-roman: "HelveticaRoman";
-$helvetica-bold: "HelveticaBold";
-
 $font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $font-serif:      Georgia, "Times New Roman", Times, serif !default;
 $font-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-base:       Arial, sans-serif !default;
+$font-base:       'HelveticaNeue', Arial, sans-serif !default;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root: 16px !default;

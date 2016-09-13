@@ -52,7 +52,7 @@
 		top: 70px;
 		right: 1em;
 		z-index: 500;
-		padding: 1em;
+		padding: 10px;
 		z-index: 501;
 
 		// Mobile styles for Menu field wrapper.
@@ -117,16 +117,15 @@
 				}
 
 				// Last item gets a 2px border, making it look like a button.
-				&:last-child {
+				&:last-child a {
+					display: block;
 					padding: .5em 1.5em;
 					border: 2px solid white;
 					border-radius: 3px;
 
 					&:hover {
 						background: white;
-						a {
-							color: $tieto-blue;
-						}
+						color: $tieto-blue;
 					}
 				}
 			}
