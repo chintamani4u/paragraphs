@@ -390,6 +390,10 @@ class ComposerStaticInitDrupal8
         ),
         'A' => 
         array (
+            'Asm89\\Stack' => 
+            array (
+                0 => __DIR__ . '/..' . '/asm89/stack-cors/src',
+            ),
             'Alchemy' => 
             array (
                 0 => __DIR__ . '/..' . '/alchemy/binary-driver/src',

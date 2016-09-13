@@ -21,5 +21,6 @@ return array(
     'Doctrine\\Common\\Collections\\' => array($vendorDir . '/doctrine/collections/lib'),
     'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib'),
     'Doctrine\\Common\\' => array($vendorDir . '/doctrine/common/lib'),
+    'Asm89\\Stack' => array($vendorDir . '/asm89/stack-cors/src'),
     'Alchemy' => array($vendorDir . '/alchemy/binary-driver/src'),
 );

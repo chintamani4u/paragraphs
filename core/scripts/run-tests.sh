@@ -34,6 +34,11 @@ const SIMPLETEST_SCRIPT_EXIT_SUCCESS = 0;
 const SIMPLETEST_SCRIPT_EXIT_FAILURE = 1;
 const SIMPLETEST_SCRIPT_EXIT_EXCEPTION = 2;
 
+if (!class_exists('\PHPUnit_Framework_TestCase')) {
+  echo "\nrun-tests.sh requires the PHPUnit testing framework. Please use 'composer install --dev' to ensure that it is present.\n\n";
+  exit(SIMPLETEST_SCRIPT_EXIT_FAILURE);
+}
+
 // Set defaults and get overrides.
 list($args, $count) = simpletest_script_parse_args();
 
@@ -647,6 +652,10 @@ function simpletest_script_execute_batch($test_classes) {
         elseif ($status['exitcode']) {
           $message = 'FATAL ' . $child['class'] . ': test runner returned a non-zero error code (' . $status['exitcode'] . ').';
           echo $message . "\n";
+          // @todo Return SIMPLETEST_SCRIPT_EXIT_EXCEPTION instead, when
+          // DrupalCI supports this.
+          // @see https://www.drupal.org/node/2780087
+          $total_status = max(SIMPLETEST_SCRIPT_EXIT_FAILURE, $total_status);
           // Insert a fail for xml results.
           TestBase::insertAssert($child['test_id'], $child['class'], FALSE, $message, 'run-tests.sh check');
           // Ensure that an error line is displayed for the class.
