@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Delete non-existing files from database.
+ */
+function campaign_pages_update_8001(&$sandbox) {
+  // Query and load all File entities.
+  $query = Drupal::entityQuery('file');
+  $file_ids = $query->execute();
+  $files = file_load_multiple($file_ids);
+
+  // Delete those which don't exist.
+  foreach ($files as $file) {
+    $uri = $file->uri->value;
+    if (!file_exists($uri)) {
+      file_delete($file->fid->value);
+    }
+  }
+}
