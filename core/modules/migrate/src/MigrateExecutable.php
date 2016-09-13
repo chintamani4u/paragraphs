@@ -329,6 +329,12 @@ class MigrateExecutable implements MigrateExecutableInterface {
         // We're now done with this row, so remove it from the map.
         $id_map->deleteDestination($destination_key);
       }
+      else {
+        // If there is no destination key the import probably failed and we can
+        // remove the row without further action.
+        $source_key = $id_map->currentSource();
+        $id_map->delete($source_key);
+      }
 
       // Check for memory exhaustion.
       if (($return = $this->checkStatus()) != MigrationInterface::RESULT_COMPLETED) {
@@ -378,6 +384,7 @@ class MigrateExecutable implements MigrateExecutableInterface {
               $new_value[] = $plugin->transform($scalar_value, $this, $row, $destination);
             }
             catch (MigrateSkipProcessException $e) {
+              $new_value[] = NULL;
               $break = TRUE;
             }
           }
@@ -391,6 +398,7 @@ class MigrateExecutable implements MigrateExecutableInterface {
             $value = $plugin->transform($value, $this, $row, $destination);
           }
           catch (MigrateSkipProcessException $e) {
+            $value = NULL;
             break;
           }
           $multiple = $multiple || $plugin->multiple();
