@@ -180,13 +180,21 @@ function tieto_admin_preprocess_menu_local_action(array &$variables) {
 
 /**
  * Implements hook_preprocess_field().
- *
- * Add rendered_confirmation_message to field variables.
  */
 function tieto_admin_preprocess_field(&$variables) {
-  $element = $variables['element'];
+  // Add rendered_confirmation_message to field variables.
   if ($variables['field_name'] === 'field_marketo_form') {
-    $variables['element'][0]['#entity']->rendered_confirmation_message = check_markup($element['#object']->field_text[0]->value, $element['#object']->field_text[0]->format);
+    $element = $variables['element']['#object'];
+
+    // Get the field's raw value and format.
+    list($markup, $format) = [
+      $element->field_text->value,
+      $element->field_text->format,
+    ];
+
+    if (isset($markup) && isset($format)) {
+      $element->rendered_confirmation_message = check_markup($markup, $format);
+    }
   }
 }
 
