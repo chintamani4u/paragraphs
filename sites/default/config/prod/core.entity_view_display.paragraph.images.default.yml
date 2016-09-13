@@ -6,7 +6,7 @@ dependencies:
     - field.field.paragraph.images.field_anchor
     - field.field.paragraph.images.field_images
     - field.field.paragraph.images.field_title
-    - image.style.medium
+    - image.style.thumbnail
     - paragraphs.paragraphs_type.images
   module:
     - image
@@ -21,7 +21,7 @@ content:
     weight: 1
     label: hidden
     settings:
-      image_style: medium
+      image_style: thumbnail
       image_link: ''
     third_party_settings: {  }
     type: image
