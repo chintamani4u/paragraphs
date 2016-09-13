@@ -1,0 +1,45 @@
+uuid: ede72bbb-ee0d-4d52-bbde-81b66895993c
+langcode: en
+status: true
+dependencies: {  }
+id: editor
+label: Editor
+weight: 3
+is_admin: null
+permissions:
+  - 'create campaign content'
+  - 'edit own campaign content'
+  - 'view own unpublished content'
+  - 'create paragraph content marketo_form'
+  - 'delete paragraph content marketo_form'
+  - 'update paragraph content marketo_form'
+  - 'create paragraph content header'
+  - 'delete paragraph content header'
+  - 'update paragraph content header'
+  - 'create paragraph content highlighted'
+  - 'delete paragraph content highlighted'
+  - 'update paragraph content highlighted'
+  - 'create paragraph content images'
+  - 'delete paragraph content images'
+  - 'update paragraph content images'
+  - 'create paragraph content parallax'
+  - 'delete paragraph content parallax'
+  - 'update paragraph content parallax'
+  - 'create paragraph content simple'
+  - 'delete paragraph content simple'
+  - 'update paragraph content simple'
+  - 'create paragraph content tabs'
+  - 'delete paragraph content tabs'
+  - 'update paragraph content tabs'
+  - 'create paragraph content image_text'
+  - 'delete paragraph content image_text'
+  - 'update paragraph content image_text'
+  - 'create paragraph content text_box'
+  - 'delete paragraph content text_box'
+  - 'update paragraph content text_box'
+  - 'create paragraph content text_boxes'
+  - 'delete paragraph content text_boxes'
+  - 'update paragraph content text_boxes'
+  - 'access toolbar'
+  - 'access content overview'
+  - 'view scheduled content'
