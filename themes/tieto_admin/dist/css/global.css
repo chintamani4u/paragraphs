@@ -1328,6 +1328,8 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   text-align: center;
   background: #cde6f5;
   padding: 2em 0 0; }
+  .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-image img, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-image img {
+    display: block; }
   @media (min-width: 767px) {
     .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-image, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-image {
       text-align: left;

@@ -84,6 +84,10 @@
             background: $tieto-lightblue;
             padding: 2em 0 0;
 
+            img {
+                display: block;
+            }
+
             @include md {
                 text-align: left;
                 background: 0;
