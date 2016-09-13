@@ -1623,9 +1623,10 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
       .paragraph--type--marketo-form .field--name-field-title, .paragraph--type--marketo-form.layout--clean .field--name-field-title {
         text-align: left; } }
   .paragraph--type--marketo-form .field--name-field-lead-text, .paragraph--type--marketo-form.layout--clean .field--name-field-lead-text {
-    font-weight: bold;
     line-height: 27px;
-    font-size: 20px; }
+    font-size: 20px;
+    letter-spacing: -.5px;
+    margin-bottom: .5em; }
   @media (min-width: 767px) {
     .paragraph--type--marketo-form .field--name-field-title,
     .paragraph--type--marketo-form .field--name-field-lead-text,
@@ -1697,9 +1698,10 @@ span.tieto-white {
   color: #fff; }
 
 h3.tieto-lead {
-  font-weight: bold;
   line-height: 27px;
-  font-size: 20px; }
+  font-size: 20px;
+  letter-spacing: -.5px;
+  margin-bottom: .5em; }
 
 /* field_paragraph_class */
 #page-tieto .paragraph.tieto-silver,
