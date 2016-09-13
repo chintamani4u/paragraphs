@@ -134,7 +134,9 @@ function campaign_pages_preprocess_paragraph__header(&$variables) {
     $poster = '/sites/default/files/paragraphs/background/' . $video_filename . '_poster.jpg';
 
     if (! file_exists(DRUPAL_ROOT . $poster)) {
-      $ffmpeg = Drupal::service('php_ffmpeg');
+      $ffmpeg = Drupal::service('php_ffmpeg')->create([
+        'loglevel' => 'quiet',
+      ]);
       $video = $ffmpeg->open(drupal_realpath($file_uri));
 
       $video->frame(TimeCode::fromSeconds(0))->save(DRUPAL_ROOT . $poster);
