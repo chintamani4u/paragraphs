@@ -1159,6 +1159,10 @@ li.tabs__tab a {
     display: table; }
   .paragraph:after {
     clear: both; }
+  .paragraph .field.text-formatted .align-right {
+    margin-left: 1.5em; }
+  .paragraph .field.text-formatted .align-left {
+    margin-right: 1.5em; }
 
 .paragraph-inner {
   max-width: 1000px;

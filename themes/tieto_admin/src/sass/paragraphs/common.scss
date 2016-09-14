@@ -2,6 +2,16 @@
 	@include clearfix;
 	padding: 40px 1em;
 	background-color: #fff;
+
+	// Some fixes for WYSIWYG fields.
+	.field.text-formatted {
+		.align-right {
+			margin-left: 1.5em;
+		}
+		.align-left {
+			margin-right: 1.5em;
+		}
+	}
 }
 
 .paragraph-inner {
