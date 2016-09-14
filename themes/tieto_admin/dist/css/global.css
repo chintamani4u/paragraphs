@@ -1279,7 +1279,12 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     width: 50%; } }
 
 .paragraph--type--image-text.layout--text_1st .field--name-field-image, .paragraph--type--image-text.layout--image_1st .field--name-field-image {
-  text-align: right; }
+  text-align: center;
+  margin: 1em 0 0; }
+  @media (min-width: 767px) {
+    .paragraph--type--image-text.layout--text_1st .field--name-field-image, .paragraph--type--image-text.layout--image_1st .field--name-field-image {
+      margin: 0;
+      text-align: right; } }
 
 @media (min-width: 767px) {
   .paragraph--type--image-text.layout--text_1st .field--name-field-title,

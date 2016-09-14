@@ -18,7 +18,12 @@
         }
 
         .field--name-field-image {
-            text-align: right;
+            text-align: center;
+            margin: 1em 0 0;
+            @include md {
+                margin: 0;
+                text-align: right;
+            }
         }
 
         @include md {
