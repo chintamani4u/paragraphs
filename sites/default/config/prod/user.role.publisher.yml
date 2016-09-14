@@ -61,3 +61,6 @@ permissions:
   - 'use published_published transition'
   - 'view any unpublished content'
   - 'view latest version'
+  - 'use published_archived transition'
+  - 'use archived_published transition'
+  - 'use archived_draft transition'
