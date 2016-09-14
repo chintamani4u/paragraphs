@@ -24,9 +24,10 @@ span.tieto-white {
   color: #fff; }
 
 h3.tieto-lead {
-  font-weight: bold;
   line-height: 27px;
-  font-size: 20px; }
+  font-size: 20px;
+  letter-spacing: -.5px;
+  margin-bottom: .5em; }
 
 /* field_paragraph_class */
 #page-tieto .paragraph.tieto-silver,

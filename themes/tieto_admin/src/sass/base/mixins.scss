@@ -75,7 +75,7 @@
  */
 @mixin campaign-title {
   margin-bottom: 1em;
-  font-family: $helvetica-bold;
+  font-weight: 800;
   letter-spacing: -1px;
   font-size: 26px;
   line-height: 1.2;
@@ -122,9 +122,10 @@
 }
 
 @mixin campaign-lead {
-  font-weight: bold;
   line-height: 27px;
   font-size: 20px;
+  letter-spacing: -.5px;
+  margin-bottom: .5em;
 }
 
 // mixin

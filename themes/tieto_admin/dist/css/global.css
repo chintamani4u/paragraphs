@@ -7,32 +7,40 @@
  * Typography
  */
 @font-face {
-  font-family: "HelveticaThin";
-  src: url("../../fonts/HelveticaNeueLTCom-Th.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeueLTCom-Th.woff") format("woff"), url("../../fonts/HelveticaNeueLTCom-Th.ttf") format("truetype"), url("../../fonts/HelveticaNeueLTCom-Th.svg#HelveticaNeueLTCom-Th") format("svg");
-  font-weight: normal;
-  line-height: normal;
-  font-style: normal; }
+  font-family: 'HelveticaNeue';
+  src: url("../../fonts/HelveticaNeueLTCom-Th.eot");
+  src: url("../../fonts/HelveticaNeueLTCom-Th.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeueLTCom-Th.woff2") format("woff2"), url("../../fonts/HelveticaNeueLTCom-Th.woff") format("woff"), url("../../fonts/HelveticaNeueLTCom-Th.ttf") format("truetype"), url("../../fonts/HelveticaNeueLTCom-Th.svg#HelveticaNeueLTCom-Th") format("svg");
+  font-weight: 100;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0-10FFFF; }
 
 @font-face {
-  font-family: "HelveticaLight";
-  src: url("../../fonts/HelveticaNeueLTCom-Lt.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeueLTCom-Lt.woff") format("woff"), url("../../fonts/HelveticaNeueLTCom-Lt.ttf") format("truetype"), url("../../fonts/HelveticaNeueLTCom-Lt.svg#HelveticaNeueLTCom-Lt") format("svg");
-  font-weight: normal;
-  line-height: normal;
-  font-style: normal; }
+  font-family: 'HelveticaNeue';
+  src: url("../../fonts/HelveticaNeueLTCom-Lt.eot");
+  src: url("../../fonts/HelveticaNeueLTCom-Lt.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeueLTCom-Lt.woff2") format("woff2"), url("../../fonts/HelveticaNeueLTCom-Lt.woff") format("woff"), url("../../fonts/HelveticaNeueLTCom-Lt.ttf") format("truetype"), url("../../fonts/HelveticaNeueLTCom-Lt.svg#HelveticaNeueLTCom-Lt") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0-10FFFF; }
 
 @font-face {
-  font-family: "HelveticaRoman";
-  src: url("../../fonts/HelveticaNeueLTCom-Roman.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeueLTCom-Roman.woff") format("woff"), url("../../fonts/HelveticaNeueLTCom-Roman.ttf") format("truetype"), url("../../fonts/HelveticaNeueLTCom-Roman.svg#HelveticaNeueLTCom-Roman") format("svg");
+  font-family: 'HelveticaNeue';
+  src: url("../../fonts/HelveticaNeueLTCom-Roman.eot");
+  src: url("../../fonts/HelveticaNeueLTCom-Roman.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeueLTCom-Roman.woff2") format("woff2"), url("../../fonts/HelveticaNeueLTCom-Roman.woff") format("woff"), url("../../fonts/HelveticaNeueLTCom-Roman.ttf") format("truetype"), url("../../fonts/HelveticaNeueLTCom-Roman.svg#HelveticaNeueLTCom-Roman") format("svg");
   font-weight: normal;
-  line-height: normal;
-  font-style: normal; }
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0-10FFFF; }
 
 @font-face {
-  font-family: "HelveticaBold";
-  src: url("../../fonts/HelveticaNeueLTCom-Hv.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeueLTCom-Hv.woff") format("woff"), url("../../fonts/HelveticaNeueLTCom-Hv.ttf") format("truetype"), url("../../fonts/HelveticaNeueLTCom-Hv.svg#HelveticaNeueLTCom-Hv") format("svg");
-  font-weight: normal;
-  line-height: normal;
-  font-style: normal; }
+  font-family: 'HelveticaNeue';
+  src: url("../../fonts/HelveticaNeueLTCom-Hv.eot");
+  src: url("../../fonts/HelveticaNeueLTCom-Hv.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeueLTCom-Hv.woff2") format("woff2"), url("../../fonts/HelveticaNeueLTCom-Hv.woff") format("woff"), url("../../fonts/HelveticaNeueLTCom-Hv.ttf") format("truetype"), url("../../fonts/HelveticaNeueLTCom-Hv.svg#HelveticaNeueLTCom-Hv") format("svg");
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0-10FFFF; }
 
 /**
  * Generic elements.
@@ -51,7 +59,7 @@ body {
   color: #777;
   background: #fff;
   font-size: 1rem;
-  font-family: "HelveticaRoman";
+  font-family: "HelveticaNeue", Arial, sans-serif;
   font-weight: normal;
   line-height: 1.5; }
 
@@ -893,54 +901,44 @@ li.tabs__tab a {
  */
 .logo {
   display: block;
-  padding: 0 10px;
-  top: 0;
-  left: 0;
   z-index: 501;
   position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 14px;
   width: 100%; }
   @media (min-width: 767px) {
     .logo {
       position: fixed; } }
-  .logo img {
-    height: 50px; }
-    @media (min-width: 767px) {
-      .logo img {
-        height: auto; } }
   .logo::after {
-    -webkit-transform: rotate(19deg) skew(-28deg) translateZ(0);
-    transform: rotate(19deg) skew(-28deg) translateZ(0);
+    -webkit-transform: rotate(16.5deg) skew(-29deg);
+    transform: rotate(16.5deg) skew(-29deg);
+    will-change: transform, width;
     background: #67afe1;
     content: " ";
     position: absolute;
     display: block;
     z-index: -1;
-    top: -120px;
-    left: -70px;
+    top: -84px;
+    left: -60px;
     width: 200px;
     height: 200px; }
-    @media (min-width: 767px) {
-      .logo::after {
-        will-change: transform, width, left;
-        top: -100px;
-        left: -50px; } }
   @media (min-width: 767px) {
     .logo.not-fixed::after {
       -webkit-transition: width .2s, -webkit-transform .2s ease .2s;
       transition: width .2s, -webkit-transform .2s ease .2s;
       transition: width .2s, transform .2s ease .2s;
       transition: width .2s, transform .2s ease .2s, -webkit-transform .2s ease .2s;
-      -webkit-transform: rotate(19deg) skew(-28deg);
-      transform: rotate(19deg) skew(-28deg); }
+      -webkit-transform: rotate(16.5deg) skew(-29deg);
+      transform: rotate(16.5deg) skew(-29deg); }
     .logo.fixed::after {
       -webkit-transition: width .2s ease .2s, -webkit-transform .2s;
       transition: width .2s ease .2s, -webkit-transform .2s;
       transition: transform .2s, width .2s ease .2s;
       transition: transform .2s, width .2s ease .2s, -webkit-transform .2s;
-      -webkit-transform: rotate(0) skew(0) translateY(-25px);
-      transform: rotate(0) skew(0) translateY(-25px);
-      width: 100%;
-      left: 0; } }
+      -webkit-transform: rotate(0) skew(0) translate3d(60px, -40px, 0);
+      transform: rotate(0) skew(0) translate3d(60px, -40px, 0);
+      width: 100%; } }
 
 /**
  * Add spacing to bottom of pages
@@ -1096,7 +1094,7 @@ li.tabs__tab a {
     top: 70px;
     right: 1em;
     z-index: 500;
-    padding: 1em;
+    padding: 10px;
     z-index: 501; }
     @media (max-width: 766px) {
       .node--type-campaign .campaign-menu {
@@ -1119,11 +1117,12 @@ li.tabs__tab a {
           border-color: transparent transparent #67afe1 transparent;
           box-sizing: content-box; } }
     .node--type-campaign .campaign-menu a {
-      font-weight: bold;
       color: white;
       text-decoration: none;
       display: block;
-      text-align: center; }
+      text-align: center;
+      font-size: 14px;
+      letter-spacing: .5px; }
     .node--type-campaign .campaign-menu .campaign-menu-link {
       padding: .5em; }
     @media (min-width: 767px) {
@@ -1143,14 +1142,14 @@ li.tabs__tab a {
             transition: border-color .2s; }
             .node--type-campaign .campaign-menu .campaign-menu-link:not(:last-child) a:link:hover {
               border-color: white; }
-          .node--type-campaign .campaign-menu .campaign-menu-link:last-child {
-            padding: .5em 1em;
+          .node--type-campaign .campaign-menu .campaign-menu-link:last-child a {
+            display: block;
+            padding: .5em 1.5em;
             border: 2px solid white;
             border-radius: 3px; }
-            .node--type-campaign .campaign-menu .campaign-menu-link:last-child:hover {
-              background: white; }
-              .node--type-campaign .campaign-menu .campaign-menu-link:last-child:hover a {
-                color: #67afe1; } }
+            .node--type-campaign .campaign-menu .campaign-menu-link:last-child a:hover {
+              background: white;
+              color: #67afe1; } }
 
 .paragraph {
   padding: 40px 1em;
@@ -1239,7 +1238,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
 
 .paragraph--type--images .field--name-field-title {
   margin-bottom: 1em;
-  font-family: "HelveticaBold";
+  font-weight: 800;
   letter-spacing: -1px;
   font-size: 26px;
   line-height: 1.2;
@@ -1253,11 +1252,13 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
 .paragraph--type--images .field--name-field-images {
   text-align: center; }
   .paragraph--type--images .field--name-field-images .field__item {
+    padding: 1em 2em;
+    vertical-align: middle;
     display: inline-block; }
 
 .paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title {
   margin-bottom: 1em;
-  font-family: "HelveticaBold";
+  font-weight: 800;
   letter-spacing: -1px;
   font-size: 26px;
   line-height: 1.2;
@@ -1269,19 +1270,16 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
       line-height: 1;
       font-size: 48px; } }
 
-.paragraph--type--image-text.layout--text_1st .field--name-field-title,
-.paragraph--type--image-text.layout--text_1st .field--name-field-text,
-.paragraph--type--image-text.layout--text_1st .field--name-field-image, .paragraph--type--image-text.layout--image_1st .field--name-field-title,
-.paragraph--type--image-text.layout--image_1st .field--name-field-text,
-.paragraph--type--image-text.layout--image_1st .field--name-field-image {
-  text-align: center; }
-  @media (min-width: 767px) {
-    .paragraph--type--image-text.layout--text_1st .field--name-field-title,
-    .paragraph--type--image-text.layout--text_1st .field--name-field-text,
-    .paragraph--type--image-text.layout--text_1st .field--name-field-image, .paragraph--type--image-text.layout--image_1st .field--name-field-title,
-    .paragraph--type--image-text.layout--image_1st .field--name-field-text,
-    .paragraph--type--image-text.layout--image_1st .field--name-field-image {
-      width: 50%; } }
+@media (min-width: 767px) {
+  .paragraph--type--image-text.layout--text_1st .field--name-field-title,
+  .paragraph--type--image-text.layout--text_1st .field--name-field-text,
+  .paragraph--type--image-text.layout--text_1st .field--name-field-image, .paragraph--type--image-text.layout--image_1st .field--name-field-title,
+  .paragraph--type--image-text.layout--image_1st .field--name-field-text,
+  .paragraph--type--image-text.layout--image_1st .field--name-field-image {
+    width: 50%; } }
+
+.paragraph--type--image-text.layout--text_1st .field--name-field-image, .paragraph--type--image-text.layout--image_1st .field--name-field-image {
+  text-align: right; }
 
 @media (min-width: 767px) {
   .paragraph--type--image-text.layout--text_1st .field--name-field-title,
@@ -1305,7 +1303,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
 
 .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title {
   margin-bottom: 1em;
-  font-family: "HelveticaBold";
+  font-weight: 800;
   letter-spacing: -1px;
   font-size: 26px;
   line-height: 1.2;
@@ -1408,7 +1406,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     font-size: 4em;
     margin-bottom: 0;
     display: inline-block;
-    font-family: "HelveticaBold";
+    font-weight: 800;
     letter-spacing: -2px; }
   .paragraph--type--header .field--name-field-secondary-title,
   .paragraph--type--header .field--name-field-lead-text {
@@ -1479,7 +1477,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
 
 .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--simple.layout--one-column-grey .field--name-field-title {
   margin-bottom: 1em;
-  font-family: "HelveticaBold";
+  font-weight: 800;
   letter-spacing: -1px;
   font-size: 26px;
   line-height: 1.2;
@@ -1498,7 +1496,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
 
 .paragraph--type--simple.layout--separator-clean .field--name-field-title {
   margin-bottom: 1em;
-  font-family: "HelveticaBold";
+  font-weight: 800;
   letter-spacing: -1px;
   font-size: 26px;
   line-height: 1.2;
@@ -1532,7 +1530,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
         width: 50%; } }
   .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title {
     margin-bottom: 1em;
-    font-family: "HelveticaBold";
+    font-weight: 800;
     letter-spacing: -1px;
     font-size: 26px;
     line-height: 1.2;
@@ -1558,7 +1556,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
 
 .paragraph--type--text-boxes .field--name-field-title {
   margin-bottom: 1em;
-  font-family: "HelveticaBold";
+  font-weight: 800;
   letter-spacing: -1px;
   font-size: 26px;
   line-height: 1.2;
@@ -1584,7 +1582,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   background: inherit; }
   .paragraph--type--text-box .field--name-field-title {
     margin-bottom: 1em;
-    font-family: "HelveticaBold";
+    font-weight: 800;
     letter-spacing: -1px;
     font-size: 26px;
     line-height: 1.2;
@@ -1607,7 +1605,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   background: #efefef; }
   .paragraph--type--marketo-form .field--name-field-title, .paragraph--type--marketo-form.layout--clean .field--name-field-title {
     margin-bottom: 1em;
-    font-family: "HelveticaBold";
+    font-weight: 800;
     letter-spacing: -1px;
     font-size: 26px;
     line-height: 1.2;
@@ -1624,9 +1622,10 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
       .paragraph--type--marketo-form .field--name-field-title, .paragraph--type--marketo-form.layout--clean .field--name-field-title {
         text-align: left; } }
   .paragraph--type--marketo-form .field--name-field-lead-text, .paragraph--type--marketo-form.layout--clean .field--name-field-lead-text {
-    font-weight: bold;
     line-height: 27px;
-    font-size: 20px; }
+    font-size: 20px;
+    letter-spacing: -.5px;
+    margin-bottom: .5em; }
   @media (min-width: 767px) {
     .paragraph--type--marketo-form .field--name-field-title,
     .paragraph--type--marketo-form .field--name-field-lead-text,
@@ -1641,7 +1640,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   .paragraph--type--marketo-form .field--name-field-text, .paragraph--type--marketo-form.layout--clean .field--name-field-text {
     display: none; }
   .paragraph--type--marketo-form .field--name-field-image, .paragraph--type--marketo-form.layout--clean .field--name-field-image {
-    text-align: center;
+    text-align: right;
     padding: 1em; }
     @media (min-width: 767px) {
       .paragraph--type--marketo-form .field--name-field-image, .paragraph--type--marketo-form.layout--clean .field--name-field-image {
@@ -1698,9 +1697,10 @@ span.tieto-white {
   color: #fff; }
 
 h3.tieto-lead {
-  font-weight: bold;
   line-height: 27px;
-  font-size: 20px; }
+  font-size: 20px;
+  letter-spacing: -.5px;
+  margin-bottom: .5em; }
 
 /* field_paragraph_class */
 #page-tieto .paragraph.tieto-silver,

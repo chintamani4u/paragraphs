@@ -12,10 +12,13 @@
         .field--name-field-title,
         .field--name-field-text,
         .field--name-field-image {
-            text-align: center;
             @include md {
                 width: 50%;
             }
+        }
+
+        .field--name-field-image {
+            text-align: right;
         }
 
         @include md {
