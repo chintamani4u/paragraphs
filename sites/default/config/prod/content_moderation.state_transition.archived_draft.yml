@@ -1,0 +1,14 @@
+uuid: a4d96610-52f4-49f6-98de-3ed67b75b37b
+langcode: en
+status: true
+dependencies:
+  config:
+    - content_moderation.state.archived
+    - content_moderation.state.draft
+_core:
+  default_config_hash: 1IC2VPUy2zUubO2GvCgAOowRzqOC2Q9IiYvMeOLbTew
+id: archived_draft
+label: 'Un-archive to Draft'
+stateFrom: archived
+stateTo: draft
+weight: -5

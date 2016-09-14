@@ -9,6 +9,7 @@ module:
   config: 0
   contact: 0
   contact_block: 0
+  content_moderation: 0
   content_translation: 0
   contextual: 0
   datetime: 0
@@ -37,7 +38,6 @@ module:
   paragraphs_type_permissions: 0
   path: 0
   php_ffmpeg: 0
-  publishcontent: 0
   quickedit: 0
   rdf: 0
   search: 0

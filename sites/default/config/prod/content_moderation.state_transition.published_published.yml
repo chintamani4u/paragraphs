@@ -1,0 +1,13 @@
+uuid: df0a1e32-2e67-4250-bf73-387284d40fb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - content_moderation.state.published
+_core:
+  default_config_hash: GMcnCCk8rQ9o_5_zNjLCOTpZs0iCYqkB735_BkpIOvA
+id: published_published
+label: Publish
+stateFrom: published
+stateTo: published
+weight: -7

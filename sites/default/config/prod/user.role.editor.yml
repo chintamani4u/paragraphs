@@ -43,3 +43,6 @@ permissions:
   - 'access toolbar'
   - 'access content overview'
   - 'view scheduled content'
+  - 'use draft_draft transition'
+  - 'view any unpublished content'
+  - 'view latest version'
