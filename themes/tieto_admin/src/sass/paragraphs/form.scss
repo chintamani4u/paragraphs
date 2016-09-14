@@ -41,7 +41,9 @@
 		.field--name-field-image {
 			text-align: right;
 			padding: 1em;
+			text-align: center;
 			@include md {
+			    text-align: right;
 				width: 50%;
 				float: right;
 			}

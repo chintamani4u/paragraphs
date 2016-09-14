@@ -1646,9 +1646,11 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     display: none; }
   .paragraph--type--marketo-form .field--name-field-image, .paragraph--type--marketo-form.layout--clean .field--name-field-image {
     text-align: right;
-    padding: 1em; }
+    padding: 1em;
+    text-align: center; }
     @media (min-width: 767px) {
       .paragraph--type--marketo-form .field--name-field-image, .paragraph--type--marketo-form.layout--clean .field--name-field-image {
+        text-align: right;
         width: 50%;
         float: right; } }
 
