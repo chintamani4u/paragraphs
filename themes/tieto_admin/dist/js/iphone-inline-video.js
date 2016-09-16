@@ -1,4 +1,4 @@
-var LaravelElixirBundle = (function () {
+(function (exports) {
 'use strict';
 
 function interopDefault(ex) {
@@ -402,10 +402,6 @@ var iphoneInlineVideo = createCommonjsModule(function (module) {
 })()
 });
 
-var iphoneInlineVideo$1 = interopDefault(iphoneInlineVideo);
-
-return iphoneInlineVideo$1;
-
-}());
+}((this.LaravelElixirBundle = this.LaravelElixirBundle || {})));
 
 //# sourceMappingURL=iphone-inline-video.js.map

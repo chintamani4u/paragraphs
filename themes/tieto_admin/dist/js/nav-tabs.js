@@ -1,4 +1,4 @@
-(function () {
+(function (exports) {
 'use strict';
 
 /**
@@ -56,6 +56,6 @@
 
 })(jQuery, Drupal);
 
-}());
+}((this.LaravelElixirBundle = this.LaravelElixirBundle || {})));
 
 //# sourceMappingURL=nav-tabs.js.map
