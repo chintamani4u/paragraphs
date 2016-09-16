@@ -1,7 +1,7 @@
-(function () {
+(function (exports) {
 'use strict';
 
-;(function ( $, window, undefined ) {
+(function ( $, window, undefined ) {
 
     /** Default settings */
     var defaults = {
@@ -721,6 +721,6 @@
 
 })(jQuery)
 
-}());
+}((this.LaravelElixirBundle = this.LaravelElixirBundle || {})));
 
 //# sourceMappingURL=responsive-tabs.js.map
