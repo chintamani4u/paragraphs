@@ -1417,10 +1417,17 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     display: inline-block;
     font-weight: 800;
     letter-spacing: -2px; }
+    @media (max-width: 766px) {
+      .paragraph--type--header .field--name-field-title {
+        font-size: 2.8em; } }
   .paragraph--type--header .field--name-field-secondary-title,
   .paragraph--type--header .field--name-field-lead-text {
     font-size: 1.5em;
     margin-bottom: .5em; }
+    @media (max-width: 766px) {
+      .paragraph--type--header .field--name-field-secondary-title,
+      .paragraph--type--header .field--name-field-lead-text {
+        font-size: 1.2em; } }
   .paragraph--type--header .field--name-field-title,
   .paragraph--type--header .field--name-field-secondary-title {
     line-height: normal; }
