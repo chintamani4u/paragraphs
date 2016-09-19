@@ -1,4 +1,4 @@
-(function () {
+(function (exports) {
 'use strict';
 
 /**
@@ -78,6 +78,6 @@
 
 })(jQuery)
 
-}());
+}((this.LaravelElixirBundle = this.LaravelElixirBundle || {})));
 
 //# sourceMappingURL=smooth-scroll.js.map

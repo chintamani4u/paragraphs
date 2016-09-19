@@ -46,3 +46,6 @@ permissions:
   - 'use draft_draft transition'
   - 'view any unpublished content'
   - 'view latest version'
+  - 'create content translations'
+  - 'update content translations'
+  - 'translate campaign node'

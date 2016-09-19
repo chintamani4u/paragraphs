@@ -1,4 +1,4 @@
-(function () {
+(function (exports) {
 'use strict';
 
 /*
@@ -295,6 +295,6 @@
 
 })(jQuery)
 
-}());
+}((this.LaravelElixirBundle = this.LaravelElixirBundle || {})));
 
 //# sourceMappingURL=scrollspy.js.map
