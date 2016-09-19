@@ -1,4 +1,4 @@
-(function () {
+(function (exports) {
 'use strict';
 
 /**
@@ -38,6 +38,6 @@
 
 })();
 
-}());
+}((this.LaravelElixirBundle = this.LaravelElixirBundle || {})));
 
 //# sourceMappingURL=mobile.install.js.map
