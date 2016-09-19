@@ -1254,7 +1254,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
       font-size: 48px; } }
 
 .paragraph--type--images .field--name-field-images {
-  text-align: center; }
+  text-align: left; }
   .paragraph--type--images .field--name-field-images .field__item {
     padding: 1em 2em;
     vertical-align: middle;
