@@ -5,11 +5,14 @@ dependencies:
   config:
     - field.field.node.campaign.field_machine_name
     - field.field.node.campaign.field_menu
+    - field.field.node.campaign.field_meta_tags
     - field.field.node.campaign.field_paragraphs
     - node.type.campaign
   module:
+    - content_moderation
     - link
     - machine_name
+    - metatag
     - paragraphs
     - path
 id: node.campaign.default
@@ -35,6 +38,11 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+  field_meta_tags:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
   field_paragraphs:
     weight: 3
     settings:
