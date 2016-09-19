@@ -23,13 +23,13 @@ mode: default
 content:
   field_call_to_action:
     weight: 5
-    label: above
+    label: hidden
     settings:
       trim_length: 80
+      rel: nofollow
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      target: '0'
     third_party_settings: {  }
     type: link
   field_image:
