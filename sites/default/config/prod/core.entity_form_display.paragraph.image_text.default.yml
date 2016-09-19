@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.image_text.field_anchor
+    - field.field.paragraph.image_text.field_call_to_action
     - field.field.paragraph.image_text.field_image
     - field.field.paragraph.image_text.field_image_text_layout
     - field.field.paragraph.image_text.field_text
@@ -12,6 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.image_text
   module:
     - image
+    - link
     - text
 _core:
   default_config_hash: 7G47whEBa8S9ncln-3j_l2DnPrSKIw5gIKVNZeCnZTg
@@ -27,6 +29,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_call_to_action:
+    weight: 5
+    settings:
+      placeholder_url: 'Button URL'
+      placeholder_title: 'Button text'
+    third_party_settings: {  }
+    type: link_default
   field_image:
     weight: 3
     settings:
@@ -54,7 +63,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 5
+    weight: 6
     settings: {  }
     third_party_settings: {  }
 hidden:
