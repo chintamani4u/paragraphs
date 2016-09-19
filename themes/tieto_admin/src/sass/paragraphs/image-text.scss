@@ -34,6 +34,27 @@
         }
     }
 
+    // Call to action buttons.
+    .field--name-field-call-to-action {
+        clear: both;
+        .field__item {
+            display: inline-block;
+        }
+        a {
+            color: white;
+            display: block;
+            padding: .7em 1.4em;
+            margin-right: .5em;
+            background: $tieto-blue;
+            border-radius: 3px;
+            transition: background .3s;
+            &:hover, &:focus, &:active {
+                text-decoration: none;
+                background: lighten($tieto-blue, 5%);
+            }
+        }
+    }
+
     // Layout: Text first
     &.layout--text_1st {
 
@@ -46,6 +67,7 @@
             // Image
             .field--name-field-image {
                 float: right;
+                padding-left: 1.5em;
             }
         }
     }
@@ -62,6 +84,12 @@
             // Image
             .field--name-field-image {
                 float: left;
+                padding-right: 1.5em;
+            }
+            // Call to action buttons.
+            .field--name-field-call-to-action {
+                width: 50%;
+                float: right;
             }
         }
     }
@@ -105,6 +133,13 @@
                 width: 40%;
                 float: right;
             }
+        }
+        // Call to action buttons.
+        .field--name-field-call-to-action {
+            text-align: center;
+            width: 40%;
+            float: right;
+            margin-top: -1.5em;
         }
     }
 }
