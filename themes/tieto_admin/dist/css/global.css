@@ -1302,7 +1302,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     display: inline-block; }
   .paragraph--type--image-text .field--name-field-call-to-action a {
     color: white;
-    display: block;
+    display: inline-block;
     padding: .7em 1.4em;
     margin-right: .5em;
     background: #67afe1;
