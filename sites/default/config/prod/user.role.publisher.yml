@@ -64,3 +64,6 @@ permissions:
   - 'use published_archived transition'
   - 'use archived_published transition'
   - 'use archived_draft transition'
+  - 'create content translations'
+  - 'update content translations'
+  - 'translate campaign node'
