@@ -16,6 +16,8 @@ class TranslationSwitcher extends BlockBase {
 
   /**
    * {@inheritdoc}
+   *
+   * @todo
    */
   public function build() {
     $current_uri = \Drupal::request()->getRequestUri();
