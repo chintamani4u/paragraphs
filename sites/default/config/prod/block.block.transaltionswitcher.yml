@@ -1,0 +1,20 @@
+uuid: f2bfbefd-1b1e-4f74-91e5-6df2e0946ee4
+langcode: de
+status: true
+dependencies:
+  module:
+    - campaign_pages
+  theme:
+    - tieto_admin
+id: transaltionswitcher
+theme: tieto_admin
+region: footer
+weight: 0
+provider: null
+plugin: campaign_pages_translation_switcher
+settings:
+  id: campaign_pages_translation_switcher
+  label: 'Transaltion switcher'
+  provider: campaign_pages
+  label_display: '0'
+visibility: {  }

@@ -217,14 +217,3 @@ function campaign_pages_add_template_variable(&$variables, $data = null) {
 
   return $data;
 }
-
-/**
- * Implements hook_preprocess_HOOK().
- *
- * Add custom class to content block.
- */
-function campaign_pages_preprocess_block(&$variables) {
-  if (in_array($variables['elements']['#id'], ['translationswitcherkthen', 'translationswitcherkthsv'])) {
-    $variables['attributes']['class'][] = 'block-language';
-  }
-}
