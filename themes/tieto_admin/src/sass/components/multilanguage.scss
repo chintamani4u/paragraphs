@@ -1,4 +1,6 @@
+// @fixme all of this
 .block-language {
+  position: relative;
   .links {
     list-style: none;
     margin: 0;
@@ -28,7 +30,7 @@
     &:hover {
       background: $tieto-blue;
       position: absolute;
-      bottom: calc(2em - 20px);
+      bottom: -1.6em;
       z-index: 99;
       padding: 20px;
       li {
