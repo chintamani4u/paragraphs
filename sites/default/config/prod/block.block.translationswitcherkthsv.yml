@@ -1,0 +1,31 @@
+uuid: 7d8f46ee-fd39-4b2a-8eb7-4406609394d4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:68d51bfa-9a0b-42b0-a791-bccb8735d3a7'
+  module:
+    - block_content
+    - system
+  theme:
+    - tieto_admin
+id: translationswitcherkthsv
+theme: tieto_admin
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:68d51bfa-9a0b-42b0-a791-bccb8735d3a7'
+settings:
+  id: 'block_content:68d51bfa-9a0b-42b0-a791-bccb8735d3a7'
+  label: 'Translation switcher KTH SV'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /sv/kth-frukostseminarium
+    negate: false
+    context_mapping: {  }
