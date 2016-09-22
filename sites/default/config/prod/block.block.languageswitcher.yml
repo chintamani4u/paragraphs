@@ -1,6 +1,6 @@
 uuid: e78f4a17-9029-4eb4-835d-b32af9566c4b
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - language
@@ -9,8 +9,8 @@ dependencies:
     - tieto_admin
 id: languageswitcher
 theme: tieto_admin
-region: '-1'
-weight: 3
+region: footer
+weight: -7
 provider: null
 plugin: 'language_block:language_interface'
 settings:

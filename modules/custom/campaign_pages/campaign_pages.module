@@ -217,3 +217,20 @@ function campaign_pages_add_template_variable(&$variables, $data = null) {
 
   return $data;
 }
+
+/**
+ * Implements hook_language_switch_links_alter().
+ *
+ * Alter langauge links in Language Switcher block on node pages
+ * - display only those, which are node translated. If there is only one
+ * language, langauge switcher will not be shown.
+ */
+function campaign_pages_language_switch_links_alter(array &$links, $type, $path) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $translations = $node->getTranslationLanguages();
+    $links = array_intersect_key($links, $translations);
+    if (count($links) <= 1) {
+      $links = [];
+    }
+  }
+}
