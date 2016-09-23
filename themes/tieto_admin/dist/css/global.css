@@ -70,7 +70,7 @@ img {
 
 a,
 .link {
-  color: #1a252f;
+  color: #67afe1;
   text-decoration: none; }
 
 a:hover,
@@ -78,7 +78,8 @@ a:hover,
 a:focus,
 .link:focus {
   text-decoration: underline;
-  outline: 0; }
+  outline: 0;
+  color: #d51067; }
 
 hr {
   margin: 0;
