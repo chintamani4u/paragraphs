@@ -1692,7 +1692,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
 .node-campaign-edit-form .paragraph-type-top {
   clear: none;
   float: none;
-  margin-bottom: 1em; }
+  margin-bottom: .5em; }
 
 .node-campaign-edit-form .paragraphs-subform > .form-wrapper {
   margin: 1em 0; }
@@ -1704,27 +1704,51 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   width: 100%; }
   .node-campaign-edit-form .field-multiple-table tr {
     border-bottom: 1px solid #e3e3e3; }
+  .node-campaign-edit-form .field-multiple-table .drag-previous {
+    background-color: #f3f3f3; }
+  .node-campaign-edit-form .field-multiple-table td {
+    padding: 1.2em 0 1.2em .5em; }
   .node-campaign-edit-form .field-multiple-table .field-multiple-drag {
-    position: relative; }
+    position: relative;
+    padding: 1.2em 0; }
     .node-campaign-edit-form .field-multiple-table .field-multiple-drag abbr.tabledrag-changed {
       position: absolute;
-      color: red;
-      font-size: 1.4em;
-      top: 11px;
-      left: -10px; }
-  .node-campaign-edit-form .field-multiple-table a.tabledrag-handle .handle {
-    background-position: 0 0;
-    height: 17px;
-    margin: 5px; }
+      color: transparent;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #cde6f5; }
+  .node-campaign-edit-form .field-multiple-table a.tabledrag-handle {
+    position: absolute;
+    z-index: 1; }
+    .node-campaign-edit-form .field-multiple-table a.tabledrag-handle .handle {
+      background-position: 0 0;
+      height: 17px;
+      margin: 5px; }
 
 .node-campaign-edit-form .paragraph-type-title {
   float: left; }
+
+.node-campaign-edit-form .paragraphs-button-wrapper {
+  margin: 2em 0; }
+
+.node-campaign-edit-form .paragraphs-button-wrapper > .button {
+  margin: 0 .5em .5em 0; }
 
 .node-campaign-edit-form .paragraph-actions {
   margin: 0;
   padding: 0;
   display: inline-block;
   list-style: none; }
+  .node-campaign-edit-form .paragraph-actions .button {
+    padding: 5px 1em;
+    color: #777;
+    background: #efefef;
+    border: 1px solid #d6d6d6;
+    box-shadow: 0; }
+    .node-campaign-edit-form .paragraph-actions .button:hover, .node-campaign-edit-form .paragraph-actions .button:focus {
+      background: white; }
   .node-campaign-edit-form .paragraph-actions > li {
     margin-left: 1em;
     display: inline-block; }

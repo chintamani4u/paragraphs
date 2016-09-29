@@ -46,8 +46,8 @@ content:
   field_paragraphs:
     weight: 4
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
+      title: Section
+      title_plural: Sections
       edit_mode: preview
       add_mode: button
       form_display_mode: default

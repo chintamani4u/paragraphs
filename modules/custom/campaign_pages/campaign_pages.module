@@ -247,7 +247,6 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
   if ($field_name === 'field_paragraphs') {
     unset($element['top']['links']['#theme_wrappers']);
     $element['top']['links']['prefix']['#markup'] = '<ul class="paragraph-actions">';
-    $element['top']['links']['suffix']['#markup'] = '</ul>';
   }
 
   // Changes to Menu field.
