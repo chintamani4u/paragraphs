@@ -20,7 +20,6 @@ module:
   file: 0
   filter: 0
   image: 0
-  kint: 0
   language: 0
   link: 0
   machine_name: 0
