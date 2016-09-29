@@ -1678,7 +1678,7 @@ body.toolbar-horizontal .tieto-campaign-page .logo, body.toolbar-horizontal .tie
 body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .campaign-menu {
   top: 78px; }
 
-.node-campaign-edit-form .field--name-field-menu td {
+.node-campaign-edit-form .field--name-field-menu .field-multiple-table td {
   padding: .5em 0; }
 
 .node-campaign-edit-form .field--name-field-menu .field-multiple-table .form-item {
@@ -1686,8 +1686,9 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   float: left;
   padding-left: .5em; }
 
-.node-campaign-edit-form .field--name-field-menu a.tabledrag-handle {
-  margin-left: 0; }
+.node-campaign-edit-form .field--name-field-menu .field-multiple-table a.tabledrag-handle {
+  margin-left: 0;
+  top: 10px; }
 
 .node-campaign-edit-form .paragraph-type-top {
   clear: none;
@@ -1704,7 +1705,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   width: 100%; }
   .node-campaign-edit-form .field-multiple-table tr {
     border-bottom: 1px solid #e3e3e3; }
-  .node-campaign-edit-form .field-multiple-table .drag-previous {
+  .node-campaign-edit-form .field-multiple-table .drag, .node-campaign-edit-form .field-multiple-table .drag-previous {
     background-color: #f3f3f3; }
   .node-campaign-edit-form .field-multiple-table td {
     padding: 1.2em 0 1.2em .5em; }
@@ -1721,7 +1722,9 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
       background: #cde6f5; }
   .node-campaign-edit-form .field-multiple-table a.tabledrag-handle {
     position: absolute;
-    z-index: 1; }
+    top: 1em;
+    z-index: 1;
+    margin-left: 0; }
     .node-campaign-edit-form .field-multiple-table a.tabledrag-handle .handle {
       background-position: 0 0;
       height: 17px;
