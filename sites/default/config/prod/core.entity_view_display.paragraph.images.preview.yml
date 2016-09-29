@@ -1,0 +1,29 @@
+uuid: 39a8a55d-5e1c-4ec1-8f21-ef7f1af156e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.images.field_anchor
+    - field.field.paragraph.images.field_images
+    - field.field.paragraph.images.field_title
+    - paragraphs.paragraphs_type.images
+_core:
+  default_config_hash: SrcUVnFWa_fwHjrESiGfJISl0JVktNYE7j3YSPRGybY
+id: paragraph.images.preview
+targetEntityType: paragraph
+bundle: images
+mode: preview
+content:
+  field_title:
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  field_anchor: true
+  field_images: true
+  uid: true

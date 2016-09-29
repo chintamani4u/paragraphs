@@ -133,3 +133,61 @@
 
 	}
 }
+
+
+/**
+ * Paragraph blocks
+ */
+.diagonal-after {
+  @include slope(after)
+}
+
+.diagonal-before {
+  @include slope(before)
+}
+
+
+
+// Super ugly hack for correctly displaying the fucking
+// admin toolbar with the fucking logo and the fucking responsive hamburger shit.
+body.toolbar-vertical, body.toolbar-horizontal {
+  .tieto-campaign-page {
+    position: relative;
+  }
+}
+
+body.toolbar-vertical {
+  @include breakpoint-max(md) {
+    #toolbar-administration {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+  .tieto-campaign-page {
+    .logo {
+      top: $toolbar-height;
+    }
+    .campaign-menu {
+      top: $header-height;
+      @include md {
+        top: $toolbar-height;
+      }
+    }
+  }
+}
+
+body.toolbar-horizontal {
+  .tieto-campaign-page {
+    .logo, .campaign-menu {
+      top: $toolbar-height;
+    }
+  }
+
+  &.toolbar-tray-open .tieto-campaign-page {
+    .logo, .campaign-menu {
+      top: $toolbar-height * 2;
+    }
+  }
+}

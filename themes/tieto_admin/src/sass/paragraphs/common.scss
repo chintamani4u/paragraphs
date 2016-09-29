@@ -1,4 +1,79 @@
-.paragraph {
+.node-campaign-edit-form {
+
+  .field--name-field-menu {
+    td {
+      padding: .5em 0;
+    }
+    .field-multiple-table .form-item {
+      width: 50%;
+      float: left;
+      padding-left: .5em;
+    }
+    a.tabledrag-handle {
+      margin-left: 0;
+    }
+  }
+
+  .paragraph-type-top {
+    clear: none;
+    float: none;
+    margin-bottom: 1em;
+  }
+
+  .paragraphs-subform > .form-wrapper {
+    margin: 1em 0;
+  }
+
+  // Ugly hacks
+  .tabledrag-toggle-weight-wrapper, td.tabledrag-hide {
+    display: none !important;
+  }
+
+  .field-multiple-table {
+    width: 100%;
+
+    tr {
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    .field-multiple-drag {
+      position: relative;
+      abbr.tabledrag-changed {
+        position: absolute;
+        color: red;
+        font-size: 1.4em;
+        top: 11px;
+        left: -10px;
+      }
+    }
+
+    a.tabledrag-handle .handle {
+      background-position: 0 0;
+      height: 17px;
+      margin: 5px;
+    }
+
+  }
+
+
+  .paragraph-type-title {
+    float: left;
+  }
+
+  .paragraph-actions {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    list-style: none;
+
+    > li {
+      margin-left: 1em;
+      display: inline-block;
+    }
+  }
+}
+
+.paragraph.paragraph--view-mode--default {
 	@include clearfix;
 	padding: 40px 1em;
 	background-color: #fff;
@@ -12,64 +87,17 @@
 			margin-right: 1.5em;
 		}
 	}
-}
 
-.paragraph-inner {
-	max-width: $page-max-width;
-	margin: 0 auto;
-}
+  // Preview mode (forms)
+  &.paragraph--view-mode--preview {
+    iframe, img, video {
+      display: none;
+    }
+  }
 
-/**
- * Paragraph blocks
- */
-.diagonal-after {
-  @include slope(after)
-}
+  .paragraph-inner {
+    max-width: $page-max-width;
+    margin: 0 auto;
+  }
 
-.diagonal-before {
-  @include slope(before)
-}
-
-// Super ugly hack for correctly displaying the fucking
-// admin toolbar with the fucking logo and the fucking responsive hamburger shit.
-body.toolbar-vertical, body.toolbar-horizontal {
-	.tieto-campaign-page {
-		position: relative;
-	}
-}
-
-body.toolbar-vertical {
-	@include breakpoint-max(md) {
-		#toolbar-administration {
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-		}
-	}
-	.tieto-campaign-page {
-		.logo {
-			top: $toolbar-height;
-		}
-		.campaign-menu {
-			top: $header-height;
-			@include md {
-				top: $toolbar-height;
-			}
-		}
-	}
-}
-
-body.toolbar-horizontal {
-	.tieto-campaign-page {
-		.logo, .campaign-menu {
-			top: $toolbar-height;
-		}
-	}
-
-	&.toolbar-tray-open .tieto-campaign-page {
-		.logo, .campaign-menu {
-			top: $toolbar-height * 2;
-		}
-	}
 }

@@ -12,6 +12,7 @@ dependencies:
     - field.field.paragraph.header.field_title
     - paragraphs.paragraphs_type.header
   module:
+    - content_moderation
     - file
     - link
 id: paragraph.header.default
@@ -66,6 +67,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   status: true

@@ -18,11 +18,13 @@ set classes = [
 %}
 
 {# Attach library if Parallax is enabled #}
-{% if parallax %}
-  {{ attach_library('tieto_admin/parallax') }}
-{% endif %}
-{% if campaign.background.type == 'video' %}
-  {{ attach_library('tieto_admin/iphone-inline-video') }}
+{% if view_mode != 'preview' %}
+  {% if parallax %}
+    {{ attach_library('tieto_admin/parallax') }}
+  {% endif %}
+  {% if campaign.background.type == 'video' %}
+    {{ attach_library('tieto_admin/iphone-inline-video') }}
+  {% endif %}
 {% endif %}
 
 <div{{ attributes.addClass(classes) }}>
