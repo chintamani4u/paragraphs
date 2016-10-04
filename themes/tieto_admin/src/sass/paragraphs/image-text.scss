@@ -1,4 +1,4 @@
-.paragraph--type--image-text {
+.paragraph--type--image-text.paragraph--view-mode--default {
 
     // Layout: Common styles
     &.layout--text_1st,
@@ -12,9 +12,17 @@
         .field--name-field-title,
         .field--name-field-text,
         .field--name-field-image {
-            text-align: center;
             @include md {
                 width: 50%;
+            }
+        }
+
+        .field--name-field-image {
+            text-align: center;
+            margin: 1em 0 0;
+            @include md {
+                margin: 0;
+                text-align: right;
             }
         }
 
@@ -22,6 +30,27 @@
             .field--name-field-title,
             .field--name-field-text {
                 text-align: left;
+            }
+        }
+    }
+
+    // Call to action buttons.
+    .field--name-field-call-to-action {
+        clear: both;
+        .field__item {
+            display: inline-block;
+        }
+        a {
+            color: white;
+            display: inline-block;
+            padding: .7em 1.4em;
+            margin-right: .5em;
+            background: $tieto-blue;
+            border-radius: 3px;
+            transition: background .3s;
+            &:hover, &:focus, &:active {
+                text-decoration: none;
+                background: lighten($tieto-blue, 5%);
             }
         }
     }
@@ -38,6 +67,7 @@
             // Image
             .field--name-field-image {
                 float: right;
+                padding-left: 1.5em;
             }
         }
     }
@@ -54,6 +84,12 @@
             // Image
             .field--name-field-image {
                 float: left;
+                padding-right: 1.5em;
+            }
+            // Call to action buttons.
+            .field--name-field-call-to-action {
+                width: 50%;
+                float: right;
             }
         }
     }
@@ -84,6 +120,10 @@
             background: $tieto-lightblue;
             padding: 2em 0 0;
 
+            img {
+                display: block;
+            }
+
             @include md {
                 text-align: left;
                 background: 0;
@@ -93,6 +133,13 @@
                 width: 40%;
                 float: right;
             }
+        }
+        // Call to action buttons.
+        .field--name-field-call-to-action {
+            text-align: center;
+            width: 40%;
+            float: right;
+            margin-top: -1.5em;
         }
     }
 }

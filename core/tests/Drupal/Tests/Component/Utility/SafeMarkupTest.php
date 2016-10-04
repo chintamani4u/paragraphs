@@ -173,7 +173,7 @@ class SafeMarkupTest extends UnitTestCase {
 
     return $tests;
   }
-    /**
+  /**
    * Custom error handler that saves the last error.
    *
    * We need this custom error handler because we cannot rely on the error to
@@ -229,4 +229,5 @@ class SafeMarkupTestString {
  */
 class SafeMarkupTestMarkup implements MarkupInterface {
   use MarkupTrait;
+
 }

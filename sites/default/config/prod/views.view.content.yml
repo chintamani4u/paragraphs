@@ -141,22 +141,6 @@ display:
       row:
         type: fields
       fields:
-        node_bulk_form:
-          id: node_bulk_form
-          table: node
-          field: node_bulk_form
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-          element_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          plugin_id: node_bulk_form
-          entity_type: node
         title:
           id: title
           table: node_field_data
@@ -356,15 +340,6 @@ display:
           destination: true
           plugin_id: entity_operations
       filters:
-        status_extra:
-          id: status_extra
-          table: node_field_data
-          field: status_extra
-          operator: '='
-          value: false
-          plugin_id: node_status
-          group: 1
-          entity_type: node
         status:
           id: status
           table: node_field_data
@@ -373,7 +348,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: true
           expose:
@@ -568,7 +543,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       max-age: 0
@@ -583,6 +557,8 @@ display:
         menu_name: admin
         weight: -10
         context: ''
+        enabled: true
+        expanded: false
       tab_options:
         type: normal
         title: Content
@@ -600,7 +576,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       max-age: 0

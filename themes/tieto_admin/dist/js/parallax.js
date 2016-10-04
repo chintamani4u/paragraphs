@@ -1,4 +1,4 @@
-(function () {
+(function (exports) {
 'use strict';
 
 var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {}
@@ -231,6 +231,6 @@ var Rellax = interopDefault(rellax);
 	var rellax = new Rellax('.parallax');
 })()
 
-}());
+}((this.LaravelElixirBundle = this.LaravelElixirBundle || {})));
 
 //# sourceMappingURL=parallax.js.map

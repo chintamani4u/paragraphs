@@ -5,7 +5,6 @@ namespace Drupal\simpletest;
 use Drupal\block\Entity\Block;
 use Drupal\Component\FileCache\FileCacheFactory;
 use Drupal\Component\Serialization\Json;
-use Drupal\Component\Serialization\Yaml;
 use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Component\Utility\UrlHelper;
@@ -18,6 +17,7 @@ use Drupal\Core\EventSubscriber\AjaxResponseSubscriber;
 use Drupal\Core\EventSubscriber\MainContentViewSubscriber;
 use Drupal\Core\Extension\MissingDependencyException;
 use Drupal\Core\Render\Element;
+use Drupal\Core\Serialization\Yaml;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Session\AnonymousUserSession;
 use Drupal\Core\Session\UserSession;
@@ -25,6 +25,7 @@ use Drupal\Core\Site\Settings;
 use Drupal\Core\StreamWrapper\PublicStream;
 use Drupal\Core\Test\AssertMailTrait;
 use Drupal\Core\Url;
+use Drupal\system\Tests\Cache\AssertPageCacheContextsAndTagsTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Yaml\Yaml as SymfonyYaml;
@@ -38,6 +39,7 @@ use Zend\Diactoros\Uri;
 abstract class WebTestBase extends TestBase {
 
   use AssertContentTrait;
+  use AssertPageCacheContextsAndTagsTrait;
   use BlockCreationTrait {
     placeBlock as drupalPlaceBlock;
   }
@@ -613,10 +615,6 @@ abstract class WebTestBase extends TestBase {
       'value' => $this->originalProfile,
       'required' => TRUE,
     ];
-    $settings['settings']['apcu_ensure_unique_prefix'] = (object) [
-      'value' => FALSE,
-      'required' => TRUE,
-    ];
     $this->writeSettings($settings);
     // Allow for test-specific overrides.
     $settings_testing_file = DRUPAL_ROOT . '/' . $this->originalSite . '/settings.testing.php';
@@ -625,7 +623,7 @@ abstract class WebTestBase extends TestBase {
       copy($settings_testing_file, $directory . '/settings.testing.php');
       // Add the name of the testing class to settings.php and include the
       // testing specific overrides
-      file_put_contents($directory . '/settings.php', "\n\$test_class = '" . get_class($this) ."';\n" . 'include DRUPAL_ROOT . \'/\' . $site_path . \'/settings.testing.php\';' ."\n", FILE_APPEND);
+      file_put_contents($directory . '/settings.php', "\n\$test_class = '" . get_class($this) . "';\n" . 'include DRUPAL_ROOT . \'/\' . $site_path . \'/settings.testing.php\';' . "\n", FILE_APPEND);
     }
     $settings_services_file = DRUPAL_ROOT . '/' . $this->originalSite . '/testing.services.yml';
     if (!file_exists($settings_services_file)) {
@@ -876,7 +874,7 @@ abstract class WebTestBase extends TestBase {
    * To install test modules outside of the testing environment, add
    * @code
    * $settings['extension_discovery_scan_tests'] = TRUE;
-   * @encode
+   * @endcode
    * to your settings.php.
    *
    * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
@@ -1302,7 +1300,7 @@ abstract class WebTestBase extends TestBase {
    * @param $header
    *   An header.
    *
-   * @see _drupal_log_error().
+   * @see _drupal_log_error()
    */
   protected function curlHeaderCallback($curlHandler, $header) {
     // Header fields can be extended over multiple lines by preceding each
@@ -2539,7 +2537,7 @@ abstract class WebTestBase extends TestBase {
    *   TRUE on pass, FALSE on fail.
    */
   protected function assertUrl($path, array $options = array(), $message = '', $group = 'Other') {
-    if ($path instanceof Url)  {
+    if ($path instanceof Url) {
       $url_obj = $path;
     }
     elseif (UrlHelper::isExternal($path)) {
@@ -2631,7 +2629,7 @@ abstract class WebTestBase extends TestBase {
    * @param $override_server_vars
    *   An array of server variables to override.
    *
-   * @return $request
+   * @return \Symfony\Component\HttpFoundation\Request
    *   The mocked request object.
    */
   protected function prepareRequestForGenerator($clean_urls = TRUE, $override_server_vars = array()) {
@@ -2680,7 +2678,7 @@ abstract class WebTestBase extends TestBase {
    *   Options to be passed to Url::fromUri().
    *
    * @return string
-   *   An absolute URL stsring.
+   *   An absolute URL string.
    */
   protected function buildUrl($path, array $options = array()) {
     if ($path instanceof Url) {
@@ -2709,28 +2707,6 @@ abstract class WebTestBase extends TestBase {
     else {
       return $this->getAbsoluteUrl($path);
     }
-  }
-
-  /**
-   * Asserts whether an expected cache context was present in the last response.
-   *
-   * @param string $expected_cache_context
-   *   The expected cache context.
-   */
-  protected function assertCacheContext($expected_cache_context) {
-    $cache_contexts = explode(' ', $this->drupalGetHeader('X-Drupal-Cache-Contexts'));
-    $this->assertTrue(in_array($expected_cache_context, $cache_contexts), "'" . $expected_cache_context . "' is present in the X-Drupal-Cache-Contexts header.");
-  }
-
-  /**
-   * Asserts that a cache context was not present in the last response.
-   *
-   * @param string $not_expected_cache_context
-   *   The expected cache context.
-   */
-  protected function assertNoCacheContext($not_expected_cache_context) {
-    $cache_contexts = explode(' ', $this->drupalGetHeader('X-Drupal-Cache-Contexts'));
-    $this->assertFalse(in_array($not_expected_cache_context, $cache_contexts), "'" . $not_expected_cache_context . "' is not present in the X-Drupal-Cache-Contexts header.");
   }
 
   /**

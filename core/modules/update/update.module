@@ -375,7 +375,6 @@ function update_get_available($refresh = FALSE) {
  *   project.
  *
  * @see \Drupal\update\UpdateFetcher::createFetchTask()
- *
  */
 function update_create_fetch_task($project) {
   \Drupal::service('update.processor')->createFetchTask($project);
@@ -394,7 +393,7 @@ function update_refresh() {
  * @see \Drupal\update\UpdateProcessor::fetchData()
  */
 function update_fetch_data() {
- \Drupal::service('update.processor')->fetchData();
+  \Drupal::service('update.processor')->fetchData();
 }
 
 /**

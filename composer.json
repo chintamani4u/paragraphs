@@ -9,7 +9,7 @@
         "php-ffmpeg/php-ffmpeg": "^0.6.1"
     },
     "replace": {
-        "drupal/core": "~8.1"
+        "drupal/core": "~8.2"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

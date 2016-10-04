@@ -1,0 +1,28 @@
+uuid: e78f4a17-9029-4eb4-835d-b32af9566c4b
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+  theme:
+    - tieto_admin
+id: languageswitcher
+theme: tieto_admin
+region: footer
+weight: -7
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  provider: language
+  label_display: '0'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      campaign: campaign
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

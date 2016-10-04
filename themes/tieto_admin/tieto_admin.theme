@@ -5,7 +5,6 @@
  * Functions to support theming in the tieto_admin theme.
  */
 
-use Drupal;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -177,6 +176,26 @@ function tieto_admin_preprocess_menu_local_action(array &$variables) {
 
   // We require Modernizr's touch test for button styling.
   $variables['#attached']['library'][] = 'core/modernizr';
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function tieto_admin_preprocess_field(&$variables) {
+  // Add rendered_confirmation_message to field variables.
+  if ($variables['field_name'] === 'field_marketo_form') {
+    $element = $variables['element']['#object'];
+
+    // Get the field's raw value and format.
+    list($markup, $format) = [
+      $element->field_text->value,
+      $element->field_text->format,
+    ];
+
+    if (isset($markup) && isset($format)) {
+      $element->rendered_confirmation_message = check_markup($markup, $format);
+    }
+  }
 }
 
 /**

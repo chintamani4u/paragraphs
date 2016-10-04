@@ -15,7 +15,7 @@ body {
   color: $text-color;
   background: #fff;
   font-size: $font-size-base;
-  font-family: $helvetica-roman;
+  font-family: $font-base;
   font-weight: normal;
   line-height: $line-height-base;
 }
@@ -26,7 +26,7 @@ img {
 }
 a,
 .link {
-  color: darken($brand-primary, 10%);
+  color: $link-color;
   text-decoration: none;
 }
 a:hover,
@@ -35,6 +35,7 @@ a:focus,
 .link:focus {
   text-decoration: underline;
   outline: 0;
+  color: $link-color-hover;
 }
 hr {
   margin: 0;

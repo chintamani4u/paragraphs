@@ -1,0 +1,9 @@
+uuid: 27f26d04-1c1f-4253-a48a-0a391d740608
+langcode: en
+status: true
+dependencies: {  }
+id: sv
+label: Swedish
+direction: ltr
+weight: 3
+locked: false

@@ -254,6 +254,7 @@ function template_preprocess_details(&$variables) {
   $variables['description'] = (!empty($element['#description'])) ? $element['#description'] : '';
   $variables['children'] = (isset($element['#children'])) ? $element['#children'] : '';
   $variables['value'] = (isset($element['#value'])) ? $element['#value'] : '';
+  $variables['required'] = !empty($element['#required']) ? $element['#required'] : NULL;
 
   // Suppress error messages.
   $variables['errors'] = NULL;
@@ -313,7 +314,6 @@ function template_preprocess_checkboxes(&$variables) {
  *   An associative array containing:
  *   - element: An associative array containing the properties and children of
  *     the details element. Properties used: #children.
- *
  */
 function template_preprocess_vertical_tabs(&$variables) {
   $element = $variables['element'];
@@ -372,7 +372,6 @@ function template_preprocess_form(&$variables) {
  *   - element: An associative array containing the properties of the element.
  *     Properties used: #title, #value, #description, #rows, #cols,
  *     #placeholder, #required, #attributes, #resizable
- *
  */
 function template_preprocess_textarea(&$variables) {
   $element = $variables['element'];
@@ -594,7 +593,8 @@ function template_preprocess_form_element_label(&$variables) {
  *   //   1 (or no value explicitly set) means the operation is finished
  *   //   and the batch processing can continue to the next operation.
  *
- *   $nodes = entity_load_multiple_by_properties('node', array('uid' => $uid, 'type' => $type));
+ *   $nodes = \Drupal::entityTypeManager()->getStorage('node')
+ *     ->loadByProperties(['uid' => $uid, 'type' => $type]);
  *   $node = reset($nodes);
  *   $context['results'][] = $node->id() . ' : ' . SafeMarkup::checkPlain($node->label());
  *   $context['message'] = SafeMarkup::checkPlain($node->label());

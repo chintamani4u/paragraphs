@@ -10,7 +10,7 @@ use Drupal\Core\State\StateInterface;
 use Drupal\Core\Url;
 use Drupal\migrate\Plugin\MigrationPluginManagerInterface;
 use Drupal\migrate_drupal_ui\MigrateUpgradeRunBatch;
-use Drupal\migrate_drupal\MigrationCreationTrait;
+use Drupal\migrate_drupal\MigrationConfigurationTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -18,7 +18,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class MigrateUpgradeForm extends ConfirmFormBase {
 
-  use MigrationCreationTrait;
+  use MigrationConfigurationTrait;
 
   /**
    * Mapping of known migrations and their source and destination modules.
@@ -266,6 +266,14 @@ class MigrateUpgradeForm extends ConfirmFormBase {
       'source_module' => 'image',
       'destination_module' => 'image',
     ],
+    'd6_language_content_settings' => [
+      'source_module' => 'locale',
+      'destination_module' => 'language',
+    ],
+    'd7_language_content_settings' => [
+      'source_module' => 'locale',
+      'destination_module' => 'language',
+    ],
     'd7_language_negotiation_settings' => [
       'source_module' => 'locale',
       'destination_module' => 'language',
@@ -287,6 +295,10 @@ class MigrateUpgradeForm extends ConfirmFormBase {
       'destination_module' => 'menu_ui',
     ],
     'd6_node' => [
+      'source_module' => 'node',
+      'destination_module' => 'node',
+    ],
+    'd6_node_translation' => [
       'source_module' => 'node',
       'destination_module' => 'node',
     ],
@@ -687,7 +699,7 @@ class MigrateUpgradeForm extends ConfirmFormBase {
    *   The form structure.
    */
   public function buildOverviewForm(array $form, FormStateInterface $form_state) {
-    $form['#title'] = $this->t('Drupal Upgrade');
+    $form['#title'] = $this->t('Upgrade');
 
     if ($date_performed = $this->state->get('migrate_drupal_ui.performed')) {
       // @todo Add back support for rollbacks and incremental migrations.
@@ -702,7 +714,7 @@ class MigrateUpgradeForm extends ConfirmFormBase {
     }
     else {
       $form['info_header'] = [
-        '#markup' => '<p>' . $this->t('Upgrade a Drupal site by importing it into a clean and empty new install of Drupal 8. You will lose any existing configuration once you import your site into it. See the <a href=":url">upgrading handbook</a> for more detailed information.', [
+        '#markup' => '<p>' . $this->t('Upgrade a site by importing it into a clean and empty new install of Drupal 8. You will lose any existing configuration once you import your site into it. See the <a href=":url">online documentation for Drupal site upgrades</a> for more detailed information.', [
           ':url' => 'https://www.drupal.org/upgrade/migrate',
         ]),
       ];
@@ -838,7 +850,7 @@ class MigrateUpgradeForm extends ConfirmFormBase {
     $form['source']['source_base_path'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Files directory'),
-      '#description' => $this->t('To import files from your current Drupal site, enter a local file directory containing your site (e.g. /var/www/docroot), or your site address (e.g. http://example.com).'),
+      '#description' => $this->t('To import files from your current Drupal site, enter a local file directory containing your site (e.g. /var/www/docroot), or your site address (for example http://example.com).'),
     ];
 
     $form['actions'] = ['#type' => 'actions'];

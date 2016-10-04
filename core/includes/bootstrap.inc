@@ -153,6 +153,7 @@ function config_get_config_directory($type) {
   if (!empty($config_directories[$type])) {
     return $config_directories[$type];
   }
+  // @todo https://www.drupal.org/node/2696103 Throw a more specific exception.
   throw new \Exception("The configuration directory type '$type' does not exist");
 }
 
@@ -598,7 +599,7 @@ function _drupal_exception_handler_additional($exception, $exception2) {
  * @param string $new_prefix
  *   Internal use only. A new prefix to be stored.
  *
- * @return string|FALSE
+ * @return string|false
  *   Either the simpletest prefix (the string "simpletest" followed by any
  *   number of digits) or FALSE if the user agent does not contain a valid
  *   HMAC and timestamp.
@@ -639,10 +640,14 @@ function drupal_valid_test_ua($new_prefix = NULL) {
     $key = $private_key . filectime(__FILE__) . fileinode(__FILE__);
     $time_diff = REQUEST_TIME - $time;
     $test_hmac = Crypt::hmacBase64($check_string, $key);
-    // Since we are making a local request a 5 second time window is allowed,
+    // Since we are making a local request a 600 second time window is allowed,
     // and the HMAC must match.
-    if ($time_diff >= 0 && $time_diff <= 5 && $hmac === $test_hmac) {
+    if ($time_diff >= 0 && $time_diff <= 600 && $hmac === $test_hmac) {
       $test_prefix = $prefix;
+    }
+    else {
+      header($_SERVER['SERVER_PROTOCOL'] . ' 403 Forbidden (SIMPLETEST_USER_AGENT invalid)');
+      exit;
     }
   }
   return $test_prefix;

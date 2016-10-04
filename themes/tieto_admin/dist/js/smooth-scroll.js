@@ -1,14 +1,12 @@
-(function () {
+(function (exports) {
 'use strict';
 
 /**
  * @file
  * Smooth Scroll.
- *
- * @author Gergely Pap <gpap@brainsum.com>
  */
 
-(function ($, Drupal) {
+(function ($) {
 
   /**
    * Speed of the smooth scroll.
@@ -76,17 +74,10 @@
     }
   }
 
-  /**
-   * Initialise.
-   */
-  Drupal.behaviors.smoothScroll = {
-    attach: function (context, settings) {
-      $('a[href*=#]:not([href=#]):not([href^=#tab-])', context).on('click', smoothScroll)
-    }
-  }
+  $('a[href*="#"]:not([href="#"]):not([href^="#tab-"]').on('click', smoothScroll)
 
-})(jQuery, Drupal)
+})(jQuery)
 
-}());
+}((this.LaravelElixirBundle = this.LaravelElixirBundle || {})));
 
 //# sourceMappingURL=smooth-scroll.js.map

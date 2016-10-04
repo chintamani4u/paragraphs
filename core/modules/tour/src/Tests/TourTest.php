@@ -145,7 +145,7 @@ class TourTest extends TourTestBasic {
     $this->drupalGet('tour-test-1');
 
     // Load it back from the database and verify storage worked.
-    $entity_save_tip = entity_load('tour', 'tour-entity-create-test-en');
+    $entity_save_tip = Tour::load('tour-entity-create-test-en');
     // Verify that hook_ENTITY_TYPE_load() integration worked.
     $this->assertEqual($entity_save_tip->loaded, 'Load hooks work');
     // Verify that hook_ENTITY_TYPE_presave() integration worked.
@@ -184,4 +184,5 @@ class TourTest extends TourTestBasic {
     ));
     $this->assertEqual(count($elements), 0, 'Did not find English variant of tip 1.');
   }
+
 }

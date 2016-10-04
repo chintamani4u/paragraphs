@@ -34,6 +34,11 @@ const SIMPLETEST_SCRIPT_EXIT_SUCCESS = 0;
 const SIMPLETEST_SCRIPT_EXIT_FAILURE = 1;
 const SIMPLETEST_SCRIPT_EXIT_EXCEPTION = 2;
 
+if (!class_exists('\PHPUnit_Framework_TestCase')) {
+  echo "\nrun-tests.sh requires the PHPUnit testing framework. Please use 'composer install --dev' to ensure that it is present.\n\n";
+  exit(SIMPLETEST_SCRIPT_EXIT_FAILURE);
+}
+
 // Set defaults and get overrides.
 list($args, $count) = simpletest_script_parse_args();
 
@@ -647,6 +652,10 @@ function simpletest_script_execute_batch($test_classes) {
         elseif ($status['exitcode']) {
           $message = 'FATAL ' . $child['class'] . ': test runner returned a non-zero error code (' . $status['exitcode'] . ').';
           echo $message . "\n";
+          // @todo Return SIMPLETEST_SCRIPT_EXIT_EXCEPTION instead, when
+          // DrupalCI supports this.
+          // @see https://www.drupal.org/node/2780087
+          $total_status = max(SIMPLETEST_SCRIPT_EXIT_FAILURE, $total_status);
           // Insert a fail for xml results.
           TestBase::insertAssert($child['test_id'], $child['class'], FALSE, $message, 'run-tests.sh check');
           // Ensure that an error line is displayed for the class.
@@ -690,36 +699,7 @@ function simpletest_script_run_phpunit($test_id, $class) {
 
   // Map phpunit results to a data structure we can pass to
   // _simpletest_format_summary_line.
-  $summaries = array();
-  foreach ($results as $result) {
-    if (!isset($summaries[$result['test_class']])) {
-      $summaries[$result['test_class']] = array(
-        '#pass' => 0,
-        '#fail' => 0,
-        '#exception' => 0,
-        '#debug' => 0,
-      );
-    }
-
-    switch ($result['status']) {
-      case 'pass':
-        $summaries[$result['test_class']]['#pass']++;
-        break;
-
-      case 'fail':
-        $summaries[$result['test_class']]['#fail']++;
-        break;
-
-      case 'exception':
-        $summaries[$result['test_class']]['#exception']++;
-        break;
-
-      case 'debug':
-        $summaries[$result['test_class']]['#debug']++;
-        break;
-    }
-  }
-
+  $summaries = simpletest_summarize_phpunit_result($results);
   foreach ($summaries as $class => $summary) {
     simpletest_script_reporter_display_summary($class, $summary);
   }

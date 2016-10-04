@@ -99,7 +99,7 @@ class ViewExecutableTest extends ViewsKernelTestBase {
   public function testFactoryService() {
     $factory = $this->container->get('views.executable');
     $this->assertTrue($factory instanceof ViewExecutableFactory, 'A ViewExecutableFactory instance was returned from the container.');
-    $view = entity_load('view', 'test_executable_displays');
+    $view = View::load('test_executable_displays');
     $this->assertTrue($factory->get($view) instanceof ViewExecutable, 'A ViewExecutable instance was returned from the factory.');
   }
 
@@ -351,7 +351,13 @@ class ViewExecutableTest extends ViewsKernelTestBase {
     $reflection = new \ReflectionClass($view);
     $defaults = $reflection->getDefaultProperties();
     // The storage and user should remain.
-    unset($defaults['storage'], $defaults['user'], $defaults['request'], $defaults['routeProvider']);
+    unset(
+      $defaults['storage'],
+      $defaults['user'],
+      $defaults['request'],
+      $defaults['routeProvider'],
+      $defaults['viewsData']
+    );
 
     foreach ($defaults as $property => $default) {
       $this->assertIdentical($this->getProtectedProperty($view, $property), $default);

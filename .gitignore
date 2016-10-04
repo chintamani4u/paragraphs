@@ -7,6 +7,10 @@ files/
 sites/*/files
 sites/*/private
 
+# Ignore developer, helper modules.
+modules/devel
+modules/contrib/devel
+
 # Other
 nbproject
 .idea

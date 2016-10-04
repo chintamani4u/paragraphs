@@ -112,13 +112,17 @@ class LocaleContentTest extends WebTestBase {
     // Edit the content and ensure correct language is selected.
     $path = 'node/' . $node->id() . '/edit';
     $this->drupalGet($path);
-    $this->assertRaw('<option value="' . $langcode . '" selected="selected">' .  $name . '</option>', 'Correct language selected.');
+    $this->assertRaw('<option value="' . $langcode . '" selected="selected">' . $name . '</option>', 'Correct language selected.');
     // Ensure we can change the node language.
     $edit = array(
       'langcode[0][value]' => 'en',
     );
     $this->drupalPostForm($path, $edit, t('Save'));
-    $this->assertRaw(t('%title has been updated.', array('%title' => $node_title)));
+    $this->assertText(t('@title has been updated.', array('@title' => $node_title)));
+
+    // Verify that the creation message contains a link to a node.
+    $view_link = $this->xpath('//div[@class="messages"]//a[contains(@href, :href)]', array(':href' => 'node/' . $node->id()));
+    $this->assert(isset($view_link), 'The message area contains the link to the edited node');
 
     $this->drupalLogout();
   }

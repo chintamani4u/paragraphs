@@ -190,7 +190,7 @@ class ContentEntityNormalizer extends NormalizerBase {
   /**
    * Constructs the entity URI.
    *
-   * @param \Drupal\Core\Entity\EntityInterface
+   * @param \Drupal\Core\Entity\EntityInterface $entity
    *   The entity.
    * @return string
    *   The entity URI.
@@ -215,7 +215,6 @@ class ContentEntityNormalizer extends NormalizerBase {
    *
    * @return array
    *   The typed data IDs.
-   *
    */
   protected function getTypedDataIds($types, $context = array()) {
     // The 'type' can potentially contain an array of type objects. By default,
@@ -245,4 +244,5 @@ class ContentEntityNormalizer extends NormalizerBase {
 
     return $typed_data_ids;
   }
+
 }

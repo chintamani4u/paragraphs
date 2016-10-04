@@ -6,7 +6,7 @@
 		position: absolute;
 	    top: 0;
 	    right: 0;
-	    z-index: 500;
+	    z-index: 501;
 
 		@include md {
 			display: none;
@@ -52,29 +52,45 @@
 		top: 70px;
 		right: 1em;
 		z-index: 500;
-		padding: 1em;
-
-		// When scrolling past Header, we need a background.
-		&.fixed {
-			background: rgba(0, 0, 0, .5);
-		}
+		padding: 10px;
+		z-index: 501;
 
 		// Mobile styles for Menu field wrapper.
 		@include breakpoint-max(md) {
-			background: rgba(0, 0, 0, 0.7);
+			background: $tieto-blue;
+			padding: .5em 1em;
 			opacity: 0;
 			visibility: hidden;
 			will-change: opacity;
 			transition: opacity .2s, visibility .2s;
+			box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+
+			// Arrow for the dropdown.
+			&::before {
+				content: " ";
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 4px;
+			    border: 10px solid;
+			    margin-top: -20px;
+			    border-color: transparent transparent $tieto-blue transparent;
+			    box-sizing: content-box;
+			}
 		}
 
 		// Menu links <a> tags
 		a {
-			font-weight: bold;
 			color: white;
 			text-decoration: none;
 			display: block;
 			text-align: center;
+			font-size: 14px;
+			letter-spacing: .5px;
+		}
+
+		.campaign-menu-link {
+			padding: .5em;
 		}
 
 		// Desktop styles for Menu field wrapper.
@@ -86,23 +102,9 @@
 			text-align: right;
 			transition: background .2s;
 
-			// Arrow for the dropdown.
-			&::before {
-				content: " ";
-				display: block;
-				position: absolute;
-				top: 0;
-				right: 4px;
-			    border: 10px solid;
-			    margin-top: -20px;
-			    border-color: transparent transparent rgba(0, 0, 0, 0.7) transparent;
-			    box-sizing: content-box;
-			}
-
 			// Menu link wrappers (<li> items)
 			.campaign-menu-link {
 				display: inline-block;
-				padding: .5em;
 
 				// On desktop, the links have a bottom border on :hover
 				&:not(:last-child) a:link {
@@ -115,13 +117,77 @@
 				}
 
 				// Last item gets a 2px border, making it look like a button.
-				&:last-child {
-					padding: .5em 1em;
+				&:last-child a {
+					display: block;
+					padding: .5em 1.5em;
 					border: 2px solid white;
 					border-radius: 3px;
+
+					&:hover {
+						background: white;
+						color: $tieto-blue;
+					}
 				}
 			}
 		}
 
 	}
+}
+
+
+/**
+ * Paragraph blocks
+ */
+.diagonal-after {
+  @include slope(after)
+}
+
+.diagonal-before {
+  @include slope(before)
+}
+
+
+
+// Super ugly hack for correctly displaying the fucking
+// admin toolbar with the fucking logo and the fucking responsive hamburger shit.
+body.toolbar-vertical, body.toolbar-horizontal {
+  .tieto-campaign-page {
+    position: relative;
+  }
+}
+
+body.toolbar-vertical {
+  @include breakpoint-max(md) {
+    #toolbar-administration {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+  .tieto-campaign-page {
+    .logo {
+      top: $toolbar-height;
+    }
+    .campaign-menu {
+      top: $header-height;
+      @include md {
+        top: $toolbar-height;
+      }
+    }
+  }
+}
+
+body.toolbar-horizontal {
+  .tieto-campaign-page {
+    .logo, .campaign-menu {
+      top: $toolbar-height;
+    }
+  }
+
+  &.toolbar-tray-open .tieto-campaign-page {
+    .logo, .campaign-menu {
+      top: $toolbar-height * 2;
+    }
+  }
 }

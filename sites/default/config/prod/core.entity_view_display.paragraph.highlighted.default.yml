@@ -18,13 +18,13 @@ bundle: highlighted
 mode: default
 content:
   field_text:
-    weight: 3
+    type: text_default
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
   field_title:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       link_to_entity: false

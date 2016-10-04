@@ -6,6 +6,7 @@ use Drupal\Component\Utility\SafeMarkup;
 use Drupal\Core\Url;
 use Drupal\shortcut\Entity\Shortcut;
 use Drupal\shortcut\Entity\ShortcutSet;
+use Drupal\views\Entity\View;
 
 /**
  * Create, view, edit, delete, and change shortcut links.
@@ -233,7 +234,7 @@ class ShortcutLinksTest extends ShortcutTestBase {
     $this->drupalGet('admin/content');
     $this->assertResponse(200);
     // Disable the view.
-    entity_load('view', 'content')->disable()->save();
+    View::load('content')->disable()->save();
     /** @var \Drupal\Core\Routing\RouteBuilderInterface $router_builder */
     $router_builder = \Drupal::service('router.builder');
     $router_builder->rebuildIfNeeded();
@@ -342,7 +343,7 @@ class ShortcutLinksTest extends ShortcutTestBase {
     $shortcuts = $this->cssSelect('#toolbar-item-shortcuts-tray .toolbar-menu a');
     $this->assertEqual((string) $shortcuts[0], 'Add content');
     $this->assertEqual((string) $shortcuts[1], 'All content');
-    foreach($this->set->getShortcuts() as $shortcut) {
+    foreach ($this->set->getShortcuts() as $shortcut) {
       $shortcut->setWeight($shortcut->getWeight() * -1)->save();
     }
     $this->drupalGet(Url::fromRoute('<front>'));

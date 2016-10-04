@@ -1,9 +1,10 @@
 // Text Boxes
-.paragraph--type--text-boxes {
+.paragraph--type--text-boxes.paragraph--view-mode--default {
 
 	// Main Title
 	.field--name-field-title {
-		@include campaign-title-center;
+		@include campaign-title;
+		color: $text-color-strong;
 	}
 
 	// Layouts
@@ -28,7 +29,7 @@
 }
 
 // Text Boxes -> Text Box
-.paragraph--type--text-box {
+.paragraph--type--text-box.paragraph--view-mode--default {
 	padding: 2em 1em;
 	background: inherit;
 

@@ -345,7 +345,7 @@ abstract class StylePluginBase extends PluginBase {
 
       $form['default_row_class'] = array(
         '#title' => $this->t('Add views row classes'),
-        '#description' => $this->t('Add the default row classes like views-row-1 to the output. You can use this to quickly reduce the amount of markup the view provides by default, at the cost of making it more difficult to apply CSS.'),
+        '#description' => $this->t('Add the default row classes like @classes to the output. You can use this to quickly reduce the amount of markup the view provides by default, at the cost of making it more difficult to apply CSS.', array('@classes' => 'views-row')),
         '#type' => 'checkbox',
         '#default_value' => $this->options['default_row_class'],
       );
@@ -720,7 +720,7 @@ abstract class StylePluginBase extends PluginBase {
           $fields = $this->view->field;
           $rendered_fields = &$this->rendered_fields[$index];
           $post_render_tokens = [];
-          foreach ($field_ids as $id)  {
+          foreach ($field_ids as $id) {
             $rendered_fields[$id] = $data[$id]['#markup'];
             $tokens = $fields[$id]->postRender($row, $rendered_fields[$id]);
             if ($tokens) {

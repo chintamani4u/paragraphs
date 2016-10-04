@@ -1,5 +1,6 @@
 // Colors
-$brand-primary: #2c3e50;
+$tieto-blue: #67afe1;
+$brand-primary: $tieto-blue;
 $brand-danger: #E62600;
 
 $messages-error-color: #a51b00;
@@ -8,20 +9,23 @@ $messages-error-border: #f9c9bf;
 
 $spacer:   1rem !default;
 
+$button-bg: $brand-primary;
+$button-bg-hover: darken($brand-primary, 20%);
+$button-border: darken($brand-primary, 30%);
+$button-box-shadow: 0 2px 2px hsla(0, 0%, 0%, 0.125);
+
+$breakpoint-md: 767px;
+$breakpoint-lg: 1200px;
+
 // Typography (from Bootstrap 4)
 //
 // Font, line-height, and color for body text, headings, and more.
 
 $fonts-directory: '../../fonts';
-$helvetica-thin: "HelveticaThin";
-$helvetica-light: "HelveticaLight";
-$helvetica-roman: "HelveticaRoman";
-$helvetica-bold: "HelveticaBold";
-
 $font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $font-serif:      Georgia, "Times New Roman", Times, serif !default;
 $font-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-base:       Arial, sans-serif !default;
+$font-base:       'HelveticaNeue', Arial, sans-serif !default;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root: 16px !default;
@@ -83,10 +87,13 @@ $icon-clone: "\e14d";
 $pulp-yellow: #fdd706;
 $pulp-red: #d03428;
 
-$tieto-blue: #67afe1;
+
 $tieto-lightblue: #cde6f5;
 $tieto-lightgrey: #efefef;
 $tieto-green: #b2eb95;
 $header-height: 50px;
 $page-max-width: 1000px;
-
+$tieto-logo-transform: rotate(16.5deg) skew(-29deg);
+$tieto-red: #d51067;
+$link-color: $tieto-blue;
+$link-color-hover: $tieto-red;

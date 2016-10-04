@@ -30,14 +30,14 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
    *
    * @var \Drupal\views\ViewExecutable
    */
-  var $view = NULL;
+  public $view = NULL;
 
   /**
    * An array of instantiated handlers used in this display.
    *
    * @var \Drupal\views\Plugin\views\ViewsHandlerInterface[]
    */
-   public $handlers = [];
+  public $handlers = [];
 
   /**
    * An array of instantiated plugins used in this display.
@@ -1051,9 +1051,9 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
       if (!isset($tokens["%$count"])) {
         $tokens["%$count"] = '';
       }
-       // Use strip tags as there should never be HTML in the path.
-       // However, we need to preserve special characters like " that
-       // were encoded by \Drupal\Component\Utility\Html::escape().
+      // Use strip tags as there should never be HTML in the path.
+      // However, we need to preserve special characters like " that
+      // were encoded by \Drupal\Component\Utility\Html::escape().
       $tokens["!$count"] = isset($this->view->args[$count - 1]) ? strip_tags(Html::decodeEntities($this->view->args[$count - 1])) : '';
     }
 
@@ -1339,6 +1339,7 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
       );
     }
 
+    /** @var \Drupal\views\Plugin\views\exposed_form\ExposedFormPluginInterface $exposed_form_plugin */
     $exposed_form_plugin = $this->getPlugin('exposed_form');
     if (!$exposed_form_plugin) {
       // Default to the no cache control plugin.
@@ -2216,6 +2217,10 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
     $return = array();
     foreach ($this->getHandlers($area) as $key => $area_handler) {
       if ($area_render = $area_handler->render($empty)) {
+        if (isset($area_handler->position)) {
+          // Fix weight of area.
+          $area_render['#weight'] = $area_handler->position;
+        }
         $return[$key] = $area_render;
       }
     }
@@ -2231,7 +2236,7 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
     }
 
     $plugin = $this->getPlugin('access');
-      /** @var \Drupal\views\Plugin\views\access\AccessPluginBase $plugin */
+    /** @var \Drupal\views\Plugin\views\access\AccessPluginBase $plugin */
     if ($plugin) {
       return $plugin->access($account);
     }
@@ -2250,6 +2255,7 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
     }
     $this->view->initHandlers();
     if ($this->usesExposed()) {
+      /** @var \Drupal\views\Plugin\views\exposed_form\ExposedFormPluginInterface $exposed_form */
       $exposed_form = $this->getPlugin('exposed_form');
       $exposed_form->preExecute();
     }
@@ -2546,6 +2552,7 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
     $this->view->initHandlers();
 
     if ($this->usesExposed() && $this->getOption('exposed_block')) {
+      /** @var \Drupal\views\Plugin\views\exposed_form\ExposedFormPluginInterface $exposed_form */
       $exposed_form = $this->getPlugin('exposed_form');
       return $exposed_form->renderExposedForm(TRUE);
     }
@@ -2666,14 +2673,12 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
    *   TRUE if the base table is of a translatable entity type, FALSE otherwise.
    */
   protected function isBaseTableTranslatable() {
-    $view_base_table = $this->view->storage->get('base_table');
-    $views_data = Views::viewsData()->get($view_base_table);
-    if (!empty($views_data['table']['entity type'])) {
-      $entity_type_id = $views_data['table']['entity type'];
-      return \Drupal::entityManager()->getDefinition($entity_type_id)->isTranslatable();
+    if ($entity_type = $this->view->getBaseEntityType()) {
+      return $entity_type->isTranslatable();
     }
     return FALSE;
   }
+
 }
 
 /**
