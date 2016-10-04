@@ -11,7 +11,7 @@ id: node.campaign.field_paragraphs
 field_name: field_paragraphs
 entity_type: node
 bundle: campaign
-label: Paragraphs
+label: Sections
 description: ''
 required: false
 translatable: false
@@ -22,10 +22,13 @@ settings:
   handler_settings:
     target_bundles: null
     target_bundles_drag_drop:
-      campaign_header:
-        weight: 14
+      header:
+        weight: 11
         enabled: false
-      campaign_header_video:
+      highlighted:
+        weight: 12
+        enabled: false
+      marketo_form:
         weight: 15
         enabled: false
       images:
@@ -34,31 +37,19 @@ settings:
       image_text:
         weight: 17
         enabled: false
-      insights:
-        weight: 18
+      simple:
+        weight: 17
         enabled: false
-      link_with_background:
+      text_box:
         weight: 19
-        enabled: false
-      nested_paragraph:
-        weight: 20
         enabled: false
       parallax:
         weight: 21
         enabled: false
       tabs:
-        weight: 22
-        enabled: false
-      text:
-        weight: 23
+        weight: -21
         enabled: false
       text_boxes:
-        weight: 24
-        enabled: false
-      text_image:
-        weight: 25
-        enabled: false
-      user:
-        weight: 26
+        weight: -21
         enabled: false
 field_type: entity_reference_revisions
