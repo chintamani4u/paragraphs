@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .list-reset {
   margin: 0;
   padding: 0;
@@ -302,6 +303,417 @@ details summary:hover {
     clear: left; } }
 
 /**
+ * @file
+ * Structural styles for Seven’s UI buttons
+ *
+ * Apply these classes to any element (<link>, <button>, <input>, etc.) that
+ * should appear as a button.
+ */
+/**
+ * Buttons.
+ *
+ * 1. Enable z-index on buttons.
+ * 2. Normalize 'line-height'; can’t be changed from 'normal' in Firefox 4+.
+ * 3. Allows full range of styling in Webkit and Gecko.
+ * 4. Use px units to ensure button text is centered vertically.
+ * 5. Use rems to avoid the font size cascade of ems, with a px fallback for
+ *    older browsers.
+ * 6. Prevent fat text in WebKit.
+ *
+ * @todo Consider moving box-sizing into base.css under a universal selector.
+ * See https://www.drupal.org/node/2124251
+ *
+ */
+.button {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  /* 1 */
+  text-align: center;
+  line-height: normal;
+  /* 2 */
+  cursor: pointer;
+  -webkit-appearance: none;
+  /* 3 */
+  -moz-appearance: none;
+  /* 3 */
+  padding: 5px 2em;
+  /* 4 */
+  border: 1px solid #1d6292;
+  border-radius: 2px;
+  background: #67afe1;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.875rem;
+  /* 5 */
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-font-smoothing: antialiased;
+  /* 6 */
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.125); }
+  .button:hover, .button:focus {
+    background-color: #257fbd;
+    text-decoration: none;
+    outline: none; }
+  .button:focus {
+    z-index: 10;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); }
+  .button:active {
+    -webkit-transition: none;
+    transition: none; }
+
+/**
+ * Overrides styling from system.theme.
+ */
+.button-action:before {
+  margin-left: -0.2em;
+  /* LTR */
+  padding-right: 0.2em;
+  /* LTR */
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 16px;
+  -webkit-font-smoothing: auto; }
+
+[dir="rtl"] .button-action:before {
+  margin-right: -0.2em;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0.2em; }
+
+/**
+ * 1. Use px units to ensure button text is centered vertically.
+ */
+.no-touchevents .button--small {
+  font-size: 13px;
+  font-size: 0.813rem;
+  padding: 2px 1em;
+  /* 1 */ }
+
+.button:disabled,
+.button:disabled:active,
+.button.is-disabled,
+.button.is-disabled:active {
+  border-color: #d4d4d4;
+  background: #ededed;
+  box-shadow: none;
+  color: #5c5c5c;
+  font-weight: normal;
+  cursor: default;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.6); }
+
+/* Link actions. */
+/**
+ * Style a clickable/tappable element as a link. Duplicates the base style for
+ * the <a> tag, plus a reset for padding, borders and background.
+ */
+.link {
+  display: inline;
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: #0074bd;
+  text-decoration: none; }
+
+.link:hover,
+.link:focus {
+  color: #008ee6;
+  text-decoration: underline; }
+
+/**
+ * We've temporarily added the danger button here, bit of a harsh reset but we
+ * need it.
+ * @todo replace with link--danger.
+ * See https://www.drupal.org/node/2123731
+ */
+/**
+ * @file
+ * Styling dropbuttons.
+ */
+/**
+ * Reset styling for all elements.
+ */
+.js .dropbutton .dropbutton-action > input,
+.js .dropbutton .dropbutton-action > a,
+.js .dropbutton .dropbutton-action > button {
+  color: white;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  line-height: normal;
+  -webkit-font-smoothing: antialiased;
+  text-align: center; }
+  @media (min-width: 767px) {
+    .js .dropbutton .dropbutton-action > input,
+    .js .dropbutton .dropbutton-action > a,
+    .js .dropbutton .dropbutton-action > button {
+      text-align: left;
+      /* LTR */ } }
+
+@media (min-width: 767px) {
+  [dir="rtl"].js .dropbutton .dropbutton-action > input,
+  [dir="rtl"].js .dropbutton .dropbutton-action > a,
+  [dir="rtl"].js .dropbutton .dropbutton-action > button {
+    text-align: right;
+    margin-left: 0;
+    /* This is required to win over specificity of [dir="rtl"] .dropbutton-multiple .dropbutton .dropbutton-action > * */ } }
+
+.js .dropbutton-action.last {
+  border-radius: 0 0 0 2px;
+  /* LTR */ }
+
+[dir="rtl"] .js .dropbutton-action.last {
+  border-radius: 0 0 2px 0; }
+
+/**
+ * Overwrite Sevens button styling.
+ */
+.js .dropbutton-widget .button {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none; }
+
+.js .dropbutton-multiple .dropbutton {
+  border-right: 0;
+  /* LTR */ }
+
+[dir="rtl"].js .dropbutton-multiple .dropbutton {
+  border-left: 0; }
+
+/**
+ * Show dropbutton elements as buttons when javascript is disabled
+ */
+.dropbutton {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+.dropbutton li + li {
+  margin-top: 10px; }
+
+.js .dropbutton li {
+  margin-bottom: 0;
+  margin-right: 0; }
+
+.js .dropbutton li + li {
+  margin-top: 0; }
+
+@media screen and (min-width: 767px) {
+  /* 601px */
+  .dropbutton li {
+    display: inline-block; }
+  .dropbutton li + li {
+    margin-left: 1em;
+    margin-top: 0; }
+  .js .dropbutton li + li {
+    margin-left: 0; } }
+
+/**
+ * Copied styling for .button.
+ */
+.js .dropbutton-multiple .dropbutton-widget {
+  border: 1px solid #1d6292;
+  border-radius: 2px;
+  background: #67afe1;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.125); }
+
+.dropbutton-multiple.open .dropbutton-widget {
+  border-radius: 2px; }
+
+.js .dropbutton-widget .dropbutton-action a,
+.js .dropbutton-widget .dropbutton-action input,
+.js .dropbutton-widget .dropbutton-action button {
+  border-radius: 2px 0 0 2px;
+  /* LTR */
+  padding: 5px 2em;
+  display: block;
+  width: 100%; }
+
+[dir="rtl"].js .dropbutton-widget .dropbutton-action a,
+[dir="rtl"].js .dropbutton-widget .dropbutton-action input,
+[dir="rtl"].js .dropbutton-widget .dropbutton-action button {
+  border-radius: 0 2px 2px 0; }
+
+.js .dropbutton-multiple.open .dropbutton-action a,
+.js .dropbutton-multiple.open .dropbutton-action .button {
+  border-radius: 0; }
+
+.js .dropbutton-multiple.open .dropbutton-action:first-child a,
+.js .dropbutton-multiple.open .dropbutton-action:first-child .button {
+  border-radius: 2px 0 0 0;
+  /* LTR */ }
+
+[dir="rtl"].js .dropbutton-multiple.open .dropbutton-action:first-child a,
+[dir="rtl"].js .dropbutton-multiple.open .dropbutton-action:first-child .button {
+  border-radius: 0 2px 0 0; }
+
+.js .dropbutton-multiple.open .dropbutton-action:last-child a,
+.js .dropbutton-multiple.open .dropbutton-action:last-child .button {
+  border-radius: 0 0 0 2px;
+  /* LTR */ }
+
+[dir="rtl"].js .dropbutton-multiple.open .dropbutton-action:last-child a,
+[dir="rtl"].js .dropbutton-multiple.open .dropbutton-action:last-child .button {
+  border-radius: 0 0 2px 0; }
+
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-action a:hover,
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-action button:hover,
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-action input:hover,
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-action a:focus,
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-action button:focus,
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-action input:focus {
+  background: #257fbd;
+  color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.125);
+  z-index: 3; }
+
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-action a:active,
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-action input:active,
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-action button:active {
+  text-decoration: none;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); }
+
+.dropbutton .secondary-action {
+  border-top: 1px solid #1d6292; }
+
+/**
+ * Rare instances when a dropbutton is actually just a button.
+ * Copied from Seven's buttons.css.
+ */
+.dropbutton-single .dropbutton-widget {
+  border: 0;
+  position: static;
+  display: inline-block; }
+
+.dropbutton-single .dropbutton-action a {
+  padding: 5px 2em;
+  border: 1px solid #1d6292;
+  border-radius: 2px !important;
+  background: #67afe1;
+  color: white;
+  text-decoration: none;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-font-smoothing: antialiased;
+  width: auto !important; }
+
+.dropbutton-single .dropbutton-action a:hover,
+.dropbutton-single .dropbutton-action a:focus {
+  background: #257fbd;
+  color: white;
+  text-decoration: none;
+  outline: none; }
+
+.dropbutton-single .dropbutton-action a:hover,
+.dropbutton-single .dropbutton-action a:focus {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.125); }
+
+.dropbutton-single .dropbutton-action a:active {
+  background-color: #dfdfd9;
+  background-image: -webkit-linear-gradient(top, #f6f6f3, #e7e7df);
+  background-image: linear-gradient(to bottom, #f6f6f3, #e7e7df);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  -webkit-transition: none;
+  transition: none; }
+
+/**
+ * The dropdown trigger.
+ */
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button {
+  border-left: 1px solid #1d6292;
+  /* LTR */
+  outline: none; }
+
+[dir="rtl"].js .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button {
+  border-right: 1px solid #1d6292;
+  border-left: 0; }
+
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button {
+  border-radius: 0 2px 2px 0;
+  /* LTR */ }
+
+[dir="rtl"].js .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button {
+  border-radius: 2px 0 0 2px; }
+
+.dropbutton-multiple.open .dropbutton-widget .dropbutton-toggle button {
+  border-radius: 0 2px 2px 0;
+  /* LTR */ }
+
+[dir="rtl"] .dropbutton-multiple.open .dropbutton-widget .dropbutton-toggle button {
+  border-radius: 2px 0 0 2px; }
+
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button:hover,
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button:focus {
+  background: #257fbd;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.125);
+  z-index: 3; }
+
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); }
+
+.dropbutton-arrow {
+  border-top-color: white;
+  right: 35%;
+  /* LTR */
+  top: 54%; }
+
+[dir="rtl"] .dropbutton-arrow {
+  left: 35%;
+  right: auto; }
+
+.dropbutton-multiple.open .dropbutton-arrow {
+  border-bottom: 0.3333em solid white;
+  border-top-color: transparent;
+  top: 0.6667em; }
+
+/**
+ * Form edit action theming.
+ * Copied styling from .button--primary.
+ */
+.js .form-actions .dropbutton .dropbutton-action > * {
+  color: #fff; }
+
+.js .form-actions .dropbutton-widget {
+  border-color: #1d6292;
+  background: #67afe1;
+  position: relative; }
+
+.js .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-action .button:hover,
+.js .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-action .button:focus {
+  background: #257fbd;
+  box-shadow: 0 1px 2px rgba(23, 26, 28, 0.25);
+  color: #fff; }
+
+.js .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-action .button:active {
+  border-color: #1d6292;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); }
+
+.js .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button,
+.form-actions .dropbutton .secondary-action {
+  border-color: #1d6292; }
+
+.js .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button:hover,
+.js .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button:focus {
+  background: #257fbd; }
+
+.js .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button:active {
+  background: #67afe1;
+  border-color: #1d6292;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); }
+
+.form-actions .dropbutton-arrow {
+  border-top-color: #fff; }
+
+.form-actions .dropbutton-multiple.open .dropbutton-arrow {
+  border-bottom: 0.3333em solid white; }
+
+/**
  * Form elements.
  */
 form {
@@ -486,9 +898,9 @@ textarea.form-textarea {
 .form-textarea:focus,
 .form-date:focus,
 .form-time:focus {
-  border-color: #2c3e50;
+  border-color: #67afe1;
   outline: 0;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 1px #2c3e50;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 1px #67afe1;
   background-color: #fff; }
 
 .confirm-parent,
@@ -514,9 +926,9 @@ select.form-select {
   -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
   transition: border linear 0.2s, box-shadow linear 0.2s; }
   select.form-select:focus {
-    border-color: #2c3e50;
+    border-color: #67afe1;
     outline: 0;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 1px #2c3e50;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 1px #67afe1;
     background-color: #fff; }
 
 select {
@@ -724,7 +1136,7 @@ li.tabs__tab a {
   color: #004f80; }
 
 .tabs.primary a {
-  background: #2c3e50; }
+  background: #67afe1; }
 
 .tabs.primary a:focus {
   color: #008ee6; }
@@ -786,7 +1198,7 @@ li.tabs__tab a {
 
 .is-open .tabs__tab.is-active {
   background-color: #fff;
-  color: #2c3e50; }
+  color: #67afe1; }
 
 /* Styles for the horizontal state always take priority */
 .is-horizontal .tabs {
@@ -1067,17 +1479,17 @@ li.tabs__tab a {
     .block-local-tasks-block .tabs.primary .tabs__tab a {
       padding: .3em .6em;
       display: block;
-      background: #2c3e50;
+      background: #67afe1;
       color: white;
-      border: 2px solid #2c3e50; }
+      border: 2px solid #67afe1; }
       .block-local-tasks-block .tabs.primary .tabs__tab a:hover {
         -webkit-transition: background .2s, color .2s;
         transition: background .2s, color .2s;
         background: white;
-        color: #2c3e50; }
+        color: #67afe1; }
     .block-local-tasks-block .tabs.primary .tabs__tab .is-active {
       background: white;
-      color: #2c3e50; }
+      color: #67afe1; }
 
 .container {
   max-width: 1000px;
@@ -1194,23 +1606,6 @@ li.tabs__tab a {
               background: white;
               color: #67afe1; } }
 
-.paragraph {
-  padding: 40px 1em;
-  background-color: #fff; }
-  .paragraph:before, .paragraph:after {
-    content: "";
-    display: table; }
-  .paragraph:after {
-    clear: both; }
-  .paragraph .field.text-formatted .align-right {
-    margin-left: 1.5em; }
-  .paragraph .field.text-formatted .align-left {
-    margin-right: 1.5em; }
-
-.paragraph-inner {
-  max-width: 1000px;
-  margin: 0 auto; }
-
 /**
  * Paragraph blocks
  */
@@ -1283,7 +1678,103 @@ body.toolbar-horizontal .tieto-campaign-page .logo, body.toolbar-horizontal .tie
 body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .campaign-menu {
   top: 78px; }
 
-.paragraph--type--images .field--name-field-title {
+.node-campaign-edit-form .field--name-field-menu .field-multiple-table td {
+  padding: .5em 0; }
+
+.node-campaign-edit-form .field--name-field-menu .field-multiple-table .form-item {
+  width: 50%;
+  float: left;
+  padding-left: .5em; }
+
+.node-campaign-edit-form .field--name-field-menu .field-multiple-table a.tabledrag-handle {
+  margin-left: 0;
+  top: 10px; }
+
+.node-campaign-edit-form .paragraph-type-top {
+  clear: none;
+  float: none;
+  margin-bottom: .5em; }
+
+.node-campaign-edit-form .paragraphs-subform > .form-wrapper {
+  margin: 1em 0; }
+
+.node-campaign-edit-form .tabledrag-toggle-weight-wrapper, .node-campaign-edit-form td.tabledrag-hide {
+  display: none !important; }
+
+.node-campaign-edit-form .field-multiple-table {
+  width: 100%; }
+  .node-campaign-edit-form .field-multiple-table tr {
+    border-bottom: 1px solid #e3e3e3; }
+  .node-campaign-edit-form .field-multiple-table .drag, .node-campaign-edit-form .field-multiple-table .drag-previous {
+    background-color: #f3f3f3; }
+  .node-campaign-edit-form .field-multiple-table td {
+    padding: 1.2em 0 1.2em .5em; }
+  .node-campaign-edit-form .field-multiple-table .field-multiple-drag {
+    position: relative;
+    padding: 1.2em 0; }
+    .node-campaign-edit-form .field-multiple-table .field-multiple-drag abbr.tabledrag-changed {
+      position: absolute;
+      color: transparent;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #cde6f5; }
+  .node-campaign-edit-form .field-multiple-table a.tabledrag-handle {
+    position: absolute;
+    top: 1em;
+    z-index: 1;
+    margin-left: 0; }
+    .node-campaign-edit-form .field-multiple-table a.tabledrag-handle .handle {
+      background-position: 0 0;
+      height: 17px;
+      margin: 5px; }
+
+.node-campaign-edit-form .paragraph-type-title {
+  float: left; }
+
+.node-campaign-edit-form .paragraphs-button-wrapper {
+  margin: 2em 0; }
+
+.node-campaign-edit-form .paragraphs-button-wrapper > .button {
+  margin: 0 .5em .5em 0; }
+
+.node-campaign-edit-form .paragraph-actions {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  list-style: none; }
+  .node-campaign-edit-form .paragraph-actions .button {
+    padding: 5px 1em;
+    color: #777;
+    background: #efefef;
+    border: 1px solid #d6d6d6;
+    box-shadow: 0; }
+    .node-campaign-edit-form .paragraph-actions .button:hover, .node-campaign-edit-form .paragraph-actions .button:focus {
+      background: white; }
+  .node-campaign-edit-form .paragraph-actions > li {
+    margin-left: 1em;
+    display: inline-block; }
+
+.paragraph.paragraph--view-mode--default {
+  padding: 40px 1em;
+  background-color: #fff; }
+  .paragraph.paragraph--view-mode--default:before, .paragraph.paragraph--view-mode--default:after {
+    content: "";
+    display: table; }
+  .paragraph.paragraph--view-mode--default:after {
+    clear: both; }
+  .paragraph.paragraph--view-mode--default .field.text-formatted .align-right {
+    margin-left: 1.5em; }
+  .paragraph.paragraph--view-mode--default .field.text-formatted .align-left {
+    margin-right: 1.5em; }
+  .paragraph.paragraph--view-mode--default.paragraph--view-mode--preview iframe, .paragraph.paragraph--view-mode--default.paragraph--view-mode--preview img, .paragraph.paragraph--view-mode--default.paragraph--view-mode--preview video {
+    display: none; }
+  .paragraph.paragraph--view-mode--default .paragraph-inner {
+    max-width: 1000px;
+    margin: 0 auto; }
+
+.paragraph--type--images.paragraph--view-mode--default .field--name-field-title {
   margin-bottom: 1em;
   font-weight: 800;
   letter-spacing: -1px;
@@ -1292,18 +1783,18 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   word-break: break-word;
   color: #333; }
   @media (min-width: 767px) {
-    .paragraph--type--images .field--name-field-title {
+    .paragraph--type--images.paragraph--view-mode--default .field--name-field-title {
       line-height: 1;
       font-size: 48px; } }
 
-.paragraph--type--images .field--name-field-images {
+.paragraph--type--images.paragraph--view-mode--default .field--name-field-images {
   text-align: left; }
-  .paragraph--type--images .field--name-field-images .field__item {
+  .paragraph--type--images.paragraph--view-mode--default .field--name-field-images .field__item {
     padding: 1em 2em;
     vertical-align: middle;
     display: inline-block; }
 
-.paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title {
+.paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-title, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-title {
   margin-bottom: 1em;
   font-weight: 800;
   letter-spacing: -1px;
@@ -1313,37 +1804,37 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   margin-bottom: 0;
   color: #333; }
   @media (min-width: 767px) {
-    .paragraph--type--image-text.layout--text_1st .field--name-field-title, .paragraph--type--image-text.layout--image_1st .field--name-field-title {
+    .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-title, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-title {
       line-height: 1;
       font-size: 48px; } }
 
 @media (min-width: 767px) {
-  .paragraph--type--image-text.layout--text_1st .field--name-field-title,
-  .paragraph--type--image-text.layout--text_1st .field--name-field-text,
-  .paragraph--type--image-text.layout--text_1st .field--name-field-image, .paragraph--type--image-text.layout--image_1st .field--name-field-title,
-  .paragraph--type--image-text.layout--image_1st .field--name-field-text,
-  .paragraph--type--image-text.layout--image_1st .field--name-field-image {
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-title,
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-text,
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-image, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-title,
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-text,
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-image {
     width: 50%; } }
 
-.paragraph--type--image-text.layout--text_1st .field--name-field-image, .paragraph--type--image-text.layout--image_1st .field--name-field-image {
+.paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-image, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-image {
   text-align: center;
   margin: 1em 0 0; }
   @media (min-width: 767px) {
-    .paragraph--type--image-text.layout--text_1st .field--name-field-image, .paragraph--type--image-text.layout--image_1st .field--name-field-image {
+    .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-image, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-image {
       margin: 0;
       text-align: right; } }
 
 @media (min-width: 767px) {
-  .paragraph--type--image-text.layout--text_1st .field--name-field-title,
-  .paragraph--type--image-text.layout--text_1st .field--name-field-text, .paragraph--type--image-text.layout--image_1st .field--name-field-title,
-  .paragraph--type--image-text.layout--image_1st .field--name-field-text {
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-title,
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-text, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-title,
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-text {
     text-align: left; } }
 
-.paragraph--type--image-text .field--name-field-call-to-action {
+.paragraph--type--image-text.paragraph--view-mode--default .field--name-field-call-to-action {
   clear: both; }
-  .paragraph--type--image-text .field--name-field-call-to-action .field__item {
+  .paragraph--type--image-text.paragraph--view-mode--default .field--name-field-call-to-action .field__item {
     display: inline-block; }
-  .paragraph--type--image-text .field--name-field-call-to-action a {
+  .paragraph--type--image-text.paragraph--view-mode--default .field--name-field-call-to-action a {
     color: white;
     display: inline-block;
     padding: .7em 1.4em;
@@ -1352,30 +1843,30 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     border-radius: 3px;
     -webkit-transition: background .3s;
     transition: background .3s; }
-    .paragraph--type--image-text .field--name-field-call-to-action a:hover, .paragraph--type--image-text .field--name-field-call-to-action a:focus, .paragraph--type--image-text .field--name-field-call-to-action a:active {
+    .paragraph--type--image-text.paragraph--view-mode--default .field--name-field-call-to-action a:hover, .paragraph--type--image-text.paragraph--view-mode--default .field--name-field-call-to-action a:focus, .paragraph--type--image-text.paragraph--view-mode--default .field--name-field-call-to-action a:active {
       text-decoration: none;
       background: #7cbae5; }
 
 @media (min-width: 767px) {
-  .paragraph--type--image-text.layout--text_1st .field--name-field-title,
-  .paragraph--type--image-text.layout--text_1st .field--name-field-text {
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-title,
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-text {
     float: left; }
-  .paragraph--type--image-text.layout--text_1st .field--name-field-image {
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-image {
     float: right;
     padding-left: 1.5em; } }
 
 @media (min-width: 767px) {
-  .paragraph--type--image-text.layout--image_1st .field--name-field-title,
-  .paragraph--type--image-text.layout--image_1st .field--name-field-text {
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-title,
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-text {
     float: right; }
-  .paragraph--type--image-text.layout--image_1st .field--name-field-image {
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-image {
     float: left;
     padding-right: 1.5em; }
-  .paragraph--type--image-text.layout--image_1st .field--name-field-call-to-action {
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-call-to-action {
     width: 50%;
     float: right; } }
 
-.paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title {
+.paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st_enhanced .field--name-field-title {
   margin-bottom: 1em;
   font-weight: 800;
   letter-spacing: -1px;
@@ -1384,26 +1875,26 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   word-break: break-word;
   color: #333; }
   @media (min-width: 767px) {
-    .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-title {
+    .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st_enhanced .field--name-field-title, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st_enhanced .field--name-field-title {
       line-height: 1;
       font-size: 48px; } }
 
-.paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-text, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-text {
+.paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st_enhanced .field--name-field-text, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st_enhanced .field--name-field-text {
   padding: 2em;
   background: #cde6f5; }
   @media (min-width: 767px) {
-    .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-text, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-text {
+    .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st_enhanced .field--name-field-text, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st_enhanced .field--name-field-text {
       padding-right: 4em;
       width: 60%; } }
 
-.paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-image, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-image {
+.paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st_enhanced .field--name-field-image, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st_enhanced .field--name-field-image {
   text-align: center;
   background: #cde6f5;
   padding: 2em 0 0; }
-  .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-image img, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-image img {
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st_enhanced .field--name-field-image img, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st_enhanced .field--name-field-image img {
     display: block; }
   @media (min-width: 767px) {
-    .paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-image, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-image {
+    .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st_enhanced .field--name-field-image, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st_enhanced .field--name-field-image {
       text-align: left;
       background: 0;
       padding: 0;
@@ -1413,7 +1904,7 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
       width: 40%;
       float: right; } }
 
-.paragraph--type--image-text.layout--text_1st_enhanced .field--name-field-call-to-action, .paragraph--type--image-text.layout--image_1st_enhanced .field--name-field-call-to-action {
+.paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st_enhanced .field--name-field-call-to-action, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st_enhanced .field--name-field-call-to-action {
   text-align: center;
   width: 40%;
   float: right;
@@ -1423,12 +1914,12 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
  * @file
  * HEADER paragraph
  */
-.paragraph--type--header {
+.paragraph--type--header.paragraph--view-mode--default {
   padding: 0; }
-  .paragraph--type--header + .paragraph {
+  .paragraph--type--header.paragraph--view-mode--default + .paragraph {
     position: relative;
     z-index: 1; }
-    .paragraph--type--header + .paragraph::before {
+    .paragraph--type--header.paragraph--view-mode--default + .paragraph::before {
       background: inherit;
       content: ' ';
       display: block;
@@ -1446,15 +1937,15 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
       top: 0;
       -webkit-transform-origin: 100% 0;
       transform-origin: 100% 0; }
-    .paragraph--type--header + .paragraph ~ .paragraph {
+    .paragraph--type--header.paragraph--view-mode--default + .paragraph ~ .paragraph {
       position: relative;
       z-index: 1; }
-  .paragraph--type--header .background {
+  .paragraph--type--header.paragraph--view-mode--default .background {
     position: relative;
     overflow: hidden;
     height: 600px;
     max-height: 100vh; }
-    .paragraph--type--header .background::before {
+    .paragraph--type--header.paragraph--view-mode--default .background::before {
       content: " ";
       position: absolute;
       top: 0;
@@ -1463,48 +1954,48 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
       bottom: 0;
       z-index: 1;
       background-color: rgba(103, 175, 225, 0.5); }
-    .paragraph--type--header .background .background-wrapper {
+    .paragraph--type--header.paragraph--view-mode--default .background .background-wrapper {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
       text-align: center; }
-    .paragraph--type--header .background .background-video, .paragraph--type--header .background .background-image {
+    .paragraph--type--header.paragraph--view-mode--default .background .background-video, .paragraph--type--header.paragraph--view-mode--default .background .background-image {
       min-width: 100%;
       min-height: 100%; }
-    .paragraph--type--header .background .background-image {
+    .paragraph--type--header.paragraph--view-mode--default .background .background-image {
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover; }
-    .paragraph--type--header .background .IIV::-webkit-media-controls-play-button,
-    .paragraph--type--header .background .IIV::-webkit-media-controls-start-playback-button {
+    .paragraph--type--header.paragraph--view-mode--default .background .IIV::-webkit-media-controls-play-button,
+    .paragraph--type--header.paragraph--view-mode--default .background .IIV::-webkit-media-controls-start-playback-button {
       opacity: 0;
       pointer-events: none;
       width: 5px; }
-  .paragraph--type--header .field--name-field-title {
+  .paragraph--type--header.paragraph--view-mode--default .field--name-field-title {
     font-size: 4em;
     margin-bottom: 0;
     display: inline-block;
     font-weight: 800;
     letter-spacing: -2px; }
     @media (max-width: 766px) {
-      .paragraph--type--header .field--name-field-title {
+      .paragraph--type--header.paragraph--view-mode--default .field--name-field-title {
         font-size: 2.8em; } }
-  .paragraph--type--header .field--name-field-secondary-title,
-  .paragraph--type--header .field--name-field-lead-text {
+  .paragraph--type--header.paragraph--view-mode--default .field--name-field-secondary-title,
+  .paragraph--type--header.paragraph--view-mode--default .field--name-field-lead-text {
     font-size: 1.5em;
     margin-bottom: .5em; }
     @media (max-width: 766px) {
-      .paragraph--type--header .field--name-field-secondary-title,
-      .paragraph--type--header .field--name-field-lead-text {
+      .paragraph--type--header.paragraph--view-mode--default .field--name-field-secondary-title,
+      .paragraph--type--header.paragraph--view-mode--default .field--name-field-lead-text {
         font-size: 1.2em; } }
-  .paragraph--type--header .field--name-field-title,
-  .paragraph--type--header .field--name-field-secondary-title {
+  .paragraph--type--header.paragraph--view-mode--default .field--name-field-title,
+  .paragraph--type--header.paragraph--view-mode--default .field--name-field-secondary-title {
     line-height: normal; }
-  .paragraph--type--header .field--name-field-call-to-action .field__item {
+  .paragraph--type--header.paragraph--view-mode--default .field--name-field-call-to-action .field__item {
     display: inline-block; }
-  .paragraph--type--header .field--name-field-call-to-action a {
+  .paragraph--type--header.paragraph--view-mode--default .field--name-field-call-to-action a {
     color: white;
     display: inline-block;
     padding: .7em 1.4em;
@@ -1513,10 +2004,10 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     border-radius: 3px;
     -webkit-transition: background .3s;
     transition: background .3s; }
-    .paragraph--type--header .field--name-field-call-to-action a:hover, .paragraph--type--header .field--name-field-call-to-action a:focus, .paragraph--type--header .field--name-field-call-to-action a:active {
+    .paragraph--type--header.paragraph--view-mode--default .field--name-field-call-to-action a:hover, .paragraph--type--header.paragraph--view-mode--default .field--name-field-call-to-action a:focus, .paragraph--type--header.paragraph--view-mode--default .field--name-field-call-to-action a:active {
       text-decoration: none;
       background: #7cbae5; }
-  .paragraph--type--header .paragraph-inner {
+  .paragraph--type--header.paragraph--view-mode--default .paragraph-inner {
     position: relative;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -1528,41 +2019,41 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     padding: 2em 1em;
     z-index: 20; }
     @media (max-width: 766px) {
-      .paragraph--type--header .paragraph-inner {
+      .paragraph--type--header.paragraph--view-mode--default .paragraph-inner {
         -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
         text-align: center; } }
 
-.paragraph--type--tabs {
+.paragraph--type--tabs.paragraph--view-mode--default {
   padding: 30px;
   background: #b2eb95; }
-  .paragraph--type--tabs .field--name-field-title {
+  .paragraph--type--tabs.paragraph--view-mode--default .field--name-field-title {
     color: white; }
-  .paragraph--type--tabs .field--name-field-lead-text {
+  .paragraph--type--tabs.paragraph--view-mode--default .field--name-field-lead-text {
     margin-bottom: 1em; }
-  .paragraph--type--tabs .r-tabs-panel {
+  .paragraph--type--tabs.paragraph--view-mode--default .r-tabs-panel {
     clear: both; }
   @media (min-width: 767px) {
-    .paragraph--type--tabs .r-tabs-accordion-title, .paragraph--type--tabs .r-tabs-tab {
+    .paragraph--type--tabs.paragraph--view-mode--default .r-tabs-accordion-title, .paragraph--type--tabs.paragraph--view-mode--default .r-tabs-tab {
       float: left;
       width: 33.333%; } }
-  .paragraph--type--tabs .r-tabs-accordion-title a, .paragraph--type--tabs .r-tabs-tab a {
+  .paragraph--type--tabs.paragraph--view-mode--default .r-tabs-accordion-title a, .paragraph--type--tabs.paragraph--view-mode--default .r-tabs-tab a {
     font-size: 1.4em;
     font-weight: bold;
     border-bottom: 3px solid black;
     display: block;
     padding: .5em 0; }
     @media (min-width: 767px) {
-      .paragraph--type--tabs .r-tabs-accordion-title a, .paragraph--type--tabs .r-tabs-tab a {
+      .paragraph--type--tabs.paragraph--view-mode--default .r-tabs-accordion-title a, .paragraph--type--tabs.paragraph--view-mode--default .r-tabs-tab a {
         padding: .5em;
         text-align: center; } }
-    .paragraph--type--tabs .r-tabs-accordion-title a:hover, .paragraph--type--tabs .r-tabs-accordion-title a:focus, .paragraph--type--tabs .r-tabs-accordion-title a:active, .paragraph--type--tabs .r-tabs-tab a:hover, .paragraph--type--tabs .r-tabs-tab a:focus, .paragraph--type--tabs .r-tabs-tab a:active {
+    .paragraph--type--tabs.paragraph--view-mode--default .r-tabs-accordion-title a:hover, .paragraph--type--tabs.paragraph--view-mode--default .r-tabs-accordion-title a:focus, .paragraph--type--tabs.paragraph--view-mode--default .r-tabs-accordion-title a:active, .paragraph--type--tabs.paragraph--view-mode--default .r-tabs-tab a:hover, .paragraph--type--tabs.paragraph--view-mode--default .r-tabs-tab a:focus, .paragraph--type--tabs.paragraph--view-mode--default .r-tabs-tab a:active {
       text-decoration: none; }
-  .paragraph--type--tabs .r-tabs-accordion-title.r-tabs-state-active a, .paragraph--type--tabs .r-tabs-tab.r-tabs-state-active a {
+  .paragraph--type--tabs.paragraph--view-mode--default .r-tabs-accordion-title.r-tabs-state-active a, .paragraph--type--tabs.paragraph--view-mode--default .r-tabs-tab.r-tabs-state-active a {
     border-color: white;
     color: white; }
 
-.paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--simple.layout--one-column-grey .field--name-field-title {
+.paragraph--type--simple.paragraph--view-mode--default.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.paragraph--view-mode--default.layout--one-column-shaded .field--name-field-title, .paragraph--type--simple.paragraph--view-mode--default.layout--one-column-grey .field--name-field-title {
   margin-bottom: 1em;
   font-weight: 800;
   letter-spacing: -1px;
@@ -1571,17 +2062,17 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   word-break: break-word;
   color: #333; }
   @media (min-width: 767px) {
-    .paragraph--type--simple.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.layout--one-column-shaded .field--name-field-title, .paragraph--type--simple.layout--one-column-grey .field--name-field-title {
+    .paragraph--type--simple.paragraph--view-mode--default.layout--one-column-clean .field--name-field-title, .paragraph--type--simple.paragraph--view-mode--default.layout--one-column-shaded .field--name-field-title, .paragraph--type--simple.paragraph--view-mode--default.layout--one-column-grey .field--name-field-title {
       line-height: 1;
       font-size: 48px; } }
 
-.paragraph--type--simple.layout--one-column-shaded {
+.paragraph--type--simple.paragraph--view-mode--default.layout--one-column-shaded {
   background-color: #cde6f5; }
 
-.paragraph--type--simple.layout--one-column-grey {
+.paragraph--type--simple.paragraph--view-mode--default.layout--one-column-grey {
   background-color: #efefef; }
 
-.paragraph--type--simple.layout--separator-clean .field--name-field-title {
+.paragraph--type--simple.paragraph--view-mode--default.layout--separator-clean .field--name-field-title {
   margin-bottom: 1em;
   font-weight: 800;
   letter-spacing: -1px;
@@ -1596,26 +2087,26 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   text-transform: uppercase;
   font-size: 1em; }
   @media (min-width: 767px) {
-    .paragraph--type--simple.layout--separator-clean .field--name-field-title {
+    .paragraph--type--simple.paragraph--view-mode--default.layout--separator-clean .field--name-field-title {
       line-height: 1;
       font-size: 48px; } }
   @media (min-width: 767px) {
-    .paragraph--type--simple.layout--separator-clean .field--name-field-title {
+    .paragraph--type--simple.paragraph--view-mode--default.layout--separator-clean .field--name-field-title {
       font-size: .9em;
       line-height: 1.5; } }
 
-.paragraph--type--simple.layout--two-column-content-1st-inverse, .paragraph--type--simple.layout--two-column-title-1st-inverse {
+.paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse, .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse {
   background: #67afe1; }
-  .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title,
-  .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-text, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title,
-  .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-text {
+  .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse .field--name-field-title,
+  .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse .field--name-field-text, .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-field-title,
+  .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-field-text {
     color: white; }
     @media (min-width: 767px) {
-      .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title,
-      .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-text, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title,
-      .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-text {
+      .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse .field--name-field-title,
+      .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse .field--name-field-text, .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-field-title,
+      .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-field-text {
         width: 50%; } }
-  .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title {
+  .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-field-title {
     margin-bottom: 1em;
     font-weight: 800;
     letter-spacing: -1px;
@@ -1625,23 +2116,23 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     margin-bottom: 0;
     color: white; }
     @media (min-width: 767px) {
-      .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title {
+      .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse .field--name-field-title, .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-field-title {
         line-height: 1;
         font-size: 48px; } }
 
 @media (min-width: 767px) {
-  .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-title {
+  .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse .field--name-field-title {
     float: right;
     text-align: right; }
-  .paragraph--type--simple.layout--two-column-content-1st-inverse .field--name-field-text {
+  .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse .field--name-field-text {
     float: left; }
-  .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-title {
+  .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-field-title {
     float: left;
     text-align: left; }
-  .paragraph--type--simple.layout--two-column-title-1st-inverse .field--name-field-text {
+  .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-field-text {
     float: right; } }
 
-.paragraph--type--text-boxes .field--name-field-title {
+.paragraph--type--text-boxes.paragraph--view-mode--default .field--name-field-title {
   margin-bottom: 1em;
   font-weight: 800;
   letter-spacing: -1px;
@@ -1650,24 +2141,24 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   word-break: break-word;
   color: #333; }
   @media (min-width: 767px) {
-    .paragraph--type--text-boxes .field--name-field-title {
+    .paragraph--type--text-boxes.paragraph--view-mode--default .field--name-field-title {
       line-height: 1;
       font-size: 48px; } }
 
-.paragraph--type--text-boxes.layout--smallinfo .paragraph--type--text-box, .paragraph--type--text-boxes.layout--lot_infos .paragraph--type--text-box, .paragraph--type--text-boxes.layout--text_icon .paragraph--type--text-box {
+.paragraph--type--text-boxes.paragraph--view-mode--default.layout--smallinfo .paragraph--type--text-box, .paragraph--type--text-boxes.paragraph--view-mode--default.layout--lot_infos .paragraph--type--text-box, .paragraph--type--text-boxes.paragraph--view-mode--default.layout--text_icon .paragraph--type--text-box {
   text-align: center; }
 
-.paragraph--type--text-boxes.layout--lot_infos-grey {
+.paragraph--type--text-boxes.paragraph--view-mode--default.layout--lot_infos-grey {
   background-color: #efefef; }
 
 @media (min-width: 767px) {
-  .paragraph--type--text-boxes.layout--lot_infos .paragraph--type--text-box {
+  .paragraph--type--text-boxes.paragraph--view-mode--default.layout--lot_infos .paragraph--type--text-box {
     text-align: left; } }
 
-.paragraph--type--text-box {
+.paragraph--type--text-box.paragraph--view-mode--default {
   padding: 2em 1em;
   background: inherit; }
-  .paragraph--type--text-box .field--name-field-title {
+  .paragraph--type--text-box.paragraph--view-mode--default .field--name-field-title {
     margin-bottom: 1em;
     font-weight: 800;
     letter-spacing: -1px;
@@ -1677,20 +2168,20 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     color: #333;
     letter-spacing: -1px; }
     @media (min-width: 767px) {
-      .paragraph--type--text-box .field--name-field-title {
+      .paragraph--type--text-box.paragraph--view-mode--default .field--name-field-title {
         line-height: 1;
         font-size: 48px; } }
     @media (min-width: 767px) {
-      .paragraph--type--text-box .field--name-field-title {
+      .paragraph--type--text-box.paragraph--view-mode--default .field--name-field-title {
         line-height: 1.5;
         font-size: 20px; } }
 
-.paragraph--type--marketo-form .image-style-whitepaper-a4 {
+.paragraph--type--marketo-form.paragraph--view-mode--default .image-style-whitepaper-a4 {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
 
-.paragraph--type--marketo-form, .paragraph--type--marketo-form.layout--clean {
+.paragraph--type--marketo-form.paragraph--view-mode--default, .paragraph--type--marketo-form.paragraph--view-mode--default.layout--clean {
   background: #efefef; }
-  .paragraph--type--marketo-form .field--name-field-title, .paragraph--type--marketo-form.layout--clean .field--name-field-title {
+  .paragraph--type--marketo-form.paragraph--view-mode--default .field--name-field-title, .paragraph--type--marketo-form.paragraph--view-mode--default.layout--clean .field--name-field-title {
     margin-bottom: 1em;
     font-weight: 800;
     letter-spacing: -1px;
@@ -1702,44 +2193,44 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     margin-bottom: .5em;
     color: #333; }
     @media (min-width: 767px) {
-      .paragraph--type--marketo-form .field--name-field-title, .paragraph--type--marketo-form.layout--clean .field--name-field-title {
+      .paragraph--type--marketo-form.paragraph--view-mode--default .field--name-field-title, .paragraph--type--marketo-form.paragraph--view-mode--default.layout--clean .field--name-field-title {
         line-height: 1;
         font-size: 48px; } }
     @media (min-width: 767px) {
-      .paragraph--type--marketo-form .field--name-field-title, .paragraph--type--marketo-form.layout--clean .field--name-field-title {
+      .paragraph--type--marketo-form.paragraph--view-mode--default .field--name-field-title, .paragraph--type--marketo-form.paragraph--view-mode--default.layout--clean .field--name-field-title {
         text-align: left; } }
-  .paragraph--type--marketo-form .field--name-field-lead-text, .paragraph--type--marketo-form.layout--clean .field--name-field-lead-text {
+  .paragraph--type--marketo-form.paragraph--view-mode--default .field--name-field-lead-text, .paragraph--type--marketo-form.paragraph--view-mode--default.layout--clean .field--name-field-lead-text {
     line-height: 27px;
     font-size: 20px;
     letter-spacing: -.5px;
     margin-bottom: .5em; }
   @media (min-width: 767px) {
-    .paragraph--type--marketo-form .field--name-field-title,
-    .paragraph--type--marketo-form .field--name-field-lead-text,
-    .paragraph--type--marketo-form .field--name-field-marketo-form,
-    .paragraph--type--marketo-form .field--name-field-text, .paragraph--type--marketo-form.layout--clean .field--name-field-title,
-    .paragraph--type--marketo-form.layout--clean .field--name-field-lead-text,
-    .paragraph--type--marketo-form.layout--clean .field--name-field-marketo-form,
-    .paragraph--type--marketo-form.layout--clean .field--name-field-text {
+    .paragraph--type--marketo-form.paragraph--view-mode--default .field--name-field-title,
+    .paragraph--type--marketo-form.paragraph--view-mode--default .field--name-field-lead-text,
+    .paragraph--type--marketo-form.paragraph--view-mode--default .field--name-field-marketo-form,
+    .paragraph--type--marketo-form.paragraph--view-mode--default .field--name-field-text, .paragraph--type--marketo-form.paragraph--view-mode--default.layout--clean .field--name-field-title,
+    .paragraph--type--marketo-form.paragraph--view-mode--default.layout--clean .field--name-field-lead-text,
+    .paragraph--type--marketo-form.paragraph--view-mode--default.layout--clean .field--name-field-marketo-form,
+    .paragraph--type--marketo-form.paragraph--view-mode--default.layout--clean .field--name-field-text {
       width: 50%;
       float: left;
       clear: left; } }
-  .paragraph--type--marketo-form .field--name-field-text, .paragraph--type--marketo-form.layout--clean .field--name-field-text {
+  .paragraph--type--marketo-form.paragraph--view-mode--default .field--name-field-text, .paragraph--type--marketo-form.paragraph--view-mode--default.layout--clean .field--name-field-text {
     display: none; }
-  .paragraph--type--marketo-form .field--name-field-image, .paragraph--type--marketo-form.layout--clean .field--name-field-image {
+  .paragraph--type--marketo-form.paragraph--view-mode--default .field--name-field-image, .paragraph--type--marketo-form.paragraph--view-mode--default.layout--clean .field--name-field-image {
     text-align: right;
     padding: 1em;
     text-align: center; }
     @media (min-width: 767px) {
-      .paragraph--type--marketo-form .field--name-field-image, .paragraph--type--marketo-form.layout--clean .field--name-field-image {
+      .paragraph--type--marketo-form.paragraph--view-mode--default .field--name-field-image, .paragraph--type--marketo-form.paragraph--view-mode--default.layout--clean .field--name-field-image {
         text-align: right;
         width: 50%;
         float: right; } }
 
-.paragraph--type--marketo-form .mktoForm, .paragraph--type--marketo-form .mktoForm * {
+.paragraph--type--marketo-form.paragraph--view-mode--default .mktoForm, .paragraph--type--marketo-form.paragraph--view-mode--default .mktoForm * {
   font-family: inherit !important; }
 
-.paragraph--type--marketo-form .mktoForm .mktoLabel, .paragraph--type--marketo-form .mktoForm .mktoRequiredField label.mktoLabel {
+.paragraph--type--marketo-form.paragraph--view-mode--default .mktoForm .mktoLabel, .paragraph--type--marketo-form.paragraph--view-mode--default .mktoForm .mktoRequiredField label.mktoLabel {
   width: auto !important;
   display: inline-block;
   float: none;
@@ -1749,13 +2240,13 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
   font-size: 16px;
   font-weight: bold !important; }
 
-.paragraph--type--marketo-form .mktoForm input.mktoField, .paragraph--type--marketo-form .mktoForm textarea.mktoField {
+.paragraph--type--marketo-form.paragraph--view-mode--default .mktoForm input.mktoField, .paragraph--type--marketo-form.paragraph--view-mode--default .mktoForm textarea.mktoField {
   min-height: inherit !important;
   padding: 10px !important;
   line-height: 1.5 !important;
   font-size: 16px !important; }
 
-.paragraph--type--marketo-form .mktoForm textarea.mktoField {
+.paragraph--type--marketo-form.paragraph--view-mode--default .mktoForm textarea.mktoField {
   resize: vertical !important;
   height: auto !important;
   min-height: inherit !important; }

@@ -1,4 +1,117 @@
-.paragraph {
+.node-campaign-edit-form {
+
+  // Ugly hacks
+  .field--name-field-menu {
+    .field-multiple-table {
+      td {
+        padding: .5em 0;
+
+      }
+      .form-item {
+        width: 50%;
+        float: left;
+        padding-left: .5em;
+
+      }
+      a.tabledrag-handle {
+        margin-left: 0;
+        top: 10px;
+      }
+    }
+  }
+
+  .paragraph-type-top {
+    clear: none;
+    float: none;
+    margin-bottom: .5em;
+  }
+
+  .paragraphs-subform > .form-wrapper {
+    margin: 1em 0;
+  }
+
+  .tabledrag-toggle-weight-wrapper, td.tabledrag-hide {
+    display: none !important;
+  }
+
+  .field-multiple-table {
+    width: 100%;
+
+    tr {
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    .drag, .drag-previous {
+      background-color: #f3f3f3;
+    }
+
+    td {
+      padding: 1.2em 0 1.2em .5em;
+    }
+
+    .field-multiple-drag {
+      position: relative;
+      padding: 1.2em 0;
+      abbr.tabledrag-changed {
+        position: absolute;
+        color: transparent;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $tieto-lightblue;
+      }
+    }
+
+    a.tabledrag-handle {
+      position: absolute;
+      top: 1em;
+      z-index: 1;
+      margin-left: 0;
+      .handle {
+        background-position: 0 0;
+        height: 17px;
+        margin: 5px;
+      }
+    }
+  }
+
+  .paragraph-type-title {
+    float: left;
+  }
+
+  .paragraphs-button-wrapper {
+    margin: 2em 0;
+  }
+  .paragraphs-button-wrapper > .button {
+    margin: 0 .5em .5em 0;
+  }
+
+  .paragraph-actions {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    list-style: none;
+
+    .button {
+      padding: 5px 1em;
+      color: $text-color;
+      background: $tieto-lightgrey;
+      border: 1px solid darken($tieto-lightgrey, 10%);
+      box-shadow: 0;
+      &:hover, &:focus {
+        background: lighten($tieto-lightgrey, 10%);
+      }
+    }
+
+    > li {
+      margin-left: 1em;
+      display: inline-block;
+    }
+  }
+}
+
+.paragraph.paragraph--view-mode--default {
 	@include clearfix;
 	padding: 40px 1em;
 	background-color: #fff;
@@ -12,64 +125,17 @@
 			margin-right: 1.5em;
 		}
 	}
-}
 
-.paragraph-inner {
-	max-width: $page-max-width;
-	margin: 0 auto;
-}
+  // Preview mode (forms)
+  &.paragraph--view-mode--preview {
+    iframe, img, video {
+      display: none;
+    }
+  }
 
-/**
- * Paragraph blocks
- */
-.diagonal-after {
-  @include slope(after)
-}
+  .paragraph-inner {
+    max-width: $page-max-width;
+    margin: 0 auto;
+  }
 
-.diagonal-before {
-  @include slope(before)
-}
-
-// Super ugly hack for correctly displaying the fucking
-// admin toolbar with the fucking logo and the fucking responsive hamburger shit.
-body.toolbar-vertical, body.toolbar-horizontal {
-	.tieto-campaign-page {
-		position: relative;
-	}
-}
-
-body.toolbar-vertical {
-	@include breakpoint-max(md) {
-		#toolbar-administration {
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-		}
-	}
-	.tieto-campaign-page {
-		.logo {
-			top: $toolbar-height;
-		}
-		.campaign-menu {
-			top: $header-height;
-			@include md {
-				top: $toolbar-height;
-			}
-		}
-	}
-}
-
-body.toolbar-horizontal {
-	.tieto-campaign-page {
-		.logo, .campaign-menu {
-			top: $toolbar-height;
-		}
-	}
-
-	&.toolbar-tray-open .tieto-campaign-page {
-		.logo, .campaign-menu {
-			top: $toolbar-height * 2;
-		}
-	}
 }

@@ -1,8 +1,9 @@
-uuid: c16a05e0-a25d-4fc3-bd73-e5a533764666
+uuid: e49d75b1-4100-4ebc-9237-c2048926b298
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.highlighted.field_anchor
     - field.field.paragraph.highlighted.field_background
     - field.field.paragraph.highlighted.field_enable_parallax
@@ -11,21 +12,21 @@ dependencies:
     - field.field.paragraph.highlighted.field_title
     - paragraphs.paragraphs_type.highlighted
   module:
-    - text
-id: paragraph.highlighted.default
+    - options
+id: paragraph.highlighted.preview
 targetEntityType: paragraph
 bundle: highlighted
-mode: default
+mode: preview
 content:
-  field_text:
-    type: text_default
+  field_highlighted_layout:
+    type: list_key
     weight: 1
-    label: hidden
+    label: inline
     settings: {  }
     third_party_settings: {  }
   field_title:
     weight: 0
-    label: hidden
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -35,5 +36,5 @@ hidden:
   field_anchor: true
   field_background: true
   field_enable_parallax: true
-  field_highlighted_layout: true
+  field_text: true
   uid: true

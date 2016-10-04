@@ -1,5 +1,6 @@
 // Colors
-$brand-primary: #2c3e50;
+$tieto-blue: #67afe1;
+$brand-primary: $tieto-blue;
 $brand-danger: #E62600;
 
 $messages-error-color: #a51b00;
@@ -7,6 +8,14 @@ $messages-error-bg: #fcf4f2;
 $messages-error-border: #f9c9bf;
 
 $spacer:   1rem !default;
+
+$button-bg: $brand-primary;
+$button-bg-hover: darken($brand-primary, 20%);
+$button-border: darken($brand-primary, 30%);
+$button-box-shadow: 0 2px 2px hsla(0, 0%, 0%, 0.125);
+
+$breakpoint-md: 767px;
+$breakpoint-lg: 1200px;
 
 // Typography (from Bootstrap 4)
 //
@@ -78,7 +87,7 @@ $icon-clone: "\e14d";
 $pulp-yellow: #fdd706;
 $pulp-red: #d03428;
 
-$tieto-blue: #67afe1;
+
 $tieto-lightblue: #cde6f5;
 $tieto-lightgrey: #efefef;
 $tieto-green: #b2eb95;
