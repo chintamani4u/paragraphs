@@ -13,3 +13,8 @@ dialog:
     - core/drupal.ajax
     - core/drupal.dialog.ajax
 
+add_buttons:
+  version: 1.x
+  css:
+    component:
+      css/add_buttons.css: {}

@@ -1767,10 +1767,6 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
 .node-campaign-edit-form .paragraphs-button-wrapper {
   margin: 2em 0; }
 
-.node-campaign-form .paragraphs-button-wrapper > .button,
-.node-campaign-edit-form .paragraphs-button-wrapper > .button {
-  margin: 0 .5em .5em 0; }
-
 .node-campaign-form .paragraph-actions,
 .node-campaign-edit-form .paragraph-actions {
   margin: 0;
