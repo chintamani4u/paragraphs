@@ -276,5 +276,15 @@ function campaign_pages_theme() {
 function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (in_array($form_id, ['node_campaign_form', 'node_campaign_edit_form'])) {
     $form['field_menu']['widget']['add_more']['#value'] = t('New menu link');
+
+    $form['#attached']['library'][] = 'campaign_pages/add_buttons';
+
+    foreach ($form['field_paragraphs']['widget']['add_more'] as $key => &$item) {
+      if (strrpos($key, 'add_more_button_', -strlen($key)) !== FALSE) {
+        $type = Html::getClass($item['#bundle_machine_name']);
+        $item['#attributes']['class'][] = 'paragraph-add-' . $type;
+      }
+    }
   }
 }
+

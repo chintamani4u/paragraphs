@@ -1,0 +1,25 @@
+/**
+ * @file
+ * Better paragraph buttons.
+ */
+
+.paragraphs-button-wrapper {
+  text-align: center;
+}
+
+.paragraphs-button-wrapper .button,
+.paragraphs-button-wrapper .button:first-child {
+  width: 30%;
+  padding: 70px 0 1em;
+  margin-right: 5px;
+}
+
+.paragraphs-button-wrapper .button:first-child {
+  margin-right: 5px;
+}
+
+.button.paragraph-add-tabs {
+  background-image: url('../images/u60.png');
+  background-repeat: no-repeat;
+  background-position: center 1em;
+}
