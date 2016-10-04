@@ -165,9 +165,11 @@ function campaign_pages_preprocess_paragraph__header(&$variables) {
 function campaign_pages_preprocess_paragraph__text_box(&$variables) {
   $paragraph = &$variables['paragraph'];
 
-  campaign_pages_add_template_variable($variables, [
-    'columns' => $paragraph->getParentEntity()->field_boxes_per_row->value,
-  ]);
+  if ($paragraph->getParentEntity()->hasField('field_boxes_per_row')) {
+    campaign_pages_add_template_variable($variables, [
+      'columns' => $paragraph->getParentEntity()->field_boxes_per_row->value,
+    ]);
+  }
 }
 
 /**
