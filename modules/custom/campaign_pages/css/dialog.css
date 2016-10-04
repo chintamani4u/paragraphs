@@ -9,17 +9,10 @@ body.dialog-active {
 
 .ui-dialog.dialog-preview-paragraph .ui-dialog-content.ui-widget-content {
   padding: 0;
-  overflow: hidden;
-}
-
-.ui-dialog.dialog-preview-paragraph .ui-dialog-content.ui-widget-content.dialog-loaded {
-  background-image: none;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .ui-dialog.dialog-preview-paragraph .ui-dialog-content.ui-widget-content > div {
-  height: 100%;
-}
-
-.ui-dialog.dialog-preview-paragraph .paragraphs-previewer-wrapper {
   height: 100%;
 }

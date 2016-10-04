@@ -108,6 +108,10 @@ function campaign_pages_preprocess_paragraph(&$variables) {
     }
   }
 
+  // Disable Quickedit
+  // @fixme disable only for Preview
+  unset($variables['attributes']['data-quickedit-entity-id']);
+
 }
 
 /**

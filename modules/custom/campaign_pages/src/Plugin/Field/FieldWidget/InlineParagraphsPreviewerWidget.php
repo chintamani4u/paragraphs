@@ -148,7 +148,7 @@ class InlineParagraphsPreviewerWidget extends InlineParagraphsWidget {
       'dialogClass' => 'dialog-preview-paragraph',
       'minWidth' => 480,
       'width' => '80%',
-      // 'minHeight' => 320,
+      // 'minHeight' => 100,
       // 'height' => 400,
       'autoOpen' => TRUE,
       'modal' => TRUE,
@@ -167,16 +167,7 @@ class InlineParagraphsPreviewerWidget extends InlineParagraphsWidget {
       $dialog_title = t('Preview');
     }
 
-    // Build previewer callback url.
-    // if (!empty($preview_button['#field_item_parents']) && !empty($form['#build_id'])) {
-    //   $route_name = 'campaign_pages.paragraph_preview';
-    //   $route_parameters = [
-    //     'form_build_id' => $form['#build_id'],
-    //     'element_parents' => implode(':', $preview_button['#field_item_parents']),
-    //   ];
-    //   $preview = \Drupal\Core\Url::fromRoute($route_name, $route_parameters);
-    // }
-
+    // Render current paragraph entity.
     if (!empty($preview_button['#field_item_parents']) && !empty($form['#build_id'])) {
       $paragraph = static::paragraphsPreviewRenderField($form['#build_id'], $preview_button['#field_item_parents']);
     }
