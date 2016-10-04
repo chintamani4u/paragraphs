@@ -3,9 +3,9 @@ name: Tieto
 mail: dev@brainsum.com
 slogan: ''
 page:
-  403: /system/403
-  404: /system/404
-  front: /system/404
+  403: ''
+  404: ''
+  front: /user/login
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en
