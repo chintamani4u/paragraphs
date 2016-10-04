@@ -1,3 +1,4 @@
+.node-campaign-form,
 .node-campaign-edit-form {
 
   // Ugly hacks
@@ -36,6 +37,10 @@
 
   .field-multiple-table {
     width: 100%;
+
+    th.field-label {
+      text-align: left;
+    }
 
     tr {
       border-bottom: 1px solid #e3e3e3;
@@ -92,6 +97,11 @@
     padding: 0;
     display: inline-block;
     list-style: none;
+    margin-left: 1em;
+
+    li:first-child {
+      margin-left: 0;
+    }
 
     .button {
       padding: 5px 1em;
