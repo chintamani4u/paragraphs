@@ -113,29 +113,55 @@
     return dialogClass && dialogClass.indexOf('dialog-preview-paragraph') > -1;
   };
 
-  // Dialog listeners.
-  $(window).on({
-    'dialog:beforecreate': function (event, dialog, $element, settings) {
-      if (previewer.dialogIsPreviewer(dialog, $element, settings)) {
-        // Initialize the dialog.
-        previewer.dialogInitialize(dialog, $element, settings);
-      }
-    },
-    'dialog:aftercreate': function (event, dialog, $element, settings) {
-      if (previewer.dialogIsPreviewer(dialog, $element, settings)) {
-        // Set body class to disable scrolling.
-        $('body').addClass('dialog-active');
-      }
-    },
-    'dialog:afterclose': function (event, dialog, $element) {
-      if (previewer.dialogIsPreviewer(dialog, $element)) {
-        // Reset extended properties.
-        previewer.dialogReset(dialog);
+  /**
+   * Disable redirect links and submit buttons in preview modal,
+   * to prevent users accidentally clicking on them.
+   *
+   * @param Drupal.dialog dialog
+   *   The dialog object
+   * @param jQuery $element
+   *   The element jQuery object.
+   *
+   * @return void
+   */
+  previewer.disableLinks = function(dialog, $element) {
+    $element.find('a:not([href^="#"]), input[type="submit"], button[type="submit"]').on('click', function (e) {
+      e.preventDefault();
+      return false;
+    })
+  };
 
-        // Remove body class to enable scrolling in the parent window.
-        $('body').removeClass('dialog-active');
-      }
+  // Dialog listeners.
+  Drupal.behaviors.previewParagraph = {
+    attach: function (context, settings) {
+      $(window, context).once('preview-paragraph').on({
+        'dialog:beforecreate': function (event, dialog, $element, settings) {
+          if (previewer.dialogIsPreviewer(dialog, $element, settings)) {
+            // Initialize the dialog.
+            previewer.dialogInitialize(dialog, $element, settings);
+          }
+        },
+        'dialog:aftercreate': function (event, dialog, $element, settings) {
+          if (previewer.dialogIsPreviewer(dialog, $element, settings)) {
+            previewer.disableLinks(dialog, $element);
+
+            // Set body class to disable scrolling.
+            $('body').addClass('dialog-active');
+          }
+        },
+        'dialog:afterclose': function (event, dialog, $element) {
+          if (previewer.dialogIsPreviewer(dialog, $element)) {
+            // Reset extended properties.
+            previewer.dialogReset(dialog);
+
+            // Remove body class to enable scrolling in the parent window.
+            $('body').removeClass('dialog-active');
+          }
+        }
+      });
     }
-  });
+  };
+
+
 
 })(jQuery, Drupal, drupalSettings);
