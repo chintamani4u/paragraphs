@@ -9,11 +9,11 @@ dependencies:
     - field.field.node.campaign.field_paragraphs
     - node.type.campaign
   module:
+    - campaign_pages
     - content_moderation
     - link
     - machine_name
     - metatag
-    - paragraphs
     - path
 id: node.campaign.default
 targetEntityType: node
@@ -52,7 +52,7 @@ content:
       add_mode: button
       form_display_mode: default
     third_party_settings: {  }
-    type: entity_reference_paragraphs
+    type: entity_reference_paragraphs_preview
   langcode:
     type: language_select
     weight: 2

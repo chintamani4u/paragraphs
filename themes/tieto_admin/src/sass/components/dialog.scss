@@ -8,6 +8,21 @@
   position: absolute;
   z-index: 1260;
   padding: 0;
+
+  &.ui-draggable {
+    .ui-draggable-handle {
+      cursor: move;
+      cursor: -webkit-grab;
+      cursor: -moz-grab;
+      cursor: grab;
+    }
+    &.ui-draggable-dragging .ui-draggable-handle {
+      cursor: -webkit-grabbing;
+      cursor: -moz-grabbing;
+      cursor: grabbing;
+    }
+  }
+
 }
 @media all and (max-width: 48em) { /* 768px */
   .ui-dialog {
@@ -47,15 +62,15 @@
   left: 20px;
 }
 .ui-dialog .ui-icon.ui-icon-closethick {
-  background: url(../../../../misc/icons/ffffff/ex.svg) 0 0 no-repeat;
+  background: url(../../../../core/misc/icons/ffffff/ex.svg) 0 0 no-repeat;
   margin-top: -12px;
 }
-.ui-dialog .ui-widget-content.ui-dialog-content {
+.ui-dialog .ui-dialog-content {
   background: #ffffff;
   overflow: auto;
   padding: 1em;
 }
-.views-ui-dialog .ui-widget-content.ui-dialog-content {
+.views-ui-dialog .ui-dialog-content {
   padding: 0;
 }
 .ui-dialog .ui-widget-content.ui-dialog-buttonpane {

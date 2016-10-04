@@ -119,42 +119,44 @@ function campaign_pages_preprocess_paragraph__header(&$variables) {
   $paragraph = &$variables['paragraph'];
 
   // Get background file info.
-  $file = File::load($paragraph->field_background->target_id);
-  $file_uri = $file->getFileUri();
-  $file_mime = $file->getMimeType();
-  $file_path = parse_url(file_create_url($file_uri))['path'];
+  if (isset($paragraph->field_background->target_id)) {
+    $file = File::load($paragraph->field_background->target_id);
+    $file_uri = $file->getFileUri();
+    $file_mime = $file->getMimeType();
+    $file_path = parse_url(file_create_url($file_uri))['path'];
 
-  if (in_array($file_mime, ['image/jpeg', 'image/svg+xml'])) {
-    $type = 'image';
-  }
-  if (in_array($file_mime, ['video/mp4', 'application/mp4', 'video/webm'])) {
-    $type = 'video';
-
-    // Generate poster image for video if not exist.
-    $video_filename = pathinfo($file_path)['filename'];
-    $poster = '/sites/default/files/paragraphs/background/' . $video_filename . '_poster.jpg';
-
-    if (! file_exists(DRUPAL_ROOT . $poster)) {
-      $ffmpeg = Drupal::service('php_ffmpeg')->create([
-        'loglevel' => 'quiet',
-      ]);
-      $video = $ffmpeg->open(drupal_realpath($file_uri));
-
-      $video->frame(TimeCode::fromSeconds(0))->save(DRUPAL_ROOT . $poster);
+    if (in_array($file_mime, ['image/jpeg', 'image/svg+xml'])) {
+      $type = 'image';
     }
+    if (in_array($file_mime, ['video/mp4', 'application/mp4', 'video/webm'])) {
+      $type = 'video';
+
+      // Generate poster image for video if not exist.
+      $video_filename = pathinfo($file_path)['filename'];
+      $poster = '/sites/default/files/paragraphs/background/' . $video_filename . '_poster.jpg';
+
+      if (! file_exists(DRUPAL_ROOT . $poster)) {
+        $ffmpeg = Drupal::service('php_ffmpeg')->create([
+          'loglevel' => 'quiet',
+        ]);
+        $video = $ffmpeg->open(drupal_realpath($file_uri));
+
+        $video->frame(TimeCode::fromSeconds(0))->save(DRUPAL_ROOT . $poster);
+      }
+    }
+
+    // Add variables to theme.
+    campaign_pages_add_template_variable($variables, [
+      'background' => [
+        'type' => $type ?? 'image',
+        'url' => $file_path,
+        'mime' => $file_mime,
+        'poster' => $type === 'video' ? $poster : null,
+      ],
+
+      'enable_parallax' => $paragraph->field_enable_parallax->value,
+    ]);
   }
-
-  // Add variables to theme.
-  campaign_pages_add_template_variable($variables, [
-    'background' => [
-      'type' => $type ?? 'image',
-      'url' => $file_path,
-      'mime' => $file_mime,
-      'poster' => $type === 'video' ? $poster : NULL,
-    ],
-
-    'enable_parallax' => $paragraph->field_enable_parallax->value,
-  ]);
 
 }
 
@@ -256,5 +258,25 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
     $element['uri']['#description'] = NULL;
     $element['uri']['#title_display'] = 'none';
     $element['title']['#title_display'] = 'none';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function campaign_pages_theme() {
+  return [
+    'paragraph_preview_modal' => [
+      'variables' => ['paragraph' => NULL],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (in_array($form_id, ['node_campaign_form', 'node_campaign_edit_form'])) {
+    $form['field_menu']['widget']['add_more']['#value'] = t('New menu link');
   }
 }

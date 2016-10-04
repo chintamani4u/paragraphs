@@ -2,23 +2,11 @@
 /**
  * @file
  * Default theme implementation to display a 404 error page.
- *
- * @see campaing_pages_theme()
- *
- * @ingroup themeable
  */
 #}
-<style>
-    #page-404 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-    }
-</style>
+{% include directory ~ '/templates/inc/logo.html.twig' %}
 <div id="page-404" class="tieto-campaign-page">
-
-    <div class="paragraph--type--header">
+    <div class="paragraph paragraph--type--header paragraph--view-mode--default">
         <div class="background">
             <div class="background-wrapper">
                 <div class="background-image" style="background-image: url(/themes/tieto_admin/images/404.jpg)"></div>
@@ -29,6 +17,5 @@
             </div>
         </div>
     </div>
-
-    {% include directory ~ '/templates/inc/footer.html.twig' %}
 </div>
+{% include directory ~ '/templates/inc/footer.html.twig' %}
