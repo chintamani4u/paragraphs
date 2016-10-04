@@ -126,13 +126,6 @@
 		}
 	}
 
-  // Preview mode (forms)
-  &.paragraph--view-mode--preview {
-    iframe, img, video {
-      display: none;
-    }
-  }
-
   .paragraph-inner {
     max-width: $page-max-width;
     margin: 0 auto;

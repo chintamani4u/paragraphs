@@ -256,3 +256,14 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
     $element['title']['#title_display'] = 'none';
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function campaign_pages_theme() {
+  return [
+    'paragraph_preview_modal' => [
+      'variables' => ['paragraph' => NULL],
+    ],
+  ];
+}

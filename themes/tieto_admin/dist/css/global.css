@@ -1768,8 +1768,6 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     margin-left: 1.5em; }
   .paragraph.paragraph--view-mode--default .field.text-formatted .align-left {
     margin-right: 1.5em; }
-  .paragraph.paragraph--view-mode--default.paragraph--view-mode--preview iframe, .paragraph.paragraph--view-mode--default.paragraph--view-mode--preview img, .paragraph.paragraph--view-mode--default.paragraph--view-mode--preview video {
-    display: none; }
   .paragraph.paragraph--view-mode--default .paragraph-inner {
     max-width: 1000px;
     margin: 0 auto; }
