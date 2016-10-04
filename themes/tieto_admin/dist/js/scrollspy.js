@@ -276,22 +276,22 @@
 
 (function ($) {
 
-    var header = $('.field--name-field-menu, .tieto-campaign-page > .logo')
+    var targets = $('.field--name-field-menu, .tieto-campaign-page > .logo, #hamburger')
 
-    header.scrollspy({
+    targets.scrollspy({
         min: 490,
         max: 50000,
         onEnter: function() {
-            header.removeClass('not-fixed')
-            header.addClass('fixed')
+            targets.removeClass('not-fixed')
+            targets.addClass('fixed')
         },
         onLeave: function() {
-            header.removeClass('fixed')
-            header.addClass('not-fixed')
+            targets.removeClass('fixed')
+            targets.addClass('not-fixed')
         }
     })
 
-    $(document).ready(function () { header.trigger('scroll.scrollspy') })
+    $(document).ready(function () { targets.trigger('scroll.scrollspy') })
 
 })(jQuery)
 

@@ -1,137 +1,153 @@
 .node--type-campaign {
-	// Contextual links adds a position: relative...
-	position: static !important;
+  // Contextual links adds a position: relative...
+  position: static !important;
 
-	.hamburger {
-		position: absolute;
-	    top: 0;
-	    right: 0;
-	    z-index: 501;
+  .hamburger {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 501;
 
-		@include md {
-			display: none;
-		}
+    @include md {
+      display: none;
+    }
 
-		@include breakpoint-max(md) {
-			&.is-active + .campaign-menu {
-				opacity: 1;
-				visibility: visible;
-			}
-		}
+    @include breakpoint-max(md) {
+      &.is-active + .campaign-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
 
-		&:active, &:focus {
-			outline: none;
-		}
+    &:active, &:focus {
+      outline: none;
+    }
 
-		.hamburger-inner {
-			&, &::before, &::after {
-				width: 30px;
-				background-color: white;
-			}
-		}
+    .hamburger-inner {
+      &, &::before, &::after {
+        width: 30px;
+        background-color: white;
+      }
+    }
 
-		.hamburger-box {
-			width: 30px;
-			height: 29px;
-		}
+    &.fixed .hamburger-inner {
+      &, &::before, &::after {
+        background-color: $tieto-blue;
+      }
+    }
 
-		.hamburger-toggle {
-			color: white;
-			&:hover, &:active, &:focus {
-				text-decoration: none;
-			}
-			@include md {
-				display: none;
-			}
-		}
-	}
+    .hamburger-box {
+      width: 30px;
+      height: 29px;
+    }
 
-	// Menu field wrapper.
-	.campaign-menu {
-		position: absolute;
-		top: 70px;
-		right: 1em;
-		z-index: 500;
-		padding: 10px;
-		z-index: 501;
+    .hamburger-toggle {
+      color: white;
+      &:hover, &:active, &:focus {
+        text-decoration: none;
+      }
+      @include md {
+        display: none;
+      }
+    }
+  }
 
-		// Mobile styles for Menu field wrapper.
-		@include breakpoint-max(md) {
-			background: $tieto-blue;
-			padding: .5em 1em;
-			opacity: 0;
-			visibility: hidden;
-			will-change: opacity;
-			transition: opacity .2s, visibility .2s;
-			box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+  // Menu field wrapper.
+  .campaign-menu {
+    position: fixed;
+    top: 70px;
+    right: 1em;
+    padding: 10px;
+    z-index: 501;
 
-			// Arrow for the dropdown.
-			&::before {
-				content: " ";
-				display: block;
-				position: absolute;
-				top: 0;
-				right: 4px;
-			    border: 10px solid;
-			    margin-top: -20px;
-			    border-color: transparent transparent $tieto-blue transparent;
-			    box-sizing: content-box;
-			}
-		}
+    // Mobile styles for Menu field wrapper.
+    @include breakpoint-max(md) {
+      background: $tieto-blue;
+      padding: 1em;
+      opacity: 0;
+      visibility: hidden;
+      will-change: opacity;
+      transition: opacity .2s, visibility .2s;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+      min-width: 50%;
+      font-size: 1.2em;
 
-		// Menu links <a> tags
-		a {
-			color: white;
-			text-decoration: none;
-			display: block;
-			text-align: center;
-			font-size: 14px;
-			letter-spacing: .5px;
-		}
+      // Arrow for the dropdown.
+      &::before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 4px;
+        border: 10px solid;
+        margin-top: -20px;
+        border-color: transparent transparent $tieto-blue transparent;
+        box-sizing: content-box;
+      }
+    }
 
-		.campaign-menu-link {
-			padding: .5em;
-		}
+    // Menu links <a> tags
+    a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      font-size: 1em;
+      letter-spacing: .5px;
+      padding: .5em;
 
-		// Desktop styles for Menu field wrapper.
-		@include md {
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-			text-align: right;
-			transition: background .2s;
+      &:hover {
+        background: white;
+        color: $tieto-blue;
+      }
+    }
 
-			// Menu link wrappers (<li> items)
-			.campaign-menu-link {
-				display: inline-block;
+    // Desktop styles for Menu field wrapper.
+    @include md {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      text-align: right;
+      transition: background .2s;
 
-				// On desktop, the links have a bottom border on :hover
-				&:not(:last-child) a:link {
-					border-bottom: 2px solid transparent;
-					transition: border-color .2s;
+      a {
+        font-size: 14px;
+      }
 
-					&:hover {
-						border-color: white;
-					}
-				}
+      // Menu link wrappers (<li> items)
+      .campaign-menu-link {
+        display: inline-block;
+        padding: .5em;
 
-				// Last item gets a 2px border, making it look like a button.
-				&:last-child a {
-					display: block;
-					padding: .5em 1.5em;
-					border: 2px solid white;
-					border-radius: 3px;
+        // On desktop, the links have a bottom border on :hover
+        &:not(:last-child) a:link {
+          border-bottom: 2px solid transparent;
+          transition: border-color .2s;
 
-					&:hover {
-						background: white;
-						color: $tieto-blue;
-					}
-				}
-			}
-		}
+          &:hover {
+            background: 0;
+            color: white;
+            border-color: white;
+          }
+        }
 
-	}
+        // Last item gets a 2px border, making it look like a button.
+        &:last-child a {
+          display: block;
+          padding: .5em 1.5em;
+          border: 2px solid white;
+          border-radius: 3px;
+
+          &:hover {
+            background: white;
+            color: $tieto-blue;
+          }
+        }
+      }
+    }
+
+  }
 }
 
 

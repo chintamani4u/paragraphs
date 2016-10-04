@@ -1354,7 +1354,7 @@ li.tabs__tab a {
 .logo {
   display: block;
   z-index: 501;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   padding-left: 14px;
@@ -1518,7 +1518,7 @@ li.tabs__tab a {
 .node--type-campaign {
   position: static !important; }
   .node--type-campaign .hamburger {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     z-index: 501; }
@@ -1534,6 +1534,8 @@ li.tabs__tab a {
     .node--type-campaign .hamburger .hamburger-inner, .node--type-campaign .hamburger .hamburger-inner::before, .node--type-campaign .hamburger .hamburger-inner::after {
       width: 30px;
       background-color: white; }
+    .node--type-campaign .hamburger.fixed .hamburger-inner, .node--type-campaign .hamburger.fixed .hamburger-inner::before, .node--type-campaign .hamburger.fixed .hamburger-inner::after {
+      background-color: #67afe1; }
     .node--type-campaign .hamburger .hamburger-box {
       width: 30px;
       height: 29px; }
@@ -1545,22 +1547,23 @@ li.tabs__tab a {
         .node--type-campaign .hamburger .hamburger-toggle {
           display: none; } }
   .node--type-campaign .campaign-menu {
-    position: absolute;
+    position: fixed;
     top: 70px;
     right: 1em;
-    z-index: 500;
     padding: 10px;
     z-index: 501; }
     @media (max-width: 766px) {
       .node--type-campaign .campaign-menu {
         background: #67afe1;
-        padding: .5em 1em;
+        padding: 1em;
         opacity: 0;
         visibility: hidden;
         will-change: opacity;
         -webkit-transition: opacity .2s, visibility .2s;
         transition: opacity .2s, visibility .2s;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); }
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+        min-width: 50%;
+        font-size: 1.2em; }
         .node--type-campaign .campaign-menu::before {
           content: " ";
           display: block;
@@ -1576,10 +1579,12 @@ li.tabs__tab a {
       text-decoration: none;
       display: block;
       text-align: center;
-      font-size: 14px;
-      letter-spacing: .5px; }
-    .node--type-campaign .campaign-menu .campaign-menu-link {
+      font-size: 1em;
+      letter-spacing: .5px;
       padding: .5em; }
+      .node--type-campaign .campaign-menu a:hover {
+        background: white;
+        color: #67afe1; }
     @media (min-width: 767px) {
       .node--type-campaign .campaign-menu {
         position: fixed;
@@ -1589,13 +1594,18 @@ li.tabs__tab a {
         text-align: right;
         -webkit-transition: background .2s;
         transition: background .2s; }
+        .node--type-campaign .campaign-menu a {
+          font-size: 14px; }
         .node--type-campaign .campaign-menu .campaign-menu-link {
-          display: inline-block; }
+          display: inline-block;
+          padding: .5em; }
           .node--type-campaign .campaign-menu .campaign-menu-link:not(:last-child) a:link {
             border-bottom: 2px solid transparent;
             -webkit-transition: border-color .2s;
             transition: border-color .2s; }
             .node--type-campaign .campaign-menu .campaign-menu-link:not(:last-child) a:link:hover {
+              background: 0;
+              color: white;
               border-color: white; }
           .node--type-campaign .campaign-menu .campaign-menu-link:last-child a {
             display: block;
