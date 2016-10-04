@@ -1354,7 +1354,7 @@ li.tabs__tab a {
 .logo {
   display: block;
   z-index: 501;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   padding-left: 14px;
@@ -1518,7 +1518,7 @@ li.tabs__tab a {
 .node--type-campaign {
   position: static !important; }
   .node--type-campaign .hamburger {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     z-index: 501; }
@@ -1534,6 +1534,8 @@ li.tabs__tab a {
     .node--type-campaign .hamburger .hamburger-inner, .node--type-campaign .hamburger .hamburger-inner::before, .node--type-campaign .hamburger .hamburger-inner::after {
       width: 30px;
       background-color: white; }
+    .node--type-campaign .hamburger.fixed .hamburger-inner, .node--type-campaign .hamburger.fixed .hamburger-inner::before, .node--type-campaign .hamburger.fixed .hamburger-inner::after {
+      background-color: #67afe1; }
     .node--type-campaign .hamburger .hamburger-box {
       width: 30px;
       height: 29px; }
@@ -1545,22 +1547,23 @@ li.tabs__tab a {
         .node--type-campaign .hamburger .hamburger-toggle {
           display: none; } }
   .node--type-campaign .campaign-menu {
-    position: absolute;
+    position: fixed;
     top: 70px;
     right: 1em;
-    z-index: 500;
     padding: 10px;
     z-index: 501; }
     @media (max-width: 766px) {
       .node--type-campaign .campaign-menu {
         background: #67afe1;
-        padding: .5em 1em;
+        padding: 1em;
         opacity: 0;
         visibility: hidden;
         will-change: opacity;
         -webkit-transition: opacity .2s, visibility .2s;
         transition: opacity .2s, visibility .2s;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); }
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+        min-width: 50%;
+        font-size: 1.2em; }
         .node--type-campaign .campaign-menu::before {
           content: " ";
           display: block;
@@ -1576,10 +1579,12 @@ li.tabs__tab a {
       text-decoration: none;
       display: block;
       text-align: center;
-      font-size: 14px;
-      letter-spacing: .5px; }
-    .node--type-campaign .campaign-menu .campaign-menu-link {
+      font-size: 1em;
+      letter-spacing: .5px;
       padding: .5em; }
+      .node--type-campaign .campaign-menu a:hover {
+        background: white;
+        color: #67afe1; }
     @media (min-width: 767px) {
       .node--type-campaign .campaign-menu {
         position: fixed;
@@ -1589,13 +1594,18 @@ li.tabs__tab a {
         text-align: right;
         -webkit-transition: background .2s;
         transition: background .2s; }
+        .node--type-campaign .campaign-menu a {
+          font-size: 14px; }
         .node--type-campaign .campaign-menu .campaign-menu-link {
-          display: inline-block; }
+          display: inline-block;
+          padding: .5em; }
           .node--type-campaign .campaign-menu .campaign-menu-link:not(:last-child) a:link {
             border-bottom: 2px solid transparent;
             -webkit-transition: border-color .2s;
             transition: border-color .2s; }
             .node--type-campaign .campaign-menu .campaign-menu-link:not(:last-child) a:link:hover {
+              background: 0;
+              color: white;
               border-color: white; }
           .node--type-campaign .campaign-menu .campaign-menu-link:last-child a {
             display: block;
@@ -1678,40 +1688,57 @@ body.toolbar-horizontal .tieto-campaign-page .logo, body.toolbar-horizontal .tie
 body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .campaign-menu {
   top: 78px; }
 
+.node-campaign-form .field--name-field-menu .field-multiple-table td,
 .node-campaign-edit-form .field--name-field-menu .field-multiple-table td {
   padding: .5em 0; }
 
+.node-campaign-form .field--name-field-menu .field-multiple-table .form-item,
 .node-campaign-edit-form .field--name-field-menu .field-multiple-table .form-item {
   width: 50%;
   float: left;
   padding-left: .5em; }
 
+.node-campaign-form .field--name-field-menu .field-multiple-table a.tabledrag-handle,
 .node-campaign-edit-form .field--name-field-menu .field-multiple-table a.tabledrag-handle {
   margin-left: 0;
   top: 10px; }
 
+.node-campaign-form .paragraph-type-top,
 .node-campaign-edit-form .paragraph-type-top {
   clear: none;
   float: none;
   margin-bottom: .5em; }
 
+.node-campaign-form .paragraphs-subform > .form-wrapper,
 .node-campaign-edit-form .paragraphs-subform > .form-wrapper {
   margin: 1em 0; }
 
-.node-campaign-edit-form .tabledrag-toggle-weight-wrapper, .node-campaign-edit-form td.tabledrag-hide {
+.node-campaign-form .tabledrag-toggle-weight-wrapper, .node-campaign-form td.tabledrag-hide,
+.node-campaign-edit-form .tabledrag-toggle-weight-wrapper,
+.node-campaign-edit-form td.tabledrag-hide {
   display: none !important; }
 
+.node-campaign-form .field-multiple-table,
 .node-campaign-edit-form .field-multiple-table {
   width: 100%; }
+  .node-campaign-form .field-multiple-table th.field-label,
+  .node-campaign-edit-form .field-multiple-table th.field-label {
+    text-align: left; }
+  .node-campaign-form .field-multiple-table tr,
   .node-campaign-edit-form .field-multiple-table tr {
     border-bottom: 1px solid #e3e3e3; }
-  .node-campaign-edit-form .field-multiple-table .drag, .node-campaign-edit-form .field-multiple-table .drag-previous {
+  .node-campaign-form .field-multiple-table .drag, .node-campaign-form .field-multiple-table .drag-previous,
+  .node-campaign-edit-form .field-multiple-table .drag,
+  .node-campaign-edit-form .field-multiple-table .drag-previous {
     background-color: #f3f3f3; }
+  .node-campaign-form .field-multiple-table td,
   .node-campaign-edit-form .field-multiple-table td {
     padding: 1.2em 0 1.2em .5em; }
+  .node-campaign-form .field-multiple-table .field-multiple-drag,
   .node-campaign-edit-form .field-multiple-table .field-multiple-drag {
     position: relative;
     padding: 1.2em 0; }
+    .node-campaign-form .field-multiple-table .field-multiple-drag abbr.tabledrag-changed,
     .node-campaign-edit-form .field-multiple-table .field-multiple-drag abbr.tabledrag-changed {
       position: absolute;
       color: transparent;
@@ -1720,38 +1747,52 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
       right: 0;
       bottom: 0;
       background: #cde6f5; }
+  .node-campaign-form .field-multiple-table a.tabledrag-handle,
   .node-campaign-edit-form .field-multiple-table a.tabledrag-handle {
     position: absolute;
     top: 1em;
     z-index: 1;
     margin-left: 0; }
+    .node-campaign-form .field-multiple-table a.tabledrag-handle .handle,
     .node-campaign-edit-form .field-multiple-table a.tabledrag-handle .handle {
       background-position: 0 0;
       height: 17px;
       margin: 5px; }
 
+.node-campaign-form .paragraph-type-title,
 .node-campaign-edit-form .paragraph-type-title {
   float: left; }
 
+.node-campaign-form .paragraphs-button-wrapper,
 .node-campaign-edit-form .paragraphs-button-wrapper {
   margin: 2em 0; }
 
+.node-campaign-form .paragraphs-button-wrapper > .button,
 .node-campaign-edit-form .paragraphs-button-wrapper > .button {
   margin: 0 .5em .5em 0; }
 
+.node-campaign-form .paragraph-actions,
 .node-campaign-edit-form .paragraph-actions {
   margin: 0;
   padding: 0;
   display: inline-block;
-  list-style: none; }
+  list-style: none;
+  margin-left: 1em; }
+  .node-campaign-form .paragraph-actions li:first-child,
+  .node-campaign-edit-form .paragraph-actions li:first-child {
+    margin-left: 0; }
+  .node-campaign-form .paragraph-actions .button,
   .node-campaign-edit-form .paragraph-actions .button {
     padding: 5px 1em;
     color: #777;
     background: #efefef;
     border: 1px solid #d6d6d6;
     box-shadow: 0; }
-    .node-campaign-edit-form .paragraph-actions .button:hover, .node-campaign-edit-form .paragraph-actions .button:focus {
+    .node-campaign-form .paragraph-actions .button:hover, .node-campaign-form .paragraph-actions .button:focus,
+    .node-campaign-edit-form .paragraph-actions .button:hover,
+    .node-campaign-edit-form .paragraph-actions .button:focus {
       background: white; }
+  .node-campaign-form .paragraph-actions > li,
   .node-campaign-edit-form .paragraph-actions > li {
     margin-left: 1em;
     display: inline-block; }
@@ -1768,8 +1809,6 @@ body.toolbar-horizontal.toolbar-tray-open .tieto-campaign-page .logo, body.toolb
     margin-left: 1.5em; }
   .paragraph.paragraph--view-mode--default .field.text-formatted .align-left {
     margin-right: 1.5em; }
-  .paragraph.paragraph--view-mode--default.paragraph--view-mode--preview iframe, .paragraph.paragraph--view-mode--default.paragraph--view-mode--preview img, .paragraph.paragraph--view-mode--default.paragraph--view-mode--preview video {
-    display: none; }
   .paragraph.paragraph--view-mode--default .paragraph-inner {
     max-width: 1000px;
     margin: 0 auto; }
