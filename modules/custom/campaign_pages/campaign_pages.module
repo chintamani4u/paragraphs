@@ -150,7 +150,7 @@ function campaign_pages_preprocess_paragraph__header(&$variables) {
       'type' => $type ?? 'image',
       'url' => $file_path,
       'mime' => $file_mime,
-      'poster' => $type === 'video' ? $poster : null,
+      'poster' => $type === 'video' ? $poster : NULL,
     ],
 
     'enable_parallax' => $paragraph->field_enable_parallax->value,
@@ -200,7 +200,7 @@ function campaign_pages_preprocess_paragraph__text_boxes(&$variables) {
  * @return array
  *   The new data.
  */
-function campaign_pages_add_template_variable(&$variables, $data = null) {
+function campaign_pages_add_template_variable(&$variables, $data = NULL) {
   if (!$data) {
     return FALSE;
   }
