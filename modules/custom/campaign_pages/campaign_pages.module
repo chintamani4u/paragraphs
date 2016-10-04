@@ -256,3 +256,35 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
     $element['title']['#title_display'] = 'none';
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function campaign_pages_theme() {
+  return [
+    'paragraph_preview_modal' => [
+      'variables' => ['paragraph' => NULL],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (in_array($form_id, ['node_campaign_form', 'node_campaign_edit_form'])) {
+    $form['field_menu']['widget']['add_more']['#value'] = t('New menu link');
+
+    if (isset($form['field_paragraphs'])) {
+
+      $form['#attached']['library'][] = 'campaign_pages/add_buttons';
+
+      foreach ($form['field_paragraphs']['widget']['add_more'] as $key => $item) {
+        if (strpos($key, 'add_more') !== FALSE) {
+          $type = Html::getClass($item['#bundle_machine_name']);
+          $form['field_paragraphs']['widget']['add_more'][$key]['#attributes']['class'][] = 'paragraph-add-' . $type;
+        }
+      }
+    }
+  }
+}
