@@ -5,7 +5,7 @@ slogan: ''
 page:
   403: /system/403
   404: /system/404
-  front: /system/404
+  front: /redirect-to-tietocom
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en
