@@ -8,10 +8,6 @@
 	top: 0; left: 0;
 	padding-left: 14px;
 
-	@include md {
-		position: fixed;
-	}
-
 	width: 100%;
 	&::after {
 		transform: $tieto-logo-transform;
@@ -43,3 +39,4 @@
 		}
 	}
 }
+

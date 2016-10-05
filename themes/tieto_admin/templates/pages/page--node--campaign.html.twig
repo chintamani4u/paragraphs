@@ -43,6 +43,7 @@
 {{ attach_library('tieto_admin/smooth-scroll') }}
 {% set machine_name = node.field_machine_name.value %}
 
+{{ page.pre_content }}
 <div id="{{ machine_name|default('tieto_campaign_page') }}" class="tieto-campaign-page">
     {% include directory ~ '/templates/inc/logo.html.twig' %}
 

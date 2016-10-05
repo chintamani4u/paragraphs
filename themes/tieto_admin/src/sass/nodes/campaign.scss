@@ -2,6 +2,38 @@
   // Contextual links adds a position: relative...
   position: static !important;
 
+  .content-moderation-entity-moderation-form {
+    background: white;
+    position: absolute;
+    z-index: 501;
+    right: 0;
+    top: 0;
+    margin: 80px 1em 0 0;
+
+    .entity-moderation-form {
+      padding: 0;
+      margin: 1em;
+      border: 0;
+      display: table;
+      font-size: .9em;
+
+      li {
+        display: table-cell;
+        vertical-align: top;
+
+        > .form-item {
+          margin: 0 1em 0 0;
+          width: auto;
+        }
+      }
+
+
+      .form-submit {
+        margin: 25px 0 0 0;
+      }
+    }
+  }
+
   .hamburger {
     position: fixed;
     top: 0;
@@ -162,48 +194,70 @@
   @include slope(before)
 }
 
+body.page-node-type-campaign {
+
+  .region-pre-content {
+    margin: 0;
+    .block {
+      margin: 1em;
+    }
+  }
+
+  // Fixed for toolbar.
+  &.toolbar-fixed {
+    .tieto-campaign-page {
+      position: relative;
+      overflow-y: hidden;
+    }
+    .logo, .hamburger, .field--name-field-menu:not(.form-wrapper) {
+      position: absolute;
+      top: 0;
+    }
+  }
+
+}
 
 
 // Super ugly hack for correctly displaying the fucking
 // admin toolbar with the fucking logo and the fucking responsive hamburger shit.
-body.toolbar-vertical, body.toolbar-horizontal {
-  .tieto-campaign-page {
-    position: relative;
-  }
-}
+// body.toolbar-vertical, body.toolbar-horizontal {
+//   .tieto-campaign-page {
+//     position: relative;
+//   }
+// }
 
-body.toolbar-vertical {
-  @include breakpoint-max(md) {
-    #toolbar-administration {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-    }
-  }
-  .tieto-campaign-page {
-    .logo {
-      top: $toolbar-height;
-    }
-    .campaign-menu {
-      top: $header-height;
-      @include md {
-        top: $toolbar-height;
-      }
-    }
-  }
-}
+// body.toolbar-vertical {
+//   @include breakpoint-max(md) {
+//     #toolbar-administration {
+//       position: fixed;
+//       top: 0;
+//       left: 0;
+//       right: 0;
+//     }
+//   }
+//   .tieto-campaign-page {
+//     .logo {
+//       top: $toolbar-height;
+//     }
+//     .campaign-menu {
+//       top: $header-height;
+//       @include md {
+//         top: $toolbar-height;
+//       }
+//     }
+//   }
+// }
 
-body.toolbar-horizontal {
-  .tieto-campaign-page {
-    .logo, .campaign-menu {
-      top: $toolbar-height;
-    }
-  }
+// body.toolbar-horizontal {
+//   .tieto-campaign-page {
+//     .logo, .campaign-menu {
+//       top: $toolbar-height;
+//     }
+//   }
 
-  &.toolbar-tray-open .tieto-campaign-page {
-    .logo, .campaign-menu {
-      top: $toolbar-height * 2;
-    }
-  }
-}
+//   &.toolbar-tray-open .tieto-campaign-page {
+//     .logo, .campaign-menu {
+//       top: $toolbar-height * 2;
+//     }
+//   }
+// }
