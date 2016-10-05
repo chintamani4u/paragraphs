@@ -1,5 +1,0 @@
-services:
-  campaign_pages.route_subscriber:
-    class: Drupal\campaign_pages\Routing\RouteSubscriber
-    tags:
-      - { name: event_subscriber }

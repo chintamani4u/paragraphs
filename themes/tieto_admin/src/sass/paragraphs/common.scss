@@ -1,3 +1,4 @@
+.node-campaign-form,
 .node-campaign-edit-form {
 
   // Ugly hacks
@@ -36,6 +37,10 @@
 
   .field-multiple-table {
     width: 100%;
+
+    th.field-label {
+      text-align: left;
+    }
 
     tr {
       border-bottom: 1px solid #e3e3e3;
@@ -83,15 +88,17 @@
   .paragraphs-button-wrapper {
     margin: 2em 0;
   }
-  .paragraphs-button-wrapper > .button {
-    margin: 0 .5em .5em 0;
-  }
 
   .paragraph-actions {
     margin: 0;
     padding: 0;
     display: inline-block;
     list-style: none;
+    margin-left: 1em;
+
+    li:first-child {
+      margin-left: 0;
+    }
 
     .button {
       padding: 5px 1em;
@@ -125,13 +132,6 @@
 			margin-right: 1.5em;
 		}
 	}
-
-  // Preview mode (forms)
-  &.paragraph--view-mode--preview {
-    iframe, img, video {
-      display: none;
-    }
-  }
 
   .paragraph-inner {
     max-width: $page-max-width;

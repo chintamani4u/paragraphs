@@ -7,21 +7,21 @@ import '../../vendor/jquery-scrollspy'
 
 ($ => {
 
-    let header = $('.field--name-field-menu, .tieto-campaign-page > .logo')
+    let targets = $('.field--name-field-menu, .tieto-campaign-page > .logo, #hamburger')
 
-    header.scrollspy({
+    targets.scrollspy({
         min: 490,
         max: 50000,
         onEnter: function() {
-            header.removeClass('not-fixed')
-            header.addClass('fixed')
+            targets.removeClass('not-fixed')
+            targets.addClass('fixed')
         },
         onLeave: function() {
-            header.removeClass('fixed')
-            header.addClass('not-fixed')
+            targets.removeClass('fixed')
+            targets.addClass('not-fixed')
         }
     })
 
-    $(document).ready(() => { header.trigger('scroll.scrollspy') })
+    $(document).ready(() => { targets.trigger('scroll.scrollspy') })
 
 })(jQuery)
