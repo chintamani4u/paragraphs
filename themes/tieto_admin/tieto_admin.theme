@@ -29,9 +29,15 @@ function tieto_admin_theme_suggestions_page_alter(array &$suggestions, array $va
   // Add content type suggestions.
   $attributes = Drupal::request()->attributes;
   if ($attributes->get('_entity_form') !== "node.edit" && $node = $attributes->get('node')) {
-    array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
-    if (in_array($node->getType(), ['campaign', 'paragraphed_content_demo']) && $node->get('field_machine_name')->value) {
-      $suggestions[] = 'page__node__' . $node->getType() . '__' . $node->get('field_machine_name')->value;
+    if (method_exists($node, 'getType')) {
+      array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
+      if (in_array($node->getType(), [
+          'campaign',
+          'paragraphed_content_demo'
+        ]) && $node->get('field_machine_name')->value
+      ) {
+        $suggestions[] = 'page__node__' . $node->getType() . '__' . $node->get('field_machine_name')->value;
+      }
     }
   }
 }
@@ -48,7 +54,7 @@ function tieto_admin_theme_suggestions_alter(array &$suggestions, array $variabl
     // Add content type suggestions.
     $attributes = Drupal::request()->attributes;
     if ($attributes->get('_entity_form') !== "node.edit" && $node = $attributes->get('node')) {
-      if (in_array($node->getType(), ['campaign', 'paragraphed_content_demo']) && $node->get('field_machine_name')->value) {
+      if (method_exists($node, 'getType') && in_array($node->getType(), ['campaign', 'paragraphed_content_demo']) && $node->get('field_machine_name')->value) {
         foreach ($suggestions as $suggestion) {
           $my_suggestions[] = $suggestion;
           $my_suggestions[] = preg_replace("/^paragraph__/", 'paragraph__' . $node->get('field_machine_name')->value . "__", $suggestion);
