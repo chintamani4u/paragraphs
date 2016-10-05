@@ -39,17 +39,13 @@
  * @see html.html.twig
  */
 #}
-{{ attach_library('tieto_admin/scrollspy') }}
-{{ attach_library('tieto_admin/smooth-scroll') }}
 {% set machine_name = node.field_machine_name.value %}
 
 {{ page.pre_content }}
 <div id="{{ machine_name|default('tieto_campaign_page') }}" class="tieto-campaign-page">
-    {% include directory ~ '/templates/inc/logo.html.twig' %}
 
-    <main class="page-content" role="main">
+    <main class="page-content container" role="main">
         {{ page.content }}
     </main>
 
-    {% include directory ~ '/templates/inc/footer.html.twig' %}
 </div>

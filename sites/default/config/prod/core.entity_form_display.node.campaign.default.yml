@@ -12,7 +12,6 @@ dependencies:
     - campaign_pages
     - content_moderation
     - link
-    - machine_name
     - metatag
     - path
 id: node.campaign.default
@@ -25,12 +24,6 @@ content:
     weight: 6
     settings: {  }
     third_party_settings: {  }
-  field_machine_name:
-    weight: 1
-    settings:
-      editable: false
-    third_party_settings: {  }
-    type: machine_name
   field_menu:
     weight: 3
     settings:
@@ -94,4 +87,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_machine_name: true
