@@ -67,3 +67,4 @@ permissions:
   - 'create content translations'
   - 'update content translations'
   - 'translate campaign node'
+  - 'create url aliases'
