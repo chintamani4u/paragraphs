@@ -39,3 +39,4 @@ permissions:
   28: 'view paragraph content text_boxes'
   29: 'view paragraph content marketo_form'
   30: 'use text format basic_html'
+  31: 'view own unpublished content'
