@@ -50,3 +50,4 @@ permissions:
   - 'update content translations'
   - 'translate campaign node'
   - 'create url aliases'
+  - 'translate paragraph'
