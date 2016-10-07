@@ -1519,22 +1519,21 @@ li.tabs__tab a {
     left: -60px;
     width: 200px;
     height: 200px; }
-  @media (min-width: 767px) {
-    .logo.not-fixed::after {
-      -webkit-transition: width .2s, -webkit-transform .2s ease .2s;
-      transition: width .2s, -webkit-transform .2s ease .2s;
-      transition: width .2s, transform .2s ease .2s;
-      transition: width .2s, transform .2s ease .2s, -webkit-transform .2s ease .2s;
-      -webkit-transform: rotate(16.5deg) skew(-29deg);
-      transform: rotate(16.5deg) skew(-29deg); }
-    .logo.fixed::after {
-      -webkit-transition: width .2s ease .2s, -webkit-transform .2s;
-      transition: width .2s ease .2s, -webkit-transform .2s;
-      transition: transform .2s, width .2s ease .2s;
-      transition: transform .2s, width .2s ease .2s, -webkit-transform .2s;
-      -webkit-transform: rotate(0) skew(0) translate3d(60px, -40px, 0);
-      transform: rotate(0) skew(0) translate3d(60px, -40px, 0);
-      width: 100%; } }
+  .logo.not-fixed::after {
+    -webkit-transition: width .2s, -webkit-transform .2s ease .2s;
+    transition: width .2s, -webkit-transform .2s ease .2s;
+    transition: width .2s, transform .2s ease .2s;
+    transition: width .2s, transform .2s ease .2s, -webkit-transform .2s ease .2s;
+    -webkit-transform: rotate(16.5deg) skew(-29deg);
+    transform: rotate(16.5deg) skew(-29deg); }
+  .logo.fixed::after {
+    -webkit-transition: width .2s ease .2s, -webkit-transform .2s;
+    transition: width .2s ease .2s, -webkit-transform .2s;
+    transition: transform .2s, width .2s ease .2s;
+    transition: transform .2s, width .2s ease .2s, -webkit-transform .2s;
+    -webkit-transform: rotate(0) skew(0) translate3d(60px, -40px, 0);
+    transform: rotate(0) skew(0) translate3d(60px, -40px, 0);
+    width: 100%; }
 
 /**
  * Add spacing to bottom of pages
@@ -1699,8 +1698,6 @@ li.tabs__tab a {
     .node--type-campaign .hamburger .hamburger-inner, .node--type-campaign .hamburger .hamburger-inner::before, .node--type-campaign .hamburger .hamburger-inner::after {
       width: 30px;
       background-color: white; }
-    .node--type-campaign .hamburger.fixed .hamburger-inner, .node--type-campaign .hamburger.fixed .hamburger-inner::before, .node--type-campaign .hamburger.fixed .hamburger-inner::after {
-      background-color: #67afe1; }
     .node--type-campaign .hamburger .hamburger-box {
       width: 30px;
       height: 29px; }
