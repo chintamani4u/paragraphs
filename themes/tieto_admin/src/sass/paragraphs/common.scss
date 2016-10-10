@@ -12,6 +12,10 @@
         width: 50%;
         float: left;
         padding-left: .5em;
+
+        input {
+          width: 100%;
+        }
       }
     }
   }
@@ -52,7 +56,6 @@
     .field-multiple-drag {
       padding: 1.2em 0;
       width: auto;
-      vertical-align: middle;
       abbr.tabledrag-changed {
         position: absolute;
         color: transparent;

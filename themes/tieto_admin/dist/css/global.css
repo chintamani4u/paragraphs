@@ -1853,6 +1853,9 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   width: 50%;
   float: left;
   padding-left: .5em; }
+  .node-campaign-form .field--name-field-menu .field-multiple-table .form-item input,
+  .node-campaign-edit-form .field--name-field-menu .field-multiple-table .form-item input {
+    width: 100%; }
 
 .node-campaign-form .paragraph-type-top,
 .node-campaign-edit-form .paragraph-type-top {
@@ -1888,8 +1891,7 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   .node-campaign-form .field-multiple-table .field-multiple-drag,
   .node-campaign-edit-form .field-multiple-table .field-multiple-drag {
     padding: 1.2em 0;
-    width: auto;
-    vertical-align: middle; }
+    width: auto; }
     .node-campaign-form .field-multiple-table .field-multiple-drag abbr.tabledrag-changed,
     .node-campaign-edit-form .field-multiple-table .field-multiple-drag abbr.tabledrag-changed {
       position: absolute;
