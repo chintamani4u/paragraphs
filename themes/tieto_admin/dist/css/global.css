@@ -1534,6 +1534,12 @@ li.tabs__tab a {
     -webkit-transform: rotate(0) skew(0) translate3d(60px, -40px, 0);
     transform: rotate(0) skew(0) translate3d(60px, -40px, 0);
     width: 100%; }
+  @media (max-width: 766px) {
+    .logo::after {
+      top: -105px; }
+    .logo img {
+      width: 80px;
+      height: 53px; } }
 
 /**
  * Add spacing to bottom of pages
@@ -2509,7 +2515,7 @@ h3.tieto-lead {
  * @link https://github.com/jonsuh/hamburgers
  */
 .hamburger {
-  padding: 15px 15px;
+  padding: 10px 15px;
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, -webkit-filter;

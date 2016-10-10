@@ -1,60 +1,42 @@
 (function (exports) {
 'use strict';
 
-function interopDefault(ex) {
-	return ex && typeof ex === 'object' && 'default' in ex ? ex['default'] : ex;
-}
-
-function createCommonjsModule(fn, module) {
-	return module = { exports: {} }, fn(module, module.exports), module.exports;
-}
-
-var poorMansSymbol_commonJs = createCommonjsModule(function (module) {
-'use strict';
-
-var index = typeof Symbol === 'undefined' ? function (description) {
+var index$1 = typeof Symbol === 'undefined' ? function (description) {
 	return '@' + (description || '@') + Math.random();
 } : Symbol;
 
-module.exports = index;
-});
-
-var poorMansSymbol_commonJs$1 = interopDefault(poorMansSymbol_commonJs);
-
-
-var require$$0$1 = Object.freeze({
-	default: poorMansSymbol_commonJs$1
-});
-
-var iphoneInlineVideo_commonJs = createCommonjsModule(function (module) {
-/*! npm.im/iphone-inline-video */
-'use strict';
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var Symbol = _interopDefault(interopDefault(require$$0$1));
-
-function Intervalometer(cb) {
-	var rafId;
+/*! npm.im/intervalometer */
+function intervalometer(cb, request, cancel, requestParameter) {
+	var requestId;
 	var previousLoopTime;
 	function loop(now) {
 		// must be requested before cb() because that might call .stop()
-		rafId = requestAnimationFrame(loop);
-		cb(now - (previousLoopTime || now)); // ms since last call. 0 on start()
+		requestId = request(loop, requestParameter);
+
+		// called with "ms since last call". 0 on start()
+		cb(now - (previousLoopTime || now));
+
 		previousLoopTime = now;
 	}
-	this.start = function () {
-		if (!rafId) { // prevent double starts
-			loop(0);
+	return {
+		start: function start() {
+			if (!requestId) { // prevent double starts
+				loop(0);
+			}
+		},
+		stop: function stop() {
+			cancel(requestId);
+			requestId = null;
+			previousLoopTime = 0;
 		}
-	};
-	this.stop = function () {
-		cancelAnimationFrame(rafId);
-		rafId = null;
-		previousLoopTime = 0;
 	};
 }
 
+function frameIntervalometer(cb) {
+	return intervalometer(cb, requestAnimationFrame, cancelAnimationFrame);
+}
+
+/*! npm.im/iphone-inline-video */
 function preventEvent(element, eventName, toggleProperty, preventWithProperty) {
 	function handler(e) {
 		if (Boolean(element[toggleProperty]) === Boolean(preventWithProperty)) {
@@ -97,13 +79,12 @@ function dispatchEventAsync(element, type) {
 }
 
 // iOS 10 adds support for native inline playback + silent autoplay
-// Also adds unprefixed css-grid. This check essentially excludes
-var isWhitelisted = /iPhone|iPod/i.test(navigator.userAgent) && document.head.style.grid === undefined;
+var isWhitelisted = /iPhone|iPod/i.test(navigator.userAgent) && !matchMedia('(-webkit-video-playable-inline)').matches;
 
-var ಠ = Symbol();
-var ಠevent = Symbol();
-var ಠplay = Symbol('nativeplay');
-var ಠpause = Symbol('nativepause');
+var ಠ = index$1();
+var ಠevent = index$1();
+var ಠplay = index$1('nativeplay');
+var ಠpause = index$1('nativepause');
 
 /**
  * UTILS
@@ -152,7 +133,7 @@ function update(timeDiff) {
 	// console.log('update', player.video.readyState, player.video.networkState, player.driver.readyState, player.driver.networkState, player.driver.paused);
 	if (player.video.readyState >= player.video.HAVE_FUTURE_DATA) {
 		if (!player.hasAudio) {
-			player.driver.currentTime = player.video.currentTime + (timeDiff * player.video.playbackRate) / 1000;
+			player.driver.currentTime = player.video.currentTime + ((timeDiff * player.video.playbackRate) / 1000);
 			if (player.video.loop && isPlayerEnded(player)) {
 				player.driver.currentTime = 0;
 			}
@@ -258,7 +239,7 @@ function addPlayer(video, hasAudio) {
 	player.paused = true; // track whether 'pause' events have been fired
 	player.hasAudio = hasAudio;
 	player.video = video;
-	player.updater = new Intervalometer(update.bind(player));
+	player.updater = frameIntervalometer(update.bind(player));
 
 	if (hasAudio) {
 		player.driver = getAudioFromVideo(video);
@@ -356,8 +337,8 @@ function overloadAPI(video) {
 }
 
 function enableInlineVideo(video, hasAudio, onlyWhitelisted) {
-	if ( hasAudio === void 0 ) hasAudio = true;
-	if ( onlyWhitelisted === void 0 ) onlyWhitelisted = true;
+	if ( hasAudio === void 0 ) { hasAudio = true; }
+	if ( onlyWhitelisted === void 0 ) { onlyWhitelisted = true; }
 
 	if ((onlyWhitelisted && !isWhitelisted) || video[ಠ]) {
 		return;
@@ -368,39 +349,28 @@ function enableInlineVideo(video, hasAudio, onlyWhitelisted) {
 	if (!hasAudio && video.autoplay) {
 		video.play();
 	}
-	if (navigator.platform === 'MacIntel' || navigator.platform === 'Windows') {
+	if (!/iPhone|iPod|iPad/.test(navigator.platform)) {
 		console.warn('iphone-inline-video is not guaranteed to work in emulated environments');
 	}
 }
 
 enableInlineVideo.isWhitelisted = isWhitelisted;
 
-module.exports = enableInlineVideo;
+
+
+var iphoneInlineVideo_esModules = Object.freeze({
+	default: enableInlineVideo
 });
 
-var iphoneInlineVideo_commonJs$1 = interopDefault(iphoneInlineVideo_commonJs);
-
-
-var require$$0 = Object.freeze({
-	default: iphoneInlineVideo_commonJs$1
-});
-
-var iphoneInlineVideo = createCommonjsModule(function (module) {
-/**
- * @file
- * Allow autoplaying videos on mobile.
- *
- * @see  https://github.com/bfred-it/iphone-inline-video
- */
+var require$$0 = ( iphoneInlineVideo_esModules && iphoneInlineVideo_esModules['default'] ) || iphoneInlineVideo_esModules;
 
 (function () {
 
-	var makeVideoPlayableInline = interopDefault(require$$0);
+	var makeVideoPlayableInline = require$$0;
 	var video = document.querySelector('.background-video');
 	makeVideoPlayableInline(video, !video.hasAttribute('muted'));
 
 })()
-});
 
 }((this.LaravelElixirBundle = this.LaravelElixirBundle || {})));
 
