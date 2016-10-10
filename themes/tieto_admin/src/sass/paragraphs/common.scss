@@ -12,11 +12,6 @@
         width: 50%;
         float: left;
         padding-left: .5em;
-
-      }
-      a.tabledrag-handle {
-        margin-left: 0;
-        top: 10px;
       }
     }
   }
@@ -55,8 +50,9 @@
     }
 
     .field-multiple-drag {
-      position: relative;
       padding: 1.2em 0;
+      width: auto;
+      vertical-align: middle;
       abbr.tabledrag-changed {
         position: absolute;
         color: transparent;
@@ -66,17 +62,18 @@
         bottom: 0;
         background: $tieto-lightblue;
       }
-    }
 
-    a.tabledrag-handle {
-      position: absolute;
-      top: 1em;
-      z-index: 1;
-      margin-left: 0;
-      .handle {
-        background-position: 0 0;
-        height: 17px;
-        margin: 5px;
+      a.tabledrag-handle {
+        margin-left: 0;
+        padding-right: 0;
+        width: auto;
+        height: auto;
+        z-index: 1;
+        .handle {
+          background-position: 0 0;
+          height: 17px;
+          margin: 5px;
+        }
       }
     }
   }

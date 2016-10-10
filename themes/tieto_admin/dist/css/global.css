@@ -1854,11 +1854,6 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   float: left;
   padding-left: .5em; }
 
-.node-campaign-form .field--name-field-menu .field-multiple-table a.tabledrag-handle,
-.node-campaign-edit-form .field--name-field-menu .field-multiple-table a.tabledrag-handle {
-  margin-left: 0;
-  top: 10px; }
-
 .node-campaign-form .paragraph-type-top,
 .node-campaign-edit-form .paragraph-type-top {
   clear: none;
@@ -1892,8 +1887,9 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
     padding: 1.2em 0 1.2em .5em; }
   .node-campaign-form .field-multiple-table .field-multiple-drag,
   .node-campaign-edit-form .field-multiple-table .field-multiple-drag {
-    position: relative;
-    padding: 1.2em 0; }
+    padding: 1.2em 0;
+    width: auto;
+    vertical-align: middle; }
     .node-campaign-form .field-multiple-table .field-multiple-drag abbr.tabledrag-changed,
     .node-campaign-edit-form .field-multiple-table .field-multiple-drag abbr.tabledrag-changed {
       position: absolute;
@@ -1903,17 +1899,18 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
       right: 0;
       bottom: 0;
       background: #cde6f5; }
-  .node-campaign-form .field-multiple-table a.tabledrag-handle,
-  .node-campaign-edit-form .field-multiple-table a.tabledrag-handle {
-    position: absolute;
-    top: 1em;
-    z-index: 1;
-    margin-left: 0; }
-    .node-campaign-form .field-multiple-table a.tabledrag-handle .handle,
-    .node-campaign-edit-form .field-multiple-table a.tabledrag-handle .handle {
-      background-position: 0 0;
-      height: 17px;
-      margin: 5px; }
+    .node-campaign-form .field-multiple-table .field-multiple-drag a.tabledrag-handle,
+    .node-campaign-edit-form .field-multiple-table .field-multiple-drag a.tabledrag-handle {
+      margin-left: 0;
+      padding-right: 0;
+      width: auto;
+      height: auto;
+      z-index: 1; }
+      .node-campaign-form .field-multiple-table .field-multiple-drag a.tabledrag-handle .handle,
+      .node-campaign-edit-form .field-multiple-table .field-multiple-drag a.tabledrag-handle .handle {
+        background-position: 0 0;
+        height: 17px;
+        margin: 5px; }
 
 .node-campaign-form .paragraph-type-title,
 .node-campaign-edit-form .paragraph-type-title {
