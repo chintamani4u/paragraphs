@@ -7,6 +7,7 @@
 
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Component\Utility\Html;
 
 /**
  * Implements hook_help().
@@ -14,10 +15,10 @@ use Drupal\Core\Form\FormStateInterface;
 function campaign_pages_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
     // Main module help for the campain_pages module.
-    case 'help.page.campain_pages':
+    case 'help.page.campaign_pages':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Campain pages functionality') . '</p>';
+      $output .= '<p>' . t('Campaign pages functionality') . '</p>';
       return $output;
 
     default:
