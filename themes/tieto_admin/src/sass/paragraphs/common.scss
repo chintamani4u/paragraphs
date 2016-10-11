@@ -54,6 +54,7 @@
     }
 
     .field-multiple-drag {
+      position: relative;
       padding: 1.2em 0;
       width: auto;
       abbr.tabledrag-changed {
@@ -67,6 +68,8 @@
       }
 
       a.tabledrag-handle {
+        position: relative;
+        z-index: 1;
         margin-left: 0;
         padding-right: 0;
         width: auto;

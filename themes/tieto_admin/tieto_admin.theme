@@ -216,9 +216,10 @@ function tieto_admin_preprocess_maintenance_page(&$variables) {
 }
 
 /**
- * Implements hook_form_BASE_FORM_ID_alter().
+ * Implements hook_form_alter().
  *
- * Changes vertical tabs to container and adds meta information.
+ * Changes vertical tabs to container and adds meta information
+ * and attach custom tabledrag library on campaign edit forms
  */
 function tieto_admin_form_node_form_alter(&$form, FormStateInterface $form_state) {
   /** @var Drupal\node\NodeInterface $node */
@@ -256,4 +257,9 @@ function tieto_admin_form_node_form_alter(&$form, FormStateInterface $form_state
   );
   $form['revision_information']['#type'] = 'container';
   $form['revision_information']['#group'] = 'meta';
+
+  // Custom tabledrag library
+  if ($form['form_id']['#id'] === 'edit-node-campaign-edit-form') {
+   $form['#attached']['library'][] = 'tieto_admin/tabledrag';
+  }
 }

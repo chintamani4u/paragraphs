@@ -1890,6 +1890,7 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
     padding: 1.2em 0 1.2em .5em; }
   .node-campaign-form .field-multiple-table .field-multiple-drag,
   .node-campaign-edit-form .field-multiple-table .field-multiple-drag {
+    position: relative;
     padding: 1.2em 0;
     width: auto; }
     .node-campaign-form .field-multiple-table .field-multiple-drag abbr.tabledrag-changed,
@@ -1903,6 +1904,8 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
       background: #cde6f5; }
     .node-campaign-form .field-multiple-table .field-multiple-drag a.tabledrag-handle,
     .node-campaign-edit-form .field-multiple-table .field-multiple-drag a.tabledrag-handle {
+      position: relative;
+      z-index: 1;
       margin-left: 0;
       padding-right: 0;
       width: auto;

@@ -1,6 +1,7 @@
 # Ignore configuration files that may contain sensitive information.
 sites/*/*settings*.php
 sites/*/*services*.yml
+!sites/*/amazeeio.settings.php
 
 # Ignore paths that contain generated content.
 files/
@@ -14,3 +15,5 @@ modules/contrib/devel
 # Other
 nbproject
 .idea
+shutdown.sh
+startup.sh
