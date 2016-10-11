@@ -1,0 +1,3 @@
+[submodule "modules/contrib/parade"]
+	path = modules/contrib/parade
+	url = git://git.drupal.org/project/parade.git
