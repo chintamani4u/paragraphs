@@ -23,50 +23,6 @@ function tieto_admin_preprocess_html(&$variables) {
 }
 
 /**
- * Implements hook_theme_suggestions_page_alter().
- */
-function tieto_admin_theme_suggestions_page_alter(array &$suggestions, array $variables) {
-  // Add content type suggestions.
-  $attributes = Drupal::request()->attributes;
-  if ($attributes->get('_entity_form') !== "node.edit" && $node = $attributes->get('node')) {
-    if (method_exists($node, 'getType')) {
-      array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
-      if (in_array($node->getType(), [
-          'campaign',
-          'paragraphed_content_demo'
-        ]) && $node->get('field_machine_name')->value
-      ) {
-        $suggestions[] = 'page__node__' . $node->getType() . '__' . $node->get('field_machine_name')->value;
-      }
-    }
-  }
-}
-
-/**
- * Implements hook_theme_suggestions_alter().
- *
- * Add custom suggestions for paragraph types with machine name.
- *
- * @todo move to module.
- */
-function tieto_admin_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
-  if ($hook === 'paragraph') {
-    // Add content type suggestions.
-    $attributes = Drupal::request()->attributes;
-    if ($attributes->get('_entity_form') !== "node.edit" && $node = $attributes->get('node')) {
-      if (method_exists($node, 'getType') && in_array($node->getType(), ['campaign', 'paragraphed_content_demo']) && $node->get('field_machine_name')->value) {
-        foreach ($suggestions as $suggestion) {
-          $my_suggestions[] = $suggestion;
-          $my_suggestions[] = preg_replace("/^paragraph__/", 'paragraph__' . $node->get('field_machine_name')->value . "__", $suggestion);
-        }
-        $suggestions = $my_suggestions;
-      }
-    }
-  }
-
-}
-
-/**
  * Implements hook_preprocess_page().
  */
 function tieto_admin_preprocess_page(&$vars) {
@@ -134,21 +90,6 @@ function tieto_admin_preprocess_block_content_add_list(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
- *
- * Add video URL path and mime type for custom Paragraph.
- */
-function tieto_admin_preprocess_paragraph__campaign_header_video(&$vars) {
-  if (isset($vars['elements']['field_video'])) {
-    $video_path = $vars['elements']['field_video'][0]['#markup'];
-    $vars['video'] = array(
-      'path' => file_create_url($video_path),
-      'mime' => Drupal::service('file.mime_type.guesser')->guess($video_path)
-    );
-  }
-}
-
-/**
  * Implements hook_preprocess_block().
  *
  * Disables contextual links for all blocks.
@@ -182,26 +123,6 @@ function tieto_admin_preprocess_menu_local_action(array &$variables) {
 
   // We require Modernizr's touch test for button styling.
   $variables['#attached']['library'][] = 'core/modernizr';
-}
-
-/**
- * Implements hook_preprocess_field().
- */
-function tieto_admin_preprocess_field(&$variables) {
-  // Add rendered_confirmation_message to field variables.
-  if ($variables['field_name'] === 'field_marketo_form') {
-    $element = $variables['element']['#object'];
-
-    // Get the field's raw value and format.
-    list($markup, $format) = [
-      $element->field_text->value,
-      $element->field_text->format,
-    ];
-
-    if (isset($markup) && isset($format)) {
-      $element->rendered_confirmation_message = check_markup($markup, $format);
-    }
-  }
 }
 
 /**
