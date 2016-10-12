@@ -34,8 +34,8 @@
    * @return {void}
    */
   var updateHash = function (hash) {
-    if (history.pushState) history.pushState(null, null, hash)
-    else window.location.hash = hash
+    if (history.pushState) { history.pushState(null, null, hash) }
+    else { window.location.hash = hash }
     // @fixme temp
     // $('.campaign-menu-link > a.active').removeClass('active')
     // $('a[href="' + hash + '"]').addClass('active')
@@ -74,7 +74,7 @@
     }
   }
 
-  $('a[href*="#"]:not([href="#"]):not([href^="#tab-"]').on('click', smoothScroll)
+  $('a[href*="#"]:not([href="#"]):not([href^="#tab-"])').on('click', smoothScroll)
 
 })(jQuery)
 

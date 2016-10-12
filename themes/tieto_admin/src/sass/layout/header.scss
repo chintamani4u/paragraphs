@@ -26,16 +26,26 @@
 		height: 200px;
 	}
 
-	@include md {
-		&.not-fixed::after {
-			transition: width .2s, transform .2s ease .2s;
-			transform: $tieto-logo-transform;
+	&.not-fixed::after {
+		transition: width .2s, transform .2s ease .2s;
+		transform: $tieto-logo-transform;
+	}
+
+	&.fixed::after {
+		transition: transform .2s, width .2s ease .2s;
+		transform: rotate(0) skew(0) translate3d(60px, -40px, 0);
+		width: 100%;
+	}
+
+	// Make horizontal bar and logo smaller on mobile
+	@include breakpoint-max(md) {
+		&::after {
+			top: -105px;
 		}
 
-		&.fixed::after {
-			transition: transform .2s, width .2s ease .2s;
-			transform: rotate(0) skew(0) translate3d(60px, -40px, 0);
-			width: 100%;
+		img {
+			width: 80px;
+			height: 53px;
 		}
 	}
 }

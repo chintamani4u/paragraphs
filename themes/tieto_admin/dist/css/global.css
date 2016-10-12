@@ -1519,22 +1519,27 @@ li.tabs__tab a {
     left: -60px;
     width: 200px;
     height: 200px; }
-  @media (min-width: 767px) {
-    .logo.not-fixed::after {
-      -webkit-transition: width .2s, -webkit-transform .2s ease .2s;
-      transition: width .2s, -webkit-transform .2s ease .2s;
-      transition: width .2s, transform .2s ease .2s;
-      transition: width .2s, transform .2s ease .2s, -webkit-transform .2s ease .2s;
-      -webkit-transform: rotate(16.5deg) skew(-29deg);
-      transform: rotate(16.5deg) skew(-29deg); }
-    .logo.fixed::after {
-      -webkit-transition: width .2s ease .2s, -webkit-transform .2s;
-      transition: width .2s ease .2s, -webkit-transform .2s;
-      transition: transform .2s, width .2s ease .2s;
-      transition: transform .2s, width .2s ease .2s, -webkit-transform .2s;
-      -webkit-transform: rotate(0) skew(0) translate3d(60px, -40px, 0);
-      transform: rotate(0) skew(0) translate3d(60px, -40px, 0);
-      width: 100%; } }
+  .logo.not-fixed::after {
+    -webkit-transition: width .2s, -webkit-transform .2s ease .2s;
+    transition: width .2s, -webkit-transform .2s ease .2s;
+    transition: width .2s, transform .2s ease .2s;
+    transition: width .2s, transform .2s ease .2s, -webkit-transform .2s ease .2s;
+    -webkit-transform: rotate(16.5deg) skew(-29deg);
+    transform: rotate(16.5deg) skew(-29deg); }
+  .logo.fixed::after {
+    -webkit-transition: width .2s ease .2s, -webkit-transform .2s;
+    transition: width .2s ease .2s, -webkit-transform .2s;
+    transition: transform .2s, width .2s ease .2s;
+    transition: transform .2s, width .2s ease .2s, -webkit-transform .2s;
+    -webkit-transform: rotate(0) skew(0) translate3d(60px, -40px, 0);
+    transform: rotate(0) skew(0) translate3d(60px, -40px, 0);
+    width: 100%; }
+  @media (max-width: 766px) {
+    .logo::after {
+      top: -105px; }
+    .logo img {
+      width: 80px;
+      height: 53px; } }
 
 /**
  * Add spacing to bottom of pages
@@ -1699,8 +1704,6 @@ li.tabs__tab a {
     .node--type-campaign .hamburger .hamburger-inner, .node--type-campaign .hamburger .hamburger-inner::before, .node--type-campaign .hamburger .hamburger-inner::after {
       width: 30px;
       background-color: white; }
-    .node--type-campaign .hamburger.fixed .hamburger-inner, .node--type-campaign .hamburger.fixed .hamburger-inner::before, .node--type-campaign .hamburger.fixed .hamburger-inner::after {
-      background-color: #67afe1; }
     .node--type-campaign .hamburger .hamburger-box {
       width: 30px;
       height: 29px; }
@@ -1850,11 +1853,9 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   width: 50%;
   float: left;
   padding-left: .5em; }
-
-.node-campaign-form .field--name-field-menu .field-multiple-table a.tabledrag-handle,
-.node-campaign-edit-form .field--name-field-menu .field-multiple-table a.tabledrag-handle {
-  margin-left: 0;
-  top: 10px; }
+  .node-campaign-form .field--name-field-menu .field-multiple-table .form-item input,
+  .node-campaign-edit-form .field--name-field-menu .field-multiple-table .form-item input {
+    width: 100%; }
 
 .node-campaign-form .paragraph-type-top,
 .node-campaign-edit-form .paragraph-type-top {
@@ -1890,7 +1891,8 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   .node-campaign-form .field-multiple-table .field-multiple-drag,
   .node-campaign-edit-form .field-multiple-table .field-multiple-drag {
     position: relative;
-    padding: 1.2em 0; }
+    padding: 1.2em 0;
+    width: auto; }
     .node-campaign-form .field-multiple-table .field-multiple-drag abbr.tabledrag-changed,
     .node-campaign-edit-form .field-multiple-table .field-multiple-drag abbr.tabledrag-changed {
       position: absolute;
@@ -1900,17 +1902,20 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
       right: 0;
       bottom: 0;
       background: #cde6f5; }
-  .node-campaign-form .field-multiple-table a.tabledrag-handle,
-  .node-campaign-edit-form .field-multiple-table a.tabledrag-handle {
-    position: absolute;
-    top: 1em;
-    z-index: 1;
-    margin-left: 0; }
-    .node-campaign-form .field-multiple-table a.tabledrag-handle .handle,
-    .node-campaign-edit-form .field-multiple-table a.tabledrag-handle .handle {
-      background-position: 0 0;
-      height: 17px;
-      margin: 5px; }
+    .node-campaign-form .field-multiple-table .field-multiple-drag a.tabledrag-handle,
+    .node-campaign-edit-form .field-multiple-table .field-multiple-drag a.tabledrag-handle {
+      position: relative;
+      z-index: 1;
+      margin-left: 0;
+      padding-right: 0;
+      width: auto;
+      height: auto;
+      z-index: 1; }
+      .node-campaign-form .field-multiple-table .field-multiple-drag a.tabledrag-handle .handle,
+      .node-campaign-edit-form .field-multiple-table .field-multiple-drag a.tabledrag-handle .handle {
+        background-position: 0 0;
+        height: 17px;
+        margin: 5px; }
 
 .node-campaign-form .paragraph-type-title,
 .node-campaign-edit-form .paragraph-type-title {
@@ -2512,7 +2517,7 @@ h3.tieto-lead {
  * @link https://github.com/jonsuh/hamburgers
  */
 .hamburger {
-  padding: 15px 15px;
+  padding: 10px 15px;
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, -webkit-filter;

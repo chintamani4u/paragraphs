@@ -62,12 +62,6 @@
       }
     }
 
-    &.fixed .hamburger-inner {
-      &, &::before, &::after {
-        background-color: $tieto-blue;
-      }
-    }
-
     .hamburger-box {
       width: 30px;
       height: 29px;

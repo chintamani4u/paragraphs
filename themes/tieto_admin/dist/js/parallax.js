@@ -1,11 +1,11 @@
 (function (exports) {
 'use strict';
 
-var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {}
+var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
-function interopDefault(ex) {
-	return ex && typeof ex === 'object' && 'default' in ex ? ex['default'] : ex;
-}
+
+
+
 
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
@@ -218,8 +218,6 @@ var rellax = createCommonjsModule(function (module) {
 }));
 });
 
-var Rellax = interopDefault(rellax);
-
 /**
  * @file
  * Initialize parallaxes with Rellax lib.
@@ -228,7 +226,7 @@ var Rellax = interopDefault(rellax);
  */
 
 (function () {
-	var rellax = new Rellax('.parallax');
+	var rellax$$1 = new rellax('.parallax');
 })()
 
 }((this.LaravelElixirBundle = this.LaravelElixirBundle || {})));
