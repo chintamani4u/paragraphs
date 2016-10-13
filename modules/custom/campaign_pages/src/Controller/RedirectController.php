@@ -11,13 +11,20 @@ use Drupal\Core\Routing\TrustedRedirectResponse;
 class RedirectController extends ControllerBase {
 
   /**
-   * Redirect.
-   *
-   * @return \Drupal\Core\Routing\TrustedRedirectResponse
+   * Redirect to tieto.com if it is non local or dev site (brainsum domain).
    */
   public function redirectToTietoCom() {
+    global $base_url;
+
+    if ('127.0.0.1' == \Drupal::request()->getClientIp()
+      || strpos($base_url, 'brainsum') !== FALSE
+    ) {
+      return [
+        '#markup' => '',
+      ];
+    }
+
     return new TrustedRedirectResponse('https://www.tieto.com');
   }
-
 
 }
