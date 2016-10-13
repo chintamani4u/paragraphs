@@ -1,38 +1,40 @@
 .paragraph--type--image-text.paragraph--view-mode--default {
 
-    // Layout: Common styles
-    &.layout--text_1st,
-    &.layout--image_1st {
+    .field--name-field-title {
+        @include campaign-headline;
+        color: $text-color-strong;
+    }
 
-        .field--name-field-title {
-            @include campaign-headline;
-            color: $text-color-strong;
-        }
-
-        .field--name-field-title,
-        .field--name-field-text,
-        .field--name-field-image {
-            @include md {
-                width: 50%;
-            }
-        }
-
-        .field--name-field-image {
-            text-align: center;
-            margin: 1em 0 0;
-            @include md {
-                margin: 0;
-                text-align: right;
-            }
-        }
-
+    .field--name-field-title,
+    .field--name-field-text,
+    .field--name-field-image {
         @include md {
-            .field--name-field-title,
-            .field--name-field-text {
-                text-align: left;
-            }
+            width: 50%;
         }
     }
+
+    .field--name-field-image {
+        text-align: center;
+        margin: 1em 0 0;
+        @include md {
+            margin: 0;
+            text-align: right;
+        }
+    }
+
+    @include md {
+        .field--name-field-title,
+        .field--name-field-text {
+            text-align: left;
+        }
+    }
+
+    // Layout: Common styles
+    // &.layout--text_1st,
+    // &.layout--image_1st {
+
+
+    // }
 
     // Call to action buttons.
     .field--name-field-call-to-action {
