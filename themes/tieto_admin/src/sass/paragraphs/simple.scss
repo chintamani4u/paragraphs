@@ -1,12 +1,14 @@
 .paragraph--type--simple.paragraph--view-mode--default {
 
-	&.layout--one-column-clean,
-	&.layout--one-column-shaded,
-	&.layout--one-column-grey {
-		.field--name-field-title {
-			@include campaign-title-center;
-		}
-	}
+  .field--name-field-title {
+    @include campaign-title-center;
+  }
+
+	// &.layout--one-column-clean,
+	// &.layout--one-column-shaded,
+	// &.layout--one-column-grey {
+
+	// }
 
 	&.layout--one-column-shaded {
 		background-color: $tieto-lightblue;
