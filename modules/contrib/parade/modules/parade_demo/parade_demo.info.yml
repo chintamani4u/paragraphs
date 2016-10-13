@@ -1,0 +1,14 @@
+name: Parade Demo
+description: 'Provides a complete demo content type for Parade.'
+package: Paragraphs
+type: module
+# core: 8.x
+
+dependencies:
+  - parade
+
+# Information added by Drupal.org packaging script on 2016-10-13
+version: '8.x-1.x-dev'
+core: '8.x'
+project: 'parade'
+datestamp: 1476355440

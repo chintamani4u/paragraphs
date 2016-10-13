@@ -1,0 +1,271 @@
+<?php
+
+/**
+ * @file
+ * Contains hook implementations for Parade.
+ *
+ * @todo Make the whole thing dynamic, do not rely on Parade content type.
+ */
+
+use Drupal\file\Entity\File;
+use FFMpeg\Coordinate\TimeCode;
+use Drupal\Component\Utility\Html;
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function parade_preprocess_paragraph(&$variables) {
+  $paragraph = &$variables['paragraph'];
+
+  // Attach libraries for each paragraph type.
+  $variables['#attached']['library'][] = 'parade/paragraphs.' . $paragraph->getType();
+
+  // Pass the Anchor field value for the template.
+  if ($paragraph->hasField('field_anchor') && $anchor = $paragraph->field_anchor->value) {
+    $variables['attributes']['id'] = Html::getId($anchor);
+  }
+
+  // Pass the Layout field values to each corresponding Paragraph.
+  // @todo Refactor!
+  $layouts = [
+    'field_highlighted_layout' => [
+      0 => 'text_1st',
+      1 => 'image_1st',
+    ],
+    'field_image_text_layout' => [
+      0 => 'image_1st',
+      1 => 'text_1st',
+      2 => 'text_1st_enhanced',
+    ],
+    'field_simple_layout' => [
+      0 => 'one-column-clean',
+      1 => 'one-column-grey',
+      2 => 'one-column-shaded',
+      3 => 'two-column-title-1st-inverse',
+      4 => 'two-column-content-1st-inverse',
+      5 => 'separator-clean',
+    ],
+    'field_text_boxes_layout' => [
+      0 => 'none',
+      1 => 'smallinfo',
+      2 => 'lot_infos',
+      3 => 'lot_infos-grey',
+      4 => 'text_icon',
+    ],
+  ];
+
+  // Set CSS class for the selected layout.
+  foreach ($layouts as $field => $classes) {
+    if ($paragraph->hasField($field) && $layout_class = $paragraph->{$field}->value) {
+      $variables['attributes']['class'][] = 'layout--' . $classes[$layout_class];
+    }
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_paragraph__header().
+ */
+function parade_preprocess_paragraph__header(&$variables) {
+  $paragraph = &$variables['paragraph'];
+
+  // Get background file info.
+  if ($paragraph->hasField('field_background') && $target_id = $paragraph->field_background->target_id) {
+    $file = File::load($target_id);
+    $file_uri = $file->getFileUri();
+    $file_mime = $file->getMimeType();
+    $file_path = parse_url(file_create_url($file_uri))['path'];
+
+    // Attach parallax library if the user enabled the effect.
+    if ($paragraph->hasField('field_enable_parallax') && $paragraph->field_enable_parallax->value == TRUE) {
+      $variables['#attached']['library'][] = 'parade/parallax';
+    }
+
+    // @todo Maybe use this...?
+    //
+    // @code
+    // if (isset($vars['elements']['field_video'])) {
+    //   $video_path = $vars['elements']['field_video'][0]['#markup'];
+    //   $vars['video'] = array(
+    //   'path' => file_create_url($video_path),
+    //   'mime' => Drupal::service('file.mime_type.guesser')->guess($video_path)
+    //   );
+    // }
+    // @endcode
+    if (in_array($file_mime, ['image/jpeg', 'image/svg+xml'])) {
+      $type = 'image';
+    }
+    if (in_array($file_mime, ['video/mp4', 'application/mp4', 'video/webm'])) {
+      $type = 'video';
+
+      // Attach video related libraries.
+      $variables['#attached']['library'][] = 'parade/inline-video';
+
+      // Generate poster image for video if not exist.
+      // @todo Move this to post node save!
+      $video_filename = pathinfo($file_path)['filename'];
+      // @todo Get the image path from 'field_background' info.
+      $poster = '/sites/default/files/paragraphs/background/' . $video_filename . '_poster.jpg';
+
+      // @todo Don't try to run ffmpeg, if not available on the system.
+      if (!file_exists(DRUPAL_ROOT . $poster)) {
+        $ffmpeg = Drupal::service('php_ffmpeg')->create([
+          'loglevel' => 'quiet',
+        ]);
+        $video = $ffmpeg->open(drupal_realpath($file_uri));
+
+        $video->frame(TimeCode::fromSeconds(0))->save(DRUPAL_ROOT . $poster);
+      }
+    }
+
+    // Add variables to theme.
+    _parade_add_template_variable($variables, [
+      'background' => [
+        'type' => $type ? $type : 'image',
+        'url' => $file_path,
+        'mime' => $file_mime,
+        'poster' => $type === 'video' ? $poster : NULL,
+      ],
+
+      'enable_parallax' => $paragraph->field_enable_parallax->value,
+    ]);
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph__text_box().
+ */
+function parade_preprocess_paragraph__text_box(&$variables) {
+  $paragraph = &$variables['paragraph'];
+  $parent = $paragraph->getParentEntity();
+
+  // Pass the number of Columns field value.
+  if ($parent->hasField('field_boxes_per_row')) {
+    if ($columns = $parent->field_boxes_per_row->value) {
+      _parade_add_template_variable($variables, [
+        'columns' => $columns,
+      ]);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph__text_boxes().
+ */
+function parade_preprocess_paragraph__text_boxes(&$variables) {
+  $paragraph = &$variables['paragraph'];
+
+  // Pass the number of Columns field value.
+  if ($columns = $paragraph->field_boxes_per_row->value) {
+    _parade_add_template_variable($variables, [
+      'columns' => $columns,
+    ]);
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function parade_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph' => [],
+    'paragraph__header' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__simple' => [
+      'template' => 'paragraph',
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__text_box' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__text_boxes' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__images' => [
+      'template' => 'paragraph',
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__image_text' => [
+      'template' => 'paragraph',
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__tabs' => [
+      'base hook' => 'paragraph',
+    ],
+    'parade_preview' => [
+      'variables' => ['paragraph' => NULL],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function parade_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Add content type suggestions based on machine_name field and content type.
+  // e.g. page--node--parade.html.twig
+  // page--node--parade--my-awesome-page.html.twig.
+  // @todo Check for any nodes which has Parade field (entity_revisions_paragraphs_preview).
+  $attributes = Drupal::request()->attributes;
+  if (!$attributes->has('_entity_form') && $attributes->get('_entity_form') !== "node.edit" && $node = $attributes->get('node')) {
+    $type = $node->getType();
+    array_unshift($suggestions, 'page__node__' . $type);
+    if ($machine_name = $node->field_machine_name->value) {
+      $suggestions[] = 'page__node__' . $type . '__' . $machine_name;
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function parade_theme_suggestions_paragraph_alter(array &$suggestions, array $variables) {
+  // Add custom suggestions for Paragraph types with machine name.
+  // @todo Check for any nodes which has Parade field (entity_revisions_paragraphs_preview).
+  $attributes = Drupal::request()->attributes;
+  if (!$attributes->has('_entity_form') && $attributes->get('_entity_form') !== "node.edit" && $node = $attributes->get('node')) {
+    if ($machine_name = $node->field_machine_name->value) {
+      foreach ($suggestions as $suggestion) {
+        $suggestions[] = preg_replace("/^paragraph__/", 'paragraph__' . $machine_name . "__", $suggestion);
+      }
+    }
+  }
+}
+
+/**
+ * Populates TWIG variables with Parade related data.
+ *
+ * E.g.: $variables['parade']['test'] becomes
+ * {{ parade.test }} in the templates.
+ *
+ * @param array &$variables
+ *   The core $variables passed by reference.
+ * @param array $data
+ *   New data in array format, which will be passed to the template.
+ *
+ * @return array
+ *   The new data.
+ *
+ * @internal
+ */
+function _parade_add_template_variable(&$variables, $data = NULL) {
+  if (!$data) {
+    return FALSE;
+  }
+
+  // Array root of Parade related data in TWIG.
+  // Example usage:
+  // {{ parade.background.url }}
+  // {{ parade.layout }}.
+  static $key = 'parade';
+
+  if (!isset($variables[$key])) {
+    $variables[$key] = $data;
+  }
+  else {
+    $variables[$key][] = $data;
+  }
+
+  return $data;
+}
