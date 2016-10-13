@@ -227,7 +227,7 @@ var rellax = createCommonjsModule(function (module) {
 
 (function () {
 	var rellax$$1 = new rellax('.parallax');
-})()
+})();
 
 }((this.LaravelElixirBundle = this.LaravelElixirBundle || {})));
 

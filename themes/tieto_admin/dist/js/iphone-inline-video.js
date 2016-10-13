@@ -364,13 +364,20 @@ var iphoneInlineVideo_esModules = Object.freeze({
 
 var require$$0 = ( iphoneInlineVideo_esModules && iphoneInlineVideo_esModules['default'] ) || iphoneInlineVideo_esModules;
 
+/**
+ * @file
+ * Allow autoplaying videos on mobile.
+ *
+ * @see  https://github.com/bfred-it/iphone-inline-video
+ */
+
 (function () {
 
 	var makeVideoPlayableInline = require$$0;
 	var video = document.querySelector('.background-video');
 	makeVideoPlayableInline(video, !video.hasAttribute('muted'));
 
-})()
+})();
 
 }((this.LaravelElixirBundle = this.LaravelElixirBundle || {})));
 

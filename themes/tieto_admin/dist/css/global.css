@@ -1925,6 +1925,10 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 .node-campaign-edit-form .paragraphs-button-wrapper {
   margin: 2em 0; }
 
+.node-campaign-form .parade-button-marketo-form,
+.node-campaign-edit-form .parade-button-marketo-form {
+  background-image: url("../../images/form.png"); }
+
 .node-campaign-form .paragraph-actions,
 .node-campaign-edit-form .paragraph-actions {
   margin: 0;

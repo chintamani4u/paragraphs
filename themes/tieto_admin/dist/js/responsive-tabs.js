@@ -717,9 +717,9 @@
 	  startCollapsed: false,
 	  animation: 'slide',
 	  duration: 200
-	})
+	});
 
-})(jQuery)
+})(jQuery);
 
 }((this.LaravelElixirBundle = this.LaravelElixirBundle || {})));
 

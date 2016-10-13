@@ -276,24 +276,24 @@
 
 (function ($) {
 
-    var targets = $('.field--name-field-menu, .tieto-campaign-page > .logo, #hamburger')
+    var targets = $('.field--name-field-menu, .tieto-campaign-page > .logo, #hamburger');
 
     targets.scrollspy({
         min: 490,
         max: 50000,
         onEnter: function() {
-            targets.removeClass('not-fixed')
-            targets.addClass('fixed')
+            targets.removeClass('not-fixed');
+            targets.addClass('fixed');
         },
         onLeave: function() {
-            targets.removeClass('fixed')
-            targets.addClass('not-fixed')
+            targets.removeClass('fixed');
+            targets.addClass('not-fixed');
         }
-    })
+    });
 
-    $(document).ready(function () { targets.trigger('scroll.scrollspy') })
+    $(document).ready(function () { targets.trigger('scroll.scrollspy'); });
 
-})(jQuery)
+})(jQuery);
 
 }((this.LaravelElixirBundle = this.LaravelElixirBundle || {})));
 

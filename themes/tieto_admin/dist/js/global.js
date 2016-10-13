@@ -8,13 +8,13 @@
 
 (function ($) {
 
-	var hamburger = $('#hamburger')
+	var hamburger = $('#hamburger');
 
 	hamburger.on('click', function () {
-		hamburger.toggleClass('is-active')
-	})
+		hamburger.toggleClass('is-active');
+	});
 
-})(jQuery)
+})(jQuery);
 
 }((this.LaravelElixirBundle = this.LaravelElixirBundle || {})));
 
