@@ -199,3 +199,14 @@ function tieto_admin_form_node_form_alter(&$form, FormStateInterface $form_state
    $form['#attached']['library'][] = 'tieto_admin/tabledrag';
   }
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function tieto_admin_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // @todo @fixme
+  if (in_array('page__node__campaign', $suggestions)) {
+    $suggestions[] = 'page__node__campaign__revisions';
+  }
+  return $suggestions;
+}
