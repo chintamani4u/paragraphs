@@ -5,30 +5,6 @@
         color: $text-color-strong;
     }
 
-    .field--name-field-title,
-    .field--name-field-text,
-    .field--name-field-image {
-        @include md {
-            width: 50%;
-        }
-    }
-
-    .field--name-field-image {
-        text-align: center;
-        margin: 1em 0 0;
-        @include md {
-            margin: 0;
-            text-align: right;
-        }
-    }
-
-    @include md {
-        .field--name-field-title,
-        .field--name-field-text {
-            text-align: left;
-        }
-    }
-
     // Call to action buttons.
     .field--name-field-call-to-action {
         clear: both;
@@ -48,6 +24,35 @@
                 background: lighten($tieto-blue, 5%);
             }
         }
+    }
+
+    &.layout--none,
+    &.layout--image_1st,
+    &.layout--text_1st {
+
+      .field--name-field-title,
+      .field--name-field-text,
+      .field--name-field-image {
+          @include md {
+              width: 50%;
+          }
+      }
+
+      .field--name-field-image {
+          text-align: center;
+          margin: 1em 0 0;
+          @include md {
+              margin: 0;
+              text-align: right;
+          }
+      }
+
+      @include md {
+          .field--name-field-title,
+          .field--name-field-text {
+              text-align: left;
+          }
+      }
     }
 
     // Layout: Text first
