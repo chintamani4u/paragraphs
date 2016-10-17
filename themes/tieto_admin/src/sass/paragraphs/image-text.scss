@@ -102,6 +102,7 @@
         // Title
         .field--name-field-title {
             @include campaign-title-center;
+            width: 100%;
         }
 
         // Text
