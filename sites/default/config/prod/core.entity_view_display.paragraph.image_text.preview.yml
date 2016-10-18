@@ -20,6 +20,13 @@ targetEntityType: paragraph
 bundle: image_text
 mode: preview
 content:
+  field_anchor:
+    type: string
+    weight: 2
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   field_image_text_layout:
     type: list_default
     weight: 1
@@ -35,7 +42,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_anchor: true
   field_call_to_action: true
   field_image: true
   field_text: true

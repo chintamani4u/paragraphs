@@ -17,6 +17,13 @@ targetEntityType: paragraph
 bundle: text_boxes
 mode: preview
 content:
+  field_anchor:
+    type: string
+    weight: 2
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   field_text_boxes_layout:
     type: list_default
     weight: 1
@@ -32,7 +39,6 @@ content:
     type: string
 hidden:
   created: true
-  field_anchor: true
   field_boxes_per_row: true
   field_paragraphs: true
   uid: true

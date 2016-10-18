@@ -15,6 +15,13 @@ targetEntityType: paragraph
 bundle: images
 mode: preview
 content:
+  field_anchor:
+    type: string
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   field_title:
     weight: 0
     label: inline
@@ -24,6 +31,5 @@ content:
     type: string
 hidden:
   created: true
-  field_anchor: true
   field_images: true
   uid: true
