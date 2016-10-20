@@ -83,8 +83,6 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
     $element['uri']['#description'] = NULL;
     $element['uri']['#title_display'] = 'none';
     $element['title']['#title_display'] = 'none';
-    // @todo:
-    $element['options']['attributes']['data-selected']['#title_display'] = 'none';
   }
 }
 

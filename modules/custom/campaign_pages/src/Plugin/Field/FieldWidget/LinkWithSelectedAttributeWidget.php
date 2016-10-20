@@ -33,7 +33,7 @@ class LinkWithSelectedAttributeWidget extends LinkWidget {
 
     $element['options']['attributes'][$attribute] = [
       '#type' => 'checkbox',
-      '#title' => $attribute,
+      '#title' => $this->t("Highlighted"),
       '#default_value' => !empty($attributes[$attribute]) ? TRUE : FALSE,
     ];
 
