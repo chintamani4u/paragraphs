@@ -1767,20 +1767,20 @@ li.tabs__tab a {
         .node--type-campaign .campaign-menu .campaign-menu-link {
           display: inline-block;
           padding: .5em; }
-          .node--type-campaign .campaign-menu .campaign-menu-link:not(:last-child) a:link {
+          .node--type-campaign .campaign-menu .campaign-menu-link a:not([data-selected="1"]):link {
             border-bottom: 2px solid transparent;
             -webkit-transition: border-color .2s;
             transition: border-color .2s; }
-            .node--type-campaign .campaign-menu .campaign-menu-link:not(:last-child) a:link:hover {
+            .node--type-campaign .campaign-menu .campaign-menu-link a:not([data-selected="1"]):link:hover {
               background: 0;
               color: white;
               border-color: white; }
-          .node--type-campaign .campaign-menu .campaign-menu-link:last-child a {
+          .node--type-campaign .campaign-menu .campaign-menu-link a[data-selected="1"] {
             display: block;
             padding: .5em 1.5em;
             border: 2px solid white;
             border-radius: 3px; }
-            .node--type-campaign .campaign-menu .campaign-menu-link:last-child a:hover {
+            .node--type-campaign .campaign-menu .campaign-menu-link a[data-selected="1"]:hover {
               background: white;
               color: #67afe1; } }
 
