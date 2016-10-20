@@ -11,8 +11,8 @@ dependencies:
   module:
     - campaign_pages
     - content_moderation
-    - link
     - metatag
+    - parade
     - path
 id: node.campaign.default
 targetEntityType: node
@@ -30,7 +30,7 @@ content:
       placeholder_url: 'Anchor or URL'
       placeholder_title: 'Link text'
     third_party_settings: {  }
-    type: link_default
+    type: link_with_selected_attribute
   field_meta_tags:
     weight: 11
     settings: {  }
