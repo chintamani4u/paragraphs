@@ -1860,7 +1860,12 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 .node-campaign-form .field--name-field-menu .field-multiple-table .form-type-checkbox,
 .node-campaign-edit-form .field--name-field-menu .field-multiple-table .form-type-checkbox {
   width: 100%;
-  margin-top: .5em; }
+  margin-top: .5em;
+  font-size: 13px; }
+  .node-campaign-form .field--name-field-menu .field-multiple-table .form-type-checkbox input, .node-campaign-form .field--name-field-menu .field-multiple-table .form-type-checkbox label,
+  .node-campaign-edit-form .field--name-field-menu .field-multiple-table .form-type-checkbox input,
+  .node-campaign-edit-form .field--name-field-menu .field-multiple-table .form-type-checkbox label {
+    vertical-align: middle; }
 
 .node-campaign-form .paragraph-type-top,
 .node-campaign-edit-form .paragraph-type-top {

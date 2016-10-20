@@ -21,6 +21,11 @@
       .form-type-checkbox {
         width: 100%;
         margin-top: .5em;
+        font-size: 13px;
+
+        input, label {
+          vertical-align: middle;
+        }
       }
     }
   }
