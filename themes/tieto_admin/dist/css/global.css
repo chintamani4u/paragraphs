@@ -1853,9 +1853,14 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   width: 50%;
   float: left;
   padding-left: .5em; }
-  .node-campaign-form .field--name-field-menu .field-multiple-table .form-item input,
-  .node-campaign-edit-form .field--name-field-menu .field-multiple-table .form-item input {
+  .node-campaign-form .field--name-field-menu .field-multiple-table .form-item input[type="text"],
+  .node-campaign-edit-form .field--name-field-menu .field-multiple-table .form-item input[type="text"] {
     width: 100%; }
+
+.node-campaign-form .field--name-field-menu .field-multiple-table .form-type-checkbox,
+.node-campaign-edit-form .field--name-field-menu .field-multiple-table .form-type-checkbox {
+  width: 100%;
+  margin-top: .5em; }
 
 .node-campaign-form .paragraph-type-top,
 .node-campaign-edit-form .paragraph-type-top {
