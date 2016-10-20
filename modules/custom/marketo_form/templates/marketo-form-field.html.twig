@@ -15,6 +15,8 @@
 #}
 {% for form in forms %}
     <script src="//{{ form.subscription_url }}/js/forms2/js/forms2.js"></script>
+    <script src="https://www.linkedin.com/autofill/js/autofill.js" async></script>
+    <script type="IN/Form2" data-form="mktoForm_{{ form.form_id }}" data-field-firstname="FirstName" data-field-lastname="LastName" data-field-phone="MobilePhone" data-field-email="Email" data-field-company="Company" data-field-title="Title" data-field-city="City" data-field-state="State" data-field-country="Country" data-field-zip="ZipCode"></script>
     <form id="mktoForm_{{ form.form_id }}"></form>
     <script>
         MktoForms2.loadForm("//{{ form.subscription_url }}", "{{ form.munchkin_id }}", {{ form.form_id }});
