@@ -17,3 +17,39 @@ function campaign_pages_update_8001(&$sandbox) {
     }
   }
 }
+
+/**
+ * Append data-selected attributes to field_menu options.
+ */
+function campaign_pages_update_8002() {
+  $nodeType = 'Campaign';
+  $attribute = 'data-selected';
+
+  $all_nids = \Drupal::entityQuery('node')
+    ->condition('type', $nodeType)
+    ->allRevisions()
+    ->execute();
+
+  $all_nids = array_keys($all_nids);
+
+  foreach ($all_nids as $nid) {
+    $node = \Drupal::entityTypeManager()->getStorage('node')->loadRevision(
+      $nid
+    );
+
+    $fieldMenu = $node->get('field_menu');
+    $fieldMenuValue = $fieldMenu->getValue();
+
+    $lastDelta = count($fieldMenu) - 1;
+
+    foreach ($fieldMenuValue as $delta => &$item) {
+      if (!isset($item['options']['attributes'][$attribute])) {
+        $item['options']['attributes'][$attribute] = (($delta === $lastDelta) ? 1 : 0);
+      }
+    }
+
+    $node->get('field_menu')->setValue($fieldMenuValue);
+
+    $node->save();
+  }
+}
