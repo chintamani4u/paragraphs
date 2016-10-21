@@ -218,7 +218,6 @@ class LeafletDefaultFormatter extends FormatterBase {
     $map['settings']['maxZoom'] = isset($settings['zoom']) ? $settings['maxZoom'] : NULL;
 
     $elements = array();
-    $a_features = array();
     foreach ($items as $delta => $item) {
 
       $features = leaflet_process_geofield($item->value);
@@ -233,12 +232,8 @@ class LeafletDefaultFormatter extends FormatterBase {
         }
       }
 
-      $a_features[] = $features;
-
-      // $elements[$delta] = leaflet_render_map($map, $features, $settings['height'] . 'px');
+      $elements[$delta] = leaflet_render_map($map, $features, $settings['height'] . 'px');
     }
-
-    $elements[0] = leaflet_render_map($map, $a_features, $settings['height'] . 'px');
 
     return $elements;
   }

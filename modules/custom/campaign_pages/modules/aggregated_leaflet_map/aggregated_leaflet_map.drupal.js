@@ -119,10 +119,8 @@
   };
 
   Drupal.Leaflet.prototype.add_features = function (features, initial) {
-    console.log(features);
     for (var i = 0; i < features.length; i++) {
       var feature = features[i];
-      console.log(feature);
       var lFeature;
 
       // dealing with a layer group

@@ -2,6 +2,7 @@
 
   Drupal.behaviors.leaflet = {
     attach: function (context, settings) {
+
       $.each(settings.leaflet, function (m, data) {
         $('#' + data.mapId, context).each(function () {
           var $container = $(this);
@@ -119,10 +120,8 @@
   };
 
   Drupal.Leaflet.prototype.add_features = function (features, initial) {
-    console.log(features);
     for (var i = 0; i < features.length; i++) {
       var feature = features[i];
-      console.log(feature);
       var lFeature;
 
       // dealing with a layer group
@@ -143,35 +142,18 @@
         this.add_overlay(feature.label, lGroup);
       }
       else {
-        if (typeof feature.type !== 'undefined') {
-          lFeature = this.create_feature(feature);
-          if (lFeature != undefined) {
-            this.lMap.addLayer(lFeature);
+        lFeature = this.create_feature(feature);
+        if (lFeature != undefined) {
+          this.lMap.addLayer(lFeature);
 
-            if (feature.popup) {
-              lFeature.bindPopup(feature.popup);
-            }
-          }
-
-          // Allow others to do something with the feature that was just added to the map
-          $(document).trigger('leaflet.feature', [lFeature, feature, this]);
-        } else {
-          for (var j = 0; j < feature.length; ++j) {
-            var sub_feature = feature[j];
-            lFeature = this.create_feature(sub_feature);
-            if (lFeature != undefined) {
-              this.lMap.addLayer(lFeature);
-
-              if (sub_feature.popup) {
-                lFeature.bindPopup(sub_feature.popup);
-              }
-            }
-
-            // Allow others to do something with the feature that was just added to the map
-            $(document).trigger('leaflet.feature', [lFeature, sub_feature, this]);
+          if (feature.popup) {
+            lFeature.bindPopup(feature.popup);
           }
         }
       }
+
+      // Allow others to do something with the feature that was just added to the map
+      $(document).trigger('leaflet.feature', [lFeature, feature, this]);
     }
 
     // Fit bounds after adding features.
