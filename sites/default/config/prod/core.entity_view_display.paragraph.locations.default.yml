@@ -10,7 +10,7 @@ dependencies:
     - field.field.paragraph.locations.field_title
     - paragraphs.paragraphs_type.locations
   module:
-    - leaflet
+    - aggregated_leaflet_map
     - text
 id: paragraph.locations.default
 targetEntityType: paragraph
@@ -45,7 +45,7 @@ content:
       minPossibleZoom: 0
       maxPossibleZoom: 18
     third_party_settings: {  }
-    type: leaflet_formatter_default
+    type: leaflet_formatter_aggregated
   field_text:
     weight: 1
     label: hidden
