@@ -1,0 +1,6 @@
+uuid: a9784e62-2bf4-496e-b720-745d83c17dd7
+langcode: en
+status: true
+dependencies: {  }
+id: locations
+label: Locations

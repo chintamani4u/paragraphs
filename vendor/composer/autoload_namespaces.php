@@ -12,6 +12,7 @@ return array(
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
     'Neutron' => array($vendorDir . '/neutron/temporary-filesystem/src'),
+    'Geocoder' => array($vendorDir . '/willdurand/geocoder/src'),
     'FFMpeg' => array($vendorDir . '/php-ffmpeg/php-ffmpeg/src'),
     'Evenement' => array($vendorDir . '/evenement/evenement/src'),
     'Egulias\\' => array($vendorDir . '/egulias/email-validator/src'),

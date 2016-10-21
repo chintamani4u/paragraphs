@@ -1,0 +1,21 @@
+uuid: 03c457d2-c91f-4185-81de-85e203c6bb69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_geofield
+    - paragraphs.paragraphs_type.locations
+  module:
+    - geofield
+id: paragraph.locations.field_geofield
+field_name: field_geofield
+entity_type: paragraph
+bundle: locations
+label: Geofield
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

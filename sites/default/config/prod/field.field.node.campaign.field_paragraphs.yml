@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.header
     - paragraphs.paragraphs_type.image_text
     - paragraphs.paragraphs_type.images
+    - paragraphs.paragraphs_type.locations
     - paragraphs.paragraphs_type.marketo_form
     - paragraphs.paragraphs_type.simple
     - paragraphs.paragraphs_type.text_box
@@ -35,6 +36,7 @@ settings:
       text_boxes: text_boxes
       marketo_form: marketo_form
       images: images
+      locations: locations
     target_bundles_drag_drop:
       header:
         enabled: true
@@ -66,4 +68,7 @@ settings:
       parallax:
         weight: -12
         enabled: false
+      locations:
+        enabled: true
+        weight: 16
 field_type: entity_reference_revisions
