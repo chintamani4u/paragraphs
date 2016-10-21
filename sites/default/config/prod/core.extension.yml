@@ -22,6 +22,8 @@ module:
   filter: 0
   geocoder: 0
   geocoder_autocomplete: 0
+  geocoder_field: 0
+  geocoder_geofield: 0
   geofield: 0
   image: 0
   language: 0

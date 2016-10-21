@@ -6,7 +6,23 @@ dependencies:
     - field.storage.paragraph.field_geofield
     - paragraphs.paragraphs_type.locations
   module:
+    - geocoder_field
     - geofield
+third_party_settings:
+  geocoder_field:
+    method: source
+    field: field_location
+    plugins:
+      - googlemaps
+      - bingmaps
+      - geoplugin
+      - geoip
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
 id: paragraph.locations.field_geofield
 field_name: field_geofield
 entity_type: paragraph
