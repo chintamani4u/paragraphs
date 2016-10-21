@@ -5146,6 +5146,7 @@
         "suggest": {
             "drupal/core": "Required by drupal/leaflet_views"
         },
+        "time": "2016-10-11 07:58:10",
         "type": "drupal-module",
         "extra": {
             "branch-alias": {

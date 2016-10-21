@@ -231,10 +231,8 @@ class LeafletDefaultFormatter extends FormatterBase {
           $features[$key]['icon'] = $settings['icon'];
         }
       }
-
       $elements[$delta] = leaflet_render_map($map, $features, $settings['height'] . 'px');
     }
-
     return $elements;
   }
 
