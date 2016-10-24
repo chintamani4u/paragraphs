@@ -1,0 +1,42 @@
+.paragraph--type--locations.paragraph--view-mode--default {
+
+    .field--name-field-title {
+        @include campaign-headline;
+        color: $text-color-strong;
+    }
+
+    &.layout--none {
+
+        .field--name-field-title,
+        .field--name-field-text,
+        .field--name-field-geofield {
+            @include md {
+                width: 50%;
+            }
+        }
+
+        .field--name-field-geofield {
+            text-align: center;
+            margin: 1em 0 0;
+            @include md {
+                margin: 0;
+                text-align: right;
+            }
+        }
+
+        @include md {
+            .field--name-field-title,
+            .field--name-field-text {
+                text-align: left;
+                float: left;
+            }
+            // Map
+            .field--name-field-geofield {
+                float: right;
+                padding-left: 1.5em;
+            }
+        }
+
+    }
+
+}
