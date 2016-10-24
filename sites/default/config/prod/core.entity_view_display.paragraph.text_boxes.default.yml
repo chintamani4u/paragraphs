@@ -10,19 +10,19 @@ dependencies:
     - field.field.paragraph.text_boxes.field_title
     - paragraphs.paragraphs_type.text_boxes
   module:
-    - entity_reference_revisions
+    - parade
 id: paragraph.text_boxes.default
 targetEntityType: paragraph
 bundle: text_boxes
 mode: default
 content:
   field_paragraphs:
-    type: entity_reference_revisions_entity_view
+    type: parade_entity_reference_revisions_entity_view
     weight: 4
     label: hidden
     settings:
-      view_mode: default
-      link: ''
+      view_mode: default_custom
+      link: false
     third_party_settings: {  }
   field_title:
     weight: 0
