@@ -1,11 +1,11 @@
-name: Parade Demo
-description: 'Provides a complete demo content type for Parade.'
+name: Aggregated leaflet map
+description: Leaflet module formatter extension.
 package: Paragraphs
 type: module
 # core: 8.x
 
 dependencies:
-  - parade
+  - leaflet
 
 # Information added by Drupal.org packaging script on 2016-10-25
 version: '8.x-1.x-dev'
