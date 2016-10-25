@@ -2492,6 +2492,18 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
     float: right;
     padding-left: 1.5em; } }
 
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default {
+  background: #cde6f5; }
+  .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default .field--name-field-paragraphs {
+    margin: 0 -15px; }
+  .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default .field--name-field-paragraphs .field--name-field-title {
+    font-weight: bold;
+    margin: 0 0 .5em;
+    line-height: 27px;
+    font-size: 20px;
+    letter-spacing: -.5px;
+    color: #777; }
+
 /**
  * CUSTOM CSS FOR CAMPAIGN PAGES
  *
