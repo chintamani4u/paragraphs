@@ -1,4 +1,3 @@
-uuid: 0b306d8f-aefa-4794-832f-9e98a9ebcc48
 langcode: en
 status: true
 dependencies:
@@ -18,19 +17,19 @@ mode: default
 content:
   field_paragraphs:
     type: parade_entity_reference_revisions_entity_view
-    weight: 4
-    label: hidden
+    weight: 1
+    label: above
     settings:
       view_mode: default_custom
       link: false
     third_party_settings: {  }
   field_title:
+    type: string
     weight: 0
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
 hidden:
   created: true
   field_anchor: true
