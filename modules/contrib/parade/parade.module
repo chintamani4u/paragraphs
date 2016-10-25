@@ -200,10 +200,6 @@ function parade_theme($existing, $type, $theme, $path) {
     'parade_preview' => [
       'variables' => ['paragraph' => NULL],
     ],
-    'paragraph__locations' => [
-      'template' => 'paragraph',
-      'base hook' => 'paragraph',
-    ],
   ];
 }
 
