@@ -147,7 +147,7 @@
         padding: .5em;
 
         // On desktop, the links have a bottom border on :hover
-        a:not([data-selected="1"]):link {
+        a[data-selected="0"] {
           border-bottom: 2px solid transparent;
           transition: border-color .2s;
 
@@ -158,7 +158,7 @@
           }
         }
 
-        // Last item gets a 2px border, making it look like a button.
+        // Highlighted elements look like a button.
         a[data-selected="1"] {
           display: block;
           padding: .5em 1.5em;
