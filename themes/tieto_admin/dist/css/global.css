@@ -2186,22 +2186,29 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
       pointer-events: none;
       width: 5px; }
   .paragraph--type--header.paragraph--view-mode--default .field--name-field-title {
-    font-size: 4em;
-    margin-bottom: 0;
+    font-size: 1.8em;
+    margin-bottom: .5rem;
     display: inline-block;
     font-weight: 800;
     letter-spacing: -2px; }
-    @media (max-width: 766px) {
+    @media (min-width: 767px) {
       .paragraph--type--header.paragraph--view-mode--default .field--name-field-title {
         font-size: 2.8em; } }
+    @media (min-width: 1200px) {
+      .paragraph--type--header.paragraph--view-mode--default .field--name-field-title {
+        font-size: 4em; } }
   .paragraph--type--header.paragraph--view-mode--default .field--name-field-secondary-title,
   .paragraph--type--header.paragraph--view-mode--default .field--name-field-lead-text {
-    font-size: 1.5em;
+    font-size: 1em;
     margin-bottom: .5em; }
-    @media (max-width: 766px) {
+    @media (min-width: 767px) {
       .paragraph--type--header.paragraph--view-mode--default .field--name-field-secondary-title,
       .paragraph--type--header.paragraph--view-mode--default .field--name-field-lead-text {
         font-size: 1.2em; } }
+    @media (min-width: 1200px) {
+      .paragraph--type--header.paragraph--view-mode--default .field--name-field-secondary-title,
+      .paragraph--type--header.paragraph--view-mode--default .field--name-field-lead-text {
+        font-size: 1.5em; } }
   .paragraph--type--header.paragraph--view-mode--default .field--name-field-title,
   .paragraph--type--header.paragraph--view-mode--default .field--name-field-secondary-title {
     line-height: normal; }

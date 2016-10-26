@@ -64,22 +64,31 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
 
     // Title, Secondary title.
     .field--name-field-title {
-        font-size: 4em;
-        margin-bottom: 0;
+        font-size: 1.8em;
+        margin-bottom: .5rem;
         display: inline-block;
         font-weight: 800;
         letter-spacing: -2px;
-        @include breakpoint-max(md) {
+
+        @include breakpoint(md) {
             font-size: 2.8em;
+        }
+
+        @include breakpoint(lg) {
+            font-size: 4em;
         }
     }
 
     .field--name-field-secondary-title,
     .field--name-field-lead-text {
-        font-size: 1.5em;
+        font-size: 1em;
         margin-bottom: .5em;
-        @include breakpoint-max(md) {
+
+        @include breakpoint(md) {
             font-size: 1.2em;
+        }
+        @include breakpoint(lg) {
+            font-size: 1.5em;
         }
     }
 
