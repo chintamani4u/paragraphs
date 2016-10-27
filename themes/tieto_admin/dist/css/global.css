@@ -1767,11 +1767,11 @@ li.tabs__tab a {
         .node--type-campaign .campaign-menu .campaign-menu-link {
           display: inline-block;
           padding: .5em; }
-          .node--type-campaign .campaign-menu .campaign-menu-link a:not([data-selected="1"]):link {
+          .node--type-campaign .campaign-menu .campaign-menu-link a[data-selected="0"] {
             border-bottom: 2px solid transparent;
             -webkit-transition: border-color .2s;
             transition: border-color .2s; }
-            .node--type-campaign .campaign-menu .campaign-menu-link a:not([data-selected="1"]):link:hover {
+            .node--type-campaign .campaign-menu .campaign-menu-link a[data-selected="0"]:hover {
               background: 0;
               color: white;
               border-color: white; }
