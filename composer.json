@@ -9,7 +9,8 @@
         "php-ffmpeg/php-ffmpeg": "^0.6.1",
         "willdurand/geocoder": "3.3",
         "drupal/geofield": "1.x-dev",
-        "drupal/leaflet": "1.x-dev"
+        "drupal/leaflet": "1.x-dev",
+        "aws/aws-sdk-php": "~3.0"
     },
     "replace": {
         "drupal/core": "~8.2"
