@@ -1,0 +1,30 @@
+channels:
+  -
+    id: purgers
+    grants:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  -
+    id: queue
+    grants:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  -
+    id: diagnostics
+    grants:
+      - 0
+      - 1
+      - 2
+      - 3
+  -
+    id: purger_cloudfront_5651801ce8
+    grants:
+      - 0
+      - 2
+      - 3
