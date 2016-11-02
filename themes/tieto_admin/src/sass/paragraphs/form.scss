@@ -76,5 +76,29 @@
 			height: auto !important;
 			min-height: inherit !important;
 		}
+        .mktoButtonWrap {
+            margin-left: 0 !important;
+            .mktoButton {
+                height: 36px;
+                line-height: 35px;
+                padding: 0 20px;
+                font-size: 13px;
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                text-shadow: 0 -1px rgba(0, 0, 0, 0.4);
+                background-clip: padding-box;
+                border: 1px solid;
+                border-radius: 2px;
+                cursor: pointer;
+                box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
+                background: #3b5ca0;
+                border-color: #2d477b #2d477b #263c68;
+                background-image: linear-gradient(to bottom, #4369b6, #3b5ca0 66%, #365391);
+                &:hover {
+                    background-color: #e56385 !important;
+                }
+            }
+        }
 	}
 }
