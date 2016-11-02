@@ -33,6 +33,7 @@ module:
   link: 0
   machine_name: 0
   marketo_form: 0
+  marketo_poll: 0
   menu_ui: 0
   metatag: 0
   metatag_open_graph: 0

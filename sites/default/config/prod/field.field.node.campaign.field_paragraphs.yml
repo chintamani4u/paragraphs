@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.images
     - paragraphs.paragraphs_type.locations
     - paragraphs.paragraphs_type.marketo_form
+    - paragraphs.paragraphs_type.marketo_poll
     - paragraphs.paragraphs_type.simple
     - paragraphs.paragraphs_type.text_box
     - paragraphs.paragraphs_type.text_boxes
@@ -37,6 +38,7 @@ settings:
       marketo_form: marketo_form
       images: images
       locations: locations
+      marketo_poll: marketo_poll
     target_bundles_drag_drop:
       header:
         enabled: true
@@ -71,4 +73,7 @@ settings:
       locations:
         enabled: true
         weight: 16
+      marketo_poll:
+        enabled: true
+        weight: 19
 field_type: entity_reference_revisions

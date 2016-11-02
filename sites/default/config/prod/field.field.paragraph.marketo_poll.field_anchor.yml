@@ -1,0 +1,32 @@
+uuid: eff06959-ce35-4afa-bd6d-de3d7e528bcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_anchor
+    - paragraphs.paragraphs_type.marketo_poll
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: parent_id
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: paragraph.marketo_poll.field_anchor
+field_name: field_anchor
+entity_type: paragraph
+bundle: marketo_poll
+label: Anchor
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
