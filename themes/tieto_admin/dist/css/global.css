@@ -2452,6 +2452,8 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
     line-height: 1.5;
     font-size: 16px;
     font-weight: bold !important; }
+  .paragraph--type--marketo-form.paragraph--view-mode--default .mktoForm .mktoField {
+    width: 100% !important; }
   .paragraph--type--marketo-form.paragraph--view-mode--default .mktoForm input.mktoField, .paragraph--type--marketo-form.paragraph--view-mode--default .mktoForm textarea.mktoField {
     min-height: inherit !important;
     padding: 10px !important;
