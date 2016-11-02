@@ -4988,7 +4988,8 @@
                 "source": "http://cgit.drupalcode.org/examples",
                 "issues": "https://www.drupal.org/project/issues/examples",
                 "documentation": "https://api.drupal.org/api/examples"
-            }
+            },
+            "time": "2016-10-24 17:50:06"
         },
         {
             "name": "fabpot/goutte",
