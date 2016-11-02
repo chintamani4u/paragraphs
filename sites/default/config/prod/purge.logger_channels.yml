@@ -3,12 +3,23 @@ channels:
     id: purgers
     grants:
       - 0
+      - 1
       - 2
       - 3
+      - 4
   -
     id: queue
     grants:
       - 0
+      - 1
+      - 2
+      - 3
+      - 4
+  -
+    id: diagnostics
+    grants:
+      - 0
+      - 1
       - 2
       - 3
   -
@@ -16,8 +27,4 @@ channels:
     grants:
       - 0
       - 2
-      - 3
-  -
-    id: diagnostics
-    grants:
       - 3
