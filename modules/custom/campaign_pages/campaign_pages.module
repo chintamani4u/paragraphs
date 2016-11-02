@@ -26,29 +26,6 @@ function campaign_pages_help($route_name, RouteMatchInterface $route_match) {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
- *
- * Add layout--[LAYOUT] as class to paragraphs.
- */
-function campaign_pages_preprocess_paragraph__marketo_form(&$variables) {
-  $paragraph = &$variables['paragraph'];
-
-  // Define layout CSS classes.
-  $classes = [
-    0 => 'clean',
-    1 => 'download',
-  ];
-
-  // Set CSS class for the selected layout.
-  if ($paragraph->hasField('field_marketo_form_layout')) {
-    $layout_id = $paragraph->field_marketo_form_layout->value;
-    if (isset($layout_id)) {
-      $variables['attributes']['class'][] = 'layout--' . $classes[$layout_id];
-    }
-  }
-}
-
-/**
  * Implements hook_language_switch_links_alter().
  *
  * Alter langauge links in Language Switcher block on node pages
@@ -109,6 +86,31 @@ function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form
   }
 }
 
+// @todo: move marketo form hooks to the marketo_form submodule.
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Add layout--[LAYOUT] as class to paragraphs.
+ */
+function campaign_pages_preprocess_paragraph__marketo_form(&$variables) {
+  $paragraph = &$variables['paragraph'];
+
+  // Define layout CSS classes.
+  $classes = [
+    0 => 'clean',
+    1 => 'download',
+  ];
+
+  // Set CSS class for the selected layout.
+  if ($paragraph->hasField('field_marketo_form_layout')) {
+    $layout_id = $paragraph->field_marketo_form_layout->value;
+    if (isset($layout_id)) {
+      $variables['attributes']['class'][] = 'layout--' . $classes[$layout_id];
+    }
+  }
+}
+
 /**
  * Implements hook_preprocess_field__field_marketo_form().
  */
@@ -125,19 +127,4 @@ function campaign_pages_preprocess_field__field_marketo_form(&$variables) {
   if (isset($markup) && isset($format)) {
     $element->rendered_confirmation_message = check_markup($markup, $format);
   }
-}
-
-/**
- * Implements hook_theme().
- */
-function campaign_pages_theme($existing, $type, $theme, $path) {
-  // @todo: move this to the marketo_form module / hook_theme
-  // @todo: add parade as a marketo_form module dependency
-  return [
-    'paragraph__marketo_form' => [
-      'template' => 'paragraph',
-      'base hook' => 'paragraph',
-      'path' => drupal_get_path('module', 'parade') . '/templates',
-    ],
-  ];
 }

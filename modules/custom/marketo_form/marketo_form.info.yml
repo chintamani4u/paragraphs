@@ -3,3 +3,7 @@ type: module
 description: Define marketo.com form field
 core: 8.x
 package: Custom
+
+dependencies:
+  - parade
+  - campaign_pages

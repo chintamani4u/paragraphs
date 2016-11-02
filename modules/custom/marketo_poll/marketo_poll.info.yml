@@ -6,3 +6,4 @@ package: Custom
 
 dependencies:
   - parade
+  - campaign_pages
