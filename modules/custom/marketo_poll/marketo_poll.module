@@ -25,6 +25,11 @@ function marketo_poll_help($route_name, RouteMatchInterface $route_match) {
  */
 function marketo_poll_theme($existing, $type, $theme, $path) {
   return [
+    'paragraph__marketo_poll' => [
+      'template' => 'paragraph',
+      'base hook' => 'paragraph',
+      'path' => drupal_get_path('module', 'parade') . '/templates',
+    ],
     'marketo_poll_field' => [
       'variables' => [
         'polls' => NULL,
