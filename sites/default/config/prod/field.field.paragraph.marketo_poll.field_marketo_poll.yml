@@ -1,4 +1,4 @@
-uuid: 9ea57594-9d2c-4152-8723-d5d5e254f32b
+uuid: d76bb711-d508-4d3c-a4d4-f79fcd01ac1a
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.marketo_poll
   module:
     - marketo_poll
+_core:
+  default_config_hash: GkiFsJCTImDEMeWkU5pvq7zo8JZoy4nSjNlJIDpk-Kw
 id: paragraph.marketo_poll.field_marketo_poll
 field_name: field_marketo_poll
 entity_type: paragraph

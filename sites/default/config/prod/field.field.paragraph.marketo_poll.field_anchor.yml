@@ -1,4 +1,4 @@
-uuid: eff06959-ce35-4afa-bd6d-de3d7e528bcb
+uuid: 55254e38-387f-4b66-bd61-f061a9438ee1
 langcode: en
 status: true
 dependencies:
@@ -18,6 +18,8 @@ third_party_settings:
       handling: preserve
       status_message: true
       log: true
+_core:
+  default_config_hash: CC9r9hTq90wOk4aTgSgOrgvAsqCUEsl_hyVEkN3DqIg
 id: paragraph.marketo_poll.field_anchor
 field_name: field_anchor
 entity_type: paragraph

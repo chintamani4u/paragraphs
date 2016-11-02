@@ -1,10 +1,12 @@
-uuid: 05d2bb8d-d7f5-44e6-b9d2-dca8e1f8bc3c
+uuid: 291aacfc-cf81-4df0-80b2-047b68e861a2
 langcode: en
 status: true
 dependencies:
   module:
     - marketo_poll
     - paragraphs
+_core:
+  default_config_hash: OLeThG-T86ilxhAOs5N2QmPl69q7RUEHHDthWrAPPU4
 id: paragraph.field_marketo_poll
 field_name: field_marketo_poll
 entity_type: paragraph

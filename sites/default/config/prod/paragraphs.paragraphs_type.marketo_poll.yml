@@ -1,6 +1,8 @@
-uuid: 64ab90e5-ac65-461a-9dc3-1086e0ccdec1
+uuid: fff8d67f-7b85-48b2-a169-bf5c9183ba6e
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: Rz39xECg2vFLsnt1jR4lYGVYJHF9jrTTbzQPTFygyAk
 id: marketo_poll
 label: Poll
