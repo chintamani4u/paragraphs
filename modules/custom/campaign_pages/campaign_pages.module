@@ -131,6 +131,8 @@ function campaign_pages_preprocess_field__field_marketo_form(&$variables) {
  * Implements hook_theme().
  */
 function campaign_pages_theme($existing, $type, $theme, $path) {
+  // @todo: move this to the marketo_form module / hook_theme
+  // @todo: add parade as a marketo_form module dependency
   return [
     'paragraph__marketo_form' => [
       'template' => 'paragraph',
