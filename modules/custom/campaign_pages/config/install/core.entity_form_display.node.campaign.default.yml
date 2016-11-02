@@ -1,0 +1,80 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.campaign.field_machine_name
+    - field.field.node.campaign.field_menu
+    - field.field.node.campaign.field_meta_tags
+    - field.field.node.campaign.field_paragraphs
+    - node.type.campaign
+  module:
+    - campaign_pages
+    - content_moderation
+    - metatag
+    - parade
+    - path
+id: node.campaign.default
+targetEntityType: node
+bundle: campaign
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+  field_menu:
+    weight: 2
+    settings:
+      placeholder_url: 'Anchor or URL'
+      placeholder_title: 'Link text'
+    third_party_settings: {  }
+    type: link_with_selected_attribute
+  field_meta_tags:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+  field_paragraphs:
+    weight: 3
+    settings:
+      title: Section
+      title_plural: Sections
+      edit_mode: preview
+      add_mode: button
+      form_display_mode: default
+    third_party_settings: {  }
+    type: entity_reference_paragraphs_preview
+  langcode:
+    type: language_select
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  field_machine_name: true
+  promote: true
+  sticky: true

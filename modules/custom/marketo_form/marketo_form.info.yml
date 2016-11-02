@@ -5,7 +5,6 @@ core: 8.x
 package: Custom
 
 dependencies:
-  - parade
   - campaign_pages
   - image
   - text
