@@ -48,6 +48,7 @@
 
 	// Marketo overrides.
 	.mktoForm {
+        width: 100% !important;
 		&, * {
 			font-family: inherit !important;
 		}
@@ -61,7 +62,7 @@
 			font-size: 16px;
 			font-weight: bold !important;
 		}
-        .mktoFormCol, .mktoFieldWrap {
+        .mktoFormCol, .mktoFieldWrap, .mktoField {
             width: 100% !important;
         }
 		input.mktoField, textarea.mktoField {
