@@ -6,11 +6,8 @@
     "require": {
         "composer/installers": "^1.0.21",
         "wikimedia/composer-merge-plugin": "~1.3",
-        "php-ffmpeg/php-ffmpeg": "^0.6.1",
-        "willdurand/geocoder": "3.3",
-        "drupal/geofield": "1.x-dev",
-        "drupal/leaflet": "1.x-dev",
-        "aws/aws-sdk-php": "~3.0"
+        "aws/aws-sdk-php": "~3.0",
+        "drupal/parade": "1.x-dev"
     },
     "replace": {
         "drupal/core": "~8.2"
