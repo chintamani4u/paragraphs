@@ -7,3 +7,6 @@ package: Custom
 dependencies:
   - parade
   - campaign_pages
+  - image
+  - text
+  - content_translation
