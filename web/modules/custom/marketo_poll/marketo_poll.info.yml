@@ -1,8 +1,0 @@
-name: Marketo Poll
-type: module
-description: Define marketo.com poll field
-core: 8.x
-package: Custom
-
-dependencies:
-  - campaign_pages

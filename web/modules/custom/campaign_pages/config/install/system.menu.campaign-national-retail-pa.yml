@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: campaign-national-retail-pa
-label: 'Campaign: National Retail Payment Switch'
-description: 'Sticky menu for campaign site National Retail Payment Switch'
-locked: false
