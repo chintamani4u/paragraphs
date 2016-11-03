@@ -1,0 +1,130 @@
+<?php
+
+/**
+ * @file
+ * Contains campaign_pages.module
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Component\Utility\Html;
+
+/**
+ * Implements hook_help().
+ */
+function campaign_pages_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the campain_pages module.
+    case 'help.page.campaign_pages':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Campaign pages functionality') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_language_switch_links_alter().
+ *
+ * Alter langauge links in Language Switcher block on node pages
+ * - display only those, which are node translated. If there is only one
+ * language, langauge switcher will not be shown.
+ */
+function campaign_pages_language_switch_links_alter(array &$links, $type, $path) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $translations = $node->getTranslationLanguages();
+    $links = array_intersect_key($links, $translations);
+    if (count($links) <= 1) {
+      $links = [];
+    }
+  }
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+  // @fixme check for field Type, not name.
+  $field_name = $context['items']->getFieldDefinition()->getName();
+
+  // Change dropbuttons to normal list in Paragraphs inline forms.
+  if ($field_name === 'field_paragraphs') {
+    unset($element['top']['links']['#theme_wrappers']);
+    $element['top']['links']['prefix']['#markup'] = '<ul class="paragraph-actions">';
+  }
+
+  // Changes to Menu field.
+  if ($field_name === 'field_menu') {
+    $element['uri']['#description'] = NULL;
+    $element['uri']['#title_display'] = 'none';
+    $element['title']['#title_display'] = 'none';
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (in_array($form_id, ['node_campaign_form', 'node_campaign_edit_form'])) {
+    $form['field_menu']['widget']['add_more']['#value'] = t('New menu link');
+
+    // Modify the Paragraphs field.
+    if (isset($form['field_paragraphs'])) {
+      $form['#attached']['library'][] = 'parade/buttons';
+
+      foreach ($form['field_paragraphs']['widget']['add_more'] as $key => $item) {
+        if (strpos($key, 'add_more') === FALSE) {
+          continue;
+        }
+        $type = Html::getClass($item['#bundle_machine_name']);
+        $form['field_paragraphs']['widget']['add_more'][$key]['#attributes']['class'][] = 'parade-button';
+        $form['field_paragraphs']['widget']['add_more'][$key]['#attributes']['class'][] = 'parade-button-' . $type;
+      }
+    }
+  }
+}
+
+// @todo: move marketo form hooks to the marketo_form submodule.
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Add layout--[LAYOUT] as class to paragraphs.
+ */
+function campaign_pages_preprocess_paragraph__marketo_form(&$variables) {
+  $paragraph = &$variables['paragraph'];
+
+  // Define layout CSS classes.
+  $classes = [
+    0 => 'clean',
+    1 => 'download',
+  ];
+
+  // Set CSS class for the selected layout.
+  if ($paragraph->hasField('field_marketo_form_layout')) {
+    $layout_id = $paragraph->field_marketo_form_layout->value;
+    if (isset($layout_id)) {
+      $variables['attributes']['class'][] = 'layout--' . $classes[$layout_id];
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_field__field_marketo_form().
+ */
+function campaign_pages_preprocess_field__field_marketo_form(&$variables) {
+  // Add rendered_confirmation_message to field variables.
+  $element = &$variables['element']['#object'];
+
+  // Get the field's raw value and format.
+  list($markup, $format) = [
+    $element->field_text->value,
+    $element->field_text->format,
+  ];
+
+  if (isset($markup) && isset($format)) {
+    $element->rendered_confirmation_message = check_markup($markup, $format);
+  }
+}
