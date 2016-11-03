@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: nb
-label: 'Norwegian Bokmål'
-direction: ltr
-weight: 8
-locked: false

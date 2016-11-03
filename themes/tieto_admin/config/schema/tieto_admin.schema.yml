@@ -1,5 +1,0 @@
-# Schema for the configuration files of the tieto_admin theme.
-
-tieto_admin.settings:
-  type: theme_settings
-  label: 'Tieto Admin settings'

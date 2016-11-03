@@ -1,7 +1,0 @@
-campaign_pages.frontredirect:
-  path: '/redirect-to-tietocom'
-  defaults:
-    _controller: '\Drupal\campaign_pages\Controller\RedirectController::redirectToTietoCom'
-    _title: 'Redirect to tieto.com'
-  requirements:
-    _permission: 'access content'
