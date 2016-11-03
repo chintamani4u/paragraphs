@@ -8,3 +8,4 @@ dependencies:
   - parade
   - text
   - content_translation
+  - tieto_admin
