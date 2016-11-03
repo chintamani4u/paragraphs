@@ -54,7 +54,3 @@
 *.exe     -text diff
 *.svgz    -text diff
 *.ttf     -text diff
-
-*.eot     -text diff
-*.woff    -text diff
-*.woff2   -text diff
