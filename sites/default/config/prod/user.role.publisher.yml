@@ -69,3 +69,4 @@ permissions:
   - 'translate campaign node'
   - 'create url aliases'
   - 'translate paragraph'
+  - 'view campaign revisions'

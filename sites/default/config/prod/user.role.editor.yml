@@ -51,3 +51,6 @@ permissions:
   - 'translate campaign node'
   - 'create url aliases'
   - 'translate paragraph'
+  - 'view campaign revisions'
+  - 'edit any campaign content'
+  - 'use published_draft transition'
