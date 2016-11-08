@@ -1,0 +1,42 @@
+uuid: 1aff406c-24b4-43d2-8f88-297a2838952d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.marketo_poll.field_anchor
+    - field.field.paragraph.marketo_poll.field_marketo_poll
+    - field.field.paragraph.marketo_poll.field_title
+    - paragraphs.paragraphs_type.marketo_poll
+  module:
+    - content_moderation
+    - marketo_poll
+_core:
+  default_config_hash: TsjKpUgvOmqOXCWzUrMKFyhHROk_UbEDjJ-gDWsizDg
+id: paragraph.marketo_poll.default
+targetEntityType: paragraph
+bundle: marketo_poll
+mode: default
+content:
+  field_anchor:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_marketo_poll:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: marketo_poll
+  field_title:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true
