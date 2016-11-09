@@ -1,6 +1,0 @@
-.IIV::-webkit-media-controls-play-button,
-.IIV::-webkit-media-controls-start-playback-button {
-  width: 5px;
-  pointer-events: none;
-  opacity: 0;
-}

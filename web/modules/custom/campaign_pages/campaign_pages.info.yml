@@ -1,0 +1,10 @@
+name: Campaign pages
+type: module
+description: Campaign pages functionality
+core: 8.x
+package: Custom
+
+dependencies:
+  - parade
+  - text
+  - content_translation
