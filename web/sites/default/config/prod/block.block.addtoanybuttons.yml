@@ -1,0 +1,28 @@
+uuid: 9d0989e9-5b27-4827-913f-72bf96265c19
+langcode: sv
+status: true
+dependencies:
+  module:
+    - addtoany
+    - node
+  theme:
+    - tieto_admin
+id: addtoanybuttons
+theme: tieto_admin
+region: footer
+weight: 0
+provider: null
+plugin: addtoany_block
+settings:
+  id: addtoany_block
+  label: 'Social Media Share'
+  provider: addtoany
+  label_display: '0'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      campaign: campaign
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

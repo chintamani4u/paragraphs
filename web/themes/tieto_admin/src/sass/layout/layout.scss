@@ -137,11 +137,29 @@
 }
 
 .campaign-footer {
+  text-align: center;
+  .block {
+    display: block;
+    margin: 1em 0;
+  }
+  .block-language {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      display: inline-block;
+      margin: 0 1em;
+    }
+    li.is-active {
+      display: none;
+    }
+  }
   .container {
     border-top: 1px solid $tieto-blue;
     padding: 2em 1em;
   }
-
   .footer-item {
     color: $tieto-blue;
     margin-right: 1em;
@@ -155,12 +173,28 @@
     }
   }
 
-  .tieto-logo {
-    float: right;
+  .addtoany_list a:hover {
+    border-bottom: 0;
+  }
+
+  @include md {
+    text-align: left;
+    .block.block-addtoany {
+      margin-left: 2em;
+    }
+    .tieto-logo {
+      float: right;
+    }
+    .block {
+      margin: 0;
+      display: inline-block;
+    }
   }
 }
 
-.region-footer {
-  display: inline-block;
+@include md {
+  .region-footer {
+    display: inline-block;
+  }
 }
 
