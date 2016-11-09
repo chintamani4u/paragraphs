@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ef4651d7a4f35de2ba5711e3928edeef",
-    "content-hash": "eb6d5fc5628f208770521e9ab23ed23b",
+    "hash": "1ca54e87e54cf69c98da4284ce61a633",
+    "content-hash": "4323ea65f2cfd5156acb13d1970de6d9",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -2376,17 +2376,17 @@
         },
         {
             "name": "drupal/metatag",
-            "version": "1.0.0-beta10",
+            "version": "1.0.0-beta11",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/metatag",
-                "reference": "8.x-1.0-beta10"
+                "reference": "8.x-1.0-beta11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.0-beta10.zip",
+                "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.0-beta11.zip",
                 "reference": null,
-                "shasum": "a727c6132eaf12a755af218f3ccfa848ff5c1808"
+                "shasum": "d73fb7ba41833bd8ccb9a661aafc47258b4c7e18"
             },
             "require": {
                 "drupal/core": "*",
@@ -2398,8 +2398,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta10",
-                    "datestamp": "1477928941"
+                    "version": "8.x-1.0-beta11",
+                    "datestamp": "1477935218"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -8061,6 +8061,7 @@
     "stability-flags": {
         "drupal/parade": 20,
         "drupal/cloudfront_purger": 20,
+        "drupal/metatag": 10,
         "drupal/devel": 20,
         "drupal/examples": 20
     },
