@@ -7,8 +7,12 @@
 	position: fixed;
 	top: 0; left: 0;
 	padding-left: 14px;
-
 	width: 100%;
+
+  img {
+    margin: 5px 0;
+  }
+
 	&::after {
 		transform: $tieto-logo-transform;
 		will-change: transform, width;
