@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1ca54e87e54cf69c98da4284ce61a633",
-    "content-hash": "4323ea65f2cfd5156acb13d1970de6d9",
+    "hash": "38e867ccda81a8795990c8e3b665a933",
+    "content-hash": "3079a4ab105b597e95879292f7f7a672",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -1798,17 +1798,17 @@
         },
         {
             "name": "drupal/entity_embed",
-            "version": "1.0.0-beta1",
+            "version": "1.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_embed",
-                "reference": "8.x-1.0-beta1"
+                "reference": "8.x-1.0-beta2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_embed-8.x-1.0-beta1.zip",
-                "reference": "8.x-1.0-beta1",
-                "shasum": "97baa245f5f2946ce90063a8dfb9ffd9b4c5c79a"
+                "url": "https://ftp.drupal.org/files/projects/entity_embed-8.x-1.0-beta2.zip",
+                "reference": "8.x-1.0-beta2",
+                "shasum": "21cdeb2b058efce461683aed9a8951053512dca7"
             },
             "require": {
                 "drupal/core": "*",
@@ -1823,7 +1823,7 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta1",
+                    "version": "8.x-1.0-beta2",
                     "datestamp": "1476698339"
                 }
             },
@@ -2385,7 +2385,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.0-beta11.zip",
-                "reference": null,
+                "reference": "8.x-1.0-beta11",
                 "shasum": "d73fb7ba41833bd8ccb9a661aafc47258b4c7e18"
             },
             "require": {
@@ -8061,7 +8061,6 @@
     "stability-flags": {
         "drupal/parade": 20,
         "drupal/cloudfront_purger": 20,
-        "drupal/metatag": 10,
         "drupal/devel": 20,
         "drupal/examples": 20
     },
