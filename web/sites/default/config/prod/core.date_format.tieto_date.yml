@@ -1,0 +1,8 @@
+uuid: b8143121-ad75-432d-ad28-2a9dd7e99848
+langcode: en
+status: true
+dependencies: {  }
+id: tieto_date
+label: 'Tieto date'
+locked: false
+pattern: 'd M Y'
