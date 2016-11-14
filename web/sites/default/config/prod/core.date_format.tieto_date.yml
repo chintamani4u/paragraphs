@@ -5,4 +5,4 @@ dependencies: {  }
 id: tieto_date
 label: 'Tieto date'
 locked: false
-pattern: 'd M Y'
+pattern: 'j M Y - G:i'
