@@ -11,6 +11,7 @@ dependencies:
     - paragraphs.paragraphs_type.locations
     - paragraphs.paragraphs_type.marketo_form
     - paragraphs.paragraphs_type.marketo_poll
+    - paragraphs.paragraphs_type.parallax
     - paragraphs.paragraphs_type.simple
     - paragraphs.paragraphs_type.text_box
     - paragraphs.paragraphs_type.text_boxes
@@ -37,6 +38,7 @@ settings:
       text_boxes: text_boxes
       marketo_form: marketo_form
       images: images
+      parallax: parallax
       locations: locations
       marketo_poll: marketo_poll
     target_bundles_drag_drop:
@@ -68,8 +70,8 @@ settings:
         weight: -13
         enabled: false
       parallax:
+        enabled: true
         weight: -12
-        enabled: false
       locations:
         enabled: true
         weight: 16
