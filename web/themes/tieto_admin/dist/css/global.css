@@ -2358,8 +2358,14 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
     text-align: left; } }
 
 .paragraph--type--text-box.paragraph--view-mode--default {
-  padding: 2em 1em;
-  background: inherit; }
+  background: inherit;
+  padding: 0; }
+  .paragraph--type--text-box.paragraph--view-mode--default .paragraph-inner {
+    margin: 1em;
+    padding: 2em; }
+  .paragraph--type--text-box.paragraph--view-mode--default ul, .paragraph--type--text-box.paragraph--view-mode--default ol {
+    margin: 0;
+    padding: 0; }
   .paragraph--type--text-box.paragraph--view-mode--default .field--name-field-title {
     margin-bottom: 1em;
     font-weight: 800;
@@ -2377,6 +2383,20 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
       .paragraph--type--text-box.paragraph--view-mode--default .field--name-field-title {
         line-height: 1.5;
         font-size: 20px; } }
+  .paragraph--type--text-box.paragraph--view-mode--default .field--name-field-title, .paragraph--type--text-box.paragraph--view-mode--default a {
+    color: inherit; }
+  .paragraph--type--text-box.paragraph--view-mode--default.layout--blue .paragraph-inner {
+    color: white;
+    background: #67afe1; }
+  .paragraph--type--text-box.paragraph--view-mode--default.layout--red .paragraph-inner {
+    color: white;
+    background: #d51067; }
+  .paragraph--type--text-box.paragraph--view-mode--default.layout--orange .paragraph-inner {
+    color: white;
+    background: #F78D2D; }
+  .paragraph--type--text-box.paragraph--view-mode--default.layout--green .paragraph-inner {
+    color: white;
+    background: #b2eb95; }
 
 .paragraph--type--marketo-form.paragraph--view-mode--default {
   background: #efefef; }

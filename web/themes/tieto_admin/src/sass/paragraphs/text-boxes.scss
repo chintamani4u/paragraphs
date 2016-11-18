@@ -30,11 +30,45 @@
 
 // Text Boxes -> Text Box
 .paragraph--type--text-box.paragraph--view-mode--default {
-	padding: 2em 1em;
+	// padding: 2em 1em;
 	background: inherit;
 
+  padding: 0;
+  .paragraph-inner {
+    margin: 1em;
+    padding: 2em;
+  }
+
+  ul, ol {
+    margin: 0;
+    padding: 0;
+  }
+
 	// Text Box item title
-	.field--name-field-title {
-		@include campaign-title-item;
-	}
+  .field--name-field-title {
+    @include campaign-title-item;
+  }
+	.field--name-field-title, a {
+    color: inherit;
+  }
+
+  &.layout--blue .paragraph-inner {
+    color: white;
+    background: $tieto-blue;
+  }
+
+  &.layout--red .paragraph-inner {
+    color: white;
+    background: $tieto-red;
+  }
+
+  &.layout--orange .paragraph-inner {
+    color: white;
+    background: $tieto-orange;
+  }
+
+  &.layout--green .paragraph-inner {
+    color: white;
+    background: $tieto-green;
+  }
 }
