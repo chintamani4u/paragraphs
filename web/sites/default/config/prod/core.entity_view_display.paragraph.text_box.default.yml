@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.text_box.field_image
     - field.field.paragraph.text_box.field_text
+    - field.field.paragraph.text_box.field_text_box_layout
     - field.field.paragraph.text_box.field_title
     - paragraphs.paragraphs_type.text_box
   module:
@@ -38,4 +39,5 @@ content:
     type: string
 hidden:
   created: true
+  field_text_box_layout: true
   uid: true

@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.field.paragraph.text_box.field_image
     - field.field.paragraph.text_box.field_text
+    - field.field.paragraph.text_box.field_text_box_layout
     - field.field.paragraph.text_box.field_title
     - image.style.thumbnail
     - paragraphs.paragraphs_type.text_box
   module:
+    - content_moderation
     - image
     - text
 id: paragraph.text_box.default
@@ -17,19 +19,24 @@ bundle: text_box
 mode: default
 content:
   field_image:
-    weight: 1
+    weight: 2
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
   field_text:
-    weight: 2
+    weight: 3
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_text_box_layout:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_title:
     weight: 0
     settings:
@@ -38,7 +45,9 @@ content:
     third_party_settings: {  }
     type: string_textfield
   translation:
-    weight: 10
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   status: true

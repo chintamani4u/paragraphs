@@ -1,0 +1,23 @@
+uuid: e17744df-a731-438f-9ac2-c52ee88bd703
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_box_layout
+    - paragraphs.paragraphs_type.text_box
+  module:
+    - options
+id: paragraph.text_box.field_text_box_layout
+field_name: field_text_box_layout
+entity_type: paragraph
+bundle: text_box
+label: Layout
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

@@ -1,0 +1,36 @@
+uuid: 02c6670d-d7c3-4be8-8e9e-78bd05cbd029
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_text_box_layout
+field_name: field_text_box_layout
+entity_type: paragraph
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 0
+      label: Normal
+    -
+      value: 1
+      label: Blue
+    -
+      value: 2
+      label: Red
+    -
+      value: 3
+      label: Orange
+    -
+      value: 4
+      label: Green
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
