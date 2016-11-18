@@ -1,0 +1,23 @@
+uuid: 49b190c0-ac16-4f20-844b-0c125b6dad8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_call_to_action
+    - paragraphs.paragraphs_type.simple
+  module:
+    - link
+id: paragraph.simple.field_call_to_action
+field_name: field_call_to_action
+entity_type: paragraph
+bundle: simple
+label: 'Call to Action'
+description: 'You can add a link here which will look like a Call to Action button.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

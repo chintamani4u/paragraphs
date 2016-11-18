@@ -4,11 +4,23 @@
     @include campaign-title-center;
   }
 
-	// &.layout--one-column-clean,
-	// &.layout--one-column-shaded,
-	// &.layout--one-column-grey {
+	&.layout--one-column-clean {
+    text-align: center;
+	}
 
-	// }
+  .field--name-field-call-to-action {
+    // @fixme After tieto_base merge, remove this.
+    .button {
+      padding: .7em 1.4em;
+      font-size: 1.3em;
+      &:hover, &:active, &:focus {
+        color: #fff;
+      }
+      + .button {
+        margin-left: 1em;
+      }
+    }
+  }
 
 	&.layout--one-column-shaded {
 		background-color: $tieto-lightblue;

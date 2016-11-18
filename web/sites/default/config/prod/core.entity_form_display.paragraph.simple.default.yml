@@ -4,11 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.simple.field_anchor
+    - field.field.paragraph.simple.field_call_to_action
     - field.field.paragraph.simple.field_simple_layout
     - field.field.paragraph.simple.field_text
     - field.field.paragraph.simple.field_title
     - paragraphs.paragraphs_type.simple
   module:
+    - content_moderation
+    - parade
     - text
 id: paragraph.simple.default
 targetEntityType: paragraph
@@ -22,6 +25,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_call_to_action:
+    weight: 11
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_with_selected_attribute
   field_simple_layout:
     weight: 1
     settings: {  }
@@ -43,6 +53,8 @@ content:
     type: string_textfield
   translation:
     weight: 10
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   status: true

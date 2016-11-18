@@ -2250,6 +2250,17 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
       line-height: 1;
       font-size: 48px; } }
 
+.paragraph--type--simple.paragraph--view-mode--default.layout--one-column-clean {
+  text-align: center; }
+
+.paragraph--type--simple.paragraph--view-mode--default .field--name-field-call-to-action .button {
+  padding: .7em 1.4em;
+  font-size: 1.3em; }
+  .paragraph--type--simple.paragraph--view-mode--default .field--name-field-call-to-action .button:hover, .paragraph--type--simple.paragraph--view-mode--default .field--name-field-call-to-action .button:active, .paragraph--type--simple.paragraph--view-mode--default .field--name-field-call-to-action .button:focus {
+    color: #fff; }
+  .paragraph--type--simple.paragraph--view-mode--default .field--name-field-call-to-action .button + .button {
+    margin-left: 1em; }
+
 .paragraph--type--simple.paragraph--view-mode--default.layout--one-column-shaded {
   background-color: #cde6f5; }
 

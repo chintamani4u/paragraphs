@@ -4,17 +4,30 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.simple.field_anchor
+    - field.field.paragraph.simple.field_call_to_action
     - field.field.paragraph.simple.field_simple_layout
     - field.field.paragraph.simple.field_text
     - field.field.paragraph.simple.field_title
     - paragraphs.paragraphs_type.simple
   module:
+    - link
     - text
 id: paragraph.simple.default
 targetEntityType: paragraph
 bundle: simple
 mode: default
 content:
+  field_call_to_action:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
   field_text:
     weight: 2
     label: hidden

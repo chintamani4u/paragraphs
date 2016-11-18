@@ -218,3 +218,14 @@ function tieto_admin_preprocess_paragraph__marketo_form(&$variables) {
   // Attach LinkedIn autofill library
   $variables['#attached']['library'][] = 'tieto_admin/vendor.linkedin-autofill';
 }
+
+/**
+ * Implements hook_preprocess_paragraph__marketo_form
+ */
+function tieto_admin_preprocess_field__field_call_to_action(&$variables) {
+  foreach ($variables['items'] as $key => $link) {
+    $variables['items'][$key]['content']['#options']['attributes']['class'] = [
+      'button', 'button--primary', 'button--lg',
+    ];
+  }
+}
