@@ -19,7 +19,7 @@ default_value: {  }
 default_value_callback: ''
 settings:
   file_directory: paragraphs/background
-  file_extensions: 'jpg jpeg svg webp mp4 ogg webm'
+  file_extensions: 'jpg jpeg svg webp'
   max_filesize: ''
   description_field: false
   handler: 'default:file'
