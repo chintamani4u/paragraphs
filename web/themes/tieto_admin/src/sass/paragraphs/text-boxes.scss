@@ -20,6 +20,49 @@
 		background-color: $tieto-lightgrey;
 	}
 
+  &.layout--contacts {
+    // @fixme this is mess but was quick
+    @media screen and (min-width: 768px) {
+      > .paragraph-inner > .field--name-field-title {
+        width: 33%;
+        float: left;
+      }
+      .field--name-field-paragraphs {
+        width: 66%;
+        float: left;
+      }
+    }
+    .paragraph--type--text-box {
+      position: relative;
+      margin-bottom: 2em;
+      .paragraph-inner {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+      .field--name-field-image {
+        position: relative;
+        // left: 0;
+        // top: 0;
+        max-width: 30%;
+        max-height: 100%;
+        text-align: right;
+        img {
+          max-height: 100%;
+          width: auto;
+        }
+      }
+      .field--name-field-title {
+        margin-bottom: 0;
+      }
+      .field--name-field-title,
+      .field--name-field-text {
+        width: 66%;
+        float: right;
+      }
+    }
+  }
+
 	@include md {
 		&.layout--lot_infos .paragraph--type--text-box {
 			text-align: left;
@@ -32,8 +75,8 @@
 .paragraph--type--text-box.paragraph--view-mode--default {
 	// padding: 2em 1em;
 	background: inherit;
-
   padding: 0;
+
   .paragraph-inner {
     margin: 1em;
     padding: 2em;
@@ -48,6 +91,7 @@
   .field--name-field-title {
     @include campaign-title-item;
   }
+
 	.field--name-field-title, a {
     color: inherit;
   }

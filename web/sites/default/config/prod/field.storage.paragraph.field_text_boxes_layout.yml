@@ -29,6 +29,9 @@ settings:
     -
       value: 5
       label: 'Rounded image'
+    -
+      value: 6
+      label: Contacts
   allowed_values_function: ''
 module: options
 locked: false
