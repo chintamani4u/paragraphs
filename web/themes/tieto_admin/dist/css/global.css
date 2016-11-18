@@ -2113,7 +2113,10 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
  * HEADER paragraph
  */
 .paragraph--type--header.paragraph--view-mode--default {
-  padding: 0; }
+  padding: 0;
+  position: relative;
+  background: 0;
+  min-height: 570px; }
   .paragraph--type--header.paragraph--view-mode--default + .paragraph {
     position: relative;
     z-index: 1; }
@@ -2138,39 +2141,15 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
     .paragraph--type--header.paragraph--view-mode--default + .paragraph ~ .paragraph {
       position: relative;
       z-index: 1; }
-  .paragraph--type--header.paragraph--view-mode--default .background {
-    position: relative;
-    overflow: hidden;
-    height: 600px;
-    max-height: 100vh; }
-    .paragraph--type--header.paragraph--view-mode--default .background::before {
-      content: " ";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 1;
-      background-color: rgba(103, 175, 225, 0.5); }
-    .paragraph--type--header.paragraph--view-mode--default .background .background-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      text-align: center; }
-    .paragraph--type--header.paragraph--view-mode--default .background .background-video, .paragraph--type--header.paragraph--view-mode--default .background .background-image {
-      min-width: 100%;
-      min-height: 100%; }
-    .paragraph--type--header.paragraph--view-mode--default .background .background-image {
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover; }
-    .paragraph--type--header.paragraph--view-mode--default .background .IIV::-webkit-media-controls-play-button,
-    .paragraph--type--header.paragraph--view-mode--default .background .IIV::-webkit-media-controls-start-playback-button {
-      opacity: 0;
-      pointer-events: none;
-      width: 5px; }
+  .paragraph--type--header.paragraph--view-mode--default .bg-wrapper::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(103, 175, 225, 0.5); }
   .paragraph--type--header.paragraph--view-mode--default .field--name-field-title {
     font-size: 1.8em;
     margin-bottom: .5rem;
@@ -2213,7 +2192,7 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
       text-decoration: none;
       background: #7cbae5; }
   .paragraph--type--header.paragraph--view-mode--default .paragraph-inner {
-    position: relative;
+    position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -2336,6 +2315,24 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
     text-align: left; }
   .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-field-text {
     float: right; } }
+
+.paragraph--type--parallax.paragraph--view-mode--default {
+  text-align: center;
+  color: white;
+  padding-top: 80px;
+  padding-bottom: 80px; }
+  .paragraph--type--parallax.paragraph--view-mode--default .field--name-field-title {
+    margin-bottom: 1em;
+    font-weight: 800;
+    letter-spacing: -1px;
+    font-size: 26px;
+    line-height: 1.2;
+    word-break: break-word;
+    margin-bottom: .5em; }
+    @media (min-width: 767px) {
+      .paragraph--type--parallax.paragraph--view-mode--default .field--name-field-title {
+        line-height: 1;
+        font-size: 48px; } }
 
 .paragraph--type--text-boxes.paragraph--view-mode--default .field--name-field-title {
   margin-bottom: 1em;
