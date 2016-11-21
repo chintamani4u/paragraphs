@@ -2303,8 +2303,16 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 .paragraph--type--header.paragraph--view-mode--default {
   padding: 0;
   position: relative;
-  background: 0;
-  min-height: 570px; }
+  max-height: 570px; }
+  .paragraph--type--header.paragraph--view-mode--default .bg-wrapper::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(103, 175, 225, 0.5); }
   .paragraph--type--header.paragraph--view-mode--default + .paragraph {
     position: relative;
     z-index: 1; }
@@ -2329,15 +2337,6 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
     .paragraph--type--header.paragraph--view-mode--default + .paragraph ~ .paragraph {
       position: relative;
       z-index: 1; }
-  .paragraph--type--header.paragraph--view-mode--default .bg-wrapper::before {
-    content: " ";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    background-color: rgba(103, 175, 225, 0.5); }
   .paragraph--type--header.paragraph--view-mode--default .field--name-field-title {
     font-size: 1.8em;
     margin-bottom: .5rem;
@@ -2517,9 +2516,7 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 
 .paragraph--type--parallax.paragraph--view-mode--default {
   text-align: center;
-  color: white;
-  padding-top: 80px;
-  padding-bottom: 80px; }
+  color: white; }
   .paragraph--type--parallax.paragraph--view-mode--default .field--name-field-title {
     margin-bottom: 1em;
     font-weight: 800;
