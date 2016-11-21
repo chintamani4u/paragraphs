@@ -54,21 +54,21 @@ content:
     third_party_settings: {  }
     type: string_textarea
   field_secondary_title:
-    weight: 2
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-  field_title:
     weight: 1
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   translation:
-    weight: 10
+    weight: 7
     settings: {  }
     third_party_settings: {  }
 hidden:

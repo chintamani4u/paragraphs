@@ -5,12 +5,25 @@ dependencies:
   config:
     - field.storage.paragraph.field_secondary_title
     - paragraphs.paragraphs_type.header
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: parent_id
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
 id: paragraph.header.field_secondary_title
 field_name: field_secondary_title
 entity_type: paragraph
 bundle: header
-label: 'Secondary title'
-description: ''
+label: Slogan
+description: 'This text will appear above the main page title.'
 required: false
 translatable: true
 default_value: {  }

@@ -2594,11 +2594,10 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
     text-align: left; } }
 
 .paragraph--type--text-box.paragraph--view-mode--default {
-  background: inherit;
-  padding: 0; }
+  padding: 0;
+  background: inherit; }
   .paragraph--type--text-box.paragraph--view-mode--default .paragraph-inner {
-    margin: 1em;
-    padding: 2em; }
+    padding: 1em; }
   .paragraph--type--text-box.paragraph--view-mode--default ul, .paragraph--type--text-box.paragraph--view-mode--default ol {
     margin: 0;
     padding: 0; }

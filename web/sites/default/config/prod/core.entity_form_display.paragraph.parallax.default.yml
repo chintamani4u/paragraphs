@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.parallax.field_anchor
     - field.field.paragraph.parallax.field_background
+    - field.field.paragraph.parallax.field_enable_parallax
     - field.field.paragraph.parallax.field_text
     - field.field.paragraph.parallax.field_title
     - paragraphs.paragraphs_type.parallax
@@ -30,6 +31,12 @@ content:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
+  field_enable_parallax:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_text:
     weight: 2
     settings:

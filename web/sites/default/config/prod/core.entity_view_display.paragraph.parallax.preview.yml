@@ -1,8 +1,9 @@
-uuid: e9f7c52e-d478-4cf2-8043-75de88876729
+uuid: d8a1fd70-d974-4a88-8722-5c649302c5cc
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.parallax.field_anchor
     - field.field.paragraph.parallax.field_background
     - field.field.paragraph.parallax.field_enable_parallax
@@ -11,20 +12,21 @@ dependencies:
     - paragraphs.paragraphs_type.parallax
   module:
     - text
-id: paragraph.parallax.default
+id: paragraph.parallax.preview
 targetEntityType: paragraph
 bundle: parallax
-mode: default
+mode: preview
 content:
   field_text:
     weight: 1
-    label: hidden
-    settings: {  }
+    label: inline
+    settings:
+      trim_length: 600
     third_party_settings: {  }
-    type: text_default
+    type: text_trimmed
   field_title:
     weight: 0
-    label: hidden
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }

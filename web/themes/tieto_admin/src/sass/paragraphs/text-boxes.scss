@@ -80,13 +80,11 @@
 
 // Text Boxes -> Text Box
 .paragraph--type--text-box.paragraph--view-mode--default {
-	// padding: 2em 1em;
+	padding: 0;
 	background: inherit;
-  padding: 0;
 
   .paragraph-inner {
-    margin: 1em;
-    padding: 2em;
+    padding: 1em;
   }
 
   ul, ol {

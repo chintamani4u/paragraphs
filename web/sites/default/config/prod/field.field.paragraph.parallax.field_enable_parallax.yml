@@ -1,0 +1,23 @@
+uuid: d95b96c0-a4b5-49c1-b5c4-797f38f0ba49
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_enable_parallax
+    - paragraphs.paragraphs_type.parallax
+id: paragraph.parallax.field_enable_parallax
+field_name: field_enable_parallax
+entity_type: paragraph
+bundle: parallax
+label: 'Enable Parallax'
+description: '3D effect for the background when scrolling.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
