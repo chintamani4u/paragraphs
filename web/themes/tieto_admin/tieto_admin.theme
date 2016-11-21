@@ -224,8 +224,12 @@ function tieto_admin_preprocess_paragraph__marketo_form(&$variables) {
  */
 function tieto_admin_preprocess_field__field_call_to_action(&$variables) {
   foreach ($variables['items'] as $key => $link) {
-    $variables['items'][$key]['content']['#options']['attributes']['class'] = [
-      'button', 'button--primary', 'button--lg',
-    ];
+    if ($variables['element']['#entity_type'] == 'paragraph' && $variables['element']['#bundle'] == 'text_box') {
+      $classes = ['button', 'button--green'];
+    }
+    else {
+      $classes = ['button', 'button--primary'];
+    }
+    $variables['items'][$key]['content']['#options']['attributes']['class'] = $classes;
   }
 }

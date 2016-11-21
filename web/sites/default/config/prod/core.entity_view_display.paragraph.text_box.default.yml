@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.text_box.field_call_to_action
     - field.field.paragraph.text_box.field_image
     - field.field.paragraph.text_box.field_text
     - field.field.paragraph.text_box.field_text_box_layout
@@ -10,12 +11,24 @@ dependencies:
     - paragraphs.paragraphs_type.text_box
   module:
     - image
+    - link
     - text
 id: paragraph.text_box.default
 targetEntityType: paragraph
 bundle: text_box
 mode: default
 content:
+  field_call_to_action:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
   field_image:
     weight: 2
     label: hidden

@@ -2514,6 +2514,12 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-field-text {
     float: right; } }
 
+.paragraph--type--simple.paragraph--view-mode--default .field--name-field-call-to-action {
+  text-align: center;
+  margin: 2em 0; }
+  .paragraph--type--simple.paragraph--view-mode--default .field--name-field-call-to-action .button {
+    font-size: 1em; }
+
 .paragraph--type--parallax.paragraph--view-mode--default {
   text-align: center;
   color: white; }
@@ -2549,6 +2555,9 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 .paragraph--type--text-boxes.paragraph--view-mode--default.layout--lot_infos-grey {
   background-color: #efefef; }
 
+.paragraph--type--text-boxes.paragraph--view-mode--default.layout--contacts .field--name-field-image img {
+  border-radius: 50%; }
+
 @media screen and (min-width: 768px) {
   .paragraph--type--text-boxes.paragraph--view-mode--default.layout--contacts > .paragraph-inner > .field--name-field-title {
     width: 33%;
@@ -2575,7 +2584,8 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   .paragraph--type--text-boxes.paragraph--view-mode--default.layout--contacts .paragraph--type--text-box .field--name-field-title {
     margin-bottom: 0; }
   .paragraph--type--text-boxes.paragraph--view-mode--default.layout--contacts .paragraph--type--text-box .field--name-field-title,
-  .paragraph--type--text-boxes.paragraph--view-mode--default.layout--contacts .paragraph--type--text-box .field--name-field-text {
+  .paragraph--type--text-boxes.paragraph--view-mode--default.layout--contacts .paragraph--type--text-box .field--name-field-text,
+  .paragraph--type--text-boxes.paragraph--view-mode--default.layout--contacts .paragraph--type--text-box .field--name-field-call-to-action {
     width: 66%;
     float: right; }
 

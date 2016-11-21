@@ -52,10 +52,10 @@ settings:
           items:
             - Source
   plugins:
+    stylescombo:
+      styles: "span.tieto-silver|Silver\r\nspan.tieto-blue|Tieto blue\r\nspan.tieto-orange|Orange\r\nspan.tieto-white|White\r\nh3.tieto-lead|Lead\r\na.button|Default button\r\na.button.button--primary|Primary button\r\na.button.button--green|Green button\r\na.button.button--orange|Orange button\r\na.button.button--red|Red button"
     language:
       language_list: un
-    stylescombo:
-      styles: "span.tieto-silver|Silver\r\nspan.tieto-blue|Tieto blue\r\nspan.tieto-orange|Orange\r\nspan.tieto-white|White\r\nh3.tieto-lead|Lead"
     video_embed:
       defaults:
         children:

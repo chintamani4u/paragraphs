@@ -21,6 +21,12 @@
 	}
 
   &.layout--contacts {
+    .field--name-field-image img {
+      border-radius: 50%;
+    }
+  }
+
+  &.layout--contacts {
     // @fixme this is mess but was quick
     @media screen and (min-width: 768px) {
       > .paragraph-inner > .field--name-field-title {
@@ -56,7 +62,8 @@
         margin-bottom: 0;
       }
       .field--name-field-title,
-      .field--name-field-text {
+      .field--name-field-text,
+      .field--name-field-call-to-action {
         width: 66%;
         float: right;
       }
