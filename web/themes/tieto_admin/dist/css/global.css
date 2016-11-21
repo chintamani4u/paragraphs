@@ -2741,6 +2741,21 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
       line-height: 1;
       font-size: 48px; } }
 
+.paragraph--type--social-links.paragraph--view-mode--default {
+  background-color: #efefef; }
+  .paragraph--type--social-links.paragraph--view-mode--default .field--name-field-title {
+    margin-bottom: 1em;
+    font-weight: 800;
+    letter-spacing: -1px;
+    font-size: 26px;
+    line-height: 1.2;
+    word-break: break-word;
+    color: #333; }
+    @media (min-width: 767px) {
+      .paragraph--type--social-links.paragraph--view-mode--default .field--name-field-title {
+        line-height: 1;
+        font-size: 48px; } }
+
 .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default {
   background: #cde6f5; }
   .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default .field--name-field-paragraphs {
