@@ -2303,7 +2303,7 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 .paragraph--type--header.paragraph--view-mode--default {
   padding: 0;
   position: relative;
-  max-height: 570px; }
+  height: 570px; }
   .paragraph--type--header.paragraph--view-mode--default .bg-wrapper::before {
     content: " ";
     position: absolute;

@@ -8,7 +8,7 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
 .paragraph--type--header.paragraph--view-mode--default {
     padding: 0;
     position: relative;
-    max-height: 570px;
+    height: 570px;
 
     // Background overlay
     .bg-wrapper::before {
