@@ -2215,7 +2215,7 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   .paragraph--type--image-text.paragraph--view-mode--default.layout--none .field--name-field-text, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-title,
   .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-text, .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-title,
   .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-text {
-    width: 66.666%; } }
+    width: 60.666%; } }
 
 .paragraph--type--image-text.paragraph--view-mode--default.layout--none .field--name-field-image, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-image, .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-image {
   text-align: center;
