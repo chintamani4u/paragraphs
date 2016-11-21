@@ -1,15 +1,29 @@
 .paragraph--type--parallax.paragraph--view-mode--default {
   text-align: center;
   color: white;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  min-height: 400px;
+  display: table;
+  width: 100%;
+
+  .paragraph-inner {
+    display: table-cell;
+    vertical-align: middle;
+    width: 70%;
+  }
 
   .bg-image {
-    // Fallback for when the background image is not available,
-    // because the font color is white, so it would not be visible.
+    // Fallback for when the background image is not available.
     background-color: $text-color-strong;
   }
 
   .field--name-field-title {
     @include campaign-title;
     margin-bottom: .5em;
+  }
+
+  .field--name-field-text {
+    font-size: 1.2em;
   }
 }
