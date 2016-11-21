@@ -37,3 +37,4 @@ permissions:
   - 'view paragraph content marketo_form'
   - 'view paragraph content locations'
   - 'view paragraph content marketo_poll'
+  - 'view paragraph content social_links'

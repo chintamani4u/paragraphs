@@ -42,3 +42,4 @@ permissions:
   31: 'view own unpublished content'
   32: 'view paragraph content locations'
   33: 'view paragraph content marketo_poll'
+  34: 'view paragraph content social_links'

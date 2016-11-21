@@ -13,6 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.marketo_poll
     - paragraphs.paragraphs_type.parallax
     - paragraphs.paragraphs_type.simple
+    - paragraphs.paragraphs_type.social_links
     - paragraphs.paragraphs_type.text_box
     - paragraphs.paragraphs_type.text_boxes
   module:
@@ -41,6 +42,7 @@ settings:
       parallax: parallax
       locations: locations
       marketo_poll: marketo_poll
+      social_links: social_links
     target_bundles_drag_drop:
       header:
         enabled: true
@@ -78,4 +80,7 @@ settings:
       marketo_poll:
         enabled: true
         weight: 19
+      social_links:
+        enabled: true
+        weight: 23
 field_type: entity_reference_revisions
