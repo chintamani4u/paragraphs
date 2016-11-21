@@ -30,13 +30,20 @@
     &.layout--image_1st,
     &.layout--text_1st {
 
-      .field--name-field-title,
-      .field--name-field-text,
+
       .field--name-field-image {
           @include md {
-              width: 50%;
+              width: 33.333%;
           }
       }
+
+      .field--name-field-title,
+      .field--name-field-text{
+          @include md {
+              width: 66.666%;
+          }
+      }
+
 
       .field--name-field-image {
           text-align: center;
