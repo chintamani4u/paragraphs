@@ -2206,6 +2206,16 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
       text-decoration: none;
       background: #7cbae5; }
 
+@media (min-width: 767px) {
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--none .field--name-field-title,
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--none .field--name-field-text,
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--none .field--name-field-image, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-title,
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-text,
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-image, .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-title,
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-text,
+  .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-image {
+    width: 50%; } }
+
 .paragraph--type--image-text.paragraph--view-mode--default.layout--none .field--name-field-image, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-image, .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-image {
   text-align: center;
   margin: 1em 0 0; }
