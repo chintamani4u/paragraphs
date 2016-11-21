@@ -8,7 +8,7 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
 .paragraph--type--header.paragraph--view-mode--default {
     padding: 0;
     position: relative;
-    height: 82vh;
+    min-height: 82vh;
 
     // Background overlay
     .bg-wrapper::before {
@@ -94,7 +94,7 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
         color: white;
         padding: 2em 1em;
         z-index: 20;
-        @include breakpoint-max(md) {
+        @include breakpoint-max(lg) {
             transform: translateY(-50%);
             text-align: center;
         }
