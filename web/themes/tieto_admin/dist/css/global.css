@@ -2601,7 +2601,13 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 
 @media (min-width: 767px) {
   .paragraph--type--text-boxes.paragraph--view-mode--default.layout--lot_infos .paragraph--type--text-box {
-    text-align: left; } }
+    text-align: left; }
+  .paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner > .field--name-field-paragraphs {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap; }
+    .paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner > .field--name-field-paragraphs > .col > .paragraph-inner {
+      height: 100%; } }
 
 .paragraph--type--text-box.paragraph--view-mode--default {
   background: inherit; }
