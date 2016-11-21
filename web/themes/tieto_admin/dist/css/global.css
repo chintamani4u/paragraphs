@@ -2523,6 +2523,8 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 .paragraph--type--parallax.paragraph--view-mode--default {
   text-align: center;
   color: white; }
+  .paragraph--type--parallax.paragraph--view-mode--default .bg-image {
+    background-color: #333; }
   .paragraph--type--parallax.paragraph--view-mode--default .field--name-field-title {
     margin-bottom: 1em;
     font-weight: 800;
