@@ -97,9 +97,12 @@
     padding: 3em;
   }
 
-  &.layout--none .paragraph-inner {
-    box-shadow: none;
-    padding: 1em;
+  &.layout--none {
+    padding: 0;
+    .paragraph-inner {
+      box-shadow: none;
+      padding: 1em;
+    }
   }
 
   ul, ol {
@@ -107,13 +110,9 @@
     padding: 0;
   }
 
-	// Text Box item title
+  // Text Box item title
   .field--name-field-title {
     @include campaign-title-item;
-  }
-
-	.field--name-field-title, a {
-    color: inherit;
   }
 
   &.layout--normal .paragraph-inner {
@@ -123,20 +122,35 @@
   &.layout--blue .paragraph-inner {
     color: white;
     background-color: $tieto-blue;
+    .field--name-field-title {
+      color: white;
+    }
   }
 
   &.layout--red .paragraph-inner {
     color: white;
     background-color: $tieto-red;
+    .field--name-field-title {
+      color: white;
+    }
   }
 
   &.layout--orange .paragraph-inner {
     color: white;
     background-color: $tieto-orange;
+    .field--name-field-title {
+      color: white;
+    }
   }
 
   &.layout--green .paragraph-inner {
     color: white;
     background: $tieto-green;
+    .field--name-field-title {
+      color: white;
+    }
   }
+
+
+
 }

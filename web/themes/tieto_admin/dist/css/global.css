@@ -78,7 +78,7 @@ a:hover,
 .link:hover,
 a:focus,
 .link:focus {
-  text-decoration: underline;
+  text-decoration: none;
   outline: 0;
   color: #d51067; }
 
@@ -2206,16 +2206,6 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
       text-decoration: none;
       background: #7cbae5; }
 
-@media (min-width: 767px) {
-  .paragraph--type--image-text.paragraph--view-mode--default.layout--none .field--name-field-title,
-  .paragraph--type--image-text.paragraph--view-mode--default.layout--none .field--name-field-text,
-  .paragraph--type--image-text.paragraph--view-mode--default.layout--none .field--name-field-image, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-title,
-  .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-text,
-  .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-image, .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-title,
-  .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-text,
-  .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-image {
-    width: 50%; } }
-
 .paragraph--type--image-text.paragraph--view-mode--default.layout--none .field--name-field-image, .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-field-image, .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-field-image {
   text-align: center;
   margin: 1em 0 0; }
@@ -2523,15 +2513,13 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 .paragraph--type--parallax.paragraph--view-mode--default {
   text-align: center;
   color: white;
-  padding-top: 70px;
-  padding-bottom: 70px;
-  min-height: 400px;
+  min-height: 340px;
   display: table;
   width: 100%; }
   .paragraph--type--parallax.paragraph--view-mode--default .paragraph-inner {
     display: table-cell;
     vertical-align: middle;
-    width: 70%; }
+    width: 60%; }
   .paragraph--type--parallax.paragraph--view-mode--default .bg-image {
     background-color: #333; }
   .paragraph--type--parallax.paragraph--view-mode--default .field--name-field-title {
@@ -2614,9 +2602,11 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   .paragraph--type--text-box.paragraph--view-mode--default .paragraph-inner {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     padding: 3em; }
-  .paragraph--type--text-box.paragraph--view-mode--default.layout--none .paragraph-inner {
-    box-shadow: none;
-    padding: 1em; }
+  .paragraph--type--text-box.paragraph--view-mode--default.layout--none {
+    padding: 0; }
+    .paragraph--type--text-box.paragraph--view-mode--default.layout--none .paragraph-inner {
+      box-shadow: none;
+      padding: 1em; }
   .paragraph--type--text-box.paragraph--view-mode--default ul, .paragraph--type--text-box.paragraph--view-mode--default ol {
     margin: 0;
     padding: 0; }
@@ -2637,22 +2627,28 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
       .paragraph--type--text-box.paragraph--view-mode--default .field--name-field-title {
         line-height: 1.2;
         font-size: 24px; } }
-  .paragraph--type--text-box.paragraph--view-mode--default .field--name-field-title, .paragraph--type--text-box.paragraph--view-mode--default a {
-    color: inherit; }
   .paragraph--type--text-box.paragraph--view-mode--default.layout--normal .paragraph-inner {
     background-color: #f8f8f8; }
   .paragraph--type--text-box.paragraph--view-mode--default.layout--blue .paragraph-inner {
     color: white;
     background-color: #67afe1; }
+    .paragraph--type--text-box.paragraph--view-mode--default.layout--blue .paragraph-inner .field--name-field-title {
+      color: white; }
   .paragraph--type--text-box.paragraph--view-mode--default.layout--red .paragraph-inner {
     color: white;
     background-color: #d51067; }
+    .paragraph--type--text-box.paragraph--view-mode--default.layout--red .paragraph-inner .field--name-field-title {
+      color: white; }
   .paragraph--type--text-box.paragraph--view-mode--default.layout--orange .paragraph-inner {
     color: white;
     background-color: #F78D2D; }
+    .paragraph--type--text-box.paragraph--view-mode--default.layout--orange .paragraph-inner .field--name-field-title {
+      color: white; }
   .paragraph--type--text-box.paragraph--view-mode--default.layout--green .paragraph-inner {
     color: white;
     background: #b2eb95; }
+    .paragraph--type--text-box.paragraph--view-mode--default.layout--green .paragraph-inner .field--name-field-title {
+      color: white; }
 
 .paragraph--type--marketo-form.paragraph--view-mode--default {
   background: #efefef; }

@@ -33,10 +33,11 @@ a:hover,
 .link:hover,
 a:focus,
 .link:focus {
-  text-decoration: underline;
+  text-decoration: none;
   outline: 0;
   color: $link-color-hover;
 }
+
 hr {
   margin: 0;
   padding: 0;
