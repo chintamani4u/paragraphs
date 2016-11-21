@@ -2304,7 +2304,7 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 .paragraph--type--header.paragraph--view-mode--default {
   padding: 0;
   position: relative;
-  height: 570px; }
+  height: 82vh; }
   .paragraph--type--header.paragraph--view-mode--default .bg-wrapper::before {
     content: " ";
     position: absolute;
