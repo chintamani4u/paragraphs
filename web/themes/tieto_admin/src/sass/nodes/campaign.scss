@@ -211,6 +211,16 @@ body.page-node-type-campaign {
 
 }
 
+.node-preview-container {
+  background: $tieto-blue;
+  color: white;
+  a {
+    color: white;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
 
 // Super ugly hack for correctly displaying the fucking
 // admin toolbar with the fucking logo and the fucking responsive hamburger shit.

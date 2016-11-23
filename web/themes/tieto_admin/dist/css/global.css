@@ -1830,6 +1830,14 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   position: absolute;
   top: 0; }
 
+.node-preview-container {
+  background: #67afe1;
+  color: white; }
+  .node-preview-container a {
+    color: white; }
+    .node-preview-container a:hover {
+      text-decoration: underline; }
+
 .node-campaign-form .field--name-field-menu .field-multiple-table td,
 .node-campaign-edit-form .field--name-field-menu .field-multiple-table td {
   padding: .5em 0; }
