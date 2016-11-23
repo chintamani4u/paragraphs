@@ -1966,6 +1966,15 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   .paragraph.paragraph--view-mode--default .paragraph-inner {
     max-width: 1000px;
     margin: 0 auto; }
+  .paragraph.paragraph--view-mode--default .field--name-field-call-to-action {
+    text-align: center;
+    margin: 2em 0; }
+    .paragraph.paragraph--view-mode--default .field--name-field-call-to-action .button {
+      padding: .7em 1.4em; }
+      .paragraph.paragraph--view-mode--default .field--name-field-call-to-action .button:hover, .paragraph.paragraph--view-mode--default .field--name-field-call-to-action .button:active, .paragraph.paragraph--view-mode--default .field--name-field-call-to-action .button:focus {
+        color: #fff; }
+      .paragraph.paragraph--view-mode--default .field--name-field-call-to-action .button + .button {
+        margin-left: 1em; }
   .paragraph.paragraph--view-mode--default .button {
     display: inline-block;
     font-weight: bold;
@@ -2441,14 +2450,6 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 .paragraph--type--simple.paragraph--view-mode--default.layout--one-column-clean {
   text-align: center; }
 
-.paragraph--type--simple.paragraph--view-mode--default .field--name-field-call-to-action .button {
-  padding: .7em 1.4em;
-  font-size: 1.3em; }
-  .paragraph--type--simple.paragraph--view-mode--default .field--name-field-call-to-action .button:hover, .paragraph--type--simple.paragraph--view-mode--default .field--name-field-call-to-action .button:active, .paragraph--type--simple.paragraph--view-mode--default .field--name-field-call-to-action .button:focus {
-    color: #fff; }
-  .paragraph--type--simple.paragraph--view-mode--default .field--name-field-call-to-action .button + .button {
-    margin-left: 1em; }
-
 .paragraph--type--simple.paragraph--view-mode--default.layout--one-column-shaded {
   background-color: #cde6f5; }
 
@@ -2514,12 +2515,6 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
     text-align: left; }
   .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-field-text {
     float: right; } }
-
-.paragraph--type--simple.paragraph--view-mode--default .field--name-field-call-to-action {
-  text-align: center;
-  margin: 2em 0; }
-  .paragraph--type--simple.paragraph--view-mode--default .field--name-field-call-to-action .button {
-    font-size: 1em; }
 
 .paragraph--type--parallax.paragraph--view-mode--default {
   text-align: center;
@@ -2666,6 +2661,11 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
     background: #b2eb95; }
     .paragraph--type--text-box.paragraph--view-mode--default.layout--green .paragraph-inner .field--name-field-title {
       color: white; }
+  .paragraph--type--text-box.paragraph--view-mode--default .field--name-field-call-to-action {
+    margin: 0;
+    text-align: left; }
+    .paragraph--type--text-box.paragraph--view-mode--default .field--name-field-call-to-action .button {
+      padding: 0.25rem 1rem; }
 
 .paragraph--type--marketo-form.paragraph--view-mode--default {
   background: #efefef; }
