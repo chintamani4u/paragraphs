@@ -2382,20 +2382,11 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   .paragraph--type--header.paragraph--view-mode--default .field--name-field-title,
   .paragraph--type--header.paragraph--view-mode--default .field--name-field-secondary-title {
     line-height: normal; }
-  .paragraph--type--header.paragraph--view-mode--default .field--name-field-call-to-action .field__item {
-    display: inline-block; }
-  .paragraph--type--header.paragraph--view-mode--default .field--name-field-call-to-action a {
-    color: white;
-    display: inline-block;
-    padding: .7em 1.4em;
-    margin-right: .5em;
-    background: #67afe1;
-    border-radius: 3px;
-    -webkit-transition: background .3s;
-    transition: background .3s; }
-    .paragraph--type--header.paragraph--view-mode--default .field--name-field-call-to-action a:hover, .paragraph--type--header.paragraph--view-mode--default .field--name-field-call-to-action a:focus, .paragraph--type--header.paragraph--view-mode--default .field--name-field-call-to-action a:active {
-      text-decoration: none;
-      background: #7cbae5; }
+  .paragraph--type--header.paragraph--view-mode--default .field--name-field-call-to-action {
+    margin: 0;
+    text-align: left; }
+    .paragraph--type--header.paragraph--view-mode--default .field--name-field-call-to-action .field__item {
+      display: inline-block; }
   .paragraph--type--header.paragraph--view-mode--default .paragraph-inner {
     position: absolute;
     top: 50%;

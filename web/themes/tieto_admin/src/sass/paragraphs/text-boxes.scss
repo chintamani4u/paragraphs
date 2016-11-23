@@ -162,9 +162,9 @@
   }
 
   .field--name-field-call-to-action {
+    // @fixme after tieto_base merge.
     margin: 0;
     text-align: left;
-    // @fixme after tieto_base merge.
     .button {
       padding: 0.25rem 1rem;
     }
