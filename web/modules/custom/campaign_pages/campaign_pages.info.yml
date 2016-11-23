@@ -6,5 +6,6 @@ package: Custom
 
 dependencies:
   - parade
-  - text
+  - marketo_form
+  - marketo_poll
   - content_translation
