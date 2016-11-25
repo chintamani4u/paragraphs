@@ -12,9 +12,10 @@
      */
     Drupal.behaviors.addLinkedinScriptTag = {
         attach: function (context, settings) {
+            var formId = 'mktoForm_' + drupalSettings.addTagToHead.dataFormId;
             var tag = $('<script ' +
                 'type="IN/Form2" ' +
-                'data-form="mktoForm_' + drupalSettings.addTagToHead.dataFormId + '" ' +
+                'data-form="' + formId + '"' +
                 'data-field-firstname="FirstName" ' +
                 'data-field-lastname="LastName" ' +
                 'data-field-phone="MobilePhone" ' +
@@ -27,6 +28,7 @@
                 'data-field-zip="ZipCode"' +
                 '></script>');
 
+            // @todo: Maybe add it before $('#' + formId) like in the template?
             $('head').append(tag);
         }
     };
