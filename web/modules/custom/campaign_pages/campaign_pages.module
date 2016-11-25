@@ -7,6 +7,7 @@
 
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Component\Utility\Html;
 
 /**
@@ -81,6 +82,49 @@ function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form
         $type = Html::getClass($item['#bundle_machine_name']);
         $form['field_paragraphs']['widget']['add_more'][$key]['#attributes']['class'][] = 'parade-button';
         $form['field_paragraphs']['widget']['add_more'][$key]['#attributes']['class'][] = 'parade-button-' . $type;
+      }
+    }
+
+    // Set custom redirection callback to stay on the node form after submit.
+    foreach (['submit', 'publish', 'unpublish'] as $action) {
+      if (isset($form['actions'][$action])) {
+        $form['actions'][$action]['#submit'][] = '_campaign_pages_disable_form_redirect';
+      }
+    }
+  }
+}
+
+/**
+ * Custom redirect for Campaign node submit.
+ *
+ * @param array &$form
+ *   The form build array.
+ * @param FormStateInterface $form_state
+ *   The form state interface.
+ * @param string $form_id
+ *   Unique ID of the form.
+ *
+ * @return void
+ */
+function _campaign_pages_disable_form_redirect(&$form, FormStateInterface &$form_state) {
+  // Sadly $form_state->disableRedirect() not works as expected, so we also
+  // need to redirect to the edit form.
+  // @todo Fix redirection of Content Moderation module
+  // @see Drupal\content_moderation\EntityType
+  $nid = $form_state->getValue('nid');
+  $form_state->setRedirect('entity.node.edit_form', ['node' => $nid]);
+}
+
+/**
+ * Implements hook_entity_operation_alter().
+ */
+function campaign_pages_entity_operation_alter(array &$operations, EntityInterface $entity) {
+  // Remove `destination` URL query parameter on Operations
+  // dropbutton for Campaign type nodes.
+  if (method_exists($entity, 'getType') && $entity->getType() === 'campaign') {
+    foreach ($operations as $operation => $data) {
+      if (isset($data['query']['destination'])) {
+        unset($operations[$operation]['query']['destination']);
       }
     }
   }

@@ -8,20 +8,6 @@
     text-align: center;
 	}
 
-  .field--name-field-call-to-action {
-    // @fixme After tieto_base merge, remove this.
-    .button {
-      padding: .7em 1.4em;
-      font-size: 1.3em;
-      &:hover, &:active, &:focus {
-        color: #fff;
-      }
-      + .button {
-        margin-left: 1em;
-      }
-    }
-  }
-
 	&.layout--one-column-shaded {
 		background-color: $tieto-lightblue;
 	}
@@ -76,13 +62,4 @@
 			}
 		}
 	}
-
-  .field--name-field-call-to-action {
-    text-align: center;
-    margin: 2em 0;
-
-    .button {
-      font-size: 1em;
-    }
-  }
 }
