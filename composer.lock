@@ -2486,7 +2486,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "e36b6072105a28c70cae7dbe1b800972ab0b4ad4"
+                "reference": "6e3d120d2b5de36b7a5c73f726bbfc9f85c05802"
             },
             "require": {
                 "drupal/aggregated_leaflet_map": "*",
@@ -2502,7 +2502,10 @@
                 "drupal/php_ffmpeg": "1.0"
             },
             "suggest": {
-                "drupal/leaflet": "Required by drupal/aggregated_leaflet_map"
+                "drupal/core": "Required by drupal/parade_demo",
+                "drupal/leaflet": "Required by drupal/aggregated_leaflet_map",
+                "drupal/marketo_form": "Required by drupal/parade_demo",
+                "drupal/marketo_poll": "Required by drupal/parade_demo"
             },
             "type": "drupal-module",
             "extra": {
@@ -2511,7 +2514,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1479766441"
+                    "datestamp": "1480073284"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2549,7 +2552,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2016-11-21 22:11:39"
+            "time": "2016-11-25 11:27:26"
         },
         {
             "name": "drupal/paragraphs",
