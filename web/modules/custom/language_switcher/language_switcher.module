@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * The module file for the Language Switcher module.
+ */
+
+/**
+ * Implements hook_language_switch_links_alter().
+ *
+ * Alter langauge links in Language Switcher block on node pages
+ * - display only those, which are node translated. If there is only one
+ * language, langauge switcher will not be shown.
+ */
+function language_switcher_language_switch_links_alter(array &$links, $type, $path) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $translations = $node->getTranslationLanguages();
+    $links = array_intersect_key($links, $translations);
+    if (count($links) <= 1) {
+      $links = [];
+    }
+  }
+}
+
+// @todo: Add the language switcher block to the module.
+// @todo: Write install hook to place the block into the footer of the active themes.
+// @todo: Add code to disallow block to be displayed on pages other than the node view.
