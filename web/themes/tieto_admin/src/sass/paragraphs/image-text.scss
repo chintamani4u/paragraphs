@@ -11,19 +11,19 @@
         .field__item {
             display: inline-block;
         }
-        a {
-            color: white;
-            display: inline-block;
-            padding: .7em 1.4em;
-            margin-right: .5em;
-            background: $tieto-blue;
-            border-radius: 3px;
-            transition: background .3s;
-            &:hover, &:focus, &:active {
-                text-decoration: none;
-                background: lighten($tieto-blue, 5%);
-            }
-        }
+        // a {
+        //     color: white;
+        //     display: inline-block;
+        //     padding: .7em 1.4em;
+        //     margin-right: .5em;
+        //     background: $tieto-blue;
+        //     border-radius: 3px;
+        //     transition: background .3s;
+        //     &:hover, &:focus, &:active {
+        //         text-decoration: none;
+        //         background: lighten($tieto-blue, 5%);
+        //     }
+        // }
     }
 
     &.layout--none,
@@ -50,13 +50,15 @@
           margin: 1em 0 0;
           @include md {
               margin: 0;
-              text-align: right;
           }
       }
 
+      .field--name-field-text {
+        text-align: justify;
+      }
+
       @include md {
-          .field--name-field-title,
-          .field--name-field-text {
+          .field--name-field-title {
               text-align: left;
           }
       }
@@ -75,7 +77,12 @@
             // Image
             .field--name-field-image {
                 float: right;
-                padding-left: 1.5em;
+                // padding-left: 1.5em;
+                text-align: left;
+            }
+            .field--name-field-call-to-action {
+                text-align: left;
+                clear: left;
             }
         }
     }
@@ -92,12 +99,13 @@
             // Image
             .field--name-field-image {
                 float: left;
-                padding-right: 1.5em;
+                // padding-right: 1.5em;
+                text-align: right;
             }
             // Call to action buttons.
             .field--name-field-call-to-action {
-                width: 50%;
-                float: right;
+                text-align: right;
+                clear: right;
             }
         }
     }
