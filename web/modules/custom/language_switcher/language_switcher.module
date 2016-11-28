@@ -21,7 +21,3 @@ function language_switcher_language_switch_links_alter(array &$links, $type, $pa
     }
   }
 }
-
-// @todo: Add the language switcher block to the module.
-// @todo: Write install hook to place the block into the footer of the active themes.
-// @todo: Add code to disallow block to be displayed on pages other than the node view.
