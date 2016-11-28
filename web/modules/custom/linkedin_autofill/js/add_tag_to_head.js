@@ -15,7 +15,7 @@
             var formId = 'mktoForm_' + drupalSettings.addTagToHead.dataFormId;
             var tag = $('<script ' +
                 'type="IN/Form2" ' +
-                'data-form="' + formId + '"' +
+                'data-form="' + formId + '" ' +
                 'data-field-firstname="FirstName" ' +
                 'data-field-lastname="LastName" ' +
                 'data-field-phone="MobilePhone" ' +
