@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "07b3e32fdf97bd5718758412759569f1",
-    "content-hash": "8c6fcfddcccd5155478fe1234b255392",
+    "hash": "2a1053a54f855d491f299f6cdde98790",
+    "content-hash": "d4900d0efdcb54c90ccebbd0cfafbccf",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -1609,6 +1609,27 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/contact_block"
             }
+        },
+        {
+            "name": "drupal/content_entity_language_switcher",
+            "version": "dev-8.x-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/sandbox/mhavelant/2831414.git",
+                "reference": "e06f0ff3db3065e26c7dccc82adf739c84e2249a"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "mhavelant",
+                    "email": "mhavelant@brainsum.com"
+                }
+            ],
+            "description": "Language Switcher functionality which should be a core patch.",
+            "time": "2016-11-29 13:02:07"
         },
         {
             "name": "drupal/core",
@@ -8247,6 +8268,7 @@
         "drupal/parade": 20,
         "drupal/cloudfront_purger": 20,
         "drupal/metatag": 10,
+        "drupal/content_entity_language_switcher": 20,
         "drupal/devel": 20,
         "drupal/examples": 20
     },
