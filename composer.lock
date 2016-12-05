@@ -1616,7 +1616,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/sandbox/mhavelant/2831414.git",
-                "reference": "476ee0c81dd87bfaabfe69ed0f6d6bf0be2d77a2"
+                "reference": "088bc58942d05f563eaee47d94635699dca64609"
             },
             "type": "drupal-module",
             "license": [
@@ -1629,7 +1629,7 @@
                 }
             ],
             "description": "Language Switcher functionality which should be a core patch.",
-            "time": "2016-11-29 13:23:02"
+            "time": "2016-12-05 11:11:45"
         },
         {
             "name": "drupal/core",
