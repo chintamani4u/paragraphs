@@ -2451,7 +2451,7 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 }
 
 .paragraph.paragraph--view-mode--default .field--name-field-call-to-action .button {
-  padding: .7em 1.4em;
+  padding: .75em 1.4em;
 }
 
 .paragraph.paragraph--view-mode--default .field--name-field-call-to-action .button:hover, .paragraph.paragraph--view-mode--default .field--name-field-call-to-action .button:active, .paragraph.paragraph--view-mode--default .field--name-field-call-to-action .button:focus {
