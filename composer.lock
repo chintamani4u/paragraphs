@@ -2507,7 +2507,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "7f883dff3e6fdfe5de22def4ec9a27675deb428f"
+                "reference": "11e5717b697ce1b1eec8fb1ed4cfc261db885b30"
             },
             "require": {
                 "drupal/aggregated_leaflet_map": "*",
@@ -2535,7 +2535,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1480433286"
+                    "datestamp": "1481162584"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2564,6 +2564,10 @@
                     "homepage": "https://www.drupal.org/user/780508"
                 },
                 {
+                    "name": "szamee",
+                    "homepage": "https://www.drupal.org/user/3070377"
+                },
+                {
                     "name": "szato",
                     "homepage": "https://www.drupal.org/user/389677"
                 }
@@ -2573,7 +2577,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2016-11-29 15:26:53"
+            "time": "2016-12-08 02:02:33"
         },
         {
             "name": "drupal/paragraphs",
