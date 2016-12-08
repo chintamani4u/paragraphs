@@ -38,5 +38,6 @@ content:
     type: string
 hidden:
   created: true
+  field_call_to_action: true
   field_text: true
   uid: true
